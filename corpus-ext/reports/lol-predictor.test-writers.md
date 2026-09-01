@@ -1,0 +1,7 @@
+| rule | fp class | count | example key |
+|---|---|---|---|
+| 9 | designed config seam: module documented as the patchable home for runtime values, read at call time by one reader chain; tests patch it once per module in an autouse fixture | 1 | src/league_predictor/config.py:12:9:test-writers:league_predictor.config.MODELS_DIR |
+| 9 | composition-root IO collaborator stubbed beside a MagicMock connection in job/CLI tests; its inputs are already parameters, the stub is the test style not a missing seam | 2 | src/league_predictor/db/__init__.py:35:9:test-writers:league_predictor.db.ensure_database_ready |
+| 9 | pure environment probe (git tree hash, machine memory) patched to a sentinel or to simulate a box condition; a parameter would bypass what the probe guards | 2 | src/league_predictor/resources.py:15:9:test-writers:league_predictor.resources.bounded_workers |
+| 9 | loader or derived object built inside a path-taking shell whose layer below already accepts the object; tests stub the builder to test the shell's wiring | 2 | src/league_predictor/draft_grading/live.py:21:9:test-writers:league_predictor.draft_grading.live.load_grader |
+| 9 | closed registry lookup whose registry dict is already the injection point; the parameter only moves the lookup one frame up to callers whose tests patch the same symbol | 1 | src/league_predictor/lifecycle/__init__.py:36:9:test-writers:league_predictor.lifecycle.get |

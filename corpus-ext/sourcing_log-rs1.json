@@ -1,0 +1,677 @@
+[
+ {
+  "full_name": "mullvad/windows-service-rs",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2802,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "rust-osdev/uefi-rs",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 44445,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "salvo-rs/salvo",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 89074,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "bytecodealliance/wizer",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 258,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "dtolnay/proc-macro2",
+  "action": "rejected",
+  "reason": "clean: crates-off-role",
+  "prod_loc": 5657,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "ratatui/mousefood",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 1525,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "ethangreen-dev/lovely-injector",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2626,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "alexheretic/ab-av1",
+  "action": "rejected",
+  "reason": "clean: no-clippy-ci",
+  "prod_loc": 5342,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "aramperes/onetun",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2407,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "lanyeeee/copymanga-downloader",
+  "action": "rejected",
+  "reason": "clean: no-clippy-ci",
+  "prod_loc": 5713,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "BitVM/BitVM",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 47873,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "pkgxdev/pkgx",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2664,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "apache/auron",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 53485,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data"
+ },
+ {
+  "full_name": "rosalyntg/wl-screenrec",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 3824,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "saschagrunert/indextree",
+  "action": "rejected",
+  "reason": "clean: crates-off-role",
+  "prod_loc": 5261,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "tokio-rs/turmoil",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 16443,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "krakenfx/kraken-cli",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 58395,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "vlcn-io/cr-sqlite",
+  "action": "rejected",
+  "reason": "clean: crates-off-role",
+  "prod_loc": 9024,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data"
+ },
+ {
+  "full_name": "imsnif/bandwhich",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2799,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "SUPERCILEX/fuc",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 2011,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "rust-lang/libc",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 126535,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "hahwul/dalfox",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 86678,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "maxday/lambda-perf",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 1926,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "shell-pool/shpool",
+  "action": "rejected",
+  "reason": "clean: crates-off-role",
+  "prod_loc": 10168,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "jehna/humanify",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 4671,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "It4innovations/hyperqueue",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 41948,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "grpc/grpc-rust",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 86517,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "microsoft/openvmm",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 713733,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "marcelroed/gigatoken",
+  "action": "rejected",
+  "reason": "clean: loc-off-role",
+  "prod_loc": 24860,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "bgreenwell/doxx",
+  "action": "accepted",
+  "reason": "sibling clean",
+  "prod_loc": 8286,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "mullvad/windows-service-rs",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 2802,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "rust-osdev/uefi-rs",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 44445,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "salvo-rs/salvo",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 89074,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "bytecodealliance/wizer",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 258,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "dtolnay/proc-macro2",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 5657,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "ratatui/mousefood",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 1525,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "ethangreen-dev/lovely-injector",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 2626,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "alexheretic/ab-av1",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 5342,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "aramperes/onetun",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 2407,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "lanyeeee/copymanga-downloader",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 5713,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "BitVM/BitVM",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 47873,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "pkgxdev/pkgx",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 2664,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "apache/auron",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 53485,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data"
+ },
+ {
+  "full_name": "rosalyntg/wl-screenrec",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 3824,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "saschagrunert/indextree",
+  "action": "rejected",
+  "reason": "mid: loc-off-role",
+  "prod_loc": 5261,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "tokio-rs/turmoil",
+  "action": "accepted",
+  "reason": "sibling mid",
+  "prod_loc": 16443,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "rust-osdev/uefi-rs",
+  "action": "rejected",
+  "reason": "scale: loc-off-role",
+  "prod_loc": 44445,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "salvo-rs/salvo",
+  "action": "accepted",
+  "reason": "sibling scale",
+  "prod_loc": 89074,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "mullvad/windows-service-rs",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2802,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "rust-osdev/uefi-rs",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 44445,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "bytecodealliance/wizer",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 258,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "dtolnay/proc-macro2",
+  "action": "accepted",
+  "reason": "slot 1",
+  "prod_loc": 5657,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "ratatui/mousefood",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 1525,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "ethangreen-dev/lovely-injector",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2626,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "alexheretic/ab-av1",
+  "action": "accepted",
+  "reason": "slot 2",
+  "prod_loc": 5342,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "aramperes/onetun",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2407,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "lanyeeee/copymanga-downloader",
+  "action": "accepted",
+  "reason": "slot 3",
+  "prod_loc": 5713,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "BitVM/BitVM",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 47873,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "pkgxdev/pkgx",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2664,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "apache/auron",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 53485,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data"
+ },
+ {
+  "full_name": "rosalyntg/wl-screenrec",
+  "action": "accepted",
+  "reason": "slot 4",
+  "prod_loc": 3824,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "saschagrunert/indextree",
+  "action": "accepted",
+  "reason": "slot 5",
+  "prod_loc": 5261,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "krakenfx/kraken-cli",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 58395,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "vlcn-io/cr-sqlite",
+  "action": "accepted",
+  "reason": "slot 6",
+  "prod_loc": 9024,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data"
+ },
+ {
+  "full_name": "imsnif/bandwhich",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2799,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "SUPERCILEX/fuc",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2011,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli"
+ },
+ {
+  "full_name": "rust-lang/libc",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 126535,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "hahwul/dalfox",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 86678,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "maxday/lambda-perf",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 1926,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "shell-pool/shpool",
+  "action": "rejected",
+  "reason": "quota-infeasible",
+  "prod_loc": 10168,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "jehna/humanify",
+  "action": "rejected",
+  "reason": "quota-infeasible",
+  "prod_loc": 4671,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "It4innovations/hyperqueue",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 41948,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys"
+ },
+ {
+  "full_name": "grpc/grpc-rust",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 86517,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web"
+ },
+ {
+  "full_name": "microsoft/openvmm",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 713733,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ },
+ {
+  "full_name": "marcelroed/gigatoken",
+  "action": "accepted",
+  "reason": "slot 7",
+  "prod_loc": 24860,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib"
+ }
+]

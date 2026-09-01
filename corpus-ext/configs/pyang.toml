@@ -1,0 +1,5 @@
+# gauntlet round-2 corpus config: pyang
+# pyang/yacc.py is a verbatim vendored PLY copy (dabeaz copyright, lines
+# 1-28); excluded as third-party. Rest of the tree is first-party in scope.
+[tool.sightline]
+excludes = ["pyang/yacc.py"]

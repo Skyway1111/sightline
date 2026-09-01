@@ -1,0 +1,2 @@
+key	rule	slug	arm	tier	file	line	symbol	message	verdict	why
+pyang/statements.py:3204:3:guard-implied:deletes.iteration	3	contract-implied-guard	guard-implied	heuristic	pyang/statements.py	3204	pyang.statements.ModSubmodStatement.prune.p	guard on 'deletes' is implied by iteration - a loop over empty runs zero times	real	'if len(deletes) > 0:' guards only the for-loop over deletes; the guard is pure noise (and the loop under it is itself an O(n^2) index-and-del rebuild)

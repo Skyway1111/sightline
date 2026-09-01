@@ -1,0 +1,101 @@
+[
+ {
+  "full_name": "basketikun/chatgpt2api",
+  "action": "accepted",
+  "reason": "slot 1",
+  "prod_loc": 15953,
+  "annotation_coverage": 0.991,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "timesler/facenet-pytorch",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 1587,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "zai-org/GLM-V",
+  "action": "accepted",
+  "reason": "slot 2",
+  "prod_loc": 14163,
+  "annotation_coverage": 0.497,
+  "typedness": "partial",
+  "domain": "lib"
+ },
+ {
+  "full_name": "wee-slack/wee-slack",
+  "action": "accepted",
+  "reason": "slot 3",
+  "prod_loc": 7659,
+  "annotation_coverage": 0.856,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "cyrus-and/gdb-dashboard",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 0,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "cli"
+ },
+ {
+  "full_name": "open-telemetry/opentelemetry-python-contrib",
+  "action": "clone-failed",
+  "reason": "clone or timeout",
+  "prod_loc": null,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": null
+ },
+ {
+  "full_name": "antgroup/echomimic",
+  "action": "rejected",
+  "reason": "quota-infeasible",
+  "prod_loc": 15225,
+  "annotation_coverage": 0.523,
+  "typedness": "partial",
+  "domain": "lib"
+ },
+ {
+  "full_name": "aigc-apps/VideoX-Fun",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 283484,
+  "annotation_coverage": 0.26,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "peterbrittain/asciimatics",
+  "action": "accepted",
+  "reason": "slot 4",
+  "prod_loc": 15676,
+  "annotation_coverage": 0.543,
+  "typedness": "partial",
+  "domain": "cli"
+ },
+ {
+  "full_name": "instaloader/instaloader",
+  "action": "rejected",
+  "reason": "quota-infeasible",
+  "prod_loc": 5715,
+  "annotation_coverage": 0.816,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "pyeve/cerberus",
+  "action": "accepted",
+  "reason": "slot 5",
+  "prod_loc": 3044,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "data"
+ }
+]

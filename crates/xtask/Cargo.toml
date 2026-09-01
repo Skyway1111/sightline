@@ -1,0 +1,41 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "The workspace's own tooling: the gate, the rulers and the receipts"
+publish = false
+
+[[bin]]
+name = "xtask"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+indexmap.workspace = true
+regex.workspace = true
+# catalog, fence and the gauntlet counters parse Python through these
+ruff_python_ast.workspace = true
+ruff_python_parser.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+sightline-core = { path = "../core" }
+sightline-py-facts = { path = "../py-facts" }
+# the catalog pins run the real #12 and #41 matchers over the exemplar data;
+# corpus polarity reads both registries for the gate-postured rules
+sightline-py-rules = { path = "../py-rules" }
+# fix-check judges a patch with the cargo argv and the build directory an
+# audit of that tree uses
+sightline-rs-provers = { path = "../rs-provers" }
+sightline-rs-rules = { path = "../rs-rules" }
+toml.workspace = true
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

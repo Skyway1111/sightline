@@ -1,0 +1,4944 @@
+{
+  "findings": [
+    {
+      "cause": "redundant:isinstance",
+      "col": 11,
+      "engine": "oracle",
+      "file": "slack/task.py",
+      "line": 100,
+      "message": "Unnecessary isinstance call; \"BaseException\" is never an instance of \"type\"",
+      "precision": {
+        "tier": {
+          "bar": 0.95,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "symbol": "slack.task.Future.set_exception",
+      "tier": "proved"
+    },
+    {
+      "cause": "over-constrained:slack.commands.get_conversation_from_args:args",
+      "col": 50,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "slack/commands.py",
+      "line": 366,
+      "message": "slack.commands.get_conversation_from_args demands concrete `List[str]` for 'args' but the body only needs `Sequence[str]`; widening verified: no new errors under the wider type",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M widenings the bound-class transport added",
+          "seed": 20260844,
+          "tp": 20
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "10",
+      "salience": 0.0,
+      "slug": "over-constrained-param",
+      "symbol": "slack.commands.get_conversation_from_args",
+      "tier": "indexed"
+    },
+    {
+      "cause": "expr-clone:b10f0cc467ec",
+      "col": 27,
+      "engine": "idx",
+      "evidence": {
+        "detail": "b10f0cc467ec"
+      },
+      "file": "slack/slack_conversation.py",
+      "line": 492,
+      "message": "expression clone x4: slack.slack_conversation.SlackConversation.set_hotlist, slack.slack_message.SlackMessage.priority",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M+17 clones, two judges 18/20 and 17/20; worst reconciliation",
+          "seed": 20260839,
+          "tp": 16
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "11",
+      "salience": 4.0,
+      "slug": "structural-clones",
+      "symbol": "slack.slack_conversation.SlackConversation.set_hotlist",
+      "tier": "indexed"
+    },
+    {
+      "cause": "kind-switch:im,mpim",
+      "col": 8,
+      "engine": "idx",
+      "file": "slack/slack_conversation.py",
+      "line": 312,
+      "message": "{'im', 'mpim'} switched over in 3 functions (slack.slack_conversation.SlackConversation._buffer_close, slack.slack_conversation.SlackConversation.name_prefix, slack.slack_workspace.SlackWorkspace.ws_recv) - dispatch wants one home",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "54",
+      "salience": 3.0,
+      "slug": "kind-switch",
+      "symbol": "slack.slack_conversation.SlackConversation.name_prefix",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:slack.completions.input_complete_cb",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/completions.py",
+      "line": 294,
+      "message": "function slack.completions.input_complete_cb is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.completions.input_complete_cb",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dishonest-accessor:slack.slack_message.SlackMessage.get_thread_replies",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "gw:slack.log.debug_messages",
+          "gw:slack.shared.shared",
+          "mutates-arg",
+          "mutates-field"
+        ]
+      },
+      "file": "slack/slack_message.py",
+      "line": 689,
+      "message": "slack.slack_message.SlackMessage.get_thread_replies is named like an accessor but has effects: gw:slack.log.debug_messages, gw:slack.shared.shared, mutates-arg, mutates-field",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "6",
+      "salience": 4.0,
+      "slug": "dishonest-accessor",
+      "symbol": "slack.slack_message.SlackMessage.get_thread_replies",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:slack.config.SlackConfigSectionWorkspace._create_option",
+      "col": 4,
+      "engine": "idx",
+      "file": "slack/config.py",
+      "line": 443,
+      "message": "slack.config.SlackConfigSectionWorkspace._create_option takes 7 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 7.0,
+      "slug": "positional-width",
+      "symbol": "slack.config.SlackConfigSectionWorkspace._create_option",
+      "tier": "indexed"
+    },
+    {
+      "cause": "doc-path:wee_slack.py",
+      "col": 0,
+      "engine": "idx",
+      "file": "README.md",
+      "line": 105,
+      "message": "doc names `wee_slack.py` which does not resolve",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "28",
+      "salience": 0.0,
+      "slug": "doc-path-integrity",
+      "symbol": "README.md",
+      "tier": "indexed"
+    },
+    {
+      "cause": "fold:extract_token_from_browser.AESCipher._unpad",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "prod-callers:1",
+          "caller:extract_token_from_browser.AESCipher.decrypt"
+        ]
+      },
+      "file": "extract_token_from_browser.py",
+      "line": 32,
+      "message": "extract_token_from_browser.AESCipher._unpad (one line) is called once, from extract_token_from_browser.AESCipher.decrypt: fold it into the caller",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "48",
+      "salience": 0.0,
+      "slug": "fold-candidate",
+      "symbol": "extract_token_from_browser.AESCipher._unpad",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unused-default:slack.commands.weechat_command:slack_buffer_required",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "closed-world:pass",
+          "prod-sites:22"
+        ]
+      },
+      "file": "slack/commands.py",
+      "line": 106,
+      "message": "param 'slack_buffer_required' of slack.commands.weechat_command is never overridden across 22 prod call sites - the flexibility is speculative",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "37",
+      "salience": 22.0,
+      "slug": "speculative-generality",
+      "symbol": "slack.commands.weechat_command",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clump:options,timeout,url",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/http.py",
+      "line": 65,
+      "message": "params (options, timeout, url) recur together in 4 signatures - wants a type",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "14",
+      "salience": 4.0,
+      "slug": "data-clump",
+      "symbol": "slack.http.hook_url",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:slack.slack_message",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/slack_message.py",
+      "line": 1,
+      "message": "slack.slack_message is 1549 lines carrying 9 hot symbols (SlackTs (68), SlackMessage (35), MessageContext (6)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 224605.0,
+      "slug": "purchase-price",
+      "symbol": "slack.slack_message",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dishonest-accessor:slack.commands.get_conversation_from_args",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "gw:slack.log.debug_messages",
+          "gw:slack.shared.shared",
+          "mutates-arg"
+        ]
+      },
+      "file": "slack/commands.py",
+      "line": 366,
+      "message": "slack.commands.get_conversation_from_args is named like an accessor but has effects: gw:slack.log.debug_messages, gw:slack.shared.shared, mutates-arg",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "6",
+      "salience": 3.0,
+      "slug": "dishonest-accessor",
+      "symbol": "slack.commands.get_conversation_from_args",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unused-default:slack.config.SlackConfigSectionWorkspace._create_option:min_value",
+      "col": 8,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "closed-world:pass",
+          "prod-sites:10"
+        ]
+      },
+      "file": "slack/config.py",
+      "line": 448,
+      "message": "param 'min_value' of slack.config.SlackConfigSectionWorkspace._create_option is never overridden across 10 prod call sites - the flexibility is speculative",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "37",
+      "salience": 10.0,
+      "slug": "speculative-generality",
+      "symbol": "slack.config.SlackConfigSectionWorkspace._create_option",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:slack.proxy.Proxy.curl_option",
+      "col": 4,
+      "engine": "idx",
+      "file": "slack/proxy.py",
+      "line": 56,
+      "message": "method slack.proxy.Proxy.curl_option is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.proxy.Proxy.curl_option",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:slack.slack_conversation",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/slack_conversation.py",
+      "line": 1,
+      "message": "slack.slack_conversation is 869 lines carrying 4 hot symbols (SlackConversation (26), SlackConversation.name_with_prefix (4), create_conversation_for_users (4)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 46926.0,
+      "slug": "purchase-price",
+      "symbol": "slack.slack_conversation",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:slack.slack_message.PendingMessageItem.__init__",
+      "col": 4,
+      "engine": "idx",
+      "file": "slack/slack_message.py",
+      "line": 213,
+      "message": "slack.slack_message.PendingMessageItem.__init__ takes 6 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 6.0,
+      "slug": "positional-width",
+      "symbol": "slack.slack_message.PendingMessageItem.__init__",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:slack.config.config_section_workspace_read_cb",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/config.py",
+      "line": 478,
+      "message": "slack.config.config_section_workspace_read_cb takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "symbol": "slack.config.config_section_workspace_read_cb",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unused-default:slack.config.SlackConfigSectionWorkspace._create_option:max_value",
+      "col": 8,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "closed-world:pass",
+          "prod-sites:10"
+        ]
+      },
+      "file": "slack/config.py",
+      "line": 449,
+      "message": "param 'max_value' of slack.config.SlackConfigSectionWorkspace._create_option is never overridden across 10 prod call sites - the flexibility is speculative",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "37",
+      "salience": 10.0,
+      "slug": "speculative-generality",
+      "symbol": "slack.config.SlackConfigSectionWorkspace._create_option",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:slack.log.print_exception_once",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/log.py",
+      "line": 48,
+      "message": "function slack.log.print_exception_once is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.log.print_exception_once",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:slack.commands",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/commands.py",
+      "line": 1,
+      "message": "slack.commands is 916 lines carrying 1 hot symbols (parse_options (11)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 14656.0,
+      "slug": "purchase-price",
+      "symbol": "slack.commands",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dishonest-accessor:slack.util.get_callback_name",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "gw:slack.shared.shared"
+        ]
+      },
+      "file": "slack/util.py",
+      "line": 29,
+      "message": "slack.util.get_callback_name is named like an accessor but has effects: gw:slack.shared.shared",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "6",
+      "salience": 1.0,
+      "slug": "dishonest-accessor",
+      "symbol": "slack.util.get_callback_name",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:slack.completions.completion_list_add_expand",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/completions.py",
+      "line": 32,
+      "message": "slack.completions.completion_list_add_expand takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "symbol": "slack.completions.completion_list_add_expand",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unused-default:slack.commands.list_workspaces:workspace_name",
+      "col": 20,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "closed-world:pass",
+          "prod-sites:3"
+        ]
+      },
+      "file": "slack/commands.py",
+      "line": 151,
+      "message": "param 'workspace_name' of slack.commands.list_workspaces is never overridden across 3 prod call sites - the flexibility is speculative",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "37",
+      "salience": 3.0,
+      "slug": "speculative-generality",
+      "symbol": "slack.commands.list_workspaces",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:generate_types_from_mocks.ast_equal",
+      "col": 0,
+      "engine": "idx",
+      "file": "generate_types_from_mocks.py",
+      "line": 41,
+      "message": "function generate_types_from_mocks.ast_equal is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "generate_types_from_mocks.ast_equal",
+      "tier": "indexed"
+    },
+    {
+      "cause": "fan-out:slack.slack_workspace",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/slack_workspace.py",
+      "line": 1,
+      "message": "slack.slack_workspace imports 14 internal modules - a reader loads 14 files to read one",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 11,
+          "of": "R+M after the reader-role restriction",
+          "seed": 20260845,
+          "tp": 10
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 14.0,
+      "slug": "purchase-price",
+      "symbol": "slack.slack_workspace",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:slack.commands.weechat_command",
+      "col": 0,
+      "engine": "idx",
+      "file": "slack/commands.py",
+      "line": 102,
+      "message": "slack.commands.weechat_command takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "symbol": "slack.commands.weechat_command",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:slack.proxy.Proxy.ipv6",
+      "col": 4,
+      "engine": "idx",
+      "file": "slack/proxy.py",
+      "line": 38,
+      "message": "method slack.proxy.Proxy.ipv6 is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.proxy.Proxy.ipv6",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:slack.completions.input_complete_cb:data",
+      "col": 22,
+      "engine": "idx",
+      "file": "slack/completions.py",
+      "line": 294,
+      "message": "param 'data' of slack.completions.input_complete_cb is never read",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.completions.input_complete_cb",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:slack.commands.display_workspace:detailed_list",
+      "col": 49,
+      "engine": "idx",
+      "file": "slack/commands.py",
+      "line": 158,
+      "message": "param 'detailed_list' of slack.commands.display_workspace is never read",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.commands.display_workspace",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:slack.commands.list_workspaces:workspace_name",
+      "col": 20,
+      "engine": "idx",
+      "file": "slack/commands.py",
+      "line": 151,
+      "message": "param 'workspace_name' of slack.commands.list_workspaces is never read",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.commands.list_workspaces",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:slack.commands.weechat_command:slack_buffer_required",
+      "col": 4,
+      "engine": "idx",
+      "file": "slack/commands.py",
+      "line": 106,
+      "message": "param 'slack_buffer_required' of slack.commands.weechat_command is never read",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.commands.weechat_command",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:slack.util.chunked:strict",
+      "col": 43,
+      "engine": "idx",
+      "file": "slack/util.py",
+      "line": 95,
+      "message": "param 'strict' of slack.util.chunked is never read",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "slack.util.chunked",
+      "tier": "indexed"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_workspace.SlackWorkspace.ws_recv",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_workspace.py",
+      "line": 674,
+      "message": "slack.slack_workspace.SlackWorkspace.ws_recv has cognitive complexity 103 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 103.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_workspace.SlackWorkspace.ws_recv",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "idiom:identity-comp:slack.slack_message.SlackMessage._render_attachments:1439",
+      "col": 16,
+      "engine": "ast",
+      "evidence": {
+        "detail": "identity-comp"
+      },
+      "file": "slack/slack_message.py",
+      "line": 1439,
+      "message": "idiom identity-comp in slack.slack_message.SlackMessage._render_attachments: use list(self._unfurl_and_unescape(line))",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "12",
+      "salience": 0.0,
+      "slug": "idiom-catalog",
+      "symbol": "slack.slack_message.SlackMessage._render_attachments",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mixed-returns:slack.commands.get_conversation_from_args",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "inconsistent returns"
+      },
+      "file": "slack/commands.py",
+      "line": 366,
+      "message": "slack.commands.get_conversation_from_args mixes value returns with bare returns - callers cannot rely on the result",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "symbol": "slack.commands.get_conversation_from_args",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.commands.get_conversation_from_args",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/commands.py",
+      "line": 366,
+      "message": "public boundary slack.commands.get_conversation_from_args leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.commands.get_conversation_from_args",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:slack.task.task_runner:task",
+      "col": 16,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "slack/task.py",
+      "line": 199,
+      "message": "public boundary param 'task' of slack.task.task_runner: contains Any",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "symbol": "slack.task.task_runner",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:getattr:491",
+      "col": 13,
+      "engine": "ast",
+      "evidence": {
+        "detail": "getattr"
+      },
+      "file": "slack/config.py",
+      "line": 491,
+      "message": "dynamic identifier construction via getattr - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "slack.config.config_section_workspace_read_cb",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:extract_token_from_browser.get_cookies:params",
+      "col": 29,
+      "engine": "ast",
+      "file": "extract_token_from_browser.py",
+      "line": 49,
+      "message": "mutable default for 'params' in extract_token_from_browser.get_cookies",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "extract_token_from_browser.get_cookies",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "demeter:slack.slack_user.name_from_user_profile:3",
+      "col": 18,
+      "engine": "ast",
+      "file": "slack/slack_user.py",
+      "line": 53,
+      "message": "slack.slack_user.name_from_user_profile reaches 3 hops through a parameter (`workspace.config.nick_source.value`)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "30",
+      "salience": 3.0,
+      "slug": "demeter-reach",
+      "symbol": "slack.slack_user.name_from_user_profile",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "commented-code:slack.commands:64",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 64,
+      "message": "5 commented-out code lines - delete them; git remembers",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "34",
+      "salience": 5.0,
+      "slug": "noop-code",
+      "symbol": "slack.commands",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "docstring-restates:slack.commands.command_slack",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 192,
+      "message": "docstring 'slack command' restates the name command_slack",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "14 calibration gauntlet clones",
+          "seed": 20260844,
+          "tp": 20
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "symbol": "slack.commands.command_slack",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_conversation.SlackConversation:ae068c05",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 150,
+      "message": "`self.buffer_pointer is not None` recurs in 7 methods of slack.slack_conversation.SlackConversation - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 7.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_conversation.SlackConversation",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_message",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 1,
+      "message": "slack.slack_message (1549 lines, 11 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 1549.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage._render_attachments",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 1350,
+      "message": "slack.slack_message.SlackMessage._render_attachments has cognitive complexity 96 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 96.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage._render_attachments",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "idiom:identity-comp:slack.slack_message.SlackMessage._render_attachments:1483",
+      "col": 29,
+      "engine": "ast",
+      "evidence": {
+        "detail": "identity-comp"
+      },
+      "file": "slack/slack_message.py",
+      "line": 1483,
+      "message": "idiom identity-comp in slack.slack_message.SlackMessage._render_attachments: use list(self._unfurl_and_unescape(footer))",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "12",
+      "salience": 0.0,
+      "slug": "idiom-catalog",
+      "symbol": "slack.slack_message.SlackMessage._render_attachments",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_message_buffer.modify_buffer_line",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_message_buffer.py",
+      "line": 63,
+      "message": "public boundary slack.slack_message_buffer.modify_buffer_line leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_message_buffer.modify_buffer_line",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mixed-returns:slack.slack_workspace.SlackWorkspace._conversation_if_should_open",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "inconsistent returns"
+      },
+      "file": "slack/slack_workspace.py",
+      "line": 594,
+      "message": "slack.slack_workspace.SlackWorkspace._conversation_if_should_open mixes value returns with bare returns - callers cannot rely on the result",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "symbol": "slack.slack_workspace.SlackWorkspace._conversation_if_should_open",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:hasattr:283",
+      "col": 11,
+      "engine": "ast",
+      "evidence": {
+        "detail": "hasattr"
+      },
+      "file": "slack/commands.py",
+      "line": 283,
+      "message": "dynamic identifier construction via hasattr - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "slack.commands.command_slack_workspace_add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:slack.slack_api.SlackApi._fetch_list:params",
+      "col": 25,
+      "engine": "ast",
+      "file": "slack/slack_api.py",
+      "line": 156,
+      "message": "mutable default for 'params' in slack.slack_api.SlackApi._fetch_list",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "slack.slack_api.SlackApi._fetch_list",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:slack.task.process_ended_task:task",
+      "col": 23,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "slack/task.py",
+      "line": 190,
+      "message": "public boundary param 'task' of slack.task.process_ended_task: contains Any",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "symbol": "slack.task.process_ended_task",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_conversation.SlackConversation:78fffb1c",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 150,
+      "message": "`self.type == 'im'` recurs in 3 methods of slack.slack_conversation.SlackConversation - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_conversation.SlackConversation",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_workspace",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_workspace.py",
+      "line": 1,
+      "message": "slack.slack_workspace (979 lines, 7 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 979.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_workspace",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.PendingMessageItem.resolve",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 236,
+      "message": "slack.slack_message.PendingMessageItem.resolve has cognitive complexity 62 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 62.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.PendingMessageItem.resolve",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.commands.parse_options",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/commands.py",
+      "line": 71,
+      "message": "public boundary slack.commands.parse_options leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.commands.parse_options",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:getattr:284",
+      "col": 63,
+      "engine": "ast",
+      "evidence": {
+        "detail": "getattr"
+      },
+      "file": "slack/commands.py",
+      "line": 284,
+      "message": "dynamic identifier construction via getattr - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "slack.commands.command_slack_workspace_add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "sentinel:slack.slack_message.SlackTs._cmp",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "sentinel return"
+      },
+      "file": "slack/slack_message.py",
+      "line": 177,
+      "message": "slack.slack_message.SlackTs._cmp returns -1 beside a computed value under `-> int` - an out-of-band result the contract admits",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "symbol": "slack.slack_message.SlackTs._cmp",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:slack.slack_api.SlackEdgeApi._fetch_edgeapi:params",
+      "col": 69,
+      "engine": "ast",
+      "file": "slack/slack_api.py",
+      "line": 79,
+      "message": "mutable default for 'params' in slack.slack_api.SlackEdgeApi._fetch_edgeapi",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "slack.slack_api.SlackEdgeApi._fetch_edgeapi",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.commands",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 1,
+      "message": "slack.commands (916 lines, 43 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 916.0,
+      "slug": "top-loading",
+      "symbol": "slack.commands",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_conversation.SlackConversation:e7b2e0ac",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 150,
+      "message": "`self._info['is_im'] is True` recurs in 3 methods of slack.slack_conversation.SlackConversation - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_conversation.SlackConversation",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:slack.task.create_task:coroutine",
+      "col": 16,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "slack/task.py",
+      "line": 231,
+      "message": "public boundary param 'coroutine' of slack.task.create_task: contains Any",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "symbol": "slack.task.create_task",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage._render_blocks",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 1105,
+      "message": "slack.slack_message.SlackMessage._render_blocks has cognitive complexity 57 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 57.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage._render_blocks",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_message_buffer.SlackMessageBuffer.print_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_message_buffer.py",
+      "line": 316,
+      "message": "public boundary slack.slack_message_buffer.SlackMessageBuffer.print_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_message_buffer.SlackMessageBuffer.print_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:eval:851",
+      "col": 16,
+      "engine": "ast",
+      "evidence": {
+        "detail": "eval"
+      },
+      "file": "slack/commands.py",
+      "line": 851,
+      "message": "dynamic identifier construction via eval - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "slack.commands.python_eval_slack_cb",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:slack.slack_api.SlackApi._fetch:params",
+      "col": 57,
+      "engine": "ast",
+      "file": "slack/slack_api.py",
+      "line": 141,
+      "message": "mutable default for 'params' in slack.slack_api.SlackApi._fetch",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "slack.slack_api.SlackApi._fetch",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_conversation",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 1,
+      "message": "slack.slack_conversation (869 lines, 7 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 869.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_conversation",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_message.SlackMessage:cbcef769",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 380,
+      "message": "`self._message_json.get('subtype') == 'me_message'` recurs in 3 methods of slack.slack_message.SlackMessage - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_message.SlackMessage",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:slack.task.run_async:coroutine",
+      "col": 14,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "slack/task.py",
+      "line": 243,
+      "message": "public boundary param 'coroutine' of slack.task.run_async: contains Any",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "symbol": "slack.task.run_async",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.commands.command_slack_debug",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 583,
+      "message": "slack.commands.command_slack_debug has cognitive complexity 38 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 38.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.commands.command_slack_debug",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_conversation.SlackConversation.fetch_history",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_conversation.py",
+      "line": 456,
+      "message": "public boundary slack.slack_conversation.SlackConversation.fetch_history leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_conversation.SlackConversation.fetch_history",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_message.SlackMessage:f4b4c40b",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 380,
+      "message": "`self._message_json.get('subtype') in ['channel_join', 'group_join']` recurs in 3 methods of slack.slack_message.SlackMessage - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_message.SlackMessage",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_message_buffer",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 1,
+      "message": "slack.slack_message_buffer (590 lines, 4 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 590.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_message_buffer",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage._render_block_rich_text_section",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 1213,
+      "message": "slack.slack_message.SlackMessage._render_block_rich_text_section has cognitive complexity 31 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 31.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage._render_block_rich_text_section",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.reactions_change",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 537,
+      "message": "public boundary slack.slack_api.SlackApi.reactions_change leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.reactions_change",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_api",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_api.py",
+      "line": 1,
+      "message": "slack.slack_api (589 lines, 3 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 589.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_api",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_message_buffer.SlackMessageBuffer:eb5fad86",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 150,
+      "message": "`self.buffer_pointer is None` recurs in 3 methods of slack.slack_message_buffer.SlackMessageBuffer - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_message_buffer.SlackMessageBuffer",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_conversation.SlackConversation.add_new_message",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 699,
+      "message": "slack.slack_conversation.SlackConversation.add_new_message has cognitive complexity 28 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 28.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_conversation.SlackConversation.add_new_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_conversation.SlackConversation.should_open",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_conversation.py",
+      "line": 333,
+      "message": "public boundary slack.slack_conversation.SlackConversation.should_open leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_conversation.SlackConversation.should_open",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.config",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/config.py",
+      "line": 1,
+      "message": "slack.config (568 lines, 6 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 568.0,
+      "slug": "top-loading",
+      "symbol": "slack.config",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_search_buffer.SlackSearchBuffer:eb5fad86",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_search_buffer.py",
+      "line": 33,
+      "message": "`self.buffer_pointer is None` recurs in 3 methods of slack.slack_search_buffer.SlackSearchBuffer - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_search_buffer.SlackSearchBuffer",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage.parse_message_text",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 846,
+      "message": "slack.slack_message.SlackMessage.parse_message_text has cognitive complexity 25 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 25.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage.parse_message_text",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_conversation.SlackConversation.print_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_conversation.py",
+      "line": 821,
+      "message": "public boundary slack.slack_conversation.SlackConversation.print_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_conversation.SlackConversation.print_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.completions",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/completions.py",
+      "line": 1,
+      "message": "slack.completions (369 lines, 13 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 369.0,
+      "slug": "top-loading",
+      "symbol": "slack.completions",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:slack.slack_workspace.SlackWorkspace:73dc523c",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_workspace.py",
+      "line": 231,
+      "message": "`self._ws is None` recurs in 3 methods of slack.slack_workspace.SlackWorkspace - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "slack.slack_workspace.SlackWorkspace",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.commands.get_conversation_from_args",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 366,
+      "message": "slack.commands.get_conversation_from_args has cognitive complexity 24 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 24.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.commands.get_conversation_from_args",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.curl_option",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 56,
+      "message": "public boundary slack.proxy.Proxy.curl_option leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.curl_option",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:extract_token_from_browser",
+      "col": 0,
+      "engine": "ast",
+      "file": "extract_token_from_browser.py",
+      "line": 1,
+      "message": "extract_token_from_browser (351 lines, 4 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 351.0,
+      "slug": "top-loading",
+      "symbol": "extract_token_from_browser",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.commands.command_slack_search",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 528,
+      "message": "slack.commands.command_slack_search has cognitive complexity 24 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 24.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.commands.command_slack_search",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_conversation.SlackConversation.load_members",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_conversation.py",
+      "line": 409,
+      "message": "public boundary slack.slack_conversation.SlackConversation.load_members leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_conversation.SlackConversation.load_members",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.task",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/task.py",
+      "line": 1,
+      "message": "slack.task (289 lines, 17 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 289.0,
+      "slug": "top-loading",
+      "symbol": "slack.task",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_conversation.SlackConversation.set_hotlist",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 468,
+      "message": "slack.slack_conversation.SlackConversation.set_hotlist has cognitive complexity 20 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 20.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_conversation.SlackConversation.set_hotlist",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_users_get_prefs",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 196,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_users_get_prefs leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_users_get_prefs",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_search_buffer",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_search_buffer.py",
+      "line": 1,
+      "message": "slack.slack_search_buffer (265 lines, 2 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 265.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_search_buffer",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage.tags",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 644,
+      "message": "slack.slack_message.SlackMessage.tags has cognitive complexity 20 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 20.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage.tags",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.chat_command",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 464,
+      "message": "public boundary slack.slack_api.SlackApi.chat_command leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.chat_command",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.weechat_config",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/weechat_config.py",
+      "line": 1,
+      "message": "slack.weechat_config (241 lines, 5 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 241.0,
+      "slug": "top-loading",
+      "symbol": "slack.weechat_config",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_workspace.SlackWorkspace.ws_recv",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_workspace.py",
+      "line": 674,
+      "message": "heavy entry point slack.slack_workspace.SlackWorkspace.ws_recv (205 lines) spends (through a helper in the file) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 205.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_workspace.SlackWorkspace.ws_recv",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message_buffer.modify_buffer_line",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 63,
+      "message": "slack.slack_message_buffer.modify_buffer_line has cognitive complexity 19 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 19.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message_buffer.modify_buffer_line",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.chat_post_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 484,
+      "message": "public boundary slack.slack_api.SlackApi.chat_post_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.chat_post_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message_buffer.SlackMessageBuffer.ts_from_index",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 379,
+      "message": "slack.slack_message_buffer.SlackMessageBuffer.ts_from_index has cognitive complexity 19 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 19.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message_buffer.SlackMessageBuffer.ts_from_index",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_user.SlackUsergroup.create",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_user.py",
+      "line": 174,
+      "message": "public boundary slack.slack_user.SlackUsergroup.create leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_user.SlackUsergroup.create",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_user",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_user.py",
+      "line": 1,
+      "message": "slack.slack_user (184 lines, 9 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 184.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.commands.focus_event_cb",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/commands.py",
+      "line": 795,
+      "message": "slack.commands.focus_event_cb has cognitive complexity 18 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 18.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.commands.focus_event_cb",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.exception",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 142,
+      "message": "public boundary slack.task.Future.exception leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.exception",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.register",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/register.py",
+      "line": 1,
+      "message": "slack.register (178 lines, 12 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 178.0,
+      "slug": "top-loading",
+      "symbol": "slack.register",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.task.task_runner",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/task.py",
+      "line": 199,
+      "message": "slack.task.task_runner has cognitive complexity 18 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 18.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.task.task_runner",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.util.with_color",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/util.py",
+      "line": 39,
+      "message": "public boundary slack.util.with_color leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.util.with_color",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.http",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/http.py",
+      "line": 1,
+      "message": "slack.http (160 lines, 6 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 160.0,
+      "slug": "top-loading",
+      "symbol": "slack.http",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage._render_block_rich_text_element",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 1268,
+      "message": "slack.slack_message.SlackMessage._render_block_rich_text_element has cognitive complexity 17 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 17.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage._render_block_rich_text_element",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.config.SlackConfig.create_workspace_config",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/config.py",
+      "line": 561,
+      "message": "public boundary slack.config.SlackConfig.create_workspace_config leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.config.SlackConfig.create_workspace_config",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:slack.slack_thread",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_thread.py",
+      "line": 1,
+      "message": "slack.slack_thread (153 lines, 1 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 153.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_thread",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message_buffer.SlackMessageBuffer.process_input",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 524,
+      "message": "slack.slack_message_buffer.SlackMessageBuffer.process_input has cognitive complexity 17 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 17.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message_buffer.SlackMessageBuffer.process_input",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_conversation.SlackConversation.fill_history",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 508,
+      "message": "heavy entry point slack.slack_conversation.SlackConversation.fill_history (82 lines) spends (slack.task.gather) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 82.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_conversation.SlackConversation.fill_history",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackEdgeApi.fetch_usergroups_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 92,
+      "message": "public boundary slack.slack_api.SlackEdgeApi.fetch_usergroups_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackEdgeApi.fetch_usergroups_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_conversation.SlackConversation.add_new_message",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 699,
+      "message": "heavy entry point slack.slack_conversation.SlackConversation.add_new_message (47 lines) spends (through a helper in the file) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 47.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_conversation.SlackConversation.add_new_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.http.http_request",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/http.py",
+      "line": 114,
+      "message": "slack.http.http_request has cognitive complexity 15 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 15.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.http.http_request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackEdgeApi.fetch_users_search",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 102,
+      "message": "public boundary slack.slack_api.SlackEdgeApi.fetch_users_search leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackEdgeApi.fetch_users_search",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.http.http_request",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/http.py",
+      "line": 114,
+      "message": "heavy entry point slack.http.http_request (46 lines) spends (slack.task.sleep) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 46.0,
+      "slug": "top-loading",
+      "symbol": "slack.http.http_request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:slack.slack_message.SlackMessage.nick",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message.py",
+      "line": 799,
+      "message": "slack.slack_message.SlackMessage.nick has cognitive complexity 15 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 15.0,
+      "slug": "cognitive-complexity",
+      "symbol": "slack.slack_message.SlackMessage.nick",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackEdgeApi.fetch_channels_search",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 117,
+      "message": "public boundary slack.slack_api.SlackEdgeApi.fetch_channels_search leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackEdgeApi.fetch_channels_search",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.register.register",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/register.py",
+      "line": 137,
+      "message": "heavy entry point slack.register.register (41 lines) spends (through a helper in the file) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 41.0,
+      "slug": "top-loading",
+      "symbol": "slack.register.register",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_team_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 182,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_team_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_team_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.http.hook_process_hashtable",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/http.py",
+      "line": 22,
+      "message": "heavy entry point slack.http.hook_process_hashtable (40 lines) spends (write) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 40.0,
+      "slug": "top-loading",
+      "symbol": "slack.http.hook_process_hashtable",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_rtm_connect",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 189,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_rtm_connect leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_rtm_connect",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_conversation.SlackConversation.set_hotlist",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_conversation.py",
+      "line": 468,
+      "message": "heavy entry point slack.slack_conversation.SlackConversation.set_hotlist (38 lines) spends (through a helper in the file) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 38.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_conversation.SlackConversation.set_hotlist",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_history",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 204,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_history leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_history",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_api.SlackApi.fetch_users_info",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_api.py",
+      "line": 319,
+      "message": "heavy entry point slack.slack_api.SlackApi.fetch_users_info (35 lines) spends (slack.task.gather) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 35.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_api.SlackApi.fetch_users_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_history_after",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 212,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_history_after leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_history_after",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_replies",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 228,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_replies leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_replies",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_message_buffer.SlackMessageBuffer.linkify_text",
+      "col": 4,
+      "engine": "ast",
+      "file": "slack/slack_message_buffer.py",
+      "line": 487,
+      "message": "heavy entry point slack.slack_message_buffer.SlackMessageBuffer.linkify_text (35 lines) spends (slack.task.gather) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 35.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_message_buffer.SlackMessageBuffer.linkify_text",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:slack.slack_emoji.load_standard_emojis",
+      "col": 0,
+      "engine": "ast",
+      "file": "slack/slack_emoji.py",
+      "line": 27,
+      "message": "heavy entry point slack.slack_emoji.load_standard_emojis (34 lines) spends (open) and declares no cost in a docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 34.0,
+      "slug": "top-loading",
+      "symbol": "slack.slack_emoji.load_standard_emojis",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 243,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_members",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 251,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_members leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_members",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_conversations_list_public",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 265,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_conversations_list_public leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_conversations_list_public",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_users_conversations",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 282,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_users_conversations leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_users_conversations",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_user_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 303,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_user_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_user_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_bot_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 356,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_bot_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_bot_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_bots_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 364,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_bots_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_bots_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_usergroups_list",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 372,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_usergroups_list leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_usergroups_list",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_files_info",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 380,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_files_info leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_files_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_emoji_list",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 388,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_emoji_list leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_emoji_list",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_client_userboot",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 395,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_client_userboot leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_client_userboot",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.fetch_client_counts",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 402,
+      "message": "public boundary slack.slack_api.SlackApi.fetch_client_counts leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.fetch_client_counts",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.conversations_open",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 409,
+      "message": "public boundary slack.slack_api.SlackApi.conversations_open leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.conversations_open",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.conversations_join",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 417,
+      "message": "public boundary slack.slack_api.SlackApi.conversations_join leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.conversations_join",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.conversations_close",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 425,
+      "message": "public boundary slack.slack_api.SlackApi.conversations_close leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.conversations_close",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.conversations_leave",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 433,
+      "message": "public boundary slack.slack_api.SlackApi.conversations_leave leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.conversations_leave",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.conversations_mark",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 441,
+      "message": "public boundary slack.slack_api.SlackApi.conversations_mark leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.conversations_mark",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.subscriptions_thread_mark",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 449,
+      "message": "public boundary slack.slack_api.SlackApi.subscriptions_thread_mark leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.subscriptions_thread_mark",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.chat_update_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 506,
+      "message": "public boundary slack.slack_api.SlackApi.chat_update_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.chat_update_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.chat_delete_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 525,
+      "message": "public boundary slack.slack_api.SlackApi.chat_delete_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.chat_delete_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.set_presence",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 561,
+      "message": "public boundary slack.slack_api.SlackApi.set_presence leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.set_presence",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.set_muted_channels",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 569,
+      "message": "public boundary slack.slack_api.SlackApi.set_muted_channels leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.set_muted_channels",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_message.SlackMessage.subtype",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_message.py",
+      "line": 422,
+      "message": "public boundary slack.slack_message.SlackMessage.subtype leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_message.SlackMessage.subtype",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_thread.SlackThread.print_message",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_thread.py",
+      "line": 117,
+      "message": "public boundary slack.slack_thread.SlackThread.print_message leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_thread.SlackThread.print_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.result",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 84,
+      "message": "public boundary slack.task.Future.result leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.result",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.done_with_result",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 115,
+      "message": "public boundary slack.task.Future.done_with_result leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.done_with_result",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.cancel",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 134,
+      "message": "public boundary slack.task.Future.cancel leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.cancel",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Task.cancel",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 174,
+      "message": "public boundary slack.task.Task.cancel leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Task.cancel",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.sleep",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 285,
+      "message": "public boundary slack.task.sleep leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.sleep",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.completions.nick_suffix",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/completions.py",
+      "line": 254,
+      "message": "public boundary slack.completions.nick_suffix leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.completions.nick_suffix",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.config.SlackConfigSectionLook.config_change_nick_colors_cb",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/config.py",
+      "line": 354,
+      "message": "public boundary slack.config.SlackConfigSectionLook.config_change_nick_colors_cb leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.config.SlackConfigSectionLook.config_change_nick_colors_cb",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.http.available_file_descriptors",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/http.py",
+      "line": 16,
+      "message": "public boundary slack.http.available_file_descriptors leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.http.available_file_descriptors",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.name",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 8,
+      "message": "public boundary slack.proxy.Proxy.name leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.name",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.enabled",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 12,
+      "message": "public boundary slack.proxy.Proxy.enabled leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.enabled",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.type",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 20,
+      "message": "public boundary slack.proxy.Proxy.type leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.type",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.address",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 26,
+      "message": "public boundary slack.proxy.Proxy.address leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.address",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.port",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 32,
+      "message": "public boundary slack.proxy.Proxy.port leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.port",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.ipv6",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 38,
+      "message": "public boundary slack.proxy.Proxy.ipv6 leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.ipv6",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.username",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 44,
+      "message": "public boundary slack.proxy.Proxy.username leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.username",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.proxy.Proxy.password",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/proxy.py",
+      "line": 50,
+      "message": "public boundary slack.proxy.Proxy.password leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.proxy.Proxy.password",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.register.shutdown_cb",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/register.py",
+      "line": 19,
+      "message": "public boundary slack.register.shutdown_cb leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.register.shutdown_cb",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.set_user_status",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 585,
+      "message": "public boundary slack.slack_api.SlackApi.set_user_status leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.set_user_status",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_api.SlackApi.clear_user_status",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_api.py",
+      "line": 588,
+      "message": "public boundary slack.slack_api.SlackApi.clear_user_status leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_api.SlackApi.clear_user_status",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_user.SlackUser.create",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_user.py",
+      "line": 101,
+      "message": "public boundary slack.slack_user.SlackUser.create leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_user.SlackUser.create",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_user.SlackBot.create",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_user.py",
+      "line": 157,
+      "message": "public boundary slack.slack_user.SlackBot.create leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_user.SlackBot.create",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_workspace.SlackWorkspace.is_connected",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_workspace.py",
+      "line": 284,
+      "message": "public boundary slack.slack_workspace.SlackWorkspace.is_connected leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_workspace.SlackWorkspace.is_connected",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.slack_workspace.SlackWorkspace.is_connecting",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/slack_workspace.py",
+      "line": 288,
+      "message": "public boundary slack.slack_workspace.SlackWorkspace.is_connecting leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.slack_workspace.SlackWorkspace.is_connecting",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.done",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 112,
+      "message": "public boundary slack.task.Future.done leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.done",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.cancelled",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 118,
+      "message": "public boundary slack.task.Future.cancelled leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.cancelled",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:slack.task.Future.exception_read",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "slack/task.py",
+      "line": 150,
+      "message": "public boundary slack.task.Future.exception_read leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "slack.task.Future.exception_read",
+      "tier": "heuristic"
+    }
+  ],
+  "provenance": {
+    "counts": {
+      "baselined": 0,
+      "findings": 182,
+      "heuristic": 149,
+      "indexed": 32,
+      "proved": 1,
+      "suppressed": 0
+    },
+    "modules": 43,
+    "notes": [
+      "family P silent: no hot-roots config and no cost-declaring docstrings"
+    ],
+    "oracle": {
+      "calls_resolved_by_oracle": 481,
+      "enabled": true,
+      "unresolved_import_density": 0.0,
+      "unresolved_imports": 0,
+      "unresolved_modules": {}
+    },
+    "parse_errors": [],
+    "paths": [],
+    "rules_off": [],
+    "rules_only": [],
+    "sightline": "0.1.0"
+  }
+}

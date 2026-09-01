@@ -1,0 +1,5 @@
+# gauntlet round-2 held-out config: django-unfold
+# python-env points the oracle at the shared held-out venv so third-party
+# types resolve (criterion 6 proved tier). No vendored dirs (manifest2).
+[tool.sightline]
+python-env = "<GAUNTLET_CORPUS_ROOT>/.heldout-venv2"

@@ -1,0 +1,32 @@
+[package]
+name = "sightline-rs-facts"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Rust facts for sightline: the parsed modules, their crate layout and the cross-module indexes"
+
+[lib]
+name = "sightline_rs_facts"
+
+[dependencies]
+camino.workspace = true
+indexmap.workspace = true
+rayon.workspace = true
+regex.workspace = true
+rustc-hash.workspace = true
+self_cell.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sightline-core = { path = "../core" }
+toml.workspace = true
+tree-sitter = "0.26"
+tree-sitter-rust = "=0.24.2"
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

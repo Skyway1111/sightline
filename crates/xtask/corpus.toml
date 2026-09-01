@@ -1,0 +1,57 @@
+# The pinned corpus: one row per tree every measurement reads, in ladder
+# order. Python first, then Rust; per language the clean pole, the mid repo,
+# the scale repo.
+#
+# `name` is the sibling directory of this workspace and the stem of every
+# file a run writes. `url` is the public repository to clone it from, which
+# `name` need not match. `config` is a path under the workspace root; a row
+# without one audits with the tree's own settings. `pin` is the commit the
+# recorded walls were measured at: `audit-bench` stops rather than print a
+# wall for a tree that has moved off it (`benchmarks.md`, "Reference machine").
+
+[[repo]]
+name = "powertools-lambda-python"
+url = "https://github.com/aws-powertools/powertools-lambda-python"
+lang = "py"
+role = "clean"
+pin = "a39e1018e36b7965b08313288bea3b7420df5220"
+
+[[repo]]
+name = "sqlglot"
+url = "https://github.com/tobymao/sqlglot"
+lang = "py"
+role = "mid"
+config = "corpus/sqlglot.toml"
+pin = "dcc36544a928618564e720c2c5b6f187e941a2f9"
+
+[[repo]]
+name = "merged-calculator"
+url = "https://github.com/koimari/league-combat-calculator"
+lang = "py"
+role = "scale"
+config = "corpus/merged-calculator.toml"
+pin = "9eefca4bd1c38d94efebd25cf43e8502cec04f75"
+
+[[repo]]
+name = "doxx"
+url = "https://github.com/bgreenwell/doxx"
+lang = "rs"
+role = "clean"
+config = "corpus/doxx.toml"
+pin = "062819a10f423f2b2ce52be6d264e9069b1b9a40"
+
+[[repo]]
+name = "turmoil"
+url = "https://github.com/tokio-rs/turmoil"
+lang = "rs"
+role = "mid"
+config = "corpus/turmoil.toml"
+pin = "684acc1a8eea3a9cf2c6959dc47b69dba981cac1"
+
+[[repo]]
+name = "salvo"
+url = "https://github.com/salvo-rs/salvo"
+lang = "rs"
+role = "scale"
+config = "corpus/salvo.toml"
+pin = "ebfefdcc9e8b6f93cea963c5ccb36dd75ab55655"

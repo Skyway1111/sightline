@@ -1,0 +1,191 @@
+# Written by `cargo xtask retired` from docs/review/decisions.tsv.
+# An id no rule holds; `explain <id>` prints its burial.
+
+[[retired]]
+id = "4"
+ts = "2026-08-27T23:30"
+decision = "#4 `interprocedural-redundant-check` cut, id retired: 1 real : 13 fp pooled over the five wave-1 clones (93 percent)"
+why = "both fp classes are the rule's premise, not a missing predicate: five guards discharge the parameter's own declared type (`pool: dict | None`, `raw: object`) where callers merely narrow first, and eight are module-public entry points published by a skill manifest whose one or two in-repo callers are not the caller set; with one real pooled no structural predicate keeps >= 3 reals under the bar. `_called_closed_world` stays as #5's candidate universe; `typestrings.establishes` and its tests went with the rule. Re-measure once `facts.published` exists (docs/todo.md)"
+evidence = "corpus-ext/sheets/*.wave1.tsv rows $2==\"4\"; ../sightline-g3/trust-b-after/"
+
+[[retired]]
+id = "4"
+ts = "2026-08-28T03:00"
+decision = "#4 `interprocedural-redundant-check` stays retired: `facts.published` removes none of its 13 fps, so the re-audit reproduces the burial exactly - 1 real / 13 fp (93 percent) on the five g3 clones, all 14 verdicts carried by key, 0 vanished"
+why = "the row's premise was that the published escape would take the eight GLM-V library-entry-point fps; it takes none of them. Those modules are loose scripts under `skills/*/scripts/`, published by a SKILL.md manifest - not a Python distribution, so the packaging read (`_published`) cannot see them, and no packaging read could without treating an agent-skill manifest as a build backend. The escape is not merely late for #4: the one real is `FileBrowser._populate_list`, a private method of a module GLM-V's sibling asciimatics does publish, so `publishes` correctly keeps it - a wider publication read subtracts reals, never adds them. The five chatgpt2api fps are the other class (the guard discharges the parameter's own declared type) and are untouched by publication: chatgpt2api publishes nothing. R+M carry a fresh unjudged pool of 7 (R 4, M 3, all indexed, seed 20260848), left unjudged: 7 reals would still pool to 8 / 13 = 62 percent, over the 30 percent bar, so no judge wave can reverse the burial"
+evidence = "../sightline-todo2/re-measure-4-after/{chatgpt2api,GLM-V,wee-slack,asciimatics,cerberus}.4.tsv (carried from corpus-ext/sheets/*.wave1.tsv); {ROFL-File-Information,merged-calculator}.4.json; restore + revert at todo2/re-measure-4"
+
+[[retired]]
+id = "8"
+ts = "2026-08-27T23:30"
+decision = "#8's `validation` arm cut: 0 real / 3 fp pooled; the repeated leading predicate survives as #8's conjunct"
+why = "every site was an object-mode test (`not self.access_token`, `self._ws is None`) - a state, not a value invariant; the conjunct stays as the evidence the recurring id is worth a NewType"
+evidence = "corpus-ext/sheets/{chatgpt2api,wee-slack,asciimatics}.wave1.tsv rule 8"
+
+[[retired]]
+id = "8"
+ts = "2026-08-28T19:25"
+decision = "#8 `primitive-obsession` cut, id retired: 1 real / 4 fp, and the one real fired on evidence unrelated to its verdict"
+why = "g3 cut #8's validation arm for reading state rather than a value invariant and kept the leading refusal as the recurring id's conjunct; g4 judged that conjunct and every guard behind all five rows - the real included - is `if not <id>: return/raise`. The real (chatgpt2api access_token) was judged real for 13 call sites re-resolving a raw token by hand, a call-site fact this rule never reads, and the four fp guards are a DB-existence raise (team_id), a declared-key fast path (result_key), a dispatch `!= _LIANDRY_BURN_KEY` (source_key) and an emptiness check (conversation_id): no monotone predicate over the def's own preamble separates them. Recall 0/30 measured. The unimplemented concept - k call sites re-deriving one value by hand - is a call-site rule, not this one"
+evidence = "../sightline-g4/rows/rule-8.tsv; ../sightline-g4/trust-a-after/topup4-{chatgpt2api,lol-predictor,merged-calculator}.tsv (4 fp + 1 real vanished)"
+
+[[retired]]
+id = "13"
+ts = "2026-08-27T23:30"
+decision = "#13 `shallow-wrapper` retired: 1 real / 35 fp (97 percent); the `shim:` module arm produced no row either way"
+why = "the population is named hops, not forwards: `_clean`/`_now_iso`/`_hash_key` normalizations with 2-46 call sites, class facades over a global config read, a documented deprecated alias, weechat callback-signature adapters, test doubles satisfying a protocol; the one real (an alias with no callers) #32 already reaches, so no restriction can reach the 30 percent bar"
+evidence = "corpus-ext/sheets/*.wave1.tsv (awk -F'\\t' '$2==\"13\"')"
+
+[[retired]]
+id = "15"
+ts = "2026-08-27T23:30"
+decision = "#15 `wallet-parameter` retired: 1 real / 11 fp (92 percent)"
+why = "ten of eleven fps are records already narrow (a 4-field `LeafOut`, `RuneValues`, an `ActorRequest` behind `.request`), a strategy interface being dispatched on, or a signature the repo does not choose (a weechat handler's `options` slot, a particle emitter's `move` protocol); the one real (a 30-field `FightState` demanded for two fields) leaves the bar needing 0 fp"
+evidence = "corpus-ext/sheets/*.wave1.tsv, topup-{lol-predictor,merged-calculator}.wave1.tsv"
+
+[[retired]]
+id = "16"
+ts = "2026-08-27T23:30"
+decision = "#16 `mutation-tail` retired: 1 real / 18 fp (95 percent); `Scope.external_write_stmts` went with it"
+why = "the tail is the shape the rule asks for, reported as a defect: a CLI main that computes then writes, a constructor resolving defaults then assigning them, a detail dict built purely and handed to one log call, a return value's construction read as a state write, a dict mutated and returned inside the frame; the one real (`fill_polygon`'s edge table) leaves the bar needing 0 fp"
+evidence = "corpus-ext/sheets/*.wave1.tsv"
+
+[[retired]]
+id = "17"
+ts = "2026-08-27T23:30"
+decision = "#17 `liveness-neck` retired: 5 real / 58 fp (92 percent)"
+why = "47 of 58 fps are a flat live profile, not a neck: a run of `self.x = x` or `parser.add_argument` has 0-1 locals live at every boundary, so the minimum is arbitrary; the three structural cuts available (no two-sided valley in the live profile, the boundary inside a >= 3-statement homogeneous run, a nested-def edge) drop 47 fp and 2 real together and leave 3 real / 11 fp = 79 percent"
+evidence = "corpus-ext/sheets/*.wave1.tsv; the valley/run/def-edge tally in the g3/surface-a commit message"
+
+[[retired]]
+id = "19"
+ts = "2026-08-27T23:30"
+decision = "#19 `linear-op-in-loop` retired: 1 real / 5 fp (83 percent)"
+why = "the one real compares whole downloaded image payloads (`response.content not in images`); the five fps are lists of a handful of status codes or ids whose order is part of the result; the separator is n and element size - nothing the AST carries"
+evidence = "corpus-ext/sheets/chatgpt2api.wave1.tsv rule 19"
+
+[[retired]]
+id = "22"
+ts = "2026-08-27T23:30"
+decision = "#22 `velcro-method` retired: 1 real / 33 fp (97 percent)"
+why = "every fp class is a method that must live on the instance: a bound-method UI callback, a template method over a primitive subclasses override, a documented public facade, a service singleton's composed operation, a test double implementing the interface it stands in for, a package's only exported class's published operations; Meyers' count reads \"uses only the public interface\" as extractable and five never-seen repos read the same shape as cohesion"
+evidence = "corpus-ext/sheets/*.wave1.tsv rule 22; corpus-ext/reports/*.g3.md"
+
+[[retired]]
+id = "25"
+ts = "2026-08-27T23:30"
+decision = "#25 `rename-delegation` cut, id retired: 1 real / 8 fp pooled (89 percent)"
+why = "every fp is a name the delegator does not choose - a dunder (`__init__` seeding itself, `__del__` -> `close`), a deprecated alias whose docstring names its successor, a signal handler, a weechat `*_cb` - or a public verb over a private primitive (`jump_to` -> `_add_step`, `putch` -> `print_at`), an abstraction boundary; the one real (`_load` -> `_read_json_object`) is that same private-target shape"
+evidence = "../sightline-g3/context-after/*.tsv; corpus-ext/sheets/*.wave1.tsv rows with arm rename-delegation"
+
+[[retired]]
+id = "28"
+ts = "2026-08-28T19:09"
+decision = "#28's doc-path arm cut: only a dotted symbol stays a claim about this code"
+why = "2 judged reals in 43 rows over four rounds (13 fps : 1 real this round). Docs name files that do not exist by design far more often than by rot: a how-to's template placeholder (forge CONTRIBUTING's yourbackend.py), a dated ADR's plan text and its branch-scoped architecture list (008/009), the outputs a workflow writes (GLM-V's outline.json), a generated project's tree. No predicate separates those from the two reals - one of which (forge ADR-008's References list) sits inside the same ADR the shape exempts"
+evidence = "../sightline-g4/context-after/{forge,cookiecutter-django}.tsv (vanished #28 fp 16, real 1); corpus-ext/sheets/{forge,GLM-V,wee-slack,asciimatics}.wave1 for the four-round population"
+
+[[retired]]
+id = "28"
+ts = "2026-08-29T13:10"
+decision = "#28 retired: doc-path-integrity leaves; no rule holds the id. The doc-path arm went in g4 (2 reals in 43 rows over four rounds) and the doc-symbol arm that remained stood at 1 real / 1 fp (THIN, n=2) with recall 0/21"
+why = "A backticked dotted name that does not resolve is a claim the checker can check and almost never a claim worth making: over the g4 pool the arm found one real symbol rot, and the g4 recall measure found none of the 21 real doc defects the judges marked. The two arms together are the only reader of `facts.tree_paths` and `facts.gitignore`, both of which go with it"
+evidence = "docs/status-g4.md rule-28 rows; corpus-ext/sheets/*.wave2.tsv rule 28; decisions.tsv rows 2026-08-28T19:09 (arm cut) and 19:10 (the restriction that left n=2)"
+
+[[retired]]
+id = "30"
+ts = "2026-08-27T23:30"
+decision = "#30's self-field arm cut: 17 real / 25 fp (60 percent); the rule fires on parameter-rooted chains only (2 real / 0 fp pooled)"
+why = "the two judges read the same shape opposite ways - asciimatics' `self._frame.canvas.unicode_aware` real 17/17, wee-slack's `self.workspace.my_user.id` fp - and no file-scope predicate tells them apart (both are `self.<field>.<obj>.<scalar>` through an unannotated or repo-typed field); reaching through own fields needs a judged standard before the arm returns (docs/todo.md)"
+evidence = "../sightline-g3/context-after/{asciimatics,wee-slack}.tsv"
+
+[[retired]]
+id = "30"
+ts = "2026-08-28T19:13"
+decision = "#30 demeter-reach retired (id reserved)"
+why = "0 real / 6 fp this round, and the two sites g3 judged real are two of those six fps - asciimatics' _DropdownPopup.__init__ (parent.frame.screen.height: 'the popup only needs the screen height' in g3, 'the framework's own spine, and the ctor hands it to super() anyway' in g4) and wee-slack's name_from_user_profile (workspace.config.nick_source.value: the repo-wide weechat-option idiom). The same code, the opposite verdict, so no predicate can keep the reals: what is left of the rule after the receiver exclusion is a record handed in whole and read to its last stdlib/Enum hop (Path.name, Enum.value), where only a local alias is available and it decouples nothing. Recall 1/8. #48 keeps the self-field reach, #11's expression clones the repeated walk"
+evidence = "../sightline-g4/context-after/topup4-{asciimatics,wee-slack,merged-calculator,ROFL-File-Information}.tsv (vanished #30 fp 6, real 0); corpus-ext/sheets/{asciimatics,wee-slack}.wave1 (g3) for the flipped rows"
+
+[[retired]]
+id = "31"
+ts = "2026-09-01T04:10"
+decision = "#31 boundary-contracts cut, id retired: 8 real of 110 judged at seed 202608312, 0.073, the lowest reading data/precision.toml held, and the rule duplicates a checker every repo it can fire on already runs"
+why = "102 of the 110 are rows import-linter itself would not report: 52 exempted by the contract's own ignore_imports through a wildcard covers() cannot match, 43 under an `if TYPE_CHECKING:` guard in a repo that sets exclude_type_checking_imports, 7 dynamic importlib targets no static graph holds. The recall side is the other half of the price and costs nothing: the 8 real rows are rows import-linter reports itself, and every repo the rule can fire on declares import-linter or tach config, so it already runs that tool - the rule's best case duplicates a check the user has and its measured case is a worse copy. #4 in data/retired.toml is the precedent, cut at 1 real : 13 fp, the same 93 percent. Not measured, and the redundancy argument covers it where the evidence does not: the tach.toml arm, since all 110 judged rows are import-linter. What went with the rule: facts.contracts and its one reader, the Contracts and Contract models, the tach and import-linter readers, the listing layer's contracts key on both stacks, provers::imports::covers, and the rule's precision row, as #46's burial took its sample. GATE stays in the product for a judged rule to earn and no rule holds it now, so core::testing's fixture registry carries the one GATE reading render and gate are proved against, the registry test asks instead for the file-scoped RATCHET reading the fast gate blocks on, and corpus::polarity prints the Python pole as proving nothing rather than counting it as proved"
+evidence = "corpus-ext/sheets/gate-l.wave1.tsv; corpus-ext/reports/gate-l.l1.md; decisions.tsv release/31-measured and release/polarity; data/retired.toml #4"
+
+[[retired]]
+id = "43"
+ts = "2026-08-27T23:30"
+decision = "#43 `unobserved-pure-call` cut, id retired and never reused: 0 real / 4 fp pooled over five clones and eight top-up roots"
+why = "every judged site drops the result on purpose with the verdict elsewhere: an expected-raise `try`, a non-mutation test whose receiver is the verdict, a validator's positive control (not raising is the assert), a corpus tiling whose oracle is exception-freedom; no real to keep"
+evidence = "corpus-ext/sheets/topup-{claude-bug-bounty,langextract,merged-calculator,ROFL-File-Information}.wave1.tsv"
+
+[[retired]]
+id = "45"
+ts = "2026-08-27T23:30"
+decision = "#45 `testing-the-double` cut, id retired: 0 real / 5 fp pooled"
+why = "the stub value asserted verbatim is the routing contract under test at every site (sentinel wiring through a double, an error-to-note mapping, a stub delegating to the real callee to make the double honest); the double is the collaborator, never the unit"
+evidence = "corpus-ext/sheets/{asciimatics,chatgpt2api}.wave1.tsv, topup-lol-predictor.wave1.tsv"
+
+[[retired]]
+id = "46"
+ts = "2026-08-28T19:40"
+decision = "#46 `unfailable-test` cut, id retired: 1 real / 6 fp on the g4 rows, and no site in two rounds of judging was called real twice"
+why = "the whole judged population is seven sites, and six flipped verdict between rounds: the five merged-calculator fail-closed handlers (`except (ValueError, KeyError, AssertionError): return  # fail-closed raise is contract-compliant`) were real at g3 ('passes green for any raise, including one from the helper') and fp at g4 ('the handler is the contract's other accepted outcome, and the silent-zero branch is still asserted'); lol-predictor test_integration:169 was fp at g3 (a later `assert len(feature_rows) >= 10` bounds the swallow) and real at g4. Only chatgpt2api scripts/test_storage.py:120 read the same twice (fp, a diagnostic script whose handler returns the run's verdict). The obvious predicate - a handler that returns leaves the test, so the exception is a terminal accepted outcome - prices 6 fp : 0 real under g4's judges and 1 fp : 5 real under g3's; nothing separates the shapes, and a RATCHET rule expert judges split on cannot block. Deleted with its tests, its neutrality fixture, its RULE_PRECISION sample and the family-T row; `provers/handlers` stays (#34, #44), and #34 still skips test files"
+evidence = "corpus-ext/sheets/topup4-merged-calculator.wave1.tsv rule 46 vs topup-merged-calculator.wave2.tsv; topup4-lol-predictor.wave1.tsv vs topup-lol-predictor.wave2.tsv; ../sightline-g4/tests-perf-after/"
+
+[[retired]]
+id = "51"
+ts = "2026-08-27T23:30"
+decision = "#51 `flag-parameter` cut, id retired: 2 real / 4 fp pooled"
+why = "the judges separated `_scatter_plan(dedup=)` (fp) from `_latest_domestic_league(exclude_international=)` (real) by \"no test exercises the False arm\" - a liveness fact, not a signature shape: both are a keyword-only bool whose two-statement arm assigns the same locals before a shared tail, both called only with literals; every predicate stalled at 2/1 (33 percent): all-callers-literal and one-branch-use keep `dedup`, all-callers-same-literal drops `mark_image_result`, the strongest real"
+evidence = "corpus-ext/sheets/topup-{lol-predictor,merged-calculator}.wave1.tsv rule 51; ../sightline-g3/trust-a-{before,after}/"
+
+[[retired]]
+id = "52"
+ts = "2026-08-26T19:44"
+decision = "trust verified PASS: f864036 635c7ea ac429db c614606; #50 unannotated-boundary shipped (18/20 at 20260842; L 205 / R 0 / M 190; file scope), #9 local-writers arm on fixtures (corpus pool 0), #51 cut (6/15 -> required-bool restriction -> 3/6 at 20260843), #52 cut (0/20 -> x-or-empty restriction -> 0/20); ids 51/52 reserved with todo rows carrying the samples; 581 fast tests fresh; budget 167.9k"
+why = "spot-check: commits + clean tree + fresh pytest + todo rows + sample-52 sheet"
+evidence = "../sightline-missing/trust corpus/results/sample-5{0,1,2}.txt docs/todo.md:27-28"
+
+[[retired]]
+id = "52"
+ts = "2026-08-26T21:43"
+decision = "campaign closed: opp 9 + four capabilities shipped, 5 rules + 6 arms shipped (#51/#52 reserved, fan-out and the #42 arms cut at their bars, stale: cut at the audit), docs reduced to what stays open; merged to master fast-forward"
+why = "closes the 19:0x frame row"
+evidence = "docs/status-missing.md docs/review/missing.md"
+
+[[retired]]
+id = "52"
+ts = "2026-08-27T02:45"
+decision = "reserved verified PASS (9d5fb5f record commit, 8f23166): #51 flag-parameter shipped unmeasured (call-index cut; pool L 4 / R 0 / M 1, all five judged 4/5 TP), #52 truthy-optional retired - a pipeline probe over the pre-cut population (95 params, 637 prod arguments) found no empty literal at any site, so the rule cannot fire on the corpus (revival = cherry-pick 9d5fb5f on a gauntlet population); registry 1-51 + 53-56; budget 178,995 (no bump); check PASS 53 s; deltas L {51: 0->4} M {51: 0->1} (+ #36/#40 env drift, below)"
+why = "spot-check: commits + clean tree + sheets + diff stat; plan's third exit (retired) applied by argument"
+evidence = "../sightline-todo/reserved-after/sample-51.txt sample-52.txt"
+
+[[retired]]
+id = "52"
+ts = "2026-08-27T11:20"
+decision = "campaign closed: 39 todo rows -> 0 carried (shipped: 26 rows across index/surface/trust/worlds/context/tests-perf/emit/records/fork/profile incl. #57 dead-key, #51, #27 fan-out, the #5 transport, the fork's callee edges; cut with the next cut: #11 ordinals, #42 loop-verdict, #54 on the gauntlet, #15 residual, Unseen; retired on evidence: #52, load variance, #41 size prior, worktrees); docs/todo.md holds the round's residue (12 rows); status doc, benchmarks, architecture, CLAUDE.md traps current; merged to master fast-forward; the thirteen sightline-todo worktrees removed after the merge"
+why = "closes the 23:40 frame row"
+evidence = "docs/status-todo.md docs/review/decisions.tsv"
+
+[[retired]]
+id = "52"
+ts = "2026-08-27T15:30"
+decision = "#54 same-operation priced twice (7:8 whole switch, 7:6 arm body) and left out; #52 pool 0 on 14 clones, retired for good; #42 unchanged"
+why = "no structural key separates the corpus TPs from pyang's FPs"
+evidence = "../sightline-todo/residue-gauntlet/sample-54-same-operation.txt"
+
+[[retired]]
+id = "61"
+ts = "2026-08-29T15:12"
+decision = "rs #61's `discard` arm (`let _ = <call>;` and `<call>.ok();`) cut before shipping: 0 real of 20 judged on Godot and 0 of 2 on doxx"
+why = "every sampled row was an idiom that drops no error a caller could act on: a `Drop` impl (3), best-effort cleanup on an error path or after success (9), `sender.send(..)` from a spawned worker (8), and one `let _ = run()` discarding a u64. `let _ =` is Rust's written statement of intent, which is why clippy's `let_underscore_must_use` is a restriction lint off by default. The judges' one real case of the shape (diffr P1-24) is a short `write` where `write_all` was meant, a narrower reading than this arm"
+evidence = "../sightline-rs4/receipts/errors/godot-discard-cut.tsv, doxx.tsv rows 2-3; corpus-ext/reports/diffr.rs2.md P1-24"
+
+[[retired]]
+id = "61"
+ts = "2026-08-29T16:00"
+decision = "rs #61 bypassed-error-channel buried: the rule, its tests and its precision key leave the tree at the integrator's read of the unit's open row; the id stays retired so no later reading reuses it"
+why = "7 real of 20 judged (35 percent) after its one monotone narrowing, and the shape prices the human mid tree above the AI one (turmoil 1.62 rows/kloc, Godot 1.11, doxx 0.11): a REPORT rule at that precision is 138 rows of noise on a 100k tree, and the round's frame is separation; what tells a real row from an idiom is whether the fn itself establishes why the unwrap holds, which no fact answers. clippy unwrap_in_result owns the name-level shape"
+evidence = "../sightline-rs4/receipts/errors/godot.tsv, godot-prenarrow.tsv, godot-discard-cut.tsv; decisions.tsv rs4/errors rows"

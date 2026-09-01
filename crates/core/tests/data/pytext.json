@@ -1,0 +1,15006 @@
+[
+ {
+  "args": [
+   "\u0000"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0001"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0002"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0003"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0004"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0005"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0006"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0007"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\b"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\t"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\n"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u000b"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\f"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\r"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u000e"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u000f"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0010"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0011"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0012"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0013"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0014"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0015"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0016"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0017"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0018"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0019"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001a"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001b"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001c"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001d"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001e"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u001f"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u007f"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0080"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0081"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0082"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0083"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0084"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0085"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0086"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0087"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0088"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0089"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008a"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008b"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008c"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008d"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008e"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u008f"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0090"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0091"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0092"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0093"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0094"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0095"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0096"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0097"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0098"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0099"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009a"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009b"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009c"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009d"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009e"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u009f"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u200b"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u2002"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u3000"
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0301"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u05d0"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u4e2d"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\ud83d\ude00"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\ud834\udd1e"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\udb40\udc01"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0378"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u00b5"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0130"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u03a3"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u0660"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   " "
+  ],
+  "expected": true,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   "0"
+  ],
+  "expected": false,
+  "fn": "is_py_space"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": [],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": [
+   "abc"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": [
+   "abc"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": [
+   "abc"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": [
+   "a",
+   "b",
+   "c",
+   "d"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "e"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": [],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": [
+   "it's"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": [
+   "say",
+   "\"hi\""
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": [
+   "both",
+   "'",
+   "and",
+   "\""
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": [
+   "back\\slash"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": [
+   "tab",
+   "here"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": [
+   "new",
+   "line"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": [
+   "ret",
+   "urn"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": [
+   "null\u0000byte"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": [
+   "bell\u0007"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": [
+   "del\u007f"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": [
+   "nbsp"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": [
+   "emoji",
+   "\ud83d\ude00",
+   "tail"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": [
+   "\ud834\udd1e",
+   "clef"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": [
+   "zero\u200bwidth"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": [
+   "\u0378unassigned"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": [
+   "\u0130stanbul"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": [
+   "\u03a3o\u03c6o\u03c2",
+   "\u03a3"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": [
+   "MiXeD",
+   "Case"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": [
+   "_priv"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": [
+   "9lives"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": [
+   "caf\u00e9"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": [
+   "\u4e2d\u6587"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": [
+   "a.b.c"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": [
+   "a..b"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": [
+   ".leading"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": [
+   "trailing."
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": [
+   "one/two/three/four"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": [
+   "\u0660\u0661\u0662"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": [
+   "12345"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": [
+   "12a45"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": [
+   "\u00b2"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "\u000b\f"
+  ],
+  "expected": [],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a\u0085b"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   "a\u2028b"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "split"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": [],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": [
+   "abc"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": [
+   " abc "
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": [
+   "\tabc"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": [
+   "a b\tc",
+   "d"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": [
+   "a",
+   "b",
+   "c",
+   "d\u001fe"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": [
+   "  ",
+   "  "
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": [
+   "it's"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": [
+   "say \"hi\""
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": [
+   "both ' and \""
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": [
+   "back\\slash"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": [
+   "tab\there"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": [
+   "new",
+   "line"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": [
+   "ret",
+   "urn"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": [
+   "null\u0000byte"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": [
+   "bell\u0007"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": [
+   "del\u007f"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": [
+   "\ud834\udd1e clef"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": [
+   "zero\u200bwidth"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": [
+   "\u0378unassigned"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": [
+   "\u0130stanbul"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": [
+   "MiXeD Case"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": [
+   "_priv"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": [
+   "9lives"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": [
+   "caf\u00e9"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": [
+   "\u4e2d\u6587"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": [
+   "a.b.c"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": [
+   "a..b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": [
+   ".leading"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": [
+   "trailing."
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": [
+   "one/two/three/four"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": [
+   "\u0660\u0661\u0662"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": [
+   "12345"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": [
+   "12a45"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": [
+   "\u00b2"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\nb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\n"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\na"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\n\nb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\nb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\rb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\ra"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\rb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\rb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u000bb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u000b"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u000ba"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u000b\u000bb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u000bb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\fb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\f"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\fa"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\f\fb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\fb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001cb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001c"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u001ca"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001c\u001cb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u001cb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001db"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001d"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u001da"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001d\u001db"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u001db"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001eb"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001e"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u001ea"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u001e\u001eb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u001eb"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u0085b"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u0085"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u0085a"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u0085\u0085b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u0085b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2028b"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2028"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u2028a"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2028\u2028b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u2028b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2029b"
+  ],
+  "expected": [
+   "a",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2029"
+  ],
+  "expected": [
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\u2029a"
+  ],
+  "expected": [
+   "",
+   "a"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\u2029\u2029b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\u2029b"
+  ],
+  "expected": [
+   "a",
+   "",
+   "b"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "a\r\nb\r\nc"
+  ],
+  "expected": [
+   "a",
+   "b",
+   "c"
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   "\r\n"
+  ],
+  "expected": [
+   ""
+  ],
+  "fn": "splitlines"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "''",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": "a",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": "a",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": "a",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": "a",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "a"
+  ],
+  "expected": "'a'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": "abc",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": "abc",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": "abc",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": "abc",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "abc"
+  ],
+  "expected": "'abc'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": "abc",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": "abc ",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": " abc",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": " abc ",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   " abc "
+  ],
+  "expected": "' abc '",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": "abc",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": "abc\n",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": "\tabc",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": "\tabc\n",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\tabc\n"
+  ],
+  "expected": "'\\tabc\\n'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": "a b\tc\nd",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": "a b\tc\nd",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": "a b\tc\nd",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": "a b\tc\nd",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "a b\tc\nd"
+  ],
+  "expected": "'a b\\tc\\nd'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": "a\u001cb\u001dc\u001ed\u001fe",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": "a\u001cb\u001dc\u001ed\u001fe",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": "a\u001cb\u001dc\u001ed\u001fe",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": "a\u001cb\u001dc\u001ed\u001fe",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "a\u001cb\u001dc\u001ed\u001fe"
+  ],
+  "expected": "'a\\x1cb\\x1dc\\x1ed\\x1fe'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": "",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": "",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": "",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": "  \u001c  ",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "  \u001c  "
+  ],
+  "expected": "'  \\x1c  '",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": "it's",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": "it's",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": "it's",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": "it's",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "it's"
+  ],
+  "expected": "\"it's\"",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": "say \"hi\"",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": "say \"hi\"",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": "say \"hi\"",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": "say \"hi\"",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "say \"hi\""
+  ],
+  "expected": "'say \"hi\"'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": "both ' and \"",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": "both ' and \"",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": "both ' and \"",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": "both ' and \"",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "both ' and \""
+  ],
+  "expected": "'both \\' and \"'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": "back\\slash",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": "back\\slash",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": "back\\slash",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": "back\\slash",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "back\\slash"
+  ],
+  "expected": "'back\\\\slash'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": "tab\there",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": "tab\there",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": "tab\there",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": "tab\there",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "tab\there"
+  ],
+  "expected": "'tab\\there'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": "new\nline",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": "new\nline",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": "new\nline",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": "new\nline",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "new\nline"
+  ],
+  "expected": "'new\\nline'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": "ret\rurn",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": "ret\rurn",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": "ret\rurn",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": "ret\rurn",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "ret\rurn"
+  ],
+  "expected": "'ret\\rurn'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": "null\u0000byte",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": "null\u0000byte",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": "null\u0000byte",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": "null\u0000byte",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "null\u0000byte"
+  ],
+  "expected": "'null\\x00byte'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": "bell\u0007",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": "bell\u0007",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": "bell\u0007",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": "bell\u0007",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "bell\u0007"
+  ],
+  "expected": "'bell\\x07'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": "del\u007f",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": "del\u007f",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": "del\u007f",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": "del\u007f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "del\u007f"
+  ],
+  "expected": "'del\\x7f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": "nbsp",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": "nbsp\u00a0",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": "\u00a0nbsp",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": "\u00a0nbsp\u00a0",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u00a0nbsp\u00a0"
+  ],
+  "expected": "'\\xa0nbsp\\xa0'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": "emoji \ud83d\ude00 tail",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": "emoji \ud83d\ude00 tail",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": "emoji \ud83d\ude00 tail",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": "emoji \ud83d\ude00 tail",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "emoji \ud83d\ude00 tail"
+  ],
+  "expected": "'emoji \ud83d\ude00 tail'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": "\ud834\udd1e clef",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": "\ud834\udd1e clef",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": "\ud834\udd1e clef",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": "\ud834\udd1e clef",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\ud834\udd1e clef"
+  ],
+  "expected": "'\ud834\udd1e clef'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": "zero\u200bwidth",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": "zero\u200bwidth",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": "zero\u200bwidth",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": "zero\u200bwidth",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "zero\u200bwidth"
+  ],
+  "expected": "'zero\\u200bwidth'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": "\u0378unassigned",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": "\u0378unassigned",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": "\u0378unassigned",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": "\u0378unassigned",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u0378unassigned"
+  ],
+  "expected": "'\\u0378unassigned'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": "\u0130stanbul",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": "\u0130stanbul",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": "\u0130stanbul",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": "i\u0307stanbul",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": true,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u0130stanbul"
+  ],
+  "expected": "'\u0130stanbul'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": "\u03a3o\u03c6o\u03c2 \u03a3",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": "\u03a3o\u03c6o\u03c2 \u03a3",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": "\u03a3o\u03c6o\u03c2 \u03a3",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": "\u03c3o\u03c6o\u03c2 \u03c3",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": true,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u03a3o\u03c6o\u03c2 \u03a3"
+  ],
+  "expected": "'\u03a3o\u03c6o\u03c2 \u03a3'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": "MiXeD Case",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": "MiXeD Case",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": "MiXeD Case",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": "mixed case",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": true,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "MiXeD Case"
+  ],
+  "expected": "'MiXeD Case'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": "_priv",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": "_priv",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": "_priv",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": "_priv",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "_priv"
+  ],
+  "expected": "'_priv'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": "9lives",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": "9lives",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": "9lives",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": "9lives",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "9lives"
+  ],
+  "expected": "'9lives'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": "caf\u00e9",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": "caf\u00e9",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": "caf\u00e9",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": "caf\u00e9",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "caf\u00e9"
+  ],
+  "expected": "'caf\u00e9'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": "\u4e2d\u6587",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": "\u4e2d\u6587",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": "\u4e2d\u6587",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": "\u4e2d\u6587",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u4e2d\u6587"
+  ],
+  "expected": "'\u4e2d\u6587'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": "a.b.c",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": "a.b.c",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": "a.b.c",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": "a.b.c",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "a.b.c"
+  ],
+  "expected": "'a.b.c'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": "a..b",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": "a..b",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": "a..b",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": "a..b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "a..b"
+  ],
+  "expected": "'a..b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": ".leading",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": ".leading",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": ".leading",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": ".leading",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   ".leading"
+  ],
+  "expected": "'.leading'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": "trailing.",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": "trailing.",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": "trailing.",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": "trailing.",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "trailing."
+  ],
+  "expected": "'trailing.'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": "one/two/three/four",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": "one/two/three/four",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": "one/two/three/four",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": "one/two/three/four",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "one/two/three/four"
+  ],
+  "expected": "'one/two/three/four'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": "\u0660\u0661\u0662",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": "\u0660\u0661\u0662",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": "\u0660\u0661\u0662",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": "\u0660\u0661\u0662",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": true,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u0660\u0661\u0662"
+  ],
+  "expected": "'\u0660\u0661\u0662'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": "12345",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": "12345",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": "12345",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": "12345",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": true,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "12345"
+  ],
+  "expected": "'12345'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": "12a45",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": "12a45",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": "12a45",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": "12a45",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "12a45"
+  ],
+  "expected": "'12a45'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "\u00b2",
+  "fn": "strip"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "\u00b2",
+  "fn": "lstrip"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "\u00b2",
+  "fn": "rstrip"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "\u00b2",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_digit"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "'\u00b2'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "\u0000"
+  ],
+  "expected": "'\\x00'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0000"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0000"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0000"
+  ],
+  "expected": "\u0000",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0001"
+  ],
+  "expected": "'\\x01'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0001"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0001"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0001"
+  ],
+  "expected": "\u0001",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0002"
+  ],
+  "expected": "'\\x02'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0002"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0002"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0002"
+  ],
+  "expected": "\u0002",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0003"
+  ],
+  "expected": "'\\x03'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0003"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0003"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0003"
+  ],
+  "expected": "\u0003",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0004"
+  ],
+  "expected": "'\\x04'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0004"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0004"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0004"
+  ],
+  "expected": "\u0004",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0005"
+  ],
+  "expected": "'\\x05'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0005"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0005"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0005"
+  ],
+  "expected": "\u0005",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0006"
+  ],
+  "expected": "'\\x06'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0006"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0006"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0006"
+  ],
+  "expected": "\u0006",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0007"
+  ],
+  "expected": "'\\x07'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0007"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0007"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0007"
+  ],
+  "expected": "\u0007",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\b"
+  ],
+  "expected": "'\\x08'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\b"
+  ],
+  "expected": "\b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\t"
+  ],
+  "expected": "'\\t'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\t"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\t"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\t"
+  ],
+  "expected": "\t",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\n"
+  ],
+  "expected": "'\\n'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\n"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\n"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\n"
+  ],
+  "expected": "\n",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u000b"
+  ],
+  "expected": "'\\x0b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u000b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u000b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u000b"
+  ],
+  "expected": "\u000b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\f"
+  ],
+  "expected": "'\\x0c'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\f"
+  ],
+  "expected": "\f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\r"
+  ],
+  "expected": "'\\r'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\r"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\r"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\r"
+  ],
+  "expected": "\r",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u000e"
+  ],
+  "expected": "'\\x0e'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u000e"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u000e"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u000e"
+  ],
+  "expected": "\u000e",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u000f"
+  ],
+  "expected": "'\\x0f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u000f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u000f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u000f"
+  ],
+  "expected": "\u000f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0010"
+  ],
+  "expected": "'\\x10'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0010"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0010"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0010"
+  ],
+  "expected": "\u0010",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0011"
+  ],
+  "expected": "'\\x11'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0011"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0011"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0011"
+  ],
+  "expected": "\u0011",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0012"
+  ],
+  "expected": "'\\x12'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0012"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0012"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0012"
+  ],
+  "expected": "\u0012",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0013"
+  ],
+  "expected": "'\\x13'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0013"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0013"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0013"
+  ],
+  "expected": "\u0013",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0014"
+  ],
+  "expected": "'\\x14'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0014"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0014"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0014"
+  ],
+  "expected": "\u0014",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0015"
+  ],
+  "expected": "'\\x15'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0015"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0015"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0015"
+  ],
+  "expected": "\u0015",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0016"
+  ],
+  "expected": "'\\x16'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0016"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0016"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0016"
+  ],
+  "expected": "\u0016",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0017"
+  ],
+  "expected": "'\\x17'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0017"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0017"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0017"
+  ],
+  "expected": "\u0017",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0018"
+  ],
+  "expected": "'\\x18'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0018"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0018"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0018"
+  ],
+  "expected": "\u0018",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0019"
+  ],
+  "expected": "'\\x19'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0019"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0019"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0019"
+  ],
+  "expected": "\u0019",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001a"
+  ],
+  "expected": "'\\x1a'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001a"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001a"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001a"
+  ],
+  "expected": "\u001a",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001b"
+  ],
+  "expected": "'\\x1b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001b"
+  ],
+  "expected": "\u001b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001c"
+  ],
+  "expected": "'\\x1c'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001c"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001c"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001c"
+  ],
+  "expected": "\u001c",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001d"
+  ],
+  "expected": "'\\x1d'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001d"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001d"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001d"
+  ],
+  "expected": "\u001d",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001e"
+  ],
+  "expected": "'\\x1e'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001e"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001e"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001e"
+  ],
+  "expected": "\u001e",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u001f"
+  ],
+  "expected": "'\\x1f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u001f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u001f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u001f"
+  ],
+  "expected": "\u001f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u007f"
+  ],
+  "expected": "'\\x7f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u007f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u007f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u007f"
+  ],
+  "expected": "\u007f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0080"
+  ],
+  "expected": "'\\x80'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0080"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0080"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0080"
+  ],
+  "expected": "\u0080",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0081"
+  ],
+  "expected": "'\\x81'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0081"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0081"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0081"
+  ],
+  "expected": "\u0081",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0082"
+  ],
+  "expected": "'\\x82'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0082"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0082"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0082"
+  ],
+  "expected": "\u0082",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0083"
+  ],
+  "expected": "'\\x83'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0083"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0083"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0083"
+  ],
+  "expected": "\u0083",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0084"
+  ],
+  "expected": "'\\x84'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0084"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0084"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0084"
+  ],
+  "expected": "\u0084",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0085"
+  ],
+  "expected": "'\\x85'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0085"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0085"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0085"
+  ],
+  "expected": "\u0085",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0086"
+  ],
+  "expected": "'\\x86'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0086"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0086"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0086"
+  ],
+  "expected": "\u0086",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0087"
+  ],
+  "expected": "'\\x87'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0087"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0087"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0087"
+  ],
+  "expected": "\u0087",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0088"
+  ],
+  "expected": "'\\x88'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0088"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0088"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0088"
+  ],
+  "expected": "\u0088",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0089"
+  ],
+  "expected": "'\\x89'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0089"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0089"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0089"
+  ],
+  "expected": "\u0089",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008a"
+  ],
+  "expected": "'\\x8a'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008a"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008a"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008a"
+  ],
+  "expected": "\u008a",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008b"
+  ],
+  "expected": "'\\x8b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008b"
+  ],
+  "expected": "\u008b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008c"
+  ],
+  "expected": "'\\x8c'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008c"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008c"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008c"
+  ],
+  "expected": "\u008c",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008d"
+  ],
+  "expected": "'\\x8d'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008d"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008d"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008d"
+  ],
+  "expected": "\u008d",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008e"
+  ],
+  "expected": "'\\x8e'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008e"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008e"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008e"
+  ],
+  "expected": "\u008e",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u008f"
+  ],
+  "expected": "'\\x8f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u008f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u008f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u008f"
+  ],
+  "expected": "\u008f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0090"
+  ],
+  "expected": "'\\x90'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0090"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0090"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0090"
+  ],
+  "expected": "\u0090",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0091"
+  ],
+  "expected": "'\\x91'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0091"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0091"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0091"
+  ],
+  "expected": "\u0091",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0092"
+  ],
+  "expected": "'\\x92'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0092"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0092"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0092"
+  ],
+  "expected": "\u0092",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0093"
+  ],
+  "expected": "'\\x93'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0093"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0093"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0093"
+  ],
+  "expected": "\u0093",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0094"
+  ],
+  "expected": "'\\x94'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0094"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0094"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0094"
+  ],
+  "expected": "\u0094",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0095"
+  ],
+  "expected": "'\\x95'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0095"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0095"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0095"
+  ],
+  "expected": "\u0095",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0096"
+  ],
+  "expected": "'\\x96'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0096"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0096"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0096"
+  ],
+  "expected": "\u0096",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0097"
+  ],
+  "expected": "'\\x97'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0097"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0097"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0097"
+  ],
+  "expected": "\u0097",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0098"
+  ],
+  "expected": "'\\x98'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0098"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0098"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0098"
+  ],
+  "expected": "\u0098",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0099"
+  ],
+  "expected": "'\\x99'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0099"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0099"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0099"
+  ],
+  "expected": "\u0099",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009a"
+  ],
+  "expected": "'\\x9a'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009a"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009a"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009a"
+  ],
+  "expected": "\u009a",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009b"
+  ],
+  "expected": "'\\x9b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009b"
+  ],
+  "expected": "\u009b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009c"
+  ],
+  "expected": "'\\x9c'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009c"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009c"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009c"
+  ],
+  "expected": "\u009c",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009d"
+  ],
+  "expected": "'\\x9d'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009d"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009d"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009d"
+  ],
+  "expected": "\u009d",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009e"
+  ],
+  "expected": "'\\x9e'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009e"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009e"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009e"
+  ],
+  "expected": "\u009e",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u009f"
+  ],
+  "expected": "'\\x9f'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u009f"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u009f"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u009f"
+  ],
+  "expected": "\u009f",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": "'\\xa0'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": "\u00a0",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": "'\\xa0'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00a0"
+  ],
+  "expected": "\u00a0",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u200b"
+  ],
+  "expected": "'\\u200b'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u200b"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u200b"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u200b"
+  ],
+  "expected": "\u200b",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u2002"
+  ],
+  "expected": "'\\u2002'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u2002"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u2002"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u2002"
+  ],
+  "expected": "\u2002",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u3000"
+  ],
+  "expected": "'\\u3000'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u3000"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u3000"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u3000"
+  ],
+  "expected": "\u3000",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0301"
+  ],
+  "expected": "'\u0301'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0301"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0301"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0301"
+  ],
+  "expected": "\u0301",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u05d0"
+  ],
+  "expected": "'\u05d0'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u05d0"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u05d0"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u05d0"
+  ],
+  "expected": "\u05d0",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u4e2d"
+  ],
+  "expected": "'\u4e2d'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u4e2d"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u4e2d"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u4e2d"
+  ],
+  "expected": "\u4e2d",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\ud83d\ude00"
+  ],
+  "expected": "'\ud83d\ude00'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\ud83d\ude00"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\ud83d\ude00"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\ud83d\ude00"
+  ],
+  "expected": "\ud83d\ude00",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\ud834\udd1e"
+  ],
+  "expected": "'\ud834\udd1e'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\ud834\udd1e"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\ud834\udd1e"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\ud834\udd1e"
+  ],
+  "expected": "\ud834\udd1e",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\udb40\udc01"
+  ],
+  "expected": "'\\U000e0001'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\udb40\udc01"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\udb40\udc01"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\udb40\udc01"
+  ],
+  "expected": "\udb40\udc01",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0378"
+  ],
+  "expected": "'\\u0378'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0378"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0378"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0378"
+  ],
+  "expected": "\u0378",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00b5"
+  ],
+  "expected": "'\u00b5'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u00b5"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00b5"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00b5"
+  ],
+  "expected": "\u00b5",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0130"
+  ],
+  "expected": "'\u0130'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0130"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0130"
+  ],
+  "expected": true,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0130"
+  ],
+  "expected": "i\u0307",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u03a3"
+  ],
+  "expected": "'\u03a3'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u03a3"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u03a3"
+  ],
+  "expected": true,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u03a3"
+  ],
+  "expected": "\u03c3",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u0660"
+  ],
+  "expected": "'\u0660'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u0660"
+  ],
+  "expected": true,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u0660"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u0660"
+  ],
+  "expected": "\u0660",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "'\u00b2'",
+  "fn": "repr_str"
+ },
+ {
+  "args": [
+   "a\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_identifier"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": false,
+  "fn": "is_upper_first"
+ },
+ {
+  "args": [
+   "\u00b2"
+  ],
+  "expected": "\u00b2",
+  "fn": "lower"
+ },
+ {
+  "args": [
+   "###head",
+   "#"
+  ],
+  "expected": "head",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "###head",
+   "#"
+  ],
+  "expected": "head",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "###head",
+   "#"
+  ],
+  "expected": "###head",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "--bar--",
+   "-"
+  ],
+  "expected": "bar",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "--bar--",
+   "-"
+  ],
+  "expected": "bar--",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "--bar--",
+   "-"
+  ],
+  "expected": "--bar",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "xxaxx",
+   "x"
+  ],
+  "expected": "a",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "xxaxx",
+   "x"
+  ],
+  "expected": "axx",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "xxaxx",
+   "x"
+  ],
+  "expected": "xxa",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "",
+   "#"
+  ],
+  "expected": "",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "",
+   "#"
+  ],
+  "expected": "",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "",
+   "#"
+  ],
+  "expected": "",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "#",
+   "#"
+  ],
+  "expected": "",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "#",
+   "#"
+  ],
+  "expected": "",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "#",
+   "#"
+  ],
+  "expected": "",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "###",
+   "#"
+  ],
+  "expected": "",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "###",
+   "#"
+  ],
+  "expected": "",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "###",
+   "#"
+  ],
+  "expected": "",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "/// doc ///",
+   "/"
+  ],
+  "expected": " doc ",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "/// doc ///",
+   "/"
+  ],
+  "expected": " doc ///",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "/// doc ///",
+   "/"
+  ],
+  "expected": "/// doc ",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "abc",
+   ""
+  ],
+  "expected": "abc",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "abc",
+   ""
+  ],
+  "expected": "abc",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "abc",
+   ""
+  ],
+  "expected": "abc",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "-=*_~/# spacer -=*",
+   "-=*_~/# "
+  ],
+  "expected": "spacer",
+  "fn": "strip_chars"
+ },
+ {
+  "args": [
+   "-=*_~/# spacer -=*",
+   "-=*_~/# "
+  ],
+  "expected": "spacer -=*",
+  "fn": "lstrip_chars"
+ },
+ {
+  "args": [
+   "-=*_~/# spacer -=*",
+   "-=*_~/# "
+  ],
+  "expected": "-=*_~/# spacer",
+  "fn": "rstrip_chars"
+ },
+ {
+  "args": [
+   "a.b.c",
+   "a."
+  ],
+  "expected": "b.c",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "a.b.c",
+   "x"
+  ],
+  "expected": "a.b.c",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "",
+   "x"
+  ],
+  "expected": "",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "abc",
+   ""
+  ],
+  "expected": "abc",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "abc",
+   "abc"
+  ],
+  "expected": "",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "  x",
+   " "
+  ],
+  "expected": " x",
+  "fn": "removeprefix"
+ },
+ {
+  "args": [
+   "a.b.c",
+   "."
+  ],
+  "expected": [
+   "a",
+   ".",
+   "b.c"
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "a.b.c",
+   "."
+  ],
+  "expected": [
+   "a.b",
+   ".",
+   "c"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "abc",
+   "."
+  ],
+  "expected": [
+   "abc",
+   "",
+   ""
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "abc",
+   "."
+  ],
+  "expected": [
+   "",
+   "",
+   "abc"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "",
+   "."
+  ],
+  "expected": [
+   "",
+   "",
+   ""
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "",
+   "."
+  ],
+  "expected": [
+   "",
+   "",
+   ""
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   ".abc",
+   "."
+  ],
+  "expected": [
+   "",
+   ".",
+   "abc"
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   ".abc",
+   "."
+  ],
+  "expected": [
+   "",
+   ".",
+   "abc"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "abc.",
+   "."
+  ],
+  "expected": [
+   "abc",
+   ".",
+   ""
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "abc.",
+   "."
+  ],
+  "expected": [
+   "abc",
+   ".",
+   ""
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "a::b::c",
+   "::"
+  ],
+  "expected": [
+   "a",
+   "::",
+   "b::c"
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "a::b::c",
+   "::"
+  ],
+  "expected": [
+   "a::b",
+   "::",
+   "c"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "a/b/c",
+   "/"
+  ],
+  "expected": [
+   "a",
+   "/",
+   "b/c"
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "a/b/c",
+   "/"
+  ],
+  "expected": [
+   "a/b",
+   "/",
+   "c"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   "a-b",
+   "-"
+  ],
+  "expected": [
+   "a",
+   "-",
+   "b"
+  ],
+  "fn": "partition"
+ },
+ {
+  "args": [
+   "a-b",
+   "-"
+  ],
+  "expected": [
+   "a",
+   "-",
+   "b"
+  ],
+  "fn": "rpartition"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   ""
+  ],
+  "expected": "",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "one line"
+  ],
+  "expected": "one line",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "one line"
+  ],
+  "expected": "one line",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "head\n    body\n    more\n"
+  ],
+  "expected": "head\nbody\nmore",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "head\n    body\n    more\n"
+  ],
+  "expected": "head\n    body\n    more\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "head\n\tbody\n\tmore\n"
+  ],
+  "expected": "head\nbody\nmore",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "head\n\tbody\n\tmore\n"
+  ],
+  "expected": "head\n\tbody\n\tmore\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "\n    head\n      indented\n    tail\n    "
+  ],
+  "expected": "head\n  indented\ntail",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "\n    head\n      indented\n    tail\n    "
+  ],
+  "expected": "\nhead\n  indented\ntail\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "head\n\n    body\n\n"
+  ],
+  "expected": "head\n\nbody",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "head\n\n    body\n\n"
+  ],
+  "expected": "head\n\n    body\n\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "  head\n  body"
+  ],
+  "expected": "head\nbody",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "  head\n  body"
+  ],
+  "expected": "head\nbody",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "head\n\tone\n        two\n"
+  ],
+  "expected": "head\none\ntwo",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "head\n\tone\n        two\n"
+  ],
+  "expected": "head\n\tone\n        two\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "\n\n\n"
+  ],
+  "expected": "",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "\n\n\n"
+  ],
+  "expected": "\n\n\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "a\n  b\n    c\n  d\n"
+  ],
+  "expected": "a\nb\n  c\nd",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "a\n  b\n    c\n  d\n"
+  ],
+  "expected": "a\n  b\n    c\n  d\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "x\n\t\ty\n"
+  ],
+  "expected": "x\ny",
+  "fn": "cleandoc"
+ },
+ {
+  "args": [
+   "x\n\t\ty\n"
+  ],
+  "expected": "x\n\t\ty\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "    a\n    b\n"
+  ],
+  "expected": "a\nb\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "\ta\n\tb\n"
+  ],
+  "expected": "a\nb\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "    a\n\tb\n"
+  ],
+  "expected": "    a\n\tb\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "  a\n\n  b\n"
+  ],
+  "expected": "a\n\nb\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "   \n  a\n"
+  ],
+  "expected": "\na\n",
+  "fn": "dedent"
+ },
+ {
+  "args": [
+   "a\tb",
+   8
+  ],
+  "expected": "a       b",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\tb",
+   4
+  ],
+  "expected": "a   b",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\tb",
+   1
+  ],
+  "expected": "a b",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\tab",
+   8
+  ],
+  "expected": "        ab",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\tab",
+   4
+  ],
+  "expected": "    ab",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\tab",
+   1
+  ],
+  "expected": " ab",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "ab\t",
+   8
+  ],
+  "expected": "ab      ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "ab\t",
+   4
+  ],
+  "expected": "ab  ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "ab\t",
+   1
+  ],
+  "expected": "ab ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\tb\nc\td",
+   8
+  ],
+  "expected": "a       b\nc       d",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\tb\nc\td",
+   4
+  ],
+  "expected": "a   b\nc   d",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\tb\nc\td",
+   1
+  ],
+  "expected": "a b\nc d",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\rb\tc",
+   8
+  ],
+  "expected": "a\rb       c",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\rb\tc",
+   4
+  ],
+  "expected": "a\rb   c",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "a\rb\tc",
+   1
+  ],
+  "expected": "a\rb c",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\t\t",
+   8
+  ],
+  "expected": "                ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\t\t",
+   4
+  ],
+  "expected": "        ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "\t\t",
+   1
+  ],
+  "expected": "  ",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "abcdefgh\tx",
+   8
+  ],
+  "expected": "abcdefgh        x",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "abcdefgh\tx",
+   4
+  ],
+  "expected": "abcdefgh    x",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "abcdefgh\tx",
+   1
+  ],
+  "expected": "abcdefgh x",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "",
+   8
+  ],
+  "expected": "",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "",
+   4
+  ],
+  "expected": "",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "",
+   1
+  ],
+  "expected": "",
+  "fn": "expandtabs"
+ },
+ {
+  "args": [
+   "0.0"
+  ],
+  "expected": "0.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "0.0"
+  ],
+  "expected": "0",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "-0.0"
+  ],
+  "expected": "-0.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "-0.0"
+  ],
+  "expected": "-0",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1.0"
+  ],
+  "expected": "1.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1.0"
+  ],
+  "expected": "1",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "-1.0"
+  ],
+  "expected": "-1.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "-1.0"
+  ],
+  "expected": "-1",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "0.1"
+  ],
+  "expected": "0.1",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "0.1"
+  ],
+  "expected": "0.1",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "0.5"
+  ],
+  "expected": "0.5",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "0.5"
+  ],
+  "expected": "0.5",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1.5"
+  ],
+  "expected": "1.5",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1.5"
+  ],
+  "expected": "1.5",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e15"
+  ],
+  "expected": "1000000000000000.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e15"
+  ],
+  "expected": "1e+15",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e16"
+  ],
+  "expected": "1e+16",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e16"
+  ],
+  "expected": "1e+16",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e17"
+  ],
+  "expected": "1e+17",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e17"
+  ],
+  "expected": "1e+17",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "9.999999999999998e15"
+  ],
+  "expected": "9999999999999998.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "9.999999999999998e15"
+  ],
+  "expected": "1e+16",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1.7976931348623157e308"
+  ],
+  "expected": "1.7976931348623157e+308",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1.7976931348623157e308"
+  ],
+  "expected": "1.79769e+308",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e-4"
+  ],
+  "expected": "0.0001",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e-4"
+  ],
+  "expected": "0.0001",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e-5"
+  ],
+  "expected": "1e-05",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e-5"
+  ],
+  "expected": "1e-05",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1.5e-5"
+  ],
+  "expected": "1.5e-05",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1.5e-5"
+  ],
+  "expected": "1.5e-05",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e-300"
+  ],
+  "expected": "1e-300",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e-300"
+  ],
+  "expected": "1e-300",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "5e-324"
+  ],
+  "expected": "5e-324",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "5e-324"
+  ],
+  "expected": "4.94066e-324",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1e300"
+  ],
+  "expected": "1e+300",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1e300"
+  ],
+  "expected": "1e+300",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "123456789.0"
+  ],
+  "expected": "123456789.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "123456789.0"
+  ],
+  "expected": "1.23457e+08",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1234567.0"
+  ],
+  "expected": "1234567.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1234567.0"
+  ],
+  "expected": "1.23457e+06",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "999999.9"
+  ],
+  "expected": "999999.9",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "999999.9"
+  ],
+  "expected": "1e+06",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "0.000123456789"
+  ],
+  "expected": "0.000123456789",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "0.000123456789"
+  ],
+  "expected": "0.000123457",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "3.141592653589793"
+  ],
+  "expected": "3.141592653589793",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "3.141592653589793"
+  ],
+  "expected": "3.14159",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "2.718281828459045"
+  ],
+  "expected": "2.718281828459045",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "2.718281828459045"
+  ],
+  "expected": "2.71828",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "0.3333333333333333"
+  ],
+  "expected": "0.3333333333333333",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "0.3333333333333333"
+  ],
+  "expected": "0.333333",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "100.0"
+  ],
+  "expected": "100.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "100.0"
+  ],
+  "expected": "100",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "1000000.0"
+  ],
+  "expected": "1000000.0",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "1000000.0"
+  ],
+  "expected": "1e+06",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "12345678901234567890.0"
+  ],
+  "expected": "1.2345678901234567e+19",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "12345678901234567890.0"
+  ],
+  "expected": "1.23457e+19",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "inf"
+  ],
+  "expected": "inf",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "inf"
+  ],
+  "expected": "inf",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "-inf"
+  ],
+  "expected": "-inf",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "-inf"
+  ],
+  "expected": "-inf",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "nan"
+  ],
+  "expected": "nan",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "nan"
+  ],
+  "expected": "nan",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "-1.5e-7"
+  ],
+  "expected": "-1.5e-07",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "-1.5e-7"
+  ],
+  "expected": "-1.5e-07",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   "6.02e23"
+  ],
+  "expected": "6.02e+23",
+  "fn": "repr_float"
+ },
+ {
+  "args": [
+   "6.02e23"
+  ],
+  "expected": "6.02e+23",
+  "fn": "format_g"
+ },
+ {
+  "args": [
+   0
+  ],
+  "expected": "0",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   1
+  ],
+  "expected": "1",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   -1
+  ],
+  "expected": "-1",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   42
+  ],
+  "expected": "42",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   -42
+  ],
+  "expected": "-42",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   2147483648
+  ],
+  "expected": "2147483648",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   -2147483648
+  ],
+  "expected": "-2147483648",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   4611686018427387904
+  ],
+  "expected": "4611686018427387904",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   -4611686018427387904
+  ],
+  "expected": "-4611686018427387904",
+  "fn": "repr_int"
+ },
+ {
+  "args": [
+   []
+  ],
+  "expected": "b''",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    97,
+    98,
+    99
+   ]
+  ],
+  "expected": "b'abc'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    105,
+    116,
+    39,
+    115
+   ]
+  ],
+  "expected": "b\"it's\"",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    115,
+    97,
+    121,
+    32,
+    34,
+    104,
+    105,
+    34
+   ]
+  ],
+  "expected": "b'say \"hi\"'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    98,
+    111,
+    116,
+    104,
+    32,
+    39,
+    32,
+    97,
+    110,
+    100,
+    32,
+    34
+   ]
+  ],
+  "expected": "b'both \\' and \"'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    98,
+    97,
+    99,
+    107,
+    92,
+    115,
+    108,
+    97,
+    115,
+    104
+   ]
+  ],
+  "expected": "b'back\\\\slash'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    0,
+    1,
+    31,
+    127,
+    128,
+    255
+   ]
+  ],
+  "expected": "b'\\x00\\x01\\x1f\\x7f\\x80\\xff'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    116,
+    97,
+    98,
+    9,
+    104,
+    101,
+    114,
+    101,
+    10,
+    110,
+    101,
+    119,
+    13,
+    114,
+    101,
+    116
+   ]
+  ],
+  "expected": "b'tab\\there\\nnew\\rret'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ]
+  ],
+  "expected": "b'\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x0c\\r\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f'",
+  "fn": "repr_bytes"
+ },
+ {
+  "args": [
+   []
+  ],
+  "expected": "[]",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   [
+    "a"
+   ]
+  ],
+  "expected": "['a']",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   [
+    "a",
+    "b"
+   ]
+  ],
+  "expected": "['a', 'b']",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   [
+    "it's",
+    "say \"hi\""
+   ]
+  ],
+  "expected": "[\"it's\", 'say \"hi\"']",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   [
+    "caf\u00e9",
+    "\ud83d\ude00"
+   ]
+  ],
+  "expected": "['caf\u00e9', '\ud83d\ude00']",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   [
+    "",
+    " "
+   ]
+  ],
+  "expected": "['', ' ']",
+  "fn": "repr_str_list"
+ },
+ {
+  "args": [
+   "a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "?.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "?.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "[ab].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "[ab].py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "[a-c].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "[a-c].py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "b.txt",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "b.txt",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/**"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "src/**"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "**/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/a.py",
+   "**/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/**"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "src/**"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "**/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "src/sub/a.py",
+   "**/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "?.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[ab].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[a-c].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "A.PY",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "A.PY",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/**"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "**/*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "Src/A.Py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "corpus-ext/reports/x.md",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "docs/todo.md",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "x",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "x",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   ""
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   ""
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "a/*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "a/*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "a\\*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a/b",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a/b",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "ab",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "ab",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "test_*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "test_*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "test_a.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*_test.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*_test.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a_test.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "??.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "??.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "n[0-9].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "n[0-9].py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n1.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n1.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "n12.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "n12.py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*.py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*.PY"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[[]a[]].py"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "[[]a[]].py"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "*b*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "a\\*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "[a].py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "[a].py",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "?.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "??.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "src/**"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*.PY"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[!ab].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[!a-c].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "test_*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*_test.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "n[0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "n[0-9][0-9].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "[[]a[]].py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   ""
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a["
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "*b*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a/*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a/*"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a\\*"
+  ],
+  "expected": true,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "a\\*"
+  ],
+  "expected": true,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   "a\\b",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatch"
+ },
+ {
+  "args": [
+   "a\\b",
+   "**/*.py"
+  ],
+  "expected": false,
+  "fn": "fnmatchcase"
+ },
+ {
+  "args": [
+   {}
+  ],
+  "expected": "{}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   []
+  ],
+  "expected": "[]",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "a": 2,
+    "b": 1
+   }
+  ],
+  "expected": "{\n  \"a\": 2,\n  \"b\": 1\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "z": {
+     "y": [
+      1,
+      2,
+      {
+       "x": null
+      }
+     ]
+    }
+   }
+  ],
+  "expected": "{\n  \"z\": {\n    \"y\": [\n      1,\n      2,\n      {\n        \"x\": null\n      }\n    ]\n  }\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "a": "\ud83d\ude00",
+    "\u00e9": "caf\u00e9"
+   }
+  ],
+  "expected": "{\n  \"a\": \"\\ud83d\\ude00\",\n  \"\\u00e9\": \"caf\\u00e9\"\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "f": 1.0,
+    "g": 0.1,
+    "h": 1e+16,
+    "i": 1e-05,
+    "j": -0.0
+   }
+  ],
+  "expected": "{\n  \"f\": 1.0,\n  \"g\": 0.1,\n  \"h\": 1e+16,\n  \"i\": 1e-05,\n  \"j\": -0.0\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "s": "quote \" and \\ and \n tab \t and \u0001"
+   }
+  ],
+  "expected": "{\n  \"s\": \"quote \\\" and \\\\ and \\n tab \\t and \\u0001\"\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "t": true,
+    "u": false,
+    "v": null
+   }
+  ],
+  "expected": "{\n  \"t\": true,\n  \"u\": false,\n  \"v\": null\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   [
+    1,
+    2.5,
+    "three",
+    null,
+    true
+   ]
+  ],
+  "expected": "[\n  1,\n  2.5,\n  \"three\",\n  null,\n  true\n]",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "nested": {
+     "empty_list": [],
+     "empty_map": {}
+    }
+   }
+  ],
+  "expected": "{\n  \"nested\": {\n    \"empty_list\": [],\n    \"empty_map\": {}\n  }\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "k": [
+     {
+      "a": 1
+     },
+     {
+      "b": [
+       2,
+       3
+      ]
+     }
+    ]
+   }
+  ],
+  "expected": "{\n  \"k\": [\n    {\n      \"a\": 1\n    },\n    {\n      \"b\": [\n        2,\n        3\n      ]\n    }\n  ]\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "": "",
+    " ": " "
+   }
+  ],
+  "expected": "{\n  \"\": \"\",\n  \" \": \" \"\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "big": 12345678901234567890
+   }
+  ],
+  "expected": "{\n  \"big\": 12345678901234567890\n}",
+  "fn": "dumps"
+ },
+ {
+  "args": [
+   {
+    "B": 2,
+    "a": 3,
+    "\u0130": 4,
+    "\u4e2d": 1
+   }
+  ],
+  "expected": "{\n  \"B\": 2,\n  \"a\": 3,\n  \"\\u0130\": 4,\n  \"\\u4e2d\": 1\n}",
+  "fn": "dumps"
+ }
+]

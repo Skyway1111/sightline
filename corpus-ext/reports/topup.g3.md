@@ -1,0 +1,22 @@
+# top-up — wave 1
+
+| rule | fp class | count | example key |
+|---|---|---|---|
+| 7 | precondition already asserted elsewhere (runtime check, annotation+assert, required kwarg); the prose only explains it | 4 | rofl/harvest.py:43:7:protocol-doc:43 |
+| 7 | comment justifies a naming/API decision (why a helper is public, why a param has no default), narrates no caller obligation | 2 | src/calculator/survival/actions.py:1046:7:protocol-comment:1046 |
+| 15 | the declared type is already the narrow one: a small record, a strategy interface being dispatched on, or a thin wrapper | 3 | src/calculator/program/views/__init__.py:514:15:wallet:src.calculator.program.views.name_every_number:writer |
+| 15 | the two members used are the domain object's whole interface and the function is its natural helper/serializer | 4 | src/league_predictor/predraft/ratings/skill_filter/artifact.py:148:15:wallet:league_predictor.predraft.ratings.skill_filter.artifact.save_artifact:model |
+| 35 | flagged import is one line of a multi-import deferred block whose sibling import is cycle-bound | 3 | src/league_predictor/predraft/evaluation/evaluate.py:484:35:hoistable-import:league_predictor.predraft.evaluation.evaluate._batched_base_map_probs:from league_predictor.predraft.pipeline.model_contract import predict_symmetric |
+| 35 | script inserts src/ on sys.path at runtime, so every first-party import is deferred by convention | 1 | tools/run_discovery_benchmark.py:142:35:hoistable-import:run_discovery_benchmark.score_events:from league_predictor.draft_grading.diagnostics import BulkStatsCache |
+| 41 | collection bounded by the domain (~8 cast slots), so the quadratic/membership never grows with data | 6 | src/calculator/rotation_resolver.py:1054:41:perf:nested-same-collection:src.calculator.rotation_resolver.detect_setup_consume_edges:1054 |
+| 41 | not hot: one-shot table build behind a loaded flag, or a per-champion cached derivation | 3 | src/league_predictor/draft_grading/champion_attributes/classes.py:66:41:perf:re-in-loop:league_predictor.draft_grading.champion_attributes.classes._parse_class_file:66 |
+| 41 | a single regex call per invocation with no loop at any level | 1 | src/calculator/ally_effects.py:66:41:perf:re-in-loop:src.calculator.ally_effects._required_cached_duration:66 |
+| 43 | the call's observable contract is raising: the test asserts it raises, or that a corpus of real inputs does not | 3 | tests/test_visual_triage.py:39:43:unobserved-call:test_visual_triage.test_build_cmd_unknown_tool_raises:39 |
+| 43 | non-mutation test: the return is dropped by design and the verdict is on the receiver's unchanged state | 1 | tests/data_lib_test.py:244:43:unobserved-call:data_lib_test.DocumentWithAdditionalContextTest.test_does_not_mutate_original_context_or_tokenization:244 |
+| 45 | sentinel routing: a collaborator's stub value is asserted verbatim to prove the SUT passes it through | 3 | tests/predraft/pipeline/test_operations.py:79:45:testing-the-double:tests.predraft.pipeline.test_operations.test_prepare_evaluation_binds_both_artifacts |
+| 46 | the try's success path stores state a later assertion reads, bounding the swallow | 1 | tests/predraft/test_integration.py:169:46:unfailable:tests.predraft.test_integration.test_integration_end_to_end:160 |
+| 47 | deliberately shrunk timeout with a monotone sleep past it: neither slow nor flaky, and the only alternative is a new clock seam | 2 | tests/test_audit_log.py:206:47:sleepy:test_audit_log.TestCircuitBreaker.test_cooldown_resets:206 |
+| 51 | the flag is a live domain axis with both arms used by prod call sites | 2 | src/calculator/participant_timeline.py:2905:51:flag:src.calculator.participant_timeline._grey_health_event_receipt:incoming |
+| 51 | the flag is a request/config value most callers forward as a variable; one literal caller triggered the fire | 2 | src/league_predictor/dashboard/common.py:55:51:flag:league_predictor.dashboard.common.parse_filters:major_only |
+| 57 | the key is consumed inside the producer itself (hash-pinned validation), so it is neither wasted nor duplicated | 1 | src/calculator/item_effects.py:4480:57:dead-key:src.calculator.item_effects.guardian_angel_rebirth_declaration:revive_health_ratio |
+| 57 | a shared consumer reads that key by name off sibling records of the same shape; dropping it makes one record irregular | 1 | src/calculator/participant_timeline.py:723:57:dead-key:src.calculator.participant_timeline._guardian_selection_template:target_scope |

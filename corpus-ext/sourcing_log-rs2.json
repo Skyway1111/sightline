@@ -1,0 +1,189 @@
+[
+ {
+  "full_name": "surrealdb/surrealkv",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 62629,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data",
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "makspll/bevy_mod_scripting",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 142713,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "rust-shell-script/rust_cmd_lib",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2810,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli",
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "arloor/nftables-nat-rust",
+  "action": "accepted",
+  "reason": "slot 1",
+  "prod_loc": 4475,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 21.6,
+  "members": 175
+ },
+ {
+  "full_name": "estk/log4rs",
+  "action": "accepted",
+  "reason": "slot 2",
+  "prod_loc": 7244,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 6.7,
+  "members": 63
+ },
+ {
+  "full_name": "cantino/mcfly",
+  "action": "accepted",
+  "reason": "slot 3",
+  "prod_loc": 5050,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli",
+  "check_wall_s": 12.0,
+  "members": 114
+ },
+ {
+  "full_name": "matrixorigin/memoria",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 50567,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data",
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "rust-itertools/itertools",
+  "action": "accepted",
+  "reason": "slot 4",
+  "prod_loc": 14492,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 10.8,
+  "members": 63
+ },
+ {
+  "full_name": "orbitinghail/graft",
+  "action": "rejected",
+  "reason": "check-failed:   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace | warning: build failed, waiting for other jobs to finish...",
+  "prod_loc": 10165,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data",
+  "check_wall_s": 10.4,
+  "members": 166
+ },
+ {
+  "full_name": "jeremychone/rust-genai",
+  "action": "accepted",
+  "reason": "slot 5",
+  "prod_loc": 22726,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 30.2,
+  "members": 208
+ },
+ {
+  "full_name": "Canop/termimad",
+  "action": "accepted",
+  "reason": "slot 6",
+  "prod_loc": 7625,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "cli",
+  "check_wall_s": 8.0,
+  "members": 68
+ },
+ {
+  "full_name": "rust-console/gba",
+  "action": "rejected",
+  "reason": "unchecked-member:bitfrob",
+  "prod_loc": 4390,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 0.4,
+  "members": 1
+ },
+ {
+  "full_name": "influxdata/influxdb",
+  "action": "clone-failed",
+  "reason": "clone failed",
+  "prod_loc": null,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": null,
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "typst/pdf-writer",
+  "action": "rejected",
+  "reason": "quota-infeasible",
+  "prod_loc": 13707,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "lib",
+  "check_wall_s": 4.2,
+  "members": 30
+ },
+ {
+  "full_name": "SamiPerttu/fundsp",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 28619,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "sys",
+  "check_wall_s": 25.1,
+  "members": 249
+ },
+ {
+  "full_name": "PerryTS/perry",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 1353509,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "data",
+  "check_wall_s": null,
+  "members": null
+ },
+ {
+  "full_name": "tower-rs/tower",
+  "action": "accepted",
+  "reason": "slot 7",
+  "prod_loc": 12306,
+  "annotation_coverage": null,
+  "typedness": null,
+  "domain": "web",
+  "check_wall_s": 5.6,
+  "members": 55
+ }
+]

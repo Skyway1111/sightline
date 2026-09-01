@@ -1,0 +1,39 @@
+[package]
+name = "sightline-py-facts"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Python facts for sightline: the parsed modules, their arenas and the cross-module indexes"
+
+[lib]
+name = "sightline_py_facts"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+indexmap.workspace = true
+rayon.workspace = true
+regex.workspace = true
+rustc-hash.workspace = true
+self_cell.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sightline-core = { path = "../core" }
+toml.workspace = true
+
+ruff_python_ast.workspace = true
+ruff_python_codegen.workspace = true
+ruff_python_parser.workspace = true
+ruff_python_stdlib.workspace = true
+ruff_python_trivia.workspace = true
+ruff_source_file.workspace = true
+ruff_text_size.workspace = true
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

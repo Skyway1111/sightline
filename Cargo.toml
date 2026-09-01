@@ -1,0 +1,72 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.2.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/Skyway1111/sightline"
+# The `rust-toolchain.toml` pin, the only toolchain this workspace is built at.
+rust-version = "1.97.1"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = "warn"
+
+# No debuginfo for dependencies: the ty and ra_ap stacks in debug carry
+# tens of GB of it in target/debug/deps, and nothing steps through them.
+# Workspace crates keep theirs ("*" matches dependencies only).
+[profile.dev.package."*"]
+debug = false
+
+# Measured on this machine, medians of 5 interleaved runs (benchmarks.md,
+# "Release profile"): thin LTO audits doxx in 15,259 ms against 15,377 and
+# cuts the binary from 94.5 MB to 80.6 MB. A clean release build costs 157 s
+# against 143 s.
+[profile.release]
+lto = "thin"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+
+# One version per crate for the whole workspace; a crate lists what it uses
+# with `workspace = true`.
+[workspace.dependencies]
+anyhow = "1"
+camino = "1"
+clap = "4"
+indexmap = { version = "2", features = ["serde"] }
+memchr = "2"
+percent-encoding = "2"
+rayon = "1"
+regex = "1"
+rustc-hash = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+similar = "2"
+toml = "0.9"
+unicode-ident = "1"
+self_cell = "1"
+
+# The fork's ruff and ty crates at rev 284831cb (decision 2): one parser serves
+# facts and the oracle. `crates/sightline/src/version.rs:FORK_REV` repeats the
+# rev for `--version`; `version::tests::rev_matches_manifest` reads this file and
+# pins the two equal, so the rev has one home.
+ruff_db = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183", features = ["os", "cache"] }
+ruff_diagnostics = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_python_ast = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_python_codegen = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_python_parser = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_python_stdlib = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_python_trivia = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_ranged_value = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_source_file = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ruff_text_size = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ty_project = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+ty_python_semantic = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+salsa = { version = "0.28.2", default-features = false, features = ["compact_str", "macros", "salsa_unstable", "inventory"] }

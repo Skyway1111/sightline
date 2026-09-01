@@ -1,0 +1,5 @@
+# sightline corpus config: turmoil (read-only checkout, rs1 mid repo)
+# excludes limited to vendored/generated dirs; the tree holds none,
+# and `target` is pruned by the walker rather than by config
+[tool.sightline]
+excludes = []

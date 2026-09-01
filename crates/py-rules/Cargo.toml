@@ -1,0 +1,32 @@
+[package]
+name = "sightline-py-rules"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Python rules for sightline: the readings that turn facts and provers into findings"
+
+[lib]
+name = "sightline_py_rules"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+indexmap.workspace = true
+rayon.workspace = true
+regex.workspace = true
+serde_json.workspace = true
+sightline-core = { path = "../core" }
+sightline-py-facts = { path = "../py-facts" }
+sightline-py-provers = { path = "../py-provers" }
+
+# the fence (decision 1): the AST vocabulary and nothing that parses or checks
+ruff_python_ast.workspace = true
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

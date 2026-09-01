@@ -1,0 +1,146 @@
+[
+ {
+  "full_name": "NateScarlet/holiday-cn",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 584,
+  "annotation_coverage": 0.595,
+  "typedness": "partial",
+  "domain": "data"
+ },
+ {
+  "full_name": "huggingface/optimum",
+  "action": "accepted",
+  "reason": "slot 1",
+  "prod_loc": 11688,
+  "annotation_coverage": 0.706,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "duyet/bruteforce-database",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 234,
+  "annotation_coverage": 0.75,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "FireRedTeam/FireRedTTS2",
+  "action": "accepted",
+  "reason": "slot 2",
+  "prod_loc": 4218,
+  "annotation_coverage": 0.673,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "Jittor/jittor",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 26628,
+  "annotation_coverage": 0.087,
+  "typedness": "untyped",
+  "domain": "data"
+ },
+ {
+  "full_name": "commaai/opendbc",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 25493,
+  "annotation_coverage": 0.473,
+  "typedness": "partial",
+  "domain": "lib"
+ },
+ {
+  "full_name": "SecKatie/ha-wyzeapi",
+  "action": "accepted",
+  "reason": "slot 3",
+  "prod_loc": 4577,
+  "annotation_coverage": 0.688,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "alteryx/featuretools",
+  "action": "accepted",
+  "reason": "slot 4",
+  "prod_loc": 20937,
+  "annotation_coverage": 0.072,
+  "typedness": "untyped",
+  "domain": "data"
+ },
+ {
+  "full_name": "sirfz/tesserocr",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 277,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "tensorflow/model-analysis",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 34927,
+  "annotation_coverage": 0.874,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "test-time-training/ttt-video-dit",
+  "action": "accepted",
+  "reason": "slot 5",
+  "prod_loc": 7483,
+  "annotation_coverage": 0.301,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "rushter/MLAlgorithms",
+  "action": "accepted",
+  "reason": "slot 6",
+  "prod_loc": 3714,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "data"
+ },
+ {
+  "full_name": "OML-Team/open-metric-learning",
+  "action": "accepted",
+  "reason": "slot 7",
+  "prod_loc": 10238,
+  "annotation_coverage": 0.976,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "fastapi-users/fastapi-users",
+  "action": "accepted",
+  "reason": "slot 8",
+  "prod_loc": 3221,
+  "annotation_coverage": 0.921,
+  "typedness": "typed",
+  "domain": "web"
+ },
+ {
+  "full_name": "CravateRouge/bloodyAD",
+  "action": "accepted",
+  "reason": "slot 9",
+  "prod_loc": 8070,
+  "annotation_coverage": 0.155,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "prs-eth/Marigold",
+  "action": "accepted",
+  "reason": "slot 10",
+  "prod_loc": 10798,
+  "annotation_coverage": 0.297,
+  "typedness": "untyped",
+  "domain": "lib"
+ }
+]

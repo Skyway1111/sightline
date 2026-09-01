@@ -1,0 +1,52 @@
+name: Bug
+description: sightline crashed, hung, or answered wrongly about itself
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a finding sightline should not have made, use the false positive
+        template. For a vulnerability, use the Security tab, never an issue.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The whole line that `sightline --version` prints.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows x64
+        - Linux x64
+        - macOS arm64
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: The command
+      description: >
+        The whole command line, and what the repository you ran it on is.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What you expected, and what happened
+      description: >
+        Paste both streams. The report goes to stdout and the per-pass timings
+        go to stderr.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: >
+        The `[tool.sightline]` table, or the `sightline.toml`, that the run
+        read. `sightline audit ROOT --json` when the run finished at all.

@@ -1,0 +1,37 @@
+[package]
+name = "sightline"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "A linter for code an agent wrote: findings ranked by what they are worth"
+
+[[bin]]
+name = "sightline"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+clap = { workspace = true, features = ["derive"] }
+indexmap.workspace = true
+mimalloc = "0.1"
+rayon.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sightline-core = { path = "../core" }
+sightline-py-facts = { path = "../py-facts" }
+sightline-py-provers = { path = "../py-provers" }
+sightline-py-rules = { path = "../py-rules" }
+sightline-rs-facts = { path = "../rs-facts" }
+sightline-rs-provers = { path = "../rs-provers" }
+sightline-rs-rules = { path = "../rs-rules" }
+tempfile = "3"
+toml.workspace = true
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+
+[lints]
+workspace = true

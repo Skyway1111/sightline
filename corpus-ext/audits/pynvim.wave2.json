@@ -1,0 +1,2675 @@
+{
+  "findings": [
+    {
+      "cause": "dunder-restates:pynvim.api.common.RemoteSequence.__iter__",
+      "col": 8,
+      "engine": "ast",
+      "file": "pynvim/api/common.py",
+      "line": 212,
+      "message": "docstring 'Return an iterator for the sequence.' restates what __iter__ means",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "todo2: blind judge per sheet over R+M (and the g3 clone the row named)",
+        "seed": 20260848,
+        "tp": 10
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        211,
+        215
+      ],
+      "symbol": "pynvim.api.common.RemoteSequence.__iter__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dunder-restates:pynvim.api.common.RemoteSequence.__len__",
+      "col": 8,
+      "engine": "ast",
+      "file": "pynvim/api/common.py",
+      "line": 196,
+      "message": "docstring 'Return the length of the remote sequence.' restates what __len__ means",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "todo2: blind judge per sheet over R+M (and the g3 clone the row named)",
+        "seed": 20260848,
+        "tp": 10
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        195,
+        197
+      ],
+      "symbol": "pynvim.api.common.RemoteSequence.__len__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dunder-restates:pynvim.api.nvim.Buffers.__len__",
+      "col": 8,
+      "engine": "ast",
+      "file": "pynvim/api/nvim.py",
+      "line": 509,
+      "message": "docstring 'Return the count of buffers.' restates what __len__ means",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "todo2: blind judge per sheet over R+M (and the g3 clone the row named)",
+        "seed": 20260848,
+        "tp": 10
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        508,
+        510
+      ],
+      "symbol": "pynvim.api.nvim.Buffers.__len__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dunder-restates:pynvim.msgpack_rpc.async_session.Response.__init__",
+      "col": 8,
+      "engine": "ast",
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 133,
+      "message": "docstring 'Initialize the Response instance.' restates what __init__ means",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "todo2: blind judge per sheet over R+M (and the g3 clone the row named)",
+        "seed": 20260848,
+        "tp": 10
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        132,
+        135
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.Response.__init__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dunder-restates:pynvim.msgpack_rpc.event_loop.asyncio.Protocol.__init__",
+      "col": 8,
+      "engine": "ast",
+      "file": "pynvim/msgpack_rpc/event_loop/asyncio.py",
+      "line": 41,
+      "message": "docstring 'Initialize the Protocol object.' restates what __init__ means",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "todo2: blind judge per sheet over R+M (and the g3 clone the row named)",
+        "seed": 20260848,
+        "tp": 10
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        40,
+        45
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.asyncio.Protocol.__init__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.buffer.Buffer.__setitem__",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/buffer.py",
+      "line": 93,
+      "message": "pynvim.api.buffer.Buffer.__setitem__ is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        93,
+        116
+      ],
+      "symbol": "pynvim.api.buffer.Buffer.__setitem__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.common.RemoteMap.__delitem__",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/common.py",
+      "line": 143,
+      "message": "pynvim.api.common.RemoteMap.__delitem__ is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        143,
+        150
+      ],
+      "symbol": "pynvim.api.common.RemoteMap.__delitem__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.buffer.Buffer.append",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/buffer.py",
+      "line": 144,
+      "message": "pynvim.api.buffer.Buffer.append is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        144,
+        150
+      ],
+      "symbol": "pynvim.api.buffer.Buffer.append",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.ui_attach",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 289,
+      "message": "pynvim.api.nvim.Nvim.ui_attach is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        289,
+        300
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.ui_attach",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.err_write",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 434,
+      "message": "pynvim.api.nvim.Nvim.err_write is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        434,
+        445
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.err_write",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.plugin.host.Host._on_request",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/plugin/host.py",
+      "line": 130,
+      "message": "pynvim.plugin.host.Host._on_request is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        130,
+        142
+      ],
+      "symbol": "pynvim.plugin.host.Host._on_request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.buffer.Buffer.name.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/buffer.py",
+      "line": 231,
+      "message": "pynvim.api.buffer.Buffer.name.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        231,
+        233
+      ],
+      "symbol": "pynvim.api.buffer.Buffer.name.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.ui_detach",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 302,
+      "message": "pynvim.api.nvim.Nvim.ui_detach is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        302,
+        304
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.ui_detach",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.ui_try_resize",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 306,
+      "message": "pynvim.api.nvim.Nvim.ui_try_resize is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        306,
+        311
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.ui_try_resize",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.subscribe",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 313,
+      "message": "pynvim.api.nvim.Nvim.subscribe is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        313,
+        315
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.subscribe",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.unsubscribe",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 317,
+      "message": "pynvim.api.nvim.Nvim.unsubscribe is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        317,
+        319
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.unsubscribe",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.command",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 321,
+      "message": "pynvim.api.nvim.Nvim.command is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        321,
+        323
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.command",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.chdir",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 384,
+      "message": "pynvim.api.nvim.Nvim.chdir is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        384,
+        387
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.chdir",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.feedkeys",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 389,
+      "message": "pynvim.api.nvim.Nvim.feedkeys is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        389,
+        391
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.feedkeys",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Nvim.out_write",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 426,
+      "message": "pynvim.api.nvim.Nvim.out_write is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        426,
+        431
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.out_write",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Current.line.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 549,
+      "message": "pynvim.api.nvim.Current.line.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        549,
+        550
+      ],
+      "symbol": "pynvim.api.nvim.Current.line.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Current.line.deleter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 553,
+      "message": "pynvim.api.nvim.Current.line.deleter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        553,
+        554
+      ],
+      "symbol": "pynvim.api.nvim.Current.line.deleter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Current.buffer.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 561,
+      "message": "pynvim.api.nvim.Current.buffer.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        561,
+        562
+      ],
+      "symbol": "pynvim.api.nvim.Current.buffer.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Current.window.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 569,
+      "message": "pynvim.api.nvim.Current.window.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        569,
+        570
+      ],
+      "symbol": "pynvim.api.nvim.Current.window.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.nvim.Current.tabpage.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 577,
+      "message": "pynvim.api.nvim.Current.tabpage.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        577,
+        578
+      ],
+      "symbol": "pynvim.api.nvim.Current.tabpage.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.window.Window.cursor.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/window.py",
+      "line": 34,
+      "message": "pynvim.api.window.Window.cursor.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        34,
+        36
+      ],
+      "symbol": "pynvim.api.window.Window.cursor.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.window.Window.height.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/window.py",
+      "line": 44,
+      "message": "pynvim.api.window.Window.height.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        44,
+        46
+      ],
+      "symbol": "pynvim.api.window.Window.height.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.api.window.Window.width.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/api/window.py",
+      "line": 54,
+      "message": "pynvim.api.window.Window.width.setter is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        54,
+        56
+      ],
+      "symbol": "pynvim.api.window.Window.width.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lying-return:pynvim.plugin.host.Host._on_error_event",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "returns under -> None"
+      },
+      "file": "pynvim/plugin/host.py",
+      "line": 73,
+      "message": "pynvim.plugin.host.Host._on_error_event is annotated `-> None` but returns a value",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "33",
+      "salience": 0.0,
+      "slug": "return-honesty",
+      "span": [
+        73,
+        79
+      ],
+      "symbol": "pynvim.plugin.host.Host._on_error_event",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.msgpack_rpc.session.Session.request:return",
+      "col": 68,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/msgpack_rpc/session.py",
+      "line": 99,
+      "message": "public boundary return of pynvim.msgpack_rpc.session.Session.request: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        99,
+        137
+      ],
+      "symbol": "pynvim.msgpack_rpc.session.Session.request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.api.nvim.Nvim.request:return",
+      "col": 63,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 178,
+      "message": "public boundary return of pynvim.api.nvim.Nvim.request: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        178,
+        212
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.api.nvim.Nvim.next_message:return",
+      "col": 30,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 214,
+      "message": "public boundary return of pynvim.api.nvim.Nvim.next_message: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        214,
+        222
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.next_message",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.api.nvim.Nvim.eval:return",
+      "col": 50,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 329,
+      "message": "public boundary return of pynvim.api.nvim.Nvim.eval: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        329,
+        331
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.eval",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.api.nvim.Nvim.call:return",
+      "col": 60,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 333,
+      "message": "public boundary return of pynvim.api.nvim.Nvim.call: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        333,
+        335
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.api.nvim.Nvim.exec_lua:return",
+      "col": 64,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 337,
+      "message": "public boundary return of pynvim.api.nvim.Nvim.exec_lua: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        337,
+        356
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.exec_lua",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:pynvim.msgpack_rpc.async_session.AsyncSession.request:args",
+      "col": 38,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contains Any"
+      },
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 42,
+      "message": "public boundary param 'args' of pynvim.msgpack_rpc.async_session.AsyncSession.request: contains Any",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        42,
+        53
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.AsyncSession.request",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:pynvim.plugin.host.Host._discover_functions",
+      "col": 4,
+      "engine": "ast",
+      "file": "pynvim/plugin/host.py",
+      "line": 228,
+      "message": "pynvim.plugin.host.Host._discover_functions has cognitive complexity 21 (threshold 15)",
+      "precision": {
+        "bar": 0.7,
+        "n": 197,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 162
+      },
+      "rule": "23",
+      "salience": 21.0,
+      "slug": "cognitive-complexity",
+      "span": [
+        228,
+        270
+      ],
+      "symbol": "pynvim.plugin.host.Host._discover_functions",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:pynvim.plugin.script_host.ScriptHost.python_do_range",
+      "col": 4,
+      "engine": "ast",
+      "file": "pynvim/plugin/script_host.py",
+      "line": 114,
+      "message": "pynvim.plugin.script_host.ScriptHost.python_do_range has cognitive complexity 16 (threshold 15)",
+      "precision": {
+        "bar": 0.7,
+        "n": 197,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 162
+      },
+      "rule": "23",
+      "salience": 16.0,
+      "slug": "cognitive-complexity",
+      "span": [
+        114,
+        165
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_do_range",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:pynvim.start_host",
+      "col": 0,
+      "engine": "ast",
+      "file": "pynvim/__init__.py",
+      "line": 28,
+      "message": "pynvim.start_host has cognitive complexity 15 (threshold 15)",
+      "precision": {
+        "bar": 0.7,
+        "n": 197,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 162
+      },
+      "rule": "23",
+      "salience": 15.0,
+      "slug": "cognitive-complexity",
+      "span": [
+        28,
+        80
+      ],
+      "symbol": "pynvim.start_host",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dead-symbol:pynvim.plugin.script_host.num_types",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/plugin/script_host.py",
+      "line": 197,
+      "message": "variable pynvim.plugin.script_host.num_types is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        197,
+        197
+      ],
+      "symbol": "pynvim.plugin.script_host",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:pynvim.plugin.script_host.path_hook.VimPathFinder.find_spec",
+      "col": 8,
+      "engine": "idx",
+      "file": "pynvim/plugin/script_host.py",
+      "line": 223,
+      "message": "method pynvim.plugin.script_host.path_hook.VimPathFinder.find_spec is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        223,
+        225
+      ],
+      "symbol": "pynvim.plugin.script_host.path_hook.VimPathFinder.find_spec",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:logging_statement_modifier.LOGGING_MODULE_NAME",
+      "col": 0,
+      "engine": "idx",
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 56,
+      "message": "variable logging_statement_modifier.LOGGING_MODULE_NAME is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        56,
+        56
+      ],
+      "symbol": "logging_statement_modifier",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:setup.needs_pytest",
+      "col": 0,
+      "engine": "idx",
+      "file": "setup.py",
+      "line": 17,
+      "message": "variable setup.needs_pytest is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        17,
+        17
+      ],
+      "symbol": "setup",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-import:setup:platform",
+      "col": 0,
+      "engine": "idx",
+      "file": "setup.py",
+      "line": 4,
+      "message": "import 'platform' in setup is never used",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "span": [
+        4,
+        4
+      ],
+      "symbol": "setup",
+      "tier": "indexed"
+    },
+    {
+      "cause": "single-impl:pynvim.msgpack_rpc.event_loop.base.BaseEventLoop",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "ABC"
+      },
+      "file": "pynvim/msgpack_rpc/event_loop/base.py",
+      "line": 30,
+      "message": "ABC pynvim.msgpack_rpc.event_loop.base.BaseEventLoop has exactly one implementation (pynvim.msgpack_rpc.event_loop.asyncio.AsyncioEventLoop) - speculative abstraction",
+      "precision": {
+        "bar": 0.7,
+        "n": 23,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 18
+      },
+      "rule": "37",
+      "salience": 0.0,
+      "slug": "speculative-generality",
+      "span": [
+        30,
+        252
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.base.BaseEventLoop",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.modify_logging",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "input_fn, output_fn, min_level_value, max_level_value, restore, force, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 226,
+      "message": "public boundary logging_statement_modifier.modify_logging leaves unannotated: input_fn, output_fn, min_level_value, max_level_value, restore, force, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 7.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        226,
+        263
+      ],
+      "symbol": "logging_statement_modifier.modify_logging",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.check_level",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "logging_stmt, logging_stmt_is_commented_out, min_level_value, max_level_value, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 265,
+      "message": "public boundary logging_statement_modifier.check_level leaves unannotated: logging_stmt, logging_stmt_is_commented_out, min_level_value, max_level_value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 5.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        265,
+        279
+      ],
+      "symbol": "logging_statement_modifier.check_level",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.disable_logging",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "lines, min_level_value, max_level_value, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 281,
+      "message": "public boundary logging_statement_modifier.disable_logging leaves unannotated: lines, min_level_value, max_level_value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        281,
+        309
+      ],
+      "symbol": "logging_statement_modifier.disable_logging",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.restore_logging",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "lines, min_level_value, max_level_value, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 311,
+      "message": "public boundary logging_statement_modifier.restore_logging leaves unannotated: lines, min_level_value, max_level_value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        311,
+        337
+      ],
+      "symbol": "logging_statement_modifier.restore_logging",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.level_is_between",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "level, min_level_value, max_level_value, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 199,
+      "message": "public boundary logging_statement_modifier.level_is_between leaves unannotated: level, min_level_value, max_level_value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        199,
+        205
+      ],
+      "symbol": "logging_statement_modifier.level_is_between",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.python_do_range",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "start, stop, code"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 114,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.python_do_range leaves unannotated: start, stop, code",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        114,
+        165
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_do_range",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.split_call",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "lines, open_paren_line, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 207,
+      "message": "public boundary logging_statement_modifier.split_call leaves unannotated: lines, open_paren_line, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        207,
+        224
+      ],
+      "symbol": "logging_statement_modifier.split_call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.get_logging_level",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "logging_stmt, commented_out, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 172,
+      "message": "public boundary logging_statement_modifier.get_logging_level leaves unannotated: logging_stmt, commented_out, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        172,
+        197
+      ],
+      "symbol": "logging_statement_modifier.get_logging_level",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.python_execute",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "script, range_start, range_stop"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 84,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.python_execute leaves unannotated: script, range_start, range_stop",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        84,
+        99
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_execute",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.python_execute_file",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "file_path, range_start, range_stop"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 102,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.python_execute_file leaves unannotated: file_path, range_start, range_stop",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        102,
+        111
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_execute_file",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.main",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "argv, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 71,
+      "message": "public boundary logging_statement_modifier.main leaves unannotated: argv, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        71,
+        121
+      ],
+      "symbol": "logging_statement_modifier.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.first_arg_to_level_name",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "arg, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 145,
+      "message": "public boundary logging_statement_modifier.first_arg_to_level_name leaves unannotated: arg, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        145,
+        156
+      ],
+      "symbol": "logging_statement_modifier.first_arg_to_level_name",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.get_level_value",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "level, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 158,
+      "message": "public boundary logging_statement_modifier.get_level_value leaves unannotated: level, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        158,
+        170
+      ],
+      "symbol": "logging_statement_modifier.get_level_value",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.async_session.Response.send",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, error"
+      },
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 137,
+      "message": "public boundary pynvim.msgpack_rpc.async_session.Response.send leaves unannotated: value, error",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        137,
+        147
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.Response.send",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.event_loop.asyncio.Protocol.pipe_data_received",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "fd, data"
+      },
+      "file": "pynvim/msgpack_rpc/event_loop/asyncio.py",
+      "line": 82,
+      "message": "public boundary pynvim.msgpack_rpc.event_loop.asyncio.Protocol.pipe_data_received leaves unannotated: fd, data",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        82,
+        88
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.asyncio.Protocol.pipe_data_received",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.python_eval",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "expr, return"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 168,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.python_eval leaves unannotated: expr, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        168,
+        174
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_eval",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.comment_lines",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "lines, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 125,
+      "message": "public boundary logging_statement_modifier.comment_lines leaves unannotated: lines, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        125,
+        132
+      ],
+      "symbol": "logging_statement_modifier.comment_lines",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:logging_statement_modifier.uncomment_lines",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "lines, return"
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 136,
+      "message": "public boundary logging_statement_modifier.uncomment_lines leaves unannotated: lines, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        136,
+        143
+      ],
+      "symbol": "logging_statement_modifier.uncomment_lines",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.async_session.AsyncSession.notify",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "method, args"
+      },
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 55,
+      "message": "public boundary pynvim.msgpack_rpc.async_session.AsyncSession.notify leaves unannotated: method, args",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        55,
+        62
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.AsyncSession.notify",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.async_session.AsyncSession.run",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "request_cb, notification_cb"
+      },
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 64,
+      "message": "public boundary pynvim.msgpack_rpc.async_session.AsyncSession.run leaves unannotated: request_cb, notification_cb",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        64,
+        75
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.AsyncSession.run",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.async_session.AsyncSession.threadsafe_call",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "fn"
+      },
+      "file": "pynvim/msgpack_rpc/async_session.py",
+      "line": 38,
+      "message": "public boundary pynvim.msgpack_rpc.async_session.AsyncSession.threadsafe_call leaves unannotated: fn",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        38,
+        40
+      ],
+      "symbol": "pynvim.msgpack_rpc.async_session.AsyncSession.threadsafe_call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.event_loop.asyncio.Protocol.connection_made",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "transport"
+      },
+      "file": "pynvim/msgpack_rpc/event_loop/asyncio.py",
+      "line": 48,
+      "message": "public boundary pynvim.msgpack_rpc.event_loop.asyncio.Protocol.connection_made leaves unannotated: transport",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        48,
+        50
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.asyncio.Protocol.connection_made",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.connect_child",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "argv"
+      },
+      "file": "pynvim/msgpack_rpc/event_loop/base.py",
+      "line": 141,
+      "message": "public boundary pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.connect_child leaves unannotated: argv",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        141,
+        144
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.connect_child",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.threadsafe_call",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "fn"
+      },
+      "file": "pynvim/msgpack_rpc/event_loop/base.py",
+      "line": 155,
+      "message": "public boundary pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.threadsafe_call leaves unannotated: fn",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        155,
+        161
+      ],
+      "symbol": "pynvim.msgpack_rpc.event_loop.base.BaseEventLoop.threadsafe_call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.threadsafe_call",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "fn"
+      },
+      "file": "pynvim/msgpack_rpc/msgpack_stream.py",
+      "line": 27,
+      "message": "public boundary pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.threadsafe_call leaves unannotated: fn",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        27,
+        29
+      ],
+      "symbol": "pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.threadsafe_call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.send",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "msg"
+      },
+      "file": "pynvim/msgpack_rpc/msgpack_stream.py",
+      "line": 31,
+      "message": "public boundary pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.send leaves unannotated: msg",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        31,
+        34
+      ],
+      "symbol": "pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.send",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.run",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "message_cb"
+      },
+      "file": "pynvim/msgpack_rpc/msgpack_stream.py",
+      "line": 36,
+      "message": "public boundary pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.run leaves unannotated: message_cb",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        36,
+        44
+      ],
+      "symbol": "pynvim.msgpack_rpc.msgpack_stream.MsgpackStream.run",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.host.Host.start",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "plugins"
+      },
+      "file": "pynvim/plugin/host.py",
+      "line": 81,
+      "message": "public boundary pynvim.plugin.host.Host.start leaves unannotated: plugins",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        81,
+        86
+      ],
+      "symbol": "pynvim.plugin.host.Host.start",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.setup",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "nvim"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 51,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.setup leaves unannotated: nvim",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        51,
+        71
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.setup",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:pynvim.plugin.script_host.ScriptHost.python_chdir",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "cwd"
+      },
+      "file": "pynvim/plugin/script_host.py",
+      "line": 177,
+      "message": "public boundary pynvim.plugin.script_host.ScriptHost.python_chdir leaves unannotated: cwd",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        177,
+        179
+      ],
+      "symbol": "pynvim.plugin.script_host.ScriptHost.python_chdir",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "clump:allow_nested,eval,name,sync",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/plugin/decorators.py",
+      "line": 46,
+      "message": "params (allow_nested, eval, name, sync) recur together in 3 signatures - wants a type",
+      "precision": {
+        "bar": 0.7,
+        "n": 22,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 17
+      },
+      "rule": "14",
+      "salience": 3.0,
+      "slug": "data-clump",
+      "span": [
+        46,
+        101
+      ],
+      "symbol": "pynvim.plugin.decorators.command",
+      "tier": "indexed"
+    },
+    {
+      "cause": "sleepy:test.test_attach.test_connect_socket:41",
+      "col": 4,
+      "engine": "ast",
+      "file": "test/test_attach.py",
+      "line": 41,
+      "message": "test.test_attach.test_connect_socket sleeps 0.2s - wall-clock waits make tests slow and flaky",
+      "precision": {
+        "bar": 0.7,
+        "n": 9,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 7
+      },
+      "rule": "47",
+      "salience": 0.0,
+      "slug": "sleepy-test",
+      "span": [
+        37,
+        49
+      ],
+      "symbol": "test.test_attach.test_connect_socket",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "sleepy:test.test_attach.test_connect_tcp:71",
+      "col": 4,
+      "engine": "ast",
+      "file": "test/test_attach.py",
+      "line": 71,
+      "message": "test.test_attach.test_connect_tcp sleeps 0.2s - wall-clock waits make tests slow and flaky",
+      "precision": {
+        "bar": 0.7,
+        "n": 9,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 7
+      },
+      "rule": "47",
+      "salience": 0.0,
+      "slug": "sleepy-test",
+      "span": [
+        65,
+        79
+      ],
+      "symbol": "test.test_attach.test_connect_tcp",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "sleepy:test.test_client_rpc.test_async_call:54",
+      "col": 4,
+      "engine": "ast",
+      "file": "test/test_client_rpc.py",
+      "line": 54,
+      "message": "test.test_client_rpc.test_async_call sleeps 0.1s - wall-clock waits make tests slow and flaky",
+      "precision": {
+        "bar": 0.7,
+        "n": 9,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 7
+      },
+      "rule": "47",
+      "salience": 0.0,
+      "slug": "sleepy-test",
+      "span": [
+        41,
+        56
+      ],
+      "symbol": "test.test_client_rpc.test_async_call",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "positional-width:pynvim.plugin.decorators.command",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/plugin/decorators.py",
+      "line": 46,
+      "message": "pynvim.plugin.decorators.command takes 10 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 10.0,
+      "slug": "positional-width",
+      "span": [
+        46,
+        101
+      ],
+      "symbol": "pynvim.plugin.decorators.command",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:pynvim.attach",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/__init__.py",
+      "line": 99,
+      "message": "pynvim.attach takes 6 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 6.0,
+      "slug": "positional-width",
+      "span": [
+        99,
+        146
+      ],
+      "symbol": "pynvim.attach",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:logging_statement_modifier.modify_logging",
+      "col": 0,
+      "engine": "idx",
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 226,
+      "message": "logging_statement_modifier.modify_logging takes 6 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 6.0,
+      "slug": "positional-width",
+      "span": [
+        226,
+        263
+      ],
+      "symbol": "logging_statement_modifier.modify_logging",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:pynvim.api.nvim.Nvim.__init__",
+      "col": 4,
+      "engine": "idx",
+      "file": "pynvim/api/nvim.py",
+      "line": 111,
+      "message": "pynvim.api.nvim.Nvim.__init__ takes 6 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 6.0,
+      "slug": "positional-width",
+      "span": [
+        111,
+        145
+      ],
+      "symbol": "pynvim.api.nvim.Nvim.__init__",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:pynvim.plugin.decorators.autocmd",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/plugin/decorators.py",
+      "line": 104,
+      "message": "pynvim.plugin.decorators.autocmd takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "span": [
+        104,
+        139
+      ],
+      "symbol": "pynvim.plugin.decorators.autocmd",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:pynvim.plugin.decorators.function",
+      "col": 0,
+      "engine": "idx",
+      "file": "pynvim/plugin/decorators.py",
+      "line": 142,
+      "message": "pynvim.plugin.decorators.function takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "bar": 0.7,
+        "n": 88,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 65
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "span": [
+        142,
+        178
+      ],
+      "symbol": "pynvim.plugin.decorators.function",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dynamic-id:getattr:176",
+      "col": 15,
+      "engine": "ast",
+      "evidence": {
+        "detail": "getattr"
+      },
+      "file": "pynvim/api/nvim.py",
+      "line": 176,
+      "message": "dynamic identifier construction via getattr - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "bar": 0.7,
+        "n": 8,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 6
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "span": [
+        172,
+        176
+      ],
+      "symbol": "pynvim.api.nvim.Nvim._get_lua_private",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lift:pynvim.plugin.host.Host._discover_functions:delay",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "pynvim/plugin/host.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 67,
+            "col_start": 67,
+            "line": 228,
+            "text": ": bool"
+          }
+        ],
+        "file": "pynvim/plugin/host.py",
+        "imports": []
+      },
+      "line": 228,
+      "message": "lift `delay: bool` in pynvim.plugin.host.Host._discover_functions - established at all 3 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        228,
+        270
+      ],
+      "symbol": "pynvim.plugin.host.Host._discover_functions",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:logging_statement_modifier.main:argv",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 13,
+            "col_start": 13,
+            "line": 71,
+            "text": ": list[str]"
+          }
+        ],
+        "file": "scripts/logging_statement_modifier.py",
+        "imports": []
+      },
+      "line": 71,
+      "message": "lift `argv: list[str]` in logging_statement_modifier.main - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        71,
+        121
+      ],
+      "symbol": "logging_statement_modifier.main",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:logging_statement_modifier.split_call:open_paren_line",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 37,
+            "col_start": 37,
+            "line": 207,
+            "text": ": int"
+          }
+        ],
+        "file": "scripts/logging_statement_modifier.py",
+        "imports": []
+      },
+      "line": 207,
+      "message": "lift `open_paren_line: int` in logging_statement_modifier.split_call - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        207,
+        224
+      ],
+      "symbol": "logging_statement_modifier.split_call",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:logging_statement_modifier.modify_logging:input_fn",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 27,
+            "col_start": 27,
+            "line": 226,
+            "text": ": str"
+          }
+        ],
+        "file": "scripts/logging_statement_modifier.py",
+        "imports": []
+      },
+      "line": 226,
+      "message": "lift `input_fn: str` in logging_statement_modifier.modify_logging - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        226,
+        263
+      ],
+      "symbol": "logging_statement_modifier.modify_logging",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:logging_statement_modifier.check_level:logging_stmt_is_commented_out",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/logging_statement_modifier.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 59,
+            "col_start": 59,
+            "line": 265,
+            "text": ": bool"
+          }
+        ],
+        "file": "scripts/logging_statement_modifier.py",
+        "imports": []
+      },
+      "line": 265,
+      "message": "lift `logging_stmt_is_commented_out: bool` in logging_statement_modifier.check_level - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        265,
+        279
+      ],
+      "symbol": "logging_statement_modifier.check_level",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:pynvim.plugin.host.Host._missing_handler_error:kind",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "pynvim/plugin/host.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 47,
+            "col_start": 47,
+            "line": 157,
+            "text": ": str"
+          }
+        ],
+        "file": "pynvim/plugin/host.py",
+        "imports": []
+      },
+      "line": 157,
+      "message": "lift `kind: str` in pynvim.plugin.host.Host._missing_handler_error - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        157,
+        164
+      ],
+      "symbol": "pynvim.plugin.host.Host._missing_handler_error",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:pynvim.plugin.host.Host._missing_handler_error:name",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "pynvim/plugin/host.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 41,
+            "col_start": 41,
+            "line": 157,
+            "text": ": str"
+          }
+        ],
+        "file": "pynvim/plugin/host.py",
+        "imports": []
+      },
+      "line": 157,
+      "message": "lift `name: str` in pynvim.plugin.host.Host._missing_handler_error - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        157,
+        164
+      ],
+      "symbol": "pynvim.plugin.host.Host._missing_handler_error",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:pynvim.plugin.host.Host._discover_classes:plugin_path",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "pynvim/plugin/host.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 61,
+            "col_start": 61,
+            "line": 222,
+            "text": ": str"
+          }
+        ],
+        "file": "pynvim/plugin/host.py",
+        "imports": []
+      },
+      "line": 222,
+      "message": "lift `plugin_path: str` in pynvim.plugin.host.Host._discover_classes - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        222,
+        226
+      ],
+      "symbol": "pynvim.plugin.host.Host._discover_classes",
+      "tier": "indexed"
+    },
+    {
+      "cause": "comment-restates:logging_statement_modifier:55",
+      "col": 0,
+      "engine": "ast",
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 55,
+      "message": "comment 'name of the logging module' restates the code it annotates",
+      "precision": {
+        "bar": 0.7,
+        "n": 11,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        55,
+        55
+      ],
+      "symbol": "logging_statement_modifier",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "type-lies:pynvim.plugin.decorators",
+      "col": 0,
+      "engine": "ast",
+      "file": "pynvim/plugin/decorators.py",
+      "line": 24,
+      "message": "pynvim.plugin.decorators silences the type checker 24x (ignore pragmas)",
+      "rule": "36",
+      "salience": 24.0,
+      "slug": "type-lie-density",
+      "span": [
+        24,
+        24
+      ],
+      "symbol": "pynvim.plugin.decorators",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "computed-declaration:logging_statement_modifier.STR_RE_LOGGING_CALL",
+      "col": 0,
+      "engine": "ast",
+      "file": "scripts/logging_statement_modifier.py",
+      "line": 60,
+      "message": "logging_statement_modifier.STR_RE_LOGGING_CALL is assembled by code - a reader must execute it to know the members",
+      "rule": "26",
+      "salience": 0.0,
+      "slug": "declaration-literalness",
+      "span": [
+        60,
+        60
+      ],
+      "symbol": "logging_statement_modifier",
+      "tier": "heuristic"
+    }
+  ],
+  "provenance": {
+    "counts": {
+      "baselined": 0,
+      "findings": 97,
+      "heuristic": 76,
+      "indexed": 21,
+      "proved": 0,
+      "suppressed": 0
+    },
+    "modules": 44,
+    "notes": [
+      "family P silent: no hot-roots config and no cost-declaring docstrings"
+    ],
+    "oracle": {
+      "build": "ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183",
+      "calls_resolved_by_oracle": 376,
+      "enabled": true,
+      "unresolved_import_density": 0.2273,
+      "unresolved_imports": 10,
+      "unresolved_modules": {
+        "mymodule.plugin": 1,
+        "pytest": 7,
+        "pytest_timeout": 1,
+        "setuptools": 1
+      }
+    },
+    "parse_errors": [],
+    "paths": [],
+    "rules_off": [],
+    "rules_only": [],
+    "sightline": "0.1.0"
+  }
+}

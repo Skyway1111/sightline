@@ -1,0 +1,7 @@
+# sightline corpus config: sqlglot (read-only checkout, py mid repo)
+# excludes limited to vendored/env/generated dirs; the tree holds none, and
+# dot-directories (.venv etc.) are skipped by default
+[tool.sightline]
+excludes = []
+# hot-roots: the per-query transpile path (chosen before precision judging)
+hot-roots = ["sqlglot.parser.Parser.parse", "sqlglot.generator.Generator.generate"]

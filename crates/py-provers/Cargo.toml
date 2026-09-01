@@ -1,0 +1,45 @@
+[package]
+name = "sightline-py-provers"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Python provers for sightline: the analysis machinery rules read, over py-facts"
+
+[lib]
+name = "sightline_py_provers"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+indexmap.workspace = true
+rayon.workspace = true
+regex.workspace = true
+rustc-hash.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+sightline-core = { path = "../core" }
+sightline-py-facts = { path = "../py-facts" }
+
+ruff_python_ast.workspace = true
+ruff_python_parser.workspace = true
+ruff_python_stdlib.workspace = true
+ruff_text_size.workspace = true
+
+# the in-process oracle (`oracle.rs` alone names them; decision 3)
+ruff_db.workspace = true
+ruff_diagnostics.workspace = true
+ruff_ranged_value.workspace = true
+ruff_source_file.workspace = true
+salsa.workspace = true
+ty_project.workspace = true
+ty_python_semantic.workspace = true
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

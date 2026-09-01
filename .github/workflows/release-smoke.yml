@@ -1,0 +1,55 @@
+name: Release smoke
+
+# dist runs this after it publishes the GitHub Release
+# (`dist-workspace.toml`, `post-announce-jobs`). Each platform downloads the
+# archive built for it, unpacks it, and runs `sightline --version` on the
+# binary a user would install. That is criterion 10 of the rewrite contract.
+
+on:
+  workflow_call:
+    inputs:
+      plan:
+        required: true
+        type: string
+
+jobs:
+  version:
+    name: sightline --version (${{ matrix.name }})
+    runs-on: ${{ matrix.runner }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            runner: windows-latest
+            archive: sightline-x86_64-pc-windows-msvc.zip
+          - name: linux-x64
+            runner: ubuntu-latest
+            archive: sightline-x86_64-unknown-linux-gnu.tar.xz
+          - name: macos-arm64
+            runner: macos-latest
+            archive: sightline-aarch64-apple-darwin.tar.xz
+    defaults:
+      run:
+        shell: bash
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ARCHIVE: ${{ matrix.archive }}
+      TAG: ${{ fromJson(inputs.plan).announcement_tag }}
+    steps:
+      - name: Download the archive for this platform
+        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "$ARCHIVE"
+
+      - name: Unpack and run --version
+        run: |
+          set -eu
+          case "$ARCHIVE" in
+            *.zip) unzip -q "$ARCHIVE" ;;
+            *) tar -xf "$ARCHIVE" ;;
+          esac
+          bin=$(find . -type f \( -name sightline -o -name sightline.exe \) | head -n 1)
+          test -n "$bin"
+          chmod +x "$bin"
+          "$bin" --version

@@ -1,0 +1,24 @@
+# The fence (plan.md decision 1, codemap 2): a rule reads facts and provers.
+# It never touches the filesystem, the environment, a process or a parser.
+# Clippy reads the nearest clippy.toml walking up from the crate directory,
+# so this file binds this crate alone.
+#
+# `tree_sitter::Parser::parse` joins the rs-rules copy in phase 6; naming a
+# path no dependency of this crate holds makes clippy warn about the config.
+disallowed-methods = [
+    "std::fs::read",
+    "std::fs::read_to_string",
+    "std::fs::read_dir",
+    "std::fs::write",
+    "std::fs::metadata",
+    "std::fs::File::open",
+    "std::fs::File::create",
+    "std::process::Command::new",
+    "std::env::var",
+    "std::env::var_os",
+    "std::env::vars",
+    "std::env::current_dir",
+    "std::io::stdin",
+]
+
+disallowed-types = ["std::fs::File", "std::process::Command"]

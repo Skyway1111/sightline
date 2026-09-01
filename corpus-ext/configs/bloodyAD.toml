@@ -1,0 +1,5 @@
+# gauntlet corpus config: bloodyAD
+# formatters/structure.py is vendored Impacket (Fortra copyright header);
+# excluded as third-party. Rest of the tree is first-party and in scope.
+[tool.sightline]
+excludes = ["bloodyAD/formatters/structure.py"]

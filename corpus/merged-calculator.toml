@@ -1,0 +1,7 @@
+# sightline corpus config: merged-calculator (read-only checkout)
+# excludes limited to vendored/env/generated dirs;
+# dot-directories (.claude etc.) are skipped by default
+[tool.sightline]
+excludes = ["vendor"]
+# hot-roots: the request-serving compute path (chosen before precision judging)
+hot-roots = ["src.calculator.calculate.calculate_payload", "src.calculator.pipeline.run_fight"]

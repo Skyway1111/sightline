@@ -1,0 +1,768 @@
+{
+ "root": "../sqlglot",
+ "modules": 253,
+ "findings": 997,
+ "total": 3.974,
+ "passes": [
+  [
+   "oracle pass 1 (diagnostics+edges)",
+   0.915
+  ],
+  [
+   "rule #11 structural-clones",
+   0.598
+  ],
+  [
+   "rule #5 proof-lifting",
+   0.388
+  ],
+  [
+   "oracle pass 142 (counterfactual worlds)",
+   0.166
+  ],
+  [
+   "oracle pass 19 (types)",
+   0.164
+  ],
+  [
+   "oracle pass 64 (types)",
+   0.118
+  ],
+  [
+   "oracle pass 31 (types)",
+   0.116
+  ],
+  [
+   "rule #10 over-constrained-param",
+   0.116
+  ],
+  [
+   "oracle pass 44 (types)",
+   0.109
+  ],
+  [
+   "rule #56 test-only-symbol",
+   0.09
+  ],
+  [
+   "oracle pass 144 (counterfactual worlds)",
+   0.086
+  ],
+  [
+   "facts",
+   0.079
+  ],
+  [
+   "rule #32 dead-symbols",
+   0.069
+  ],
+  [
+   "rule #60 dead-by-graph",
+   0.066
+  ],
+  [
+   "oracle pass 18 (types)",
+   0.065
+  ],
+  [
+   "oracle pass 17 (types)",
+   0.062
+  ],
+  [
+   "rule #37 speculative-generality",
+   0.06
+  ],
+  [
+   "oracle pass 32 (types)",
+   0.058
+  ],
+  [
+   "oracle pass 83 (types)",
+   0.053
+  ],
+  [
+   "oracle pass 90 (types)",
+   0.047
+  ],
+  [
+   "oracle pass 21 (types)",
+   0.047
+  ],
+  [
+   "oracle pass 85 (types)",
+   0.041
+  ],
+  [
+   "rule #6 dishonest-accessor",
+   0.039
+  ],
+  [
+   "rule #14 data-clump",
+   0.039
+  ],
+  [
+   "rule #40 naming-proxies",
+   0.036
+  ],
+  [
+   "oracle pass 13 (types)",
+   0.035
+  ],
+  [
+   "oracle pass 40 (types)",
+   0.029
+  ],
+  [
+   "oracle pass 84 (types)",
+   0.029
+  ],
+  [
+   "rule #21 distributed-invariant",
+   0.026
+  ],
+  [
+   "provers",
+   0.026
+  ],
+  [
+   "rule #1 weak-boundary-types",
+   0.026
+  ],
+  [
+   "oracle pass 29 (types)",
+   0.025
+  ],
+  [
+   "oracle pass 9 (types)",
+   0.025
+  ],
+  [
+   "oracle pass 49 (types)",
+   0.024
+  ],
+  [
+   "oracle pass 33 (types)",
+   0.024
+  ],
+  [
+   "oracle pass 91 (types)",
+   0.022
+  ],
+  [
+   "oracle pass 41 (types)",
+   0.021
+  ],
+  [
+   "oracle pass 6 (types)",
+   0.021
+  ],
+  [
+   "oracle pass 72 (types)",
+   0.019
+  ],
+  [
+   "oracle pass 77 (types)",
+   0.018
+  ],
+  [
+   "rule #39 comment-discipline",
+   0.018
+  ],
+  [
+   "oracle pass 12 (types)",
+   0.018
+  ],
+  [
+   "oracle pass 143 (counterfactual worlds)",
+   0.017
+  ],
+  [
+   "oracle pass 37 (types)",
+   0.017
+  ],
+  [
+   "oracle pass 58 (types)",
+   0.016
+  ],
+  [
+   "oracle pass 128 (types)",
+   0.016
+  ],
+  [
+   "oracle pass 55 (types)",
+   0.015
+  ],
+  [
+   "oracle pass 22 (types)",
+   0.015
+  ],
+  [
+   "oracle pass 75 (types)",
+   0.014
+  ],
+  [
+   "oracle pass 123 (types)",
+   0.014
+  ],
+  [
+   "oracle pass 125 (types)",
+   0.014
+  ],
+  [
+   "oracle pass 34 (types)",
+   0.014
+  ],
+  [
+   "oracle pass 15 (types)",
+   0.013
+  ],
+  [
+   "oracle pass 124 (types)",
+   0.013
+  ],
+  [
+   "rule #20 repeated-lambda",
+   0.013
+  ],
+  [
+   "oracle pass 126 (types)",
+   0.013
+  ],
+  [
+   "oracle pass 127 (types)",
+   0.013
+  ],
+  [
+   "oracle pass 11 (types)",
+   0.013
+  ],
+  [
+   "rule #59 cost-docstring",
+   0.011
+  ],
+  [
+   "rule #27 purchase-price",
+   0.009
+  ],
+  [
+   "oracle pass 16 (types)",
+   0.009
+  ],
+  [
+   "oracle pass 66 (types)",
+   0.009
+  ],
+  [
+   "oracle pass 4 (types)",
+   0.009
+  ],
+  [
+   "rule #12 idiom-catalog",
+   0.008
+  ],
+  [
+   "oracle pass 97 (types)",
+   0.008
+  ],
+  [
+   "oracle pass 56 (types)",
+   0.007
+  ],
+  [
+   "oracle pass 30 (types)",
+   0.007
+  ],
+  [
+   "rule #38 value-duplication",
+   0.007
+  ],
+  [
+   "oracle pass 35 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 59 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 76 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 45 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 63 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 92 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 53 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 25 (types)",
+   0.006
+  ],
+  [
+   "oracle pass 20 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 51 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 61 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 38 (types)",
+   0.005
+  ],
+  [
+   "rule #35 import-topology",
+   0.005
+  ],
+  [
+   "oracle pass 99 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 42 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 89 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 95 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 80 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 67 (types)",
+   0.005
+  ],
+  [
+   "oracle pass 28 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 24 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 74 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 26 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 39 (types)",
+   0.004
+  ],
+  [
+   "rule #33 return-honesty",
+   0.004
+  ],
+  [
+   "oracle pass 68 (types)",
+   0.004
+  ],
+  [
+   "rule #9 shared-mutable-state",
+   0.004
+  ],
+  [
+   "oracle pass 100 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 36 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 101 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 104 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 106 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 112 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 118 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 109 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 117 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 122 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 114 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 107 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 103 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 116 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 105 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 102 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 113 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 115 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 111 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 110 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 108 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 119 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 121 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 120 (types)",
+   0.004
+  ],
+  [
+   "oracle pass 46 (types)",
+   0.004
+  ],
+  [
+   "rule #34 noop-code",
+   0.003
+  ],
+  [
+   "oracle pass 71 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 70 (types)",
+   0.003
+  ],
+  [
+   "rule #42 assertion-free-test",
+   0.003
+  ],
+  [
+   "oracle pass 82 (types)",
+   0.003
+  ],
+  [
+   "rule #55 positional-width",
+   0.003
+  ],
+  [
+   "oracle pass 96 (types)",
+   0.003
+  ],
+  [
+   "rule #24 dynamic-identifiers",
+   0.003
+  ],
+  [
+   "oracle pass 129 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 130 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 133 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 131 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 139 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 136 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 134 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 138 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 135 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 132 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 137 (types)",
+   0.003
+  ],
+  [
+   "oracle pass 73 (types)",
+   0.002
+  ],
+  [
+   "rule #2 locally-redundant-check",
+   0.002
+  ],
+  [
+   "oracle pass 88 (types)",
+   0.002
+  ],
+  [
+   "oracle pass 23 (types)",
+   0.002
+  ],
+  [
+   "oracle pass 94 (types)",
+   0.002
+  ],
+  [
+   "oracle pass 57 (types)",
+   0.002
+  ],
+  [
+   "rule #41 perf-catalog",
+   0.002
+  ],
+  [
+   "oracle pass 98 (types)",
+   0.002
+  ],
+  [
+   "rule #50 unannotated-boundary",
+   0.002
+  ],
+  [
+   "rule #54 kind-switch",
+   0.002
+  ],
+  [
+   "rule #53 raise-contract",
+   0.002
+  ],
+  [
+   "oracle pass 140 (types)",
+   0.002
+  ],
+  [
+   "rule #48 fold-candidate",
+   0.002
+  ],
+  [
+   "oracle pass 81 (types)",
+   0.002
+  ],
+  [
+   "rule #7 comment-borne-protocol",
+   0.002
+  ],
+  [
+   "oracle pass 5 (types)",
+   0.002
+  ],
+  [
+   "oracle pass 86 (types)",
+   0.001
+  ],
+  [
+   "rule #3 contract-implied-guard",
+   0.001
+  ],
+  [
+   "oracle pass 141 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 93 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 78 (types)",
+   0.001
+  ],
+  [
+   "rule #44 tautological-assertion",
+   0.001
+  ],
+  [
+   "oracle pass 14 (types)",
+   0.001
+  ],
+  [
+   "rule #23 cognitive-complexity",
+   0.001
+  ],
+  [
+   "oracle pass 52 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 10 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 7 (types)",
+   0.001
+  ],
+  [
+   "rule #18 section-comments",
+   0.001
+  ],
+  [
+   "rule #49 mutable-default",
+   0.001
+  ],
+  [
+   "oracle pass 2 (types)",
+   0.001
+  ],
+  [
+   "rule #58 checker-error",
+   0.001
+  ],
+  [
+   "rule #47 sleepy-test",
+   0.001
+  ],
+  [
+   "rule #36 type-lie-density",
+   0.001
+  ],
+  [
+   "oracle pass 79 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 60 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 47 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 48 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 43 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 27 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 54 (types)",
+   0.001
+  ],
+  [
+   "oracle pass 8 (types)",
+   0.0
+  ],
+  [
+   "oracle pass 50 (types)",
+   0.0
+  ],
+  [
+   "oracle pass 65 (types)",
+   0.0
+  ],
+  [
+   "oracle pass 69 (types)",
+   0.0
+  ],
+  [
+   "oracle pass 62 (types)",
+   0.0
+  ],
+  [
+   "rule #26 declaration-literalness",
+   0.0
+  ],
+  [
+   "oracle pass 87 (types)",
+   0.0
+  ],
+  [
+   "oracle pass 3 (types)",
+   0.0
+  ],
+  [
+   "rule #29 top-loading",
+   0.0
+  ],
+  [
+   "rule #57 dead-key",
+   0.0
+  ],
+  [
+   "provers close",
+   0.0
+  ]
+ ]
+}

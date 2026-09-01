@@ -1,0 +1,2 @@
+key	rule	slug	arm	tier	file	line	symbol	message	verdict	why
+agent.py:83:9:test-writers:agent._h	9	shared-mutable-state	test-writers	indexed	agent.py	83	agent._h	agent._h rebound by tests in 3 modules: a global every test must patch is a parameter in disguise	real	_h() is the sole hunt-module seam read at 7 ToolDispatcher call sites and rebound by 3 test modules that already build ToolDispatcher directly; a hunt collaborator arg (default _h()) makes the dependency explicit and drops the global monkeypatch while keeping laziness

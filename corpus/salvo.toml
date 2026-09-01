@@ -1,0 +1,5 @@
+# sightline corpus config: salvo (read-only checkout, rs1 scale workspace)
+# excludes limited to vendored/generated dirs; `target` is pruned by the
+# walker rather than by config
+[tool.sightline]
+excludes = ["examples/upload-files-tus/clients/browser/dist"]

@@ -1,0 +1,2805 @@
+{
+  "findings": [
+    {
+      "cause": "over-constrained:scripts.create_django_issue.GitHubManager.get_compatibility:package_info",
+      "col": 51,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/create_django_issue.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 69,
+            "col_start": 65,
+            "line": 194,
+            "text": "Mapping"
+          }
+        ],
+        "file": "scripts/create_django_issue.py",
+        "imports": [
+          "from collections.abc import Mapping"
+        ]
+      },
+      "line": 194,
+      "message": "scripts.create_django_issue.GitHubManager.get_compatibility demands concrete `dict` for 'package_info' but the body only needs `Mapping`; widening verified: no new errors under the wider type",
+      "precision": {
+        "bar": 0.7,
+        "n": 97,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 91
+      },
+      "rule": "10",
+      "salience": 0.0,
+      "slug": "over-constrained-param",
+      "span": [
+        194,
+        232
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager.get_compatibility",
+      "tier": "indexed"
+    },
+    {
+      "cause": "over-constrained:scripts.create_django_issue.GitHubManager._get_md_home_page_url:package_info",
+      "col": 36,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/create_django_issue.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 54,
+            "col_start": 50,
+            "line": 243,
+            "text": "Mapping"
+          }
+        ],
+        "file": "scripts/create_django_issue.py",
+        "imports": [
+          "from collections.abc import Mapping"
+        ]
+      },
+      "line": 243,
+      "message": "scripts.create_django_issue.GitHubManager._get_md_home_page_url demands concrete `dict` for 'package_info' but the body only needs `Mapping`; widening verified: no new errors under the wider type",
+      "precision": {
+        "bar": 0.7,
+        "n": 97,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 91
+      },
+      "rule": "10",
+      "salience": 0.0,
+      "slug": "over-constrained-param",
+      "span": [
+        243,
+        248
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager._get_md_home_page_url",
+      "tier": "indexed"
+    },
+    {
+      "cause": "over-constrained:scripts.update_changelog.update_git_repo:paths",
+      "col": 20,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "scripts/update_changelog.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 37,
+            "col_start": 27,
+            "line": 142,
+            "text": "Iterable[Path]"
+          }
+        ],
+        "file": "scripts/update_changelog.py",
+        "imports": []
+      },
+      "line": 142,
+      "message": "scripts.update_changelog.update_git_repo demands concrete `list[Path]` for 'paths' but the body only needs `Iterable[Path]`; widening verified: no new errors under the wider type",
+      "precision": {
+        "bar": 0.7,
+        "n": 97,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 91
+      },
+      "rule": "10",
+      "salience": 0.0,
+      "slug": "over-constrained-param",
+      "span": [
+        142,
+        160
+      ],
+      "symbol": "scripts.update_changelog.update_git_repo",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:config.websocket.websocket_application:scope",
+      "col": 32,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/config/websocket.py",
+      "line": 1,
+      "message": "param 'scope' of config.websocket.websocket_application is never read",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 13
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "span": [
+        1,
+        13
+      ],
+      "symbol": "config.websocket.websocket_application",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-param:{{cookiecutter.project_slug}}.users.context_processors.allauth_settings:request",
+      "col": 21,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/context_processors.py",
+      "line": 4,
+      "message": "param 'request' of {{cookiecutter.project_slug}}.users.context_processors.allauth_settings is never read",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 13
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "span": [
+        4,
+        8
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+      "tier": "indexed"
+    },
+    {
+      "cause": "weak:scripts.create_django_issue.GitHubManager.get_compatibility:package_info",
+      "col": 51,
+      "engine": "ast",
+      "evidence": {
+        "detail": "bare dict"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 194,
+      "message": "public boundary param 'package_info' of scripts.create_django_issue.GitHubManager.get_compatibility: bare dict",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        194,
+        232
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager.get_compatibility",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:hooks.post_gen_project.set_flag:*args",
+      "col": 65,
+      "engine": "ast",
+      "evidence": {
+        "detail": "opaque *args"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 279,
+      "message": "opaque *args on public boundary hooks.post_gen_project.set_flag",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        279,
+        298
+      ],
+      "symbol": "hooks.post_gen_project.set_flag",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:hooks.post_gen_project.set_flag:**kwargs",
+      "col": 73,
+      "engine": "ast",
+      "evidence": {
+        "detail": "opaque **kwargs"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 279,
+      "message": "opaque **kwargs on public boundary hooks.post_gen_project.set_flag",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        279,
+        298
+      ],
+      "symbol": "hooks.post_gen_project.set_flag",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:{{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser:**extra_fields",
+      "col": 74,
+      "engine": "ast",
+      "evidence": {
+        "detail": "opaque **extra_fields"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/managers.py",
+      "line": 31,
+      "message": "opaque **extra_fields on public boundary {{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        31,
+        42
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:scripts.create_django_issue.get_package_info:return",
+      "col": 38,
+      "engine": "ast",
+      "evidence": {
+        "detail": "bare dict"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 61,
+      "message": "public boundary return of scripts.create_django_issue.get_package_info: bare dict",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        61,
+        68
+      ],
+      "symbol": "scripts.create_django_issue.get_package_info",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "weak:{{cookiecutter.project_slug}}.users.managers.UserManager.create_user:**extra_fields",
+      "col": 69,
+      "engine": "ast",
+      "evidence": {
+        "detail": "opaque **extra_fields"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/managers.py",
+      "line": 26,
+      "message": "opaque **extra_fields on public boundary {{cookiecutter.project_slug}}.users.managers.UserManager.create_user",
+      "precision": {
+        "bar": 0.7,
+        "n": 120,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 102
+      },
+      "rule": "1",
+      "salience": 0.0,
+      "slug": "weak-boundary-types",
+      "span": [
+        26,
+        29
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.managers.UserManager.create_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:hooks.post_gen_project.main",
+      "col": 0,
+      "engine": "ast",
+      "file": "hooks/post_gen_project.py",
+      "line": 427,
+      "message": "hooks.post_gen_project.main has cognitive complexity 38 (threshold 15)",
+      "precision": {
+        "bar": 0.7,
+        "n": 197,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 162
+      },
+      "rule": "23",
+      "salience": 38.0,
+      "slug": "cognitive-complexity",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:scripts.create_django_issue.GitHubManager.get_compatibility",
+      "col": 4,
+      "engine": "ast",
+      "file": "scripts/create_django_issue.py",
+      "line": 194,
+      "message": "scripts.create_django_issue.GitHubManager.get_compatibility has cognitive complexity 17 (threshold 15)",
+      "precision": {
+        "bar": 0.7,
+        "n": 197,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 162
+      },
+      "rule": "23",
+      "salience": 17.0,
+      "slug": "cognitive-complexity",
+      "span": [
+        194,
+        232
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager.get_compatibility",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dead-symbol:config.asgi.application",
+      "col": 0,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/config/asgi.py",
+      "line": 32,
+      "message": "function config.asgi.application is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        32,
+        39
+      ],
+      "symbol": "config.asgi.application",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:hooks.post_gen_project.generate_postgres_user",
+      "col": 0,
+      "engine": "idx",
+      "file": "hooks/post_gen_project.py",
+      "line": 326,
+      "message": "function hooks.post_gen_project.generate_postgres_user is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        326,
+        327
+      ],
+      "symbol": "hooks.post_gen_project.generate_postgres_user",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:hooks.post_gen_project.HINT",
+      "col": 0,
+      "engine": "idx",
+      "file": "hooks/post_gen_project.py",
+      "line": 22,
+      "message": "variable hooks.post_gen_project.HINT is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        22,
+        22
+      ],
+      "symbol": "hooks.post_gen_project",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:hooks.pre_gen_project.HINT",
+      "col": 0,
+      "engine": "idx",
+      "file": "hooks/pre_gen_project.py",
+      "line": 7,
+      "message": "variable hooks.pre_gen_project.HINT is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        7,
+        7
+      ],
+      "symbol": "hooks.pre_gen_project",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:config.wsgi.application",
+      "col": 0,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/config/wsgi.py",
+      "line": 32,
+      "message": "variable config.wsgi.application is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        32,
+        32
+      ],
+      "symbol": "config.wsgi",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+      "col": 0,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/context_processors.py",
+      "line": 4,
+      "message": "function {{cookiecutter.project_slug}}.users.context_processors.allauth_settings is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "bar": 0.7,
+        "n": 47,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 38
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "span": [
+        4,
+        8
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:4d92bd42a15b",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "4d92bd42a15b"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "line": 37,
+      "message": "structural clone x2: {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward, {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 2200.0,
+      "slug": "structural-clones",
+      "span": [
+        37,
+        45
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:4d92bd42a15b",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "4d92bd42a15b"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "line": 48,
+      "message": "structural clone x2: {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward, {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 2200.0,
+      "slug": "structural-clones",
+      "span": [
+        48,
+        56
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:805743c66325",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "805743c66325"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 34,
+      "message": "structural clone x3: hooks.post_gen_project.remove_gplv3_files, hooks.post_gen_project.remove_gulp_files, hooks.post_gen_project.remove_packagejson_file",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 1725.0,
+      "slug": "structural-clones",
+      "span": [
+        34,
+        37
+      ],
+      "symbol": "hooks.post_gen_project.remove_gplv3_files",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:805743c66325",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "805743c66325"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 96,
+      "message": "structural clone x3: hooks.post_gen_project.remove_gplv3_files, hooks.post_gen_project.remove_gulp_files, hooks.post_gen_project.remove_packagejson_file",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 1725.0,
+      "slug": "structural-clones",
+      "span": [
+        96,
+        99
+      ],
+      "symbol": "hooks.post_gen_project.remove_gulp_files",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:805743c66325",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "805743c66325"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 119,
+      "message": "structural clone x3: hooks.post_gen_project.remove_gplv3_files, hooks.post_gen_project.remove_gulp_files, hooks.post_gen_project.remove_packagejson_file",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 1725.0,
+      "slug": "structural-clones",
+      "span": [
+        119,
+        122
+      ],
+      "symbol": "hooks.post_gen_project.remove_packagejson_file",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:2fa6d1726200",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "2fa6d1726200"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 107,
+      "message": "structural clone x2: hooks.post_gen_project.remove_vendors_js, hooks.post_gen_project.remove_project_css",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 750.0,
+      "slug": "structural-clones",
+      "span": [
+        107,
+        110
+      ],
+      "symbol": "hooks.post_gen_project.remove_vendors_js",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:2fa6d1726200",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "2fa6d1726200"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 113,
+      "message": "structural clone x2: hooks.post_gen_project.remove_vendors_js, hooks.post_gen_project.remove_project_css",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 750.0,
+      "slug": "structural-clones",
+      "span": [
+        113,
+        116
+      ],
+      "symbol": "hooks.post_gen_project.remove_project_css",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:053f06027ac5",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "053f06027ac5"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 410,
+      "message": "structural clone x2: hooks.post_gen_project.remove_drf_starter_files, hooks.post_gen_project.remove_ninja_starter_files",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 340.0,
+      "slug": "structural-clones",
+      "span": [
+        410,
+        412
+      ],
+      "symbol": "hooks.post_gen_project.remove_drf_starter_files",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone:053f06027ac5",
+      "col": 0,
+      "engine": "idx",
+      "evidence": {
+        "detail": "053f06027ac5"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 415,
+      "message": "structural clone x2: hooks.post_gen_project.remove_drf_starter_files, hooks.post_gen_project.remove_ninja_starter_files",
+      "precision": {
+        "bar": 0.7,
+        "n": 102,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 82
+      },
+      "rule": "11",
+      "salience": 340.0,
+      "slug": "structural-clones",
+      "span": [
+        415,
+        417
+      ],
+      "symbol": "hooks.post_gen_project.remove_ninja_starter_files",
+      "tier": "indexed"
+    },
+    {
+      "cause": "doc-symbol:config.settings.local",
+      "col": 0,
+      "engine": "idx",
+      "file": "docs/2-local-development/developing-locally-docker.rst",
+      "line": 109,
+      "message": "doc names `config.settings.local` which does not resolve",
+      "rule": "28",
+      "salience": 0.0,
+      "slug": "doc-path-integrity",
+      "span": [
+        109,
+        109
+      ],
+      "symbol": "docs/2-local-development/developing-locally-docker.rst",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-import:{{cookiecutter.project_slug}}.users.managers:User",
+      "col": 4,
+      "engine": "idx",
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/managers.py",
+      "line": 7,
+      "message": "import 'User' in {{cookiecutter.project_slug}}.users.managers is never used",
+      "precision": {
+        "bar": 0.7,
+        "n": 10,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "span": [
+        7,
+        7
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.managers",
+      "tier": "indexed"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.generate_random_string",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "length, using_digits, using_ascii_letters, using_punctuation, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 256,
+      "message": "public boundary hooks.post_gen_project.generate_random_string leaves unannotated: length, using_digits, using_ascii_letters, using_punctuation, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 5.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        256,
+        276
+      ],
+      "symbol": "hooks.post_gen_project.generate_random_string",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_flag",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "flag, value, formatted, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 279,
+      "message": "public boundary hooks.post_gen_project.set_flag leaves unannotated: flag, value, formatted, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        279,
+        298
+      ],
+      "symbol": "hooks.post_gen_project.set_flag",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:config.websocket.websocket_application",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "scope, receive, send"
+      },
+      "file": "{{cookiecutter.project_slug}}/config/websocket.py",
+      "line": 1,
+      "message": "public boundary config.websocket.websocket_application leaves unannotated: scope, receive, send",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        1,
+        13
+      ],
+      "symbol": "config.websocket.websocket_application",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.handle_js_runner",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "choice, use_docker, use_async"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 140,
+      "message": "public boundary hooks.post_gen_project.handle_js_runner leaves unannotated: choice, use_docker, use_async",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        140,
+        197
+      ],
+      "symbol": "hooks.post_gen_project.handle_js_runner",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_flags_in_envs",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "postgres_user, celery_flower_user, debug"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 366,
+      "message": "public boundary hooks.post_gen_project.set_flags_in_envs leaves unannotated: postgres_user, celery_flower_user, debug",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        366,
+        383
+      ],
+      "symbol": "hooks.post_gen_project.set_flags_in_envs",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:config.asgi.application",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "scope, receive, send"
+      },
+      "file": "{{cookiecutter.project_slug}}/config/asgi.py",
+      "line": 32,
+      "message": "public boundary config.asgi.application leaves unannotated: scope, receive, send",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        32,
+        39
+      ],
+      "symbol": "config.asgi.application",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.update_package_json",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "remove_dev_deps, remove_keys, scripts"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 125,
+      "message": "public boundary hooks.post_gen_project.update_package_json leaves unannotated: remove_dev_deps, remove_keys, scripts",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        125,
+        137
+      ],
+      "symbol": "hooks.post_gen_project.update_package_json",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_postgres_user",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "file_path, value, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 330,
+      "message": "public boundary hooks.post_gen_project.set_postgres_user leaves unannotated: file_path, value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        330,
+        331
+      ],
+      "symbol": "hooks.post_gen_project.set_postgres_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_postgres_password",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "file_path, value, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 334,
+      "message": "public boundary hooks.post_gen_project.set_postgres_password leaves unannotated: file_path, value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        334,
+        342
+      ],
+      "symbol": "hooks.post_gen_project.set_postgres_password",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_celery_flower_user",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "file_path, value, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 345,
+      "message": "public boundary hooks.post_gen_project.set_celery_flower_user leaves unannotated: file_path, value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        345,
+        346
+      ],
+      "symbol": "hooks.post_gen_project.set_celery_flower_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_celery_flower_password",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "file_path, value, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 349,
+      "message": "public boundary hooks.post_gen_project.set_celery_flower_password leaves unannotated: file_path, value, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        349,
+        357
+      ],
+      "symbol": "hooks.post_gen_project.set_celery_flower_password",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.generate_postgres_user",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "debug, return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 326,
+      "message": "public boundary hooks.post_gen_project.generate_postgres_user leaves unannotated: debug, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        326,
+        327
+      ],
+      "symbol": "hooks.post_gen_project.generate_postgres_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "apps, schema_editor"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "line": 37,
+      "message": "public boundary {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward leaves unannotated: apps, schema_editor",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        37,
+        45
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_forward",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "apps, schema_editor"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "line": 48,
+      "message": "public boundary {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward leaves unannotated: apps, schema_editor",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        48,
+        56
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name.update_site_backward",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "request, return"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/context_processors.py",
+      "line": 4,
+      "message": "public boundary {{cookiecutter.project_slug}}.users.context_processors.allauth_settings leaves unannotated: request, return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        4,
+        8
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:scripts.create_django_issue.GitHubManager.get_compatibility",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 194,
+      "message": "public boundary scripts.create_django_issue.GitHubManager.get_compatibility leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        194,
+        232
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager.get_compatibility",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:scripts.create_django_issue.GitHubManager.generate_markdown",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 250,
+      "message": "public boundary scripts.create_django_issue.GitHubManager.generate_markdown leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        250,
+        264
+      ],
+      "symbol": "scripts.create_django_issue.GitHubManager.generate_markdown",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/managers.py",
+      "line": 31,
+      "message": "public boundary {{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        31,
+        42
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.managers.UserManager.create_superuser",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:scripts.create_django_issue.main",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "django_max_version"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 288,
+      "message": "public boundary scripts.create_django_issue.main leaves unannotated: django_max_version",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        288,
+        300
+      ],
+      "symbol": "scripts.create_django_issue.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_django_secret_key",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 301,
+      "message": "public boundary hooks.post_gen_project.set_django_secret_key leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        301,
+        308
+      ],
+      "symbol": "hooks.post_gen_project.set_django_secret_key",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.set_django_admin_url",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 311,
+      "message": "public boundary hooks.post_gen_project.set_django_admin_url leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        311,
+        319
+      ],
+      "symbol": "hooks.post_gen_project.set_django_admin_url",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.generate_random_user",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 322,
+      "message": "public boundary hooks.post_gen_project.generate_random_user leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        322,
+        323
+      ],
+      "symbol": "hooks.post_gen_project.generate_random_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:hooks.post_gen_project.append_to_gitignore_file",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "ignored_line"
+      },
+      "file": "hooks/post_gen_project.py",
+      "line": 360,
+      "message": "public boundary hooks.post_gen_project.append_to_gitignore_file leaves unannotated: ignored_line",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        360,
+        363
+      ],
+      "symbol": "hooks.post_gen_project.append_to_gitignore_file",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:scripts.create_django_issue.DjVersion.parse_to_tuple",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "scripts/create_django_issue.py",
+      "line": 56,
+      "message": "public boundary scripts.create_django_issue.DjVersion.parse_to_tuple leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        56,
+        58
+      ],
+      "symbol": "scripts.create_django_issue.DjVersion.parse_to_tuple",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:scripts.update_contributors.write_md_file",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "contributors"
+      },
+      "file": "scripts/update_contributors.py",
+      "line": 86,
+      "message": "public boundary scripts.update_contributors.write_md_file leaves unannotated: contributors",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        86,
+        96
+      ],
+      "symbol": "scripts.update_contributors.write_md_file",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.users.managers.UserManager.create_user",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/managers.py",
+      "line": 26,
+      "message": "public boundary {{cookiecutter.project_slug}}.users.managers.UserManager.create_user leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        26,
+        29
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.managers.UserManager.create_user",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:{{cookiecutter.project_slug}}.users.tasks.get_users_count",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tasks.py",
+      "line": 7,
+      "message": "public boundary {{cookiecutter.project_slug}}.users.tasks.get_users_count leaves unannotated: return",
+      "precision": {
+        "bar": 0.7,
+        "n": 316,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 248
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "span": [
+        7,
+        9
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.users.tasks.get_users_count",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 437,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.open_source_license }}\"]\" and \"Literal[\"Not open source\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 439,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.open_source_license}}\"]\" and \"Literal[\"GPLv3\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 442,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.username_type }}\"]\" and \"Literal[\"username\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 445,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.editor }}\"]\" and \"Literal[\"PyCharm\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 58,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 455,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.cloud_provider}}\"]\" and \"Literal[\"AWS\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 492,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.cloud_provider }}\"]\" and \"Literal[\"None\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 503,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.ci_tool }}\"]\" and \"Literal[\"Travis\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 506,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.ci_tool }}\"]\" and \"Literal[\"Gitlab\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 509,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.ci_tool }}\"]\" and \"Literal[\"Github\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 512,
+      "message": "Condition will always evaluate to True since the types \"Literal[\"{{ cookiecutter.ci_tool }}\"]\" and \"Literal[\"Drone\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 515,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.rest_api }}\"]\" and \"Literal[\"DRF\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 9,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 517,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.rest_api }}\"]\" and \"Literal[\"Django Ninja\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 7,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/post_gen_project.py",
+      "line": 68,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.editor }}\"]\" and \"Literal[\"PyCharm\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        56,
+        71
+      ],
+      "symbol": "hooks.post_gen_project.remove_docker_files",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 58,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/pre_gen_project.py",
+      "line": 26,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.cloud_provider }}\"]\" and \"Literal[\"None\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        26,
+        26
+      ],
+      "symbol": "hooks.pre_gen_project",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "redundant:comparison",
+      "col": 3,
+      "engine": "oracle-ungrounded",
+      "file": "hooks/pre_gen_project.py",
+      "line": 30,
+      "message": "Condition will always evaluate to False since the types \"Literal[\"{{ cookiecutter.mail_service }}\"]\" and \"Literal[\"Amazon SES\"]\" have no overlap",
+      "precision": {
+        "bar": 0.7,
+        "n": 15,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 12
+      },
+      "rule": "2",
+      "salience": 0.0,
+      "slug": "locally-redundant-check",
+      "span": [
+        30,
+        30
+      ],
+      "symbol": "hooks.pre_gen_project",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.handle_js_runner:choice",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 27,
+            "col_start": 27,
+            "line": 140,
+            "text": ": str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 140,
+      "message": "lift `choice: str` in hooks.post_gen_project.handle_js_runner - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        140,
+        197
+      ],
+      "symbol": "hooks.post_gen_project.handle_js_runner",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.handle_js_runner:use_async",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 50,
+            "col_start": 50,
+            "line": 140,
+            "text": ": bool"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 140,
+      "message": "lift `use_async: bool` in hooks.post_gen_project.handle_js_runner - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        140,
+        197
+      ],
+      "symbol": "hooks.post_gen_project.handle_js_runner",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.handle_js_runner:use_docker",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 39,
+            "col_start": 39,
+            "line": 140,
+            "text": ": bool"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 140,
+      "message": "lift `use_docker: bool` in hooks.post_gen_project.handle_js_runner - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        140,
+        197
+      ],
+      "symbol": "hooks.post_gen_project.handle_js_runner",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_flag:flag",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 34,
+            "col_start": 34,
+            "line": 279,
+            "text": ": str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 279,
+      "message": "lift `flag: str` in hooks.post_gen_project.set_flag - established at all 6 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        279,
+        298
+      ],
+      "symbol": "hooks.post_gen_project.set_flag",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_flag:formatted",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 57,
+            "col_start": 57,
+            "line": 279,
+            "text": ": None | str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 279,
+      "message": "lift `formatted: None | str` in hooks.post_gen_project.set_flag - established at all 6 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        279,
+        298
+      ],
+      "symbol": "hooks.post_gen_project.set_flag",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_flags_in_envs:debug",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 62,
+            "col_start": 62,
+            "line": 366,
+            "text": ": bool"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 366,
+      "message": "lift `debug: bool` in hooks.post_gen_project.set_flags_in_envs - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        366,
+        383
+      ],
+      "symbol": "hooks.post_gen_project.set_flags_in_envs",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence:domain",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 71,
+            "col_start": 71,
+            "line": 10,
+            "text": ": str"
+          }
+        ],
+        "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+        "imports": []
+      },
+      "line": 10,
+      "message": "lift `domain: str` in {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        10,
+        34
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence:name",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 77,
+            "col_start": 77,
+            "line": 10,
+            "text": ": str"
+          }
+        ],
+        "file": "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/contrib/sites/migrations/0003_set_site_domain_and_name.py",
+        "imports": []
+      },
+      "line": 10,
+      "message": "lift `name: str` in {{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        10,
+        34
+      ],
+      "symbol": "{{cookiecutter.project_slug}}.contrib.sites.migrations.0003_set_site_domain_and_name._update_or_create_site_with_sequence",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.update_package_json:remove_keys",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 57,
+            "col_start": 57,
+            "line": 125,
+            "text": ": None | list[str]"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 125,
+      "message": "lift `remove_keys: None | list[str]` in hooks.post_gen_project.update_package_json - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        125,
+        137
+      ],
+      "symbol": "hooks.post_gen_project.update_package_json",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_postgres_user:file_path",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 31,
+            "col_start": 31,
+            "line": 330,
+            "text": ": Path"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 330,
+      "message": "lift `file_path: Path` in hooks.post_gen_project.set_postgres_user - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        330,
+        331
+      ],
+      "symbol": "hooks.post_gen_project.set_postgres_user",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_postgres_password:file_path",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 35,
+            "col_start": 35,
+            "line": 334,
+            "text": ": Path"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 334,
+      "message": "lift `file_path: Path` in hooks.post_gen_project.set_postgres_password - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        334,
+        342
+      ],
+      "symbol": "hooks.post_gen_project.set_postgres_password",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_postgres_password:value",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 42,
+            "col_start": 42,
+            "line": 334,
+            "text": ": None | str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 334,
+      "message": "lift `value: None | str` in hooks.post_gen_project.set_postgres_password - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        334,
+        342
+      ],
+      "symbol": "hooks.post_gen_project.set_postgres_password",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_celery_flower_user:file_path",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 36,
+            "col_start": 36,
+            "line": 345,
+            "text": ": Path"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 345,
+      "message": "lift `file_path: Path` in hooks.post_gen_project.set_celery_flower_user - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        345,
+        346
+      ],
+      "symbol": "hooks.post_gen_project.set_celery_flower_user",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_celery_flower_password:file_path",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 40,
+            "col_start": 40,
+            "line": 349,
+            "text": ": Path"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 349,
+      "message": "lift `file_path: Path` in hooks.post_gen_project.set_celery_flower_password - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        349,
+        357
+      ],
+      "symbol": "hooks.post_gen_project.set_celery_flower_password",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.set_celery_flower_password:value",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 47,
+            "col_start": 47,
+            "line": 349,
+            "text": ": None | str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 349,
+      "message": "lift `value: None | str` in hooks.post_gen_project.set_celery_flower_password - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        349,
+        357
+      ],
+      "symbol": "hooks.post_gen_project.set_celery_flower_password",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:hooks.post_gen_project.append_to_gitignore_file:ignored_line",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "hooks/post_gen_project.py",
+      "fix": {
+        "edits": [
+          {
+            "col_end": 41,
+            "col_start": 41,
+            "line": 360,
+            "text": ": str"
+          }
+        ],
+        "file": "hooks/post_gen_project.py",
+        "imports": []
+      },
+      "line": 360,
+      "message": "lift `ignored_line: str` in hooks.post_gen_project.append_to_gitignore_file - established at all 3 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "bar": 0.7,
+        "n": 95,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 69
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "span": [
+        360,
+        363
+      ],
+      "symbol": "hooks.post_gen_project.append_to_gitignore_file",
+      "tier": "indexed"
+    },
+    {
+      "cause": "top-loading:hooks.post_gen_project",
+      "col": 0,
+      "engine": "ast",
+      "file": "hooks/post_gen_project.py",
+      "line": 1,
+      "message": "hooks.post_gen_project (598 lines, 46 top-level defs) has no top-loading docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 82,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 60
+      },
+      "rule": "29",
+      "salience": 598.0,
+      "slug": "top-loading",
+      "span": [
+        1,
+        1
+      ],
+      "symbol": "hooks.post_gen_project",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:docs.conf",
+      "col": 0,
+      "engine": "ast",
+      "file": "docs/conf.py",
+      "line": 1,
+      "message": "docs.conf (257 lines, 0 top-level defs) has no top-loading docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 82,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 60
+      },
+      "rule": "29",
+      "salience": 257.0,
+      "slug": "top-loading",
+      "span": [
+        1,
+        1
+      ],
+      "symbol": "docs.conf",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:scripts.update_changelog",
+      "col": 0,
+      "engine": "ast",
+      "file": "scripts/update_changelog.py",
+      "line": 1,
+      "message": "scripts.update_changelog (168 lines, 7 top-level defs) has no top-loading docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 82,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 60
+      },
+      "rule": "29",
+      "salience": 168.0,
+      "slug": "top-loading",
+      "span": [
+        1,
+        1
+      ],
+      "symbol": "scripts.update_changelog",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "comment-restates:scripts.update_changelog:62",
+      "col": 4,
+      "engine": "ast",
+      "file": "scripts/update_changelog.py",
+      "line": 62,
+      "message": "comment 'Create GitHub release' restates the code it annotates",
+      "precision": {
+        "bar": 0.7,
+        "n": 11,
+        "of": "g3: 5 never-seen clones + top-up, all findings judged, wave 2",
+        "seed": 202608273,
+        "tp": 8
+      },
+      "rule": "39",
+      "salience": 0.0,
+      "slug": "comment-discipline",
+      "span": [
+        21,
+        68
+      ],
+      "symbol": "scripts.update_changelog.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:hooks.post_gen_project.main",
+      "col": 0,
+      "engine": "ast",
+      "file": "hooks/post_gen_project.py",
+      "line": 427,
+      "message": "heavy entry point hooks.post_gen_project.main (100 lines) spends (setup_dependencies -> shutil.rmtree) and declares no cost in a docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 63,
+        "of": "todo3: five g3 clones + R+M, carried by key and site + judged",
+        "seed": 20260851,
+        "tp": 43
+      },
+      "rule": "59",
+      "salience": 100.0,
+      "slug": "cost-docstring",
+      "span": [
+        427,
+        527
+      ],
+      "symbol": "hooks.post_gen_project.main",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:hooks.post_gen_project.setup_dependencies",
+      "col": 0,
+      "engine": "ast",
+      "file": "hooks/post_gen_project.py",
+      "line": 530,
+      "message": "heavy entry point hooks.post_gen_project.setup_dependencies (64 lines) spends (shutil.rmtree) and declares no cost in a docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 63,
+        "of": "todo3: five g3 clones + R+M, carried by key and site + judged",
+        "seed": 20260851,
+        "tp": 43
+      },
+      "rule": "59",
+      "salience": 64.0,
+      "slug": "cost-docstring",
+      "span": [
+        530,
+        594
+      ],
+      "symbol": "hooks.post_gen_project.setup_dependencies",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cost-docstring:hooks.post_gen_project.handle_js_runner",
+      "col": 0,
+      "engine": "ast",
+      "file": "hooks/post_gen_project.py",
+      "line": 140,
+      "message": "heavy entry point hooks.post_gen_project.handle_js_runner (57 lines) spends (update_package_json -> write_text) and declares no cost in a docstring",
+      "precision": {
+        "bar": 0.7,
+        "n": 63,
+        "of": "todo3: five g3 clones + R+M, carried by key and site + judged",
+        "seed": 20260851,
+        "tp": 43
+      },
+      "rule": "59",
+      "salience": 57.0,
+      "slug": "cost-docstring",
+      "span": [
+        140,
+        197
+      ],
+      "symbol": "hooks.post_gen_project.handle_js_runner",
+      "tier": "heuristic"
+    }
+  ],
+  "provenance": {
+    "counts": {
+      "baselined": 0,
+      "findings": 95,
+      "heuristic": 57,
+      "indexed": 38,
+      "proved": 0,
+      "suppressed": 0
+    },
+    "modules": 42,
+    "notes": [
+      "family P silent: no hot-roots config and no cost-declaring docstrings"
+    ],
+    "oracle": {
+      "build": "ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183",
+      "calls_resolved_by_oracle": 101,
+      "enabled": true,
+      "unresolved_import_density": 0.6429,
+      "unresolved_imports": 27,
+      "unresolved_modules": {
+        ".models": 2,
+        "celery": 2,
+        "celery.signals": 1,
+        "django.apps": 1,
+        "django.conf": 3,
+        "django.contrib.admin.views.decorators": 1,
+        "django.contrib.auth.hashers": 1,
+        "django.contrib.auth.models": 1,
+        "django.contrib.sites.models": 3,
+        "django.core.asgi": 1,
+        "django.core.management": 1,
+        "django.core.wsgi": 1,
+        "django.db": 6,
+        "django.utils.translation": 1,
+        "ninja": 1,
+        "ninja.security": 1
+      }
+    },
+    "parse_errors": [
+      "{{cookiecutter.project_slug}}/config/__init__.py: invalid syntax (line 1)",
+      "{{cookiecutter.project_slug}}/config/api_router.py: invalid syntax (line 5)",
+      "{{cookiecutter.project_slug}}/config/settings/base.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/config/settings/local.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/config/settings/production.py: invalid syntax (line 2)",
+      "{{cookiecutter.project_slug}}/config/settings/test.py: invalid syntax (line 38)",
+      "{{cookiecutter.project_slug}}/config/urls.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/docs/conf.py: expected an indented block after 'else' statement on line 23 (line 24)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/conftest.py: invalid syntax (line 7)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/adapters.py: invalid syntax (line 13)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/admin.py: invalid syntax (line 23)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/api/schema.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/api/serializers.py: invalid syntax (line 3)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/api/views.py: invalid syntax (line 1)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/forms.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/migrations/0001_initial.py: invalid syntax (line 7)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/models.py: invalid syntax (line 1)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/api/test_openapi.py: invalid syntax (line 1)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/api/test_urls.py: invalid syntax (line 9)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/api/test_views.py: invalid syntax (line 1)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/factories.py: invalid syntax (line 7)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_admin.py: invalid syntax (line 11)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_forms.py: invalid syntax (line 9)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_managers.py: invalid syntax (line 6)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_models.py: invalid syntax (line 6)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_tasks.py: invalid syntax (line 4)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_urls.py: invalid syntax (line 9)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/tests/test_views.py: invalid syntax (line 17)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/urls.py: invalid syntax (line 11)",
+      "{{cookiecutter.project_slug}}/{{cookiecutter.project_slug}}/users/views.py: invalid syntax (line 13)"
+    ],
+    "paths": [],
+    "rules_off": [],
+    "rules_only": [],
+    "sightline": "0.1.0"
+  }
+}

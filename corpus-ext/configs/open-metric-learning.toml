@@ -1,0 +1,5 @@
+# gauntlet corpus config: open-metric-learning
+# oml/models/*/external* are vendored upstream model copies (CLIP, DINO,
+# UNICOM, ECAPA-TDNN) — third-party, excluded. Rest of oml/ is first-party.
+[tool.sightline]
+excludes = ["external", "external_v2"]

@@ -1,0 +1,28 @@
+[package]
+name = "sightline-testkit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Dev-only fixtures every sightline crate's tests build on"
+publish = false
+
+[lib]
+name = "sightline_testkit"
+
+[dependencies]
+indexmap.workspace = true
+camino.workspace = true
+sightline-core = { path = "../core", features = ["testing"] }
+sightline-py-facts = { path = "../py-facts" }
+sightline-py-provers = { path = "../py-provers" }
+sightline-py-rules = { path = "../py-rules" }
+sightline-rs-facts = { path = "../rs-facts" }
+sightline-rs-provers = { path = "../rs-provers" }
+sightline-rs-rules = { path = "../rs-rules" }
+tempfile = "3"
+
+
+[lints]
+workspace = true

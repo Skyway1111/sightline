@@ -1,0 +1,7312 @@
+{
+ "modules": [
+  "src/calculator/__init__.py",
+  "src/calculator/ability_atoms.py",
+  "src/calculator/ability_spec.py",
+  "src/calculator/ally_effects.py",
+  "src/calculator/application_errors.py",
+  "src/calculator/atomizer.py",
+  "src/calculator/atomizer_domains.py",
+  "src/calculator/auto_attack_policy.py",
+  "src/calculator/bis.py",
+  "src/calculator/calculate.py"
+ ],
+ "rows": [
+  {
+   "expected": [
+    "on_",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "'on_%s' % e"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'on_%s' % e"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'on_%s' % e"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'on_%s' % e"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'on_%s' % e"
+  },
+  {
+   "expected": [
+    "on_",
+    "!"
+   ],
+   "fn": "literal_affixes",
+   "source": "'on_%(name)s!' % d"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'on_%(name)s!' % d"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'on_%(name)s!' % d"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'on_%(name)s!' % d"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'on_%(name)s!' % d"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "'%d of %d' % (a, b)"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'%d of %d' % (a, b)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'%d of %d' % (a, b)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'%d of %d' % (a, b)"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Constant",
+    "Tuple",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'%d of %d' % (a, b)"
+  },
+  {
+   "expected": [
+    "on_",
+    "_end"
+   ],
+   "fn": "literal_affixes",
+   "source": "'on_{}_end'.format(e)"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'on_{}_end'.format(e)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'on_{}_end'.format(e)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'on_{}_end'.format(e)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "'on_{}_end'.format(e)"
+  },
+  {
+   "expected": [
+    "",
+    "!"
+   ],
+   "fn": "literal_affixes",
+   "source": "'{a[0]}{b}!'.format(a=a, b=b)"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'{a[0]}{b}!'.format(a=a, b=b)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'{a[0]}{b}!'.format(a=a, b=b)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'{a[0]}{b}!'.format(a=a, b=b)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "keyword",
+    "keyword",
+    "Constant",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'{a[0]}{b}!'.format(a=a, b=b)"
+  },
+  {
+   "expected": [
+    "on_",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "f'on_{e}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'on_{e}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'on_{e}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'on_{e}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'on_{e}'"
+  },
+  {
+   "expected": [
+    "on_",
+    "_end"
+   ],
+   "fn": "literal_affixes",
+   "source": "f'on_{e}_end'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'on_{e}_end'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'on_{e}_end'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'on_{e}_end'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'on_{e}_end'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "f'{e}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{e}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{e}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{e}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "FormattedValue",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{e}'"
+  },
+  {
+   "expected": [
+    "x=",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "f'{x=}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{x=}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{x=}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{x=}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{x=}'"
+  },
+  {
+   "expected": [
+    "prex=",
+    "post"
+   ],
+   "fn": "literal_affixes",
+   "source": "f'pre{x=}post'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'pre{x=}post'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'pre{x=}post'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'pre{x=}post'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'pre{x=}post'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "f'{x:{width}}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{x:{width}}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{x:{width}}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{x:{width}}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "FormattedValue",
+    "Name",
+    "JoinedStr",
+    "FormattedValue",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{x:{width}}'"
+  },
+  {
+   "expected": [
+    "ab",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "'a' 'b' + c"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'a' 'b' + c"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'a' 'b' + c"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'a' 'b' + c"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'a' 'b' + c"
+  },
+  {
+   "expected": [
+    "on_",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "'on_' + e"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'on_' + e"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'on_' + e"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'on_' + e"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'on_' + e"
+  },
+  {
+   "expected": [
+    "on_",
+    "_end"
+   ],
+   "fn": "literal_affixes",
+   "source": "'on_' + e + '_end'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'on_' + e + '_end'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'on_' + e + '_end'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "'on_' + e + '_end'"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "BinOp",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "'on_' + e + '_end'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "a + b"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "a + b"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "a + b"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "a + b"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "a + b"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.seen"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.seen"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.seen"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.seen"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.seen"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "seen",
+   "fn": "attr_on",
+   "source": "self.seen"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "cls.registry"
+  },
+  {
+   "expected": "cls",
+   "fn": "chain_root",
+   "source": "cls.registry"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "cls.registry"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "cls.registry"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "cls.registry"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "registry",
+   "fn": "attr_on",
+   "source": "cls.registry"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "other.seen"
+  },
+  {
+   "expected": "other",
+   "fn": "chain_root",
+   "source": "other.seen"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "other.seen"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "other.seen"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "other.seen"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "other.seen"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "a.b[0].c(x)"
+  },
+  {
+   "expected": "a",
+   "fn": "chain_root",
+   "source": "a.b[0].c(x)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "a.b[0].c(x)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "a.b[0].c(x)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Name",
+    "Subscript",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "a.b[0].c(x)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "(await f()).g"
+  },
+  {
+   "expected": "f",
+   "fn": "chain_root",
+   "source": "(await f()).g"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "(await f()).g"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "(await f()).g"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Await",
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "(await f()).g"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "(await f()).g"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "[]"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "[]"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "[]"
+  },
+  {
+   "expected": {
+    "kind": "list",
+    "value": []
+   },
+   "fn": "literal",
+   "source": "[]"
+  },
+  {
+   "expected": [
+    "List"
+   ],
+   "fn": "subnodes",
+   "source": "[]"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "{}"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "{}"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "{}"
+  },
+  {
+   "expected": {
+    "kind": "dict",
+    "value": []
+   },
+   "fn": "literal",
+   "source": "{}"
+  },
+  {
+   "expected": [
+    "Dict"
+   ],
+   "fn": "subnodes",
+   "source": "{}"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "set()"
+  },
+  {
+   "expected": "set",
+   "fn": "chain_root",
+   "source": "set()"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "set()"
+  },
+  {
+   "expected": {
+    "kind": "set",
+    "value": []
+   },
+   "fn": "literal",
+   "source": "set()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "set()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list()"
+  },
+  {
+   "expected": "list",
+   "fn": "chain_root",
+   "source": "list()"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "list()"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "defaultdict(list)"
+  },
+  {
+   "expected": "defaultdict",
+   "fn": "chain_root",
+   "source": "defaultdict(list)"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "defaultdict(list)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "defaultdict(list)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "defaultdict(list)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "OrderedDict()"
+  },
+  {
+   "expected": "OrderedDict",
+   "fn": "chain_root",
+   "source": "OrderedDict()"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "OrderedDict()"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "OrderedDict()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "OrderedDict()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "Counter()"
+  },
+  {
+   "expected": "Counter",
+   "fn": "chain_root",
+   "source": "Counter()"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "Counter()"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "Counter()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "Counter()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "deque()"
+  },
+  {
+   "expected": "deque",
+   "fn": "chain_root",
+   "source": "deque()"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "deque()"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "deque()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "deque()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "-1"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "-1"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "-1"
+  },
+  {
+   "expected": {
+    "kind": "int",
+    "value": "-1"
+   },
+   "fn": "literal",
+   "source": "-1"
+  },
+  {
+   "expected": [
+    "UnaryOp",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "-1"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "-1.0"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "-1.0"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "-1.0"
+  },
+  {
+   "expected": {
+    "kind": "float",
+    "value": "-1.0"
+   },
+   "fn": "literal",
+   "source": "-1.0"
+  },
+  {
+   "expected": [
+    "UnaryOp",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "-1.0"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "+2"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "+2"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "+2"
+  },
+  {
+   "expected": {
+    "kind": "int",
+    "value": "2"
+   },
+   "fn": "literal",
+   "source": "+2"
+  },
+  {
+   "expected": [
+    "UnaryOp",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "+2"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "0x10"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "0x10"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "0x10"
+  },
+  {
+   "expected": {
+    "kind": "int",
+    "value": "16"
+   },
+   "fn": "literal",
+   "source": "0x10"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "0x10"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "1_000"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "1_000"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "1_000"
+  },
+  {
+   "expected": {
+    "kind": "int",
+    "value": "1000"
+   },
+   "fn": "literal",
+   "source": "1_000"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "1_000"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "True"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "True"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "True"
+  },
+  {
+   "expected": {
+    "kind": "bool",
+    "value": true
+   },
+   "fn": "literal",
+   "source": "True"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "True"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "False"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "False"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "False"
+  },
+  {
+   "expected": {
+    "kind": "bool",
+    "value": false
+   },
+   "fn": "literal",
+   "source": "False"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "False"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "None"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "None"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "None"
+  },
+  {
+   "expected": {
+    "kind": "none"
+   },
+   "fn": "literal",
+   "source": "None"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "None"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "..."
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "..."
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "..."
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "..."
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "1j"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "1j"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "1j"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "1j"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "b'ab'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "b'ab'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "b'ab'"
+  },
+  {
+   "expected": {
+    "kind": "bytes",
+    "value": [
+     97,
+     98
+    ]
+   },
+   "fn": "literal",
+   "source": "b'ab'"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "b'ab'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "'text'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "'text'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "'text'"
+  },
+  {
+   "expected": {
+    "kind": "str",
+    "value": "text"
+   },
+   "fn": "literal",
+   "source": "'text'"
+  },
+  {
+   "expected": [
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "'text'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "(1, 'a', None)"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "(1, 'a', None)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "(1, 'a', None)"
+  },
+  {
+   "expected": {
+    "kind": "tuple",
+    "value": [
+     {
+      "kind": "int",
+      "value": "1"
+     },
+     {
+      "kind": "str",
+      "value": "a"
+     },
+     {
+      "kind": "none"
+     }
+    ]
+   },
+   "fn": "literal",
+   "source": "(1, 'a', None)"
+  },
+  {
+   "expected": [
+    "Tuple",
+    "Constant",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "(1, 'a', None)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "[1, [2, 3]]"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "[1, [2, 3]]"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "[1, [2, 3]]"
+  },
+  {
+   "expected": {
+    "kind": "list",
+    "value": [
+     {
+      "kind": "int",
+      "value": "1"
+     },
+     {
+      "kind": "list",
+      "value": [
+       {
+        "kind": "int",
+        "value": "2"
+       },
+       {
+        "kind": "int",
+        "value": "3"
+       }
+      ]
+     }
+    ]
+   },
+   "fn": "literal",
+   "source": "[1, [2, 3]]"
+  },
+  {
+   "expected": [
+    "List",
+    "Constant",
+    "List",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "[1, [2, 3]]"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "{'k': -1}"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "{'k': -1}"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "{'k': -1}"
+  },
+  {
+   "expected": {
+    "kind": "dict",
+    "value": [
+     [
+      {
+       "kind": "str",
+       "value": "k"
+      },
+      {
+       "kind": "int",
+       "value": "-1"
+      }
+     ]
+    ]
+   },
+   "fn": "literal",
+   "source": "{'k': -1}"
+  },
+  {
+   "expected": [
+    "Dict",
+    "Constant",
+    "UnaryOp",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "{'k': -1}"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "{1, 2, 3}"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "{1, 2, 3}"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "{1, 2, 3}"
+  },
+  {
+   "expected": {
+    "kind": "set",
+    "value": [
+     {
+      "kind": "int",
+      "value": "1"
+     },
+     {
+      "kind": "int",
+      "value": "2"
+     },
+     {
+      "kind": "int",
+      "value": "3"
+     }
+    ]
+   },
+   "fn": "literal",
+   "source": "{1, 2, 3}"
+  },
+  {
+   "expected": [
+    "Set",
+    "Constant",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "{1, 2, 3}"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "{**x}"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "{**x}"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "{**x}"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "{**x}"
+  },
+  {
+   "expected": [
+    "Dict",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "{**x}"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "(x for x in y)"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "(x for x in y)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "(x for x in y)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "(x for x in y)"
+  },
+  {
+   "expected": [
+    "GeneratorExp",
+    "Name",
+    "comprehension",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "(x for x in y)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "f(x for x in y)"
+  },
+  {
+   "expected": "f",
+   "fn": "chain_root",
+   "source": "f(x for x in y)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f(x for x in y)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f(x for x in y)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "GeneratorExp",
+    "Name",
+    "comprehension",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f(x for x in y)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "[x for k, v in ys]"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "[x for k, v in ys]"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "[x for k, v in ys]"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "[x for k, v in ys]"
+  },
+  {
+   "expected": [
+    "ListComp",
+    "Name",
+    "comprehension",
+    "Tuple",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "[x for k, v in ys]"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "d[str, int]"
+  },
+  {
+   "expected": "d",
+   "fn": "chain_root",
+   "source": "d[str, int]"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "d[str, int]"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "d[str, int]"
+  },
+  {
+   "expected": [
+    "Subscript",
+    "Name",
+    "Tuple",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "d[str, int]"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "lambda a, b=1, *args, c, **kw: a"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "lambda a, b=1, *args, c, **kw: a"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "lambda a, b=1, *args, c, **kw: a"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "lambda a, b=1, *args, c, **kw: a"
+  },
+  {
+   "expected": [
+    "Lambda",
+    "arguments",
+    "Name",
+    "arg",
+    "arg",
+    "arg",
+    "arg",
+    "arg",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "lambda a, b=1, *args, c, **kw: a"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "dataclass(frozen=True)"
+  },
+  {
+   "expected": "dataclass",
+   "fn": "chain_root",
+   "source": "dataclass(frozen=True)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "dataclass(frozen=True)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "dataclass(frozen=True)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "keyword",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "dataclass(frozen=True)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "enumerate(ability.get('effects', []))"
+  },
+  {
+   "expected": "enumerate",
+   "fn": "chain_root",
+   "source": "enumerate(ability.get('effects', []))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "enumerate(ability.get('effects', []))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "enumerate(ability.get('effects', []))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Call",
+    "Attribute",
+    "Constant",
+    "List",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "enumerate(ability.get('effects', []))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "KeyError(f'ability atom {champion_name}.{slot} {query.source!r} {query.evidence_prefix!r} resolved {len(candidates)} rows')"
+  },
+  {
+   "expected": "KeyError",
+   "fn": "chain_root",
+   "source": "KeyError(f'ability atom {champion_name}.{slot} {query.source!r} {query.evidence_prefix!r} resolved {len(candidates)} rows')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "KeyError(f'ability atom {champion_name}.{slot} {query.source!r} {query.evidence_prefix!r} resolved {len(candidates)} rows')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "KeyError(f'ability atom {champion_name}.{slot} {query.source!r} {query.evidence_prefix!r} resolved {len(candidates)} rows')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "Name",
+    "Name",
+    "Attribute",
+    "Attribute",
+    "Call",
+    "Name",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "KeyError(f'ability atom {champion_name}.{slot} {query.source!r} {query.evidence_prefix!r} resolved {len(candidates)} rows')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "isinstance(value, bool)"
+  },
+  {
+   "expected": "isinstance",
+   "fn": "chain_root",
+   "source": "isinstance(value, bool)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "isinstance(value, bool)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "isinstance(value, bool)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "isinstance(value, bool)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "MappingProxyType({'crit_chance_multiplier': 1.0, 'crit_damage_multiplier_factor': 1.0, 'excess_crit_bonus_ad_per_percent': 0.0})"
+  },
+  {
+   "expected": "MappingProxyType",
+   "fn": "chain_root",
+   "source": "MappingProxyType({'crit_chance_multiplier': 1.0, 'crit_damage_multiplier_factor': 1.0, 'excess_crit_bonus_ad_per_percent': 0.0})"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "MappingProxyType({'crit_chance_multiplier': 1.0, 'crit_damage_multiplier_factor': 1.0, 'excess_crit_bonus_ad_per_percent': 0.0})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "MappingProxyType({'crit_chance_multiplier': 1.0, 'crit_damage_multiplier_factor': 1.0, 'excess_crit_bonus_ad_per_percent': 0.0})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Dict",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "MappingProxyType({'crit_chance_multiplier': 1.0, 'crit_damage_multiplier_factor': 1.0, 'excess_crit_bonus_ad_per_percent': 0.0})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "KeyError(f\"ability payload {payload.get('name') or form!r} is missing required field {key!r}\")"
+  },
+  {
+   "expected": "KeyError",
+   "fn": "chain_root",
+   "source": "KeyError(f\"ability payload {payload.get('name') or form!r} is missing required field {key!r}\")"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "KeyError(f\"ability payload {payload.get('name') or form!r} is missing required field {key!r}\")"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "KeyError(f\"ability payload {payload.get('name') or form!r} is missing required field {key!r}\")"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "BoolOp",
+    "Name",
+    "Call",
+    "Name",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "KeyError(f\"ability payload {payload.get('name') or form!r} is missing required field {key!r}\")"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "len(units)"
+  },
+  {
+   "expected": "len",
+   "fn": "chain_root",
+   "source": "len(units)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "len(units)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "len(units)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "len(units)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "len(entries)"
+  },
+  {
+   "expected": "len",
+   "fn": "chain_root",
+   "source": "len(entries)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "len(entries)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "len(entries)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "len(entries)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode())"
+  },
+  {
+   "expected": "hashlib",
+   "fn": "chain_root",
+   "source": "hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode())"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode())"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode())"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Call",
+    "Name",
+    "Attribute",
+    "Call",
+    "Attribute",
+    "Name",
+    "keyword",
+    "keyword",
+    "Name",
+    "Constant",
+    "Tuple",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode())"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "expected": "ABILITY_PAYLOAD_SCHEMA",
+   "fn": "chain_root",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "ABILITY_PAYLOAD_SCHEMA.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "query.source"
+  },
+  {
+   "expected": "query",
+   "fn": "chain_root",
+   "source": "query.source"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "query.source"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "query.source"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "query.source"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "query.source"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "atom.get"
+  },
+  {
+   "expected": "atom",
+   "fn": "chain_root",
+   "source": "atom.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "atom.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "atom.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "atom.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "atom.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "dataclass(frozen=True, slots=True)"
+  },
+  {
+   "expected": "dataclass",
+   "fn": "chain_root",
+   "source": "dataclass(frozen=True, slots=True)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "dataclass(frozen=True, slots=True)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "dataclass(frozen=True, slots=True)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "keyword",
+    "keyword",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "dataclass(frozen=True, slots=True)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "expected": "ControlScope",
+   "fn": "chain_root",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "ControlScope.EVERY_TARGET"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "dot_stack_scaled",
+   "fn": "attr_on",
+   "source": "self.dot_stack_scaled"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.reason.strip()"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.reason.strip()"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.reason.strip()"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.reason.strip()"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.reason.strip()"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.damage_type"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.damage_type"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.damage_type"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.damage_type"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.damage_type"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "damage_type",
+   "fn": "attr_on",
+   "source": "self.damage_type"
+  },
+  {
+   "expected": [
+    ", hit_interval=",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "f', hit_interval={self.hit_interval}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f', hit_interval={self.hit_interval}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f', hit_interval={self.hit_interval}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f', hit_interval={self.hit_interval}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f', hit_interval={self.hit_interval}'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.count"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.count"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.count"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.count"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.count"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "count",
+   "fn": "attr_on",
+   "source": "self.count"
+  },
+  {
+   "expected": [
+    ", scope=",
+    ""
+   ],
+   "fn": "literal_affixes",
+   "source": "f', scope={self.scope.value}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f', scope={self.scope.value}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f', scope={self.scope.value}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f', scope={self.scope.value}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "Constant",
+    "FormattedValue",
+    "Attribute",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f', scope={self.scope.value}'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.hit_interval"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.hit_interval"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.hit_interval"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.hit_interval"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.hit_interval"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "hit_interval",
+   "fn": "attr_on",
+   "source": "self.hit_interval"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self.time_offset"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self.time_offset"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self.time_offset"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self.time_offset"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self.time_offset"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": "time_offset",
+   "fn": "attr_on",
+   "source": "self.time_offset"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list(self.receipts)"
+  },
+  {
+   "expected": "list",
+   "fn": "chain_root",
+   "source": "list(self.receipts)"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "list(self.receipts)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list(self.receipts)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list(self.receipts)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "str(kind)"
+  },
+  {
+   "expected": "str",
+   "fn": "chain_root",
+   "source": "str(kind)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "str(kind)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "str(kind)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "str(kind)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "tuple(effects)"
+  },
+  {
+   "expected": "tuple",
+   "fn": "chain_root",
+   "source": "tuple(effects)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "tuple(effects)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "tuple(effects)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "tuple(effects)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "float(duration_match.group(1))"
+  },
+  {
+   "expected": "float",
+   "fn": "chain_root",
+   "source": "float(duration_match.group(1))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "float(duration_match.group(1))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "float(duration_match.group(1))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Call",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "float(duration_match.group(1))"
+  },
+  {
+   "expected": [
+    "",
+    " Rapids is missing its cached stats mapping"
+   ],
+   "fn": "literal_affixes",
+   "source": "f'{item_name} Rapids is missing its cached stats mapping'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{item_name} Rapids is missing its cached stats mapping'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{item_name} Rapids is missing its cached stats mapping'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{item_name} Rapids is missing its cached stats mapping'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "FormattedValue",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{item_name} Rapids is missing its cached stats mapping'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "isinstance(passive, Mapping)"
+  },
+  {
+   "expected": "isinstance",
+   "fn": "chain_root",
+   "source": "isinstance(passive, Mapping)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "isinstance(passive, Mapping)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "isinstance(passive, Mapping)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "isinstance(passive, Mapping)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "ValueError(f'{item_name} is missing its Rapids passive')"
+  },
+  {
+   "expected": "ValueError",
+   "fn": "chain_root",
+   "source": "ValueError(f'{item_name} is missing its Rapids passive')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "ValueError(f'{item_name} is missing its Rapids passive')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "ValueError(f'{item_name} is missing its Rapids passive')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "JoinedStr",
+    "FormattedValue",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "ValueError(f'{item_name} is missing its Rapids passive')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "slot.value"
+  },
+  {
+   "expected": "slot",
+   "fn": "chain_root",
+   "source": "slot.value"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "slot.value"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "slot.value"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "slot.value"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "slot.value"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "expected": "_PRODUCER",
+   "fn": "chain_root",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "_PRODUCER.value"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "field(default_factory=list)"
+  },
+  {
+   "expected": "field",
+   "fn": "chain_root",
+   "source": "field(default_factory=list)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "field(default_factory=list)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "field(default_factory=list)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "keyword",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "field(default_factory=list)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "os.replace(tmp, path)"
+  },
+  {
+   "expected": "os",
+   "fn": "chain_root",
+   "source": "os.replace(tmp, path)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "os.replace(tmp, path)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "os.replace(tmp, path)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "os.replace(tmp, path)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "expected": "json",
+   "fn": "chain_root",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Call",
+    "Attribute",
+    "Name",
+    "keyword",
+    "keyword",
+    "Name",
+    "Constant",
+    "Tuple",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "json.dumps(stable, sort_keys=True, separators=(',', ':')).encode"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "os.replace"
+  },
+  {
+   "expected": "os",
+   "fn": "chain_root",
+   "source": "os.replace"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "os.replace"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "os.replace"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "os.replace"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "os.replace"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "effect.get('description', '')"
+  },
+  {
+   "expected": "effect",
+   "fn": "chain_root",
+   "source": "effect.get('description', '')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "effect.get('description', '')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "effect.get('description', '')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "effect.get('description', '')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "self._atoms.get"
+  },
+  {
+   "expected": "self",
+   "fn": "chain_root",
+   "source": "self._atoms.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "self._atoms.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "self._atoms.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "self._atoms.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "self._atoms.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "time.time"
+  },
+  {
+   "expected": "time",
+   "fn": "chain_root",
+   "source": "time.time"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "time.time"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "time.time"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "time.time"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "time.time"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "set(self.evidence)"
+  },
+  {
+   "expected": "set",
+   "fn": "chain_root",
+   "source": "set(self.evidence)"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "set(self.evidence)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "set(self.evidence)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "set(self.evidence)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "json.dumps"
+  },
+  {
+   "expected": "json",
+   "fn": "chain_root",
+   "source": "json.dumps"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "json.dumps"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "json.dumps"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "json.dumps"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "json.dumps"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "units.append"
+  },
+  {
+   "expected": "units",
+   "fn": "chain_root",
+   "source": "units.append"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "units.append"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "units.append"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "units.append"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "units.append"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "fragments.append((f'{prefix}[{index}].branches[{branch_index}]', text))"
+  },
+  {
+   "expected": "fragments",
+   "fn": "chain_root",
+   "source": "fragments.append((f'{prefix}[{index}].branches[{branch_index}]', text))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "fragments.append((f'{prefix}[{index}].branches[{branch_index}]', text))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "fragments.append((f'{prefix}[{index}].branches[{branch_index}]', text))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Tuple",
+    "Name",
+    "JoinedStr",
+    "Name",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Constant",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "fragments.append((f'{prefix}[{index}].branches[{branch_index}]', text))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "Atomizer('items', source_ref=item.get('name', '?'))"
+  },
+  {
+   "expected": "Atomizer",
+   "fn": "chain_root",
+   "source": "Atomizer('items', source_ref=item.get('name', '?'))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "Atomizer('items', source_ref=item.get('name', '?'))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "Atomizer('items', source_ref=item.get('name', '?'))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Constant",
+    "keyword",
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "Atomizer('items', source_ref=item.get('name', '?'))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "{'flat': 'flat', 'perLevel': 'per_level', 'percent': 'percent', 'percentPerLevel': 'percent_per_level'}.get(field, 'flat')"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "{'flat': 'flat', 'perLevel': 'per_level', 'percent': 'percent', 'percentPerLevel': 'percent_per_level'}.get(field, 'flat')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "{'flat': 'flat', 'perLevel': 'per_level', 'percent': 'percent', 'percentPerLevel': 'percent_per_level'}.get(field, 'flat')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "{'flat': 'flat', 'perLevel': 'per_level', 'percent': 'percent', 'percentPerLevel': 'percent_per_level'}.get(field, 'flat')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Name",
+    "Constant",
+    "Dict",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "{'flat': 'flat', 'perLevel': 'per_level', 'percent': 'percent', 'percentPerLevel': 'percent_per_level'}.get(field, 'flat')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "BoolOp",
+    "Call",
+    "Dict",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "(champion.get('abilities') or {}).items"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "isinstance(row.get('ddragon_sell'), (int, float))"
+  },
+  {
+   "expected": "isinstance",
+   "fn": "chain_root",
+   "source": "isinstance(row.get('ddragon_sell'), (int, float))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "isinstance(row.get('ddragon_sell'), (int, float))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "isinstance(row.get('ddragon_sell'), (int, float))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Call",
+    "Tuple",
+    "Attribute",
+    "Constant",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "isinstance(row.get('ddragon_sell'), (int, float))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "item.get('name', '?')"
+  },
+  {
+   "expected": "item",
+   "fn": "chain_root",
+   "source": "item.get('name', '?')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "item.get('name', '?')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "item.get('name', '?')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "item.get('name', '?')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "entry.get('cooldown')"
+  },
+  {
+   "expected": "entry",
+   "fn": "chain_root",
+   "source": "entry.get('cooldown')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "entry.get('cooldown')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "entry.get('cooldown')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "entry.get('cooldown')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "any((token in lowered for token in ('cooldown', 'duration', 'seconds')))"
+  },
+  {
+   "expected": "any",
+   "fn": "chain_root",
+   "source": "any((token in lowered for token in ('cooldown', 'duration', 'seconds')))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "any((token in lowered for token in ('cooldown', 'duration', 'seconds')))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "any((token in lowered for token in ('cooldown', 'duration', 'seconds')))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "GeneratorExp",
+    "Compare",
+    "comprehension",
+    "Name",
+    "Name",
+    "Name",
+    "Tuple",
+    "Constant",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "any((token in lowered for token in ('cooldown', 'duration', 'seconds')))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "a.add('economy.sell', 'economy', f'{name}.sell', name, [float(row['ddragon_sell'])], ['gold'], ['per_item_sell.ddragon_sell'])"
+  },
+  {
+   "expected": "a",
+   "fn": "chain_root",
+   "source": "a.add('economy.sell', 'economy', f'{name}.sell', name, [float(row['ddragon_sell'])], ['gold'], ['per_item_sell.ddragon_sell'])"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "a.add('economy.sell', 'economy', f'{name}.sell', name, [float(row['ddragon_sell'])], ['gold'], ['per_item_sell.ddragon_sell'])"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "a.add('economy.sell', 'economy', f'{name}.sell', name, [float(row['ddragon_sell'])], ['gold'], ['per_item_sell.ddragon_sell'])"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "JoinedStr",
+    "Name",
+    "List",
+    "List",
+    "List",
+    "Name",
+    "FormattedValue",
+    "Constant",
+    "Call",
+    "Constant",
+    "Constant",
+    "Name",
+    "Name",
+    "Subscript",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "a.add('economy.sell', 'economy', f'{name}.sell', name, [float(row['ddragon_sell'])], ['gold'], ['per_item_sell.ddragon_sell'])"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "item.get('stats')"
+  },
+  {
+   "expected": "item",
+   "fn": "chain_root",
+   "source": "item.get('stats')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "item.get('stats')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "item.get('stats')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "item.get('stats')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "entry.get"
+  },
+  {
+   "expected": "entry",
+   "fn": "chain_root",
+   "source": "entry.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "entry.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "entry.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "entry.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "entry.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "expected": "lowered",
+   "fn": "chain_root",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "lowered.replace('.', '_').split"
+  },
+  {
+   "expected": [
+    "",
+    ".sell"
+   ],
+   "fn": "literal_affixes",
+   "source": "f'{name}.sell'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{name}.sell'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{name}.sell'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{name}.sell'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "FormattedValue",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{name}.sell'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "item.get"
+  },
+  {
+   "expected": "item",
+   "fn": "chain_root",
+   "source": "item.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "item.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "item.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "item.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "item.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "champion.get"
+  },
+  {
+   "expected": "champion",
+   "fn": "chain_root",
+   "source": "champion.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "champion.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "champion.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "champion.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "champion.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "float(value)"
+  },
+  {
+   "expected": "float",
+   "fn": "chain_root",
+   "source": "float(value)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "float(value)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "float(value)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "float(value)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "cooldown.get('modifiers')"
+  },
+  {
+   "expected": "cooldown",
+   "fn": "chain_root",
+   "source": "cooldown.get('modifiers')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "cooldown.get('modifiers')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "cooldown.get('modifiers')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "cooldown.get('modifiers')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "a.add"
+  },
+  {
+   "expected": "a",
+   "fn": "chain_root",
+   "source": "a.add"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "a.add"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "a.add"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "a.add"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "a.add"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "_snake(path)"
+  },
+  {
+   "expected": "_snake",
+   "fn": "chain_root",
+   "source": "_snake(path)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "_snake(path)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "_snake(path)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "_snake(path)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "cooldown.get"
+  },
+  {
+   "expected": "cooldown",
+   "fn": "chain_root",
+   "source": "cooldown.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "cooldown.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "cooldown.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "cooldown.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "cooldown.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "len(control_durations)"
+  },
+  {
+   "expected": "len",
+   "fn": "chain_root",
+   "source": "len(control_durations)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "len(control_durations)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "len(control_durations)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "len(control_durations)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "leveling.get"
+  },
+  {
+   "expected": "leveling",
+   "fn": "chain_root",
+   "source": "leveling.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "leveling.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "leveling.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "leveling.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "leveling.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "champion_data.get('abilities', {})"
+  },
+  {
+   "expected": "champion_data",
+   "fn": "chain_root",
+   "source": "champion_data.get('abilities', {})"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "champion_data.get('abilities', {})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "champion_data.get('abilities', {})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Dict",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "champion_data.get('abilities', {})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list[str] | None"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "list[str] | None"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "list[str] | None"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list[str] | None"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Subscript",
+    "Constant",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list[str] | None"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "extract_cast_time(dict(raw_slot[0]))"
+  },
+  {
+   "expected": "extract_cast_time",
+   "fn": "chain_root",
+   "source": "extract_cast_time(dict(raw_slot[0]))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "extract_cast_time(dict(raw_slot[0]))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "extract_cast_time(dict(raw_slot[0]))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Call",
+    "Name",
+    "Subscript",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "extract_cast_time(dict(raw_slot[0]))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "round(requested_uptime, 6)"
+  },
+  {
+   "expected": "round",
+   "fn": "chain_root",
+   "source": "round(requested_uptime, 6)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "round(requested_uptime, 6)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "round(requested_uptime, 6)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "round(requested_uptime, 6)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": "role_scoped_shop_items",
+   "fn": "chain_root",
+   "source": "role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "min(times, default=duration)"
+  },
+  {
+   "expected": "min",
+   "fn": "chain_root",
+   "source": "min(times, default=duration)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "min(times, default=duration)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "min(times, default=duration)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "keyword",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "min(times, default=duration)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "part('objective.focus_damage_before_death', focus_damage)"
+  },
+  {
+   "expected": "part",
+   "fn": "chain_root",
+   "source": "part('objective.focus_damage_before_death', focus_damage)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "part('objective.focus_damage_before_death', focus_damage)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "part('objective.focus_damage_before_death', focus_damage)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "part('objective.focus_damage_before_death', focus_damage)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list(resolved.enemies)"
+  },
+  {
+   "expected": "list",
+   "fn": "chain_root",
+   "source": "list(resolved.enemies)"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "list(resolved.enemies)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list(resolved.enemies)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list(resolved.enemies)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "request_string(scenario, 'subject_team', 'main')"
+  },
+  {
+   "expected": "request_string",
+   "fn": "chain_root",
+   "source": "request_string(scenario, 'subject_team', 'main')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "request_string(scenario, 'subject_team', 'main')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "request_string(scenario, 'subject_team', 'main')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "request_string(scenario, 'subject_team', 'main')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "get_eligible_boots(tier=boots_tier)"
+  },
+  {
+   "expected": "get_eligible_boots",
+   "fn": "chain_root",
+   "source": "get_eligible_boots(tier=boots_tier)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "get_eligible_boots(tier=boots_tier)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "get_eligible_boots(tier=boots_tier)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "keyword",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "get_eligible_boots(tier=boots_tier)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "ValueError('objective must be one of: overall, kill, survival, damage, utility')"
+  },
+  {
+   "expected": "ValueError",
+   "fn": "chain_root",
+   "source": "ValueError('objective must be one of: overall, kill, survival, damage, utility')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "ValueError('objective must be one of: overall, kill, survival, damage, utility')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "ValueError('objective must be one of: overall, kill, survival, damage, utility')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "ValueError('objective must be one of: overall, kill, survival, damage, utility')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "enemy_bis_rank_key(objective, focus_survival, duration=duration)"
+  },
+  {
+   "expected": "enemy_bis_rank_key",
+   "fn": "chain_root",
+   "source": "enemy_bis_rank_key(objective, focus_survival, duration=duration)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "enemy_bis_rank_key(objective, focus_survival, duration=duration)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "enemy_bis_rank_key(objective, focus_survival, duration=duration)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name",
+    "keyword",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "enemy_bis_rank_key(objective, focus_survival, duration=duration)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "dict | None"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "dict | None"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "dict | None"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "dict | None"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "dict | None"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "f'{subject_team}:{subject_base.champion}'"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "f'{subject_team}:{subject_base.champion}'"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "f'{subject_team}:{subject_base.champion}'"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "f'{subject_team}:{subject_base.champion}'"
+  },
+  {
+   "expected": [
+    "JoinedStr",
+    "FormattedValue",
+    "Constant",
+    "FormattedValue",
+    "Name",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "f'{subject_team}:{subject_base.champion}'"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "loadout.get"
+  },
+  {
+   "expected": "loadout",
+   "fn": "chain_root",
+   "source": "loadout.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "loadout.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "loadout.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "loadout.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "loadout.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "request_int(raw_slot, 'slot_index', 0, 0, MAX_LOADOUT_ITEMS - 1)"
+  },
+  {
+   "expected": "request_int",
+   "fn": "chain_root",
+   "source": "request_int(raw_slot, 'slot_index', 0, 0, MAX_LOADOUT_ITEMS - 1)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "request_int(raw_slot, 'slot_index', 0, 0, MAX_LOADOUT_ITEMS - 1)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "request_int(raw_slot, 'slot_index', 0, 0, MAX_LOADOUT_ITEMS - 1)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Constant",
+    "Constant",
+    "Constant",
+    "BinOp",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "request_int(raw_slot, 'slot_index', 0, 0, MAX_LOADOUT_ITEMS - 1)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "dict(request.fight_params.item_options or {})"
+  },
+  {
+   "expected": "dict",
+   "fn": "chain_root",
+   "source": "dict(request.fight_params.item_options or {})"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "dict(request.fight_params.item_options or {})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "dict(request.fight_params.item_options or {})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "BoolOp",
+    "Attribute",
+    "Dict",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "dict(request.fight_params.item_options or {})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "blocked.append({'champion': loadout.champion_data.get('name', loadout.request.champion), 'name': entry.get('name', ''), 'reason': entry.get('reason', '')})"
+  },
+  {
+   "expected": "blocked",
+   "fn": "chain_root",
+   "source": "blocked.append({'champion': loadout.champion_data.get('name', loadout.request.champion), 'name': entry.get('name', ''), 'reason': entry.get('reason', '')})"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "blocked.append({'champion': loadout.champion_data.get('name', loadout.request.champion), 'name': entry.get('name', ''), 'reason': entry.get('reason', '')})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "blocked.append({'champion': loadout.champion_data.get('name', loadout.request.champion), 'name': entry.get('name', ''), 'reason': entry.get('reason', '')})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Dict",
+    "Name",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Call",
+    "Call",
+    "Call",
+    "Attribute",
+    "Constant",
+    "Attribute",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Attribute",
+    "Attribute",
+    "Name",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "blocked.append({'champion': loadout.champion_data.get('name', loadout.request.champion), 'name': entry.get('name', ''), 'reason': entry.get('reason', '')})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "survival.get"
+  },
+  {
+   "expected": "survival",
+   "fn": "chain_root",
+   "source": "survival.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "survival.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "survival.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "survival.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "survival.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "objective.get('focus_support_value', 0.0)"
+  },
+  {
+   "expected": "objective",
+   "fn": "chain_root",
+   "source": "objective.get('focus_support_value', 0.0)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "objective.get('focus_support_value', 0.0)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "objective.get('focus_support_value', 0.0)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "objective.get('focus_support_value', 0.0)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "data.get"
+  },
+  {
+   "expected": "data",
+   "fn": "chain_root",
+   "source": "data.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "data.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "data.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "data.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "data.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "next((row for row in combat['participants'] if row['participant_id'] == focus_id))"
+  },
+  {
+   "expected": "next",
+   "fn": "chain_root",
+   "source": "next((row for row in combat['participants'] if row['participant_id'] == focus_id))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "next((row for row in combat['participants'] if row['participant_id'] == focus_id))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "next((row for row in combat['participants'] if row['participant_id'] == focus_id))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "GeneratorExp",
+    "Name",
+    "comprehension",
+    "Name",
+    "Subscript",
+    "Compare",
+    "Name",
+    "Constant",
+    "Subscript",
+    "Name",
+    "Name",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "next((row for row in combat['participants'] if row['participant_id'] == focus_id))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "isinstance(raw_slots, list)"
+  },
+  {
+   "expected": "isinstance",
+   "fn": "chain_root",
+   "source": "isinstance(raw_slots, list)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "isinstance(raw_slots, list)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "isinstance(raw_slots, list)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "isinstance(raw_slots, list)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "request.fight_params"
+  },
+  {
+   "expected": "request",
+   "fn": "chain_root",
+   "source": "request.fight_params"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "request.fight_params"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "request.fight_params"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "request.fight_params"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "request.fight_params"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "max(0.0, min(duration, parsed))"
+  },
+  {
+   "expected": "max",
+   "fn": "chain_root",
+   "source": "max(0.0, min(duration, parsed))"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "max(0.0, min(duration, parsed))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "max(0.0, min(duration, parsed))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Constant",
+    "Call",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "max(0.0, min(duration, parsed))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "len(target_coverage_filtered)"
+  },
+  {
+   "expected": "len",
+   "fn": "chain_root",
+   "source": "len(target_coverage_filtered)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "len(target_coverage_filtered)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "len(target_coverage_filtered)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "len(target_coverage_filtered)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "target_filtered.extend(blocked_targets)"
+  },
+  {
+   "expected": "target_filtered",
+   "fn": "chain_root",
+   "source": "target_filtered.extend(blocked_targets)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "target_filtered.extend(blocked_targets)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "target_filtered.extend(blocked_targets)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "target_filtered.extend(blocked_targets)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list(result.get('candidates', []))"
+  },
+  {
+   "expected": "list",
+   "fn": "chain_root",
+   "source": "list(result.get('candidates', []))"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "list(result.get('candidates', []))"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list(result.get('candidates', []))"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Call",
+    "Attribute",
+    "Constant",
+    "List",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list(result.get('candidates', []))"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "entry.get('name', '')"
+  },
+  {
+   "expected": "entry",
+   "fn": "chain_root",
+   "source": "entry.get('name', '')"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "entry.get('name', '')"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "entry.get('name', '')"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "entry.get('name', '')"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "subject_base.items"
+  },
+  {
+   "expected": "subject_base",
+   "fn": "chain_root",
+   "source": "subject_base.items"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "subject_base.items"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "subject_base.items"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "subject_base.items"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "subject_base.items"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "candidate.get('stats', {})"
+  },
+  {
+   "expected": "candidate",
+   "fn": "chain_root",
+   "source": "candidate.get('stats', {})"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "candidate.get('stats', {})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "candidate.get('stats', {})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Dict",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "candidate.get('stats', {})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "expected": "loadout",
+   "fn": "chain_root",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "loadout.champion_data.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "candidate.get"
+  },
+  {
+   "expected": "candidate",
+   "fn": "chain_root",
+   "source": "candidate.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "candidate.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "candidate.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "candidate.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "candidate.get"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "expected": "candidate_params",
+   "fn": "chain_root",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "candidate_params.ally_stat_bonuses"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "engine_registration_kind(champion_name)"
+  },
+  {
+   "expected": "engine_registration_kind",
+   "fn": "chain_root",
+   "source": "engine_registration_kind(champion_name)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "engine_registration_kind(champion_name)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "engine_registration_kind(champion_name)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "engine_registration_kind(champion_name)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "list(resolved.allies)"
+  },
+  {
+   "expected": "list",
+   "fn": "chain_root",
+   "source": "list(resolved.allies)"
+  },
+  {
+   "expected": true,
+   "fn": "is_mutable_init",
+   "source": "list(resolved.allies)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "list(resolved.allies)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "list(resolved.allies)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "ONE_ROTATION_DURATION * rotation"
+  },
+  {
+   "expected": null,
+   "fn": "chain_root",
+   "source": "ONE_ROTATION_DURATION * rotation"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "ONE_ROTATION_DURATION * rotation"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "ONE_ROTATION_DURATION * rotation"
+  },
+  {
+   "expected": [
+    "BinOp",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "ONE_ROTATION_DURATION * rotation"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "request.level"
+  },
+  {
+   "expected": "request",
+   "fn": "chain_root",
+   "source": "request.level"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "request.level"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "request.level"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "request.level"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "request.level"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "run_fight(champion_data, request.level, items, target_params)"
+  },
+  {
+   "expected": "run_fight",
+   "fn": "chain_root",
+   "source": "run_fight(champion_data, request.level, items, target_params)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "run_fight(champion_data, request.level, items, target_params)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "run_fight(champion_data, request.level, items, target_params)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Attribute",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "run_fight(champion_data, request.level, items, target_params)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "zip(resolved.enemies, resolved.target_fight_params)"
+  },
+  {
+   "expected": "zip",
+   "fn": "chain_root",
+   "source": "zip(resolved.enemies, resolved.target_fight_params)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "zip(resolved.enemies, resolved.target_fight_params)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "zip(resolved.enemies, resolved.target_fight_params)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Attribute",
+    "Attribute",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "zip(resolved.enemies, resolved.target_fight_params)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "_add_comparison_curve(response, request, resolved)"
+  },
+  {
+   "expected": "_add_comparison_curve",
+   "fn": "chain_root",
+   "source": "_add_comparison_curve(response, request, resolved)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "_add_comparison_curve(response, request, resolved)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "_add_comparison_curve(response, request, resolved)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "_add_comparison_curve(response, request, resolved)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "resolved.fight_params"
+  },
+  {
+   "expected": "resolved",
+   "fn": "chain_root",
+   "source": "resolved.fight_params"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "resolved.fight_params"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "resolved.fight_params"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "resolved.fight_params"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "resolved.fight_params"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "expected": "resolved",
+   "fn": "chain_root",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "resolved.ally_effects"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "public_loadout_summary(enemy)"
+  },
+  {
+   "expected": "public_loadout_summary",
+   "fn": "chain_root",
+   "source": "public_loadout_summary(enemy)"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "public_loadout_summary(enemy)"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "public_loadout_summary(enemy)"
+  },
+  {
+   "expected": [
+    "Call",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "public_loadout_summary(enemy)"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "target_result.get('timeline_coverage', {})"
+  },
+  {
+   "expected": "target_result",
+   "fn": "chain_root",
+   "source": "target_result.get('timeline_coverage', {})"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "target_result.get('timeline_coverage', {})"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "target_result.get('timeline_coverage', {})"
+  },
+  {
+   "expected": [
+    "Call",
+    "Attribute",
+    "Constant",
+    "Dict",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "target_result.get('timeline_coverage', {})"
+  },
+  {
+   "expected": null,
+   "fn": "literal_affixes",
+   "source": "target_result.get"
+  },
+  {
+   "expected": "target_result",
+   "fn": "chain_root",
+   "source": "target_result.get"
+  },
+  {
+   "expected": false,
+   "fn": "is_mutable_init",
+   "source": "target_result.get"
+  },
+  {
+   "expected": {
+    "kind": "computed"
+   },
+   "fn": "literal",
+   "source": "target_result.get"
+  },
+  {
+   "expected": [
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "target_result.get"
+  },
+  {
+   "arg": [
+    "self",
+    "cls"
+   ],
+   "expected": null,
+   "fn": "attr_on",
+   "source": "target_result.get"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def f(a, /, b, *args, c, **kwargs):\n    pass"
+  },
+  {
+   "expected": [
+    "a",
+    "args",
+    "b",
+    "c",
+    "kwargs"
+   ],
+   "fn": "all_arg_names",
+   "source": "def f(a, /, b, *args, c, **kwargs):\n    pass"
+  },
+  {
+   "arg": "f",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def f(a, /, b, *args, c, **kwargs):\n    pass"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Pass",
+    "arg",
+    "arg",
+    "arg",
+    "arg",
+    "arg"
+   ],
+   "fn": "subnodes",
+   "source": "def f(a, /, b, *args, c, **kwargs):\n    pass"
+  },
+  {
+   "expected": [
+    [
+     "a",
+     "1"
+    ],
+    [
+     "b",
+     "None"
+    ]
+   ],
+   "fn": "fn_defaults",
+   "source": "def outer(a=1, *, b=None):\n    pass"
+  },
+  {
+   "expected": [
+    "a",
+    "b"
+   ],
+   "fn": "all_arg_names",
+   "source": "def outer(a=1, *, b=None):\n    pass"
+  },
+  {
+   "arg": "outer",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def outer(a=1, *, b=None):\n    pass"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Pass",
+    "arg",
+    "arg",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "def outer(a=1, *, b=None):\n    pass"
+  },
+  {
+   "expected": [
+    [
+     "self",
+     "None"
+    ],
+    [
+     "value",
+     "1"
+    ]
+   ],
+   "fn": "fn_defaults",
+   "source": "def method(self=None, value=1):\n    pass"
+  },
+  {
+   "expected": [
+    "self",
+    "value"
+   ],
+   "fn": "all_arg_names",
+   "source": "def method(self=None, value=1):\n    pass"
+  },
+  {
+   "arg": "method",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def method(self=None, value=1):\n    pass"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Pass",
+    "arg",
+    "arg",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "def method(self=None, value=1):\n    pass"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def f(*self):\n    pass"
+  },
+  {
+   "expected": [
+    "self"
+   ],
+   "fn": "all_arg_names",
+   "source": "def f(*self):\n    pass"
+  },
+  {
+   "arg": "f",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def f(*self):\n    pass"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Pass",
+    "arg"
+   ],
+   "fn": "subnodes",
+   "source": "def f(*self):\n    pass"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def f(self, value):\n    return self.value"
+  },
+  {
+   "expected": [
+    "self",
+    "value"
+   ],
+   "fn": "all_arg_names",
+   "source": "def f(self, value):\n    return self.value"
+  },
+  {
+   "arg": "f",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def f(self, value):\n    return self.value"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Return",
+    "arg",
+    "arg",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def f(self, value):\n    return self.value"
+  },
+  {
+   "expected": [
+    [
+     "a",
+     "1"
+    ],
+    [
+     "b",
+     "'x'"
+    ],
+    [
+     "c",
+     "2.0"
+    ]
+   ],
+   "fn": "fn_defaults",
+   "source": "def f(a: int = 1, b: str = 'x', *, c: float = 2.0):\n    return a"
+  },
+  {
+   "expected": [
+    "a",
+    "b",
+    "c"
+   ],
+   "fn": "all_arg_names",
+   "source": "def f(a: int = 1, b: str = 'x', *, c: float = 2.0):\n    return a"
+  },
+  {
+   "arg": "f",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def f(a: int = 1, b: str = 'x', *, c: float = 2.0):\n    return a"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Return",
+    "arg",
+    "arg",
+    "arg",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Name",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def f(a: int = 1, b: str = 'x', *, c: float = 2.0):\n    return a"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def f():\n    'doc'\n    return 1"
+  },
+  {
+   "expected": [],
+   "fn": "all_arg_names",
+   "source": "def f():\n    'doc'\n    return 1"
+  },
+  {
+   "arg": "f",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def f():\n    'doc'\n    return 1"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Return",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "def f():\n    'doc'\n    return 1"
+  },
+  {
+   "expected": [
+    [
+     "b",
+     "2"
+    ]
+   ],
+   "fn": "fn_defaults",
+   "source": "async def g(a, b=2):\n    return await a"
+  },
+  {
+   "expected": [
+    "a",
+    "b"
+   ],
+   "fn": "all_arg_names",
+   "source": "async def g(a, b=2):\n    return await a"
+  },
+  {
+   "arg": "g",
+   "expected": false,
+   "fn": "mentions",
+   "source": "async def g(a, b=2):\n    return await a"
+  },
+  {
+   "expected": [
+    "AsyncFunctionDef",
+    "arguments",
+    "Return",
+    "arg",
+    "arg",
+    "Constant",
+    "Await",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "async def g(a, b=2):\n    return await a"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def deco(fn):\n\n    @wraps(fn)\n    def inner(*a, **k):\n        return fn(*a, **k)\n    return inner"
+  },
+  {
+   "expected": [
+    "fn"
+   ],
+   "fn": "all_arg_names",
+   "source": "def deco(fn):\n\n    @wraps(fn)\n    def inner(*a, **k):\n        return fn(*a, **k)\n    return inner"
+  },
+  {
+   "arg": "deco",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def deco(fn):\n\n    @wraps(fn)\n    def inner(*a, **k):\n        return fn(*a, **k)\n    return inner"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "FunctionDef",
+    "Return",
+    "arg",
+    "arguments",
+    "Return",
+    "Call",
+    "Name",
+    "arg",
+    "arg",
+    "Call",
+    "Name",
+    "Name",
+    "Name",
+    "Starred",
+    "keyword",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def deco(fn):\n\n    @wraps(fn)\n    def inner(*a, **k):\n        return fn(*a, **k)\n    return inner"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def _valid_atom_hash(atom: Mapping[str, Any]) -> bool:\n    \"\"\"Check the hash emitted by :class:`src.calculator.atomizer.Atom`.\"\"\"\n    record = {key: atom.get(key) for key in ('atom_id', 'behavior', 'source', 'name', 'values', 'units', 'evidence')}\n    expected = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()[:16]\n    return str(atom.get('hash', '')) == expected"
+  },
+  {
+   "expected": [
+    "atom"
+   ],
+   "fn": "all_arg_names",
+   "source": "def _valid_atom_hash(atom: Mapping[str, Any]) -> bool:\n    \"\"\"Check the hash emitted by :class:`src.calculator.atomizer.Atom`.\"\"\"\n    record = {key: atom.get(key) for key in ('atom_id', 'behavior', 'source', 'name', 'values', 'units', 'evidence')}\n    expected = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()[:16]\n    return str(atom.get('hash', '')) == expected"
+  },
+  {
+   "arg": "_valid_atom_hash",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def _valid_atom_hash(atom: Mapping[str, Any]) -> bool:\n    \"\"\"Check the hash emitted by :class:`src.calculator.atomizer.Atom`.\"\"\"\n    record = {key: atom.get(key) for key in ('atom_id', 'behavior', 'source', 'name', 'values', 'units', 'evidence')}\n    expected = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()[:16]\n    return str(atom.get('hash', '')) == expected"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Assign",
+    "Assign",
+    "Return",
+    "Name",
+    "arg",
+    "Constant",
+    "Name",
+    "DictComp",
+    "Name",
+    "Subscript",
+    "Compare",
+    "Subscript",
+    "Name",
+    "Call",
+    "comprehension",
+    "Call",
+    "Slice",
+    "Call",
+    "Name",
+    "Name",
+    "Tuple",
+    "Attribute",
+    "Name",
+    "Name",
+    "Tuple",
+    "Attribute",
+    "Constant",
+    "Name",
+    "Call",
+    "Name",
+    "Name",
+    "Name",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Call",
+    "Attribute",
+    "Constant",
+    "Constant",
+    "Attribute",
+    "Call",
+    "Name",
+    "Name",
+    "Attribute",
+    "Call",
+    "Attribute",
+    "Name",
+    "keyword",
+    "keyword",
+    "Name",
+    "Constant",
+    "Tuple",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "def _valid_atom_hash(atom: Mapping[str, Any]) -> bool:\n    \"\"\"Check the hash emitted by :class:`src.calculator.atomizer.Atom`.\"\"\"\n    record = {key: atom.get(key) for key in ('atom_id', 'behavior', 'source', 'name', 'values', 'units', 'evidence')}\n    expected = hashlib.sha256(json.dumps(record, sort_keys=True, separators=(',', ':')).encode()).hexdigest()[:16]\n    return str(atom.get('hash', '')) == expected"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "@property\ndef disposition(self) -> Disposition:\n    \"\"\"This quantity's tag.\"\"\"\n    return Disposition.WITHHELD"
+  },
+  {
+   "expected": [
+    "self"
+   ],
+   "fn": "all_arg_names",
+   "source": "@property\ndef disposition(self) -> Disposition:\n    \"\"\"This quantity's tag.\"\"\"\n    return Disposition.WITHHELD"
+  },
+  {
+   "arg": "disposition",
+   "expected": false,
+   "fn": "mentions",
+   "source": "@property\ndef disposition(self) -> Disposition:\n    \"\"\"This quantity's tag.\"\"\"\n    return Disposition.WITHHELD"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Return",
+    "Name",
+    "Name",
+    "arg",
+    "Constant",
+    "Attribute",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "@property\ndef disposition(self) -> Disposition:\n    \"\"\"This quantity's tag.\"\"\"\n    return Disposition.WITHHELD"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def _required_cached_duration(passive: Mapping[str, Any], *, item_name: str) -> float:\n    \"\"\"Read the window the cached effect text states, or refuse.\"\"\"\n    duration_match = re.search('for\\\\s+(\\\\d+(?:\\\\.\\\\d+)?)\\\\s+seconds?', effect_text(passive), flags=re.IGNORECASE)\n    if duration_match is None:\n        raise ValueError(f'{item_name} Rapids is missing numeric duration')\n    try:\n        duration = float(duration_match.group(1))\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f'{item_name} Rapids duration must be numeric') from exc\n    if not math.isfinite(duration):\n        raise ValueError(f'{item_name} Rapids duration must be finite')\n    return duration"
+  },
+  {
+   "expected": [
+    "item_name",
+    "passive"
+   ],
+   "fn": "all_arg_names",
+   "source": "def _required_cached_duration(passive: Mapping[str, Any], *, item_name: str) -> float:\n    \"\"\"Read the window the cached effect text states, or refuse.\"\"\"\n    duration_match = re.search('for\\\\s+(\\\\d+(?:\\\\.\\\\d+)?)\\\\s+seconds?', effect_text(passive), flags=re.IGNORECASE)\n    if duration_match is None:\n        raise ValueError(f'{item_name} Rapids is missing numeric duration')\n    try:\n        duration = float(duration_match.group(1))\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f'{item_name} Rapids duration must be numeric') from exc\n    if not math.isfinite(duration):\n        raise ValueError(f'{item_name} Rapids duration must be finite')\n    return duration"
+  },
+  {
+   "arg": "_required_cached_duration",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def _required_cached_duration(passive: Mapping[str, Any], *, item_name: str) -> float:\n    \"\"\"Read the window the cached effect text states, or refuse.\"\"\"\n    duration_match = re.search('for\\\\s+(\\\\d+(?:\\\\.\\\\d+)?)\\\\s+seconds?', effect_text(passive), flags=re.IGNORECASE)\n    if duration_match is None:\n        raise ValueError(f'{item_name} Rapids is missing numeric duration')\n    try:\n        duration = float(duration_match.group(1))\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f'{item_name} Rapids duration must be numeric') from exc\n    if not math.isfinite(duration):\n        raise ValueError(f'{item_name} Rapids duration must be finite')\n    return duration"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Assign",
+    "If",
+    "Try",
+    "If",
+    "Return",
+    "Name",
+    "arg",
+    "arg",
+    "Constant",
+    "Name",
+    "Call",
+    "Compare",
+    "Raise",
+    "Assign",
+    "ExceptHandler",
+    "UnaryOp",
+    "Raise",
+    "Name",
+    "Subscript",
+    "Name",
+    "Attribute",
+    "Constant",
+    "Call",
+    "keyword",
+    "Name",
+    "Constant",
+    "Call",
+    "Name",
+    "Call",
+    "Tuple",
+    "Raise",
+    "Call",
+    "Call",
+    "Name",
+    "Tuple",
+    "Name",
+    "Name",
+    "Name",
+    "Attribute",
+    "Name",
+    "JoinedStr",
+    "Name",
+    "Call",
+    "Name",
+    "Name",
+    "Call",
+    "Name",
+    "Attribute",
+    "Name",
+    "Name",
+    "JoinedStr",
+    "Name",
+    "Name",
+    "Name",
+    "FormattedValue",
+    "Constant",
+    "Attribute",
+    "Constant",
+    "Name",
+    "JoinedStr",
+    "Name",
+    "FormattedValue",
+    "Constant",
+    "Name",
+    "Name",
+    "FormattedValue",
+    "Constant",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def _required_cached_duration(passive: Mapping[str, Any], *, item_name: str) -> float:\n    \"\"\"Read the window the cached effect text states, or refuse.\"\"\"\n    duration_match = re.search('for\\\\s+(\\\\d+(?:\\\\.\\\\d+)?)\\\\s+seconds?', effect_text(passive), flags=re.IGNORECASE)\n    if duration_match is None:\n        raise ValueError(f'{item_name} Rapids is missing numeric duration')\n    try:\n        duration = float(duration_match.group(1))\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f'{item_name} Rapids duration must be numeric') from exc\n    if not math.isfinite(duration):\n        raise ValueError(f'{item_name} Rapids duration must be finite')\n    return duration"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def _content_stable_bytes(domain: str, objects: dict[str, Any], source_ref: str | None) -> bytes:\n    \"\"\"Canonical bytes for a domain payload's content identity; excludes\n    ``generated_at`` so re-runs over unchanged content hash the same.\"\"\"\n    stable = {'domain': domain, 'source_ref': source_ref, 'objects': objects}\n    return json.dumps(stable, sort_keys=True, separators=(',', ':')).encode('utf-8')"
+  },
+  {
+   "expected": [
+    "domain",
+    "objects",
+    "source_ref"
+   ],
+   "fn": "all_arg_names",
+   "source": "def _content_stable_bytes(domain: str, objects: dict[str, Any], source_ref: str | None) -> bytes:\n    \"\"\"Canonical bytes for a domain payload's content identity; excludes\n    ``generated_at`` so re-runs over unchanged content hash the same.\"\"\"\n    stable = {'domain': domain, 'source_ref': source_ref, 'objects': objects}\n    return json.dumps(stable, sort_keys=True, separators=(',', ':')).encode('utf-8')"
+  },
+  {
+   "arg": "_content_stable_bytes",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def _content_stable_bytes(domain: str, objects: dict[str, Any], source_ref: str | None) -> bytes:\n    \"\"\"Canonical bytes for a domain payload's content identity; excludes\n    ``generated_at`` so re-runs over unchanged content hash the same.\"\"\"\n    stable = {'domain': domain, 'source_ref': source_ref, 'objects': objects}\n    return json.dumps(stable, sort_keys=True, separators=(',', ':')).encode('utf-8')"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Assign",
+    "Return",
+    "Name",
+    "arg",
+    "arg",
+    "arg",
+    "Constant",
+    "Name",
+    "Dict",
+    "Call",
+    "Name",
+    "Subscript",
+    "BinOp",
+    "Constant",
+    "Constant",
+    "Constant",
+    "Name",
+    "Name",
+    "Name",
+    "Attribute",
+    "Constant",
+    "Name",
+    "Tuple",
+    "Name",
+    "Constant",
+    "Call",
+    "Name",
+    "Name",
+    "Attribute",
+    "Name",
+    "keyword",
+    "keyword",
+    "Name",
+    "Constant",
+    "Tuple",
+    "Constant",
+    "Constant"
+   ],
+   "fn": "subnodes",
+   "source": "def _content_stable_bytes(domain: str, objects: dict[str, Any], source_ref: str | None) -> bytes:\n    \"\"\"Canonical bytes for a domain payload's content identity; excludes\n    ``generated_at`` so re-runs over unchanged content hash the same.\"\"\"\n    stable = {'domain': domain, 'source_ref': source_ref, 'objects': objects}\n    return json.dumps(stable, sort_keys=True, separators=(',', ':')).encode('utf-8')"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def emit(self) -> list[dict[str, Any]]:\n    return sorted((a.to_dict() for a in self._atoms.values()), key=lambda d: (d['atom_id'], d['behavior'], d['source']))"
+  },
+  {
+   "expected": [
+    "self"
+   ],
+   "fn": "all_arg_names",
+   "source": "def emit(self) -> list[dict[str, Any]]:\n    return sorted((a.to_dict() for a in self._atoms.values()), key=lambda d: (d['atom_id'], d['behavior'], d['source']))"
+  },
+  {
+   "arg": "emit",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def emit(self) -> list[dict[str, Any]]:\n    return sorted((a.to_dict() for a in self._atoms.values()), key=lambda d: (d['atom_id'], d['behavior'], d['source']))"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Return",
+    "Subscript",
+    "arg",
+    "Call",
+    "Name",
+    "Subscript",
+    "Name",
+    "GeneratorExp",
+    "keyword",
+    "Name",
+    "Tuple",
+    "Call",
+    "comprehension",
+    "Lambda",
+    "Name",
+    "Name",
+    "Attribute",
+    "Name",
+    "Call",
+    "arguments",
+    "Tuple",
+    "Name",
+    "Attribute",
+    "arg",
+    "Subscript",
+    "Subscript",
+    "Subscript",
+    "Attribute",
+    "Name",
+    "Constant",
+    "Name",
+    "Constant",
+    "Name",
+    "Constant",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def emit(self) -> list[dict[str, Any]]:\n    return sorted((a.to_dict() for a in self._atoms.values()), key=lambda d: (d['atom_id'], d['behavior'], d['source']))"
+  },
+  {
+   "expected": [],
+   "fn": "fn_defaults",
+   "source": "def role_scoped_bis_candidates(candidates: list[dict], *, role: str) -> list[dict]:\n    \"\"\"Keep roster BIS candidates within the selected role's sourced shop scope.\"\"\"\n    return role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": [
+    "candidates",
+    "role"
+   ],
+   "fn": "all_arg_names",
+   "source": "def role_scoped_bis_candidates(candidates: list[dict], *, role: str) -> list[dict]:\n    \"\"\"Keep roster BIS candidates within the selected role's sourced shop scope.\"\"\"\n    return role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "arg": "role_scoped_bis_candidates",
+   "expected": false,
+   "fn": "mentions",
+   "source": "def role_scoped_bis_candidates(candidates: list[dict], *, role: str) -> list[dict]:\n    \"\"\"Keep roster BIS candidates within the selected role's sourced shop scope.\"\"\"\n    return role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": [
+    "FunctionDef",
+    "arguments",
+    "Expr",
+    "Return",
+    "Subscript",
+    "arg",
+    "arg",
+    "Constant",
+    "Call",
+    "Name",
+    "Name",
+    "Subscript",
+    "Name",
+    "Name",
+    "Name",
+    "Name",
+    "Name",
+    "Name"
+   ],
+   "fn": "subnodes",
+   "source": "def role_scoped_bis_candidates(candidates: list[dict], *, role: str) -> list[dict]:\n    \"\"\"Keep roster BIS candidates within the selected role's sourced shop scope.\"\"\"\n    return role_scoped_shop_items(candidates, role)"
+  },
+  {
+   "expected": [
+    "esponse",
+    "httpr",
+    "parse"
+   ],
+   "fn": "name_tokens",
+   "source": "parseHTTPResponse"
+  },
+  {
+   "expected": [
+    "case",
+    "name",
+    "snake"
+   ],
+   "fn": "name_tokens",
+   "source": "snake_case_name"
+  },
+  {
+   "expected": [
+    "camel",
+    "case"
+   ],
+   "fn": "name_tokens",
+   "source": "CamelCase"
+  },
+  {
+   "expected": [
+    "erver",
+    "https"
+   ],
+   "fn": "name_tokens",
+   "source": "HTTPServer"
+  },
+  {
+   "expected": [
+    "value2"
+   ],
+   "fn": "name_tokens",
+   "source": "value2"
+  },
+  {
+   "expected": [
+    "private"
+   ],
+   "fn": "name_tokens",
+   "source": "_private"
+  },
+  {
+   "expected": [
+    "dunder"
+   ],
+   "fn": "name_tokens",
+   "source": "__dunder__"
+  },
+  {
+   "expected": [
+    "a1b2c3"
+   ],
+   "fn": "name_tokens",
+   "source": "a1b2c3"
+  },
+  {
+   "expected": [
+    "allcaps"
+   ],
+   "fn": "name_tokens",
+   "source": "ALLCAPS"
+  },
+  {
+   "expected": [
+    "ase2",
+    "httpc",
+    "mixed",
+    "value"
+   ],
+   "fn": "name_tokens",
+   "source": "mixedHTTPCase2Value"
+  },
+  {
+   "expected": [],
+   "fn": "name_tokens",
+   "source": ""
+  },
+  {
+   "expected": [
+    "a",
+    "comment",
+    "line",
+    "with",
+    "words"
+   ],
+   "fn": "name_tokens",
+   "source": "  # a comment line with words"
+  },
+  {
+   "expected": [
+    "ability",
+    "atom",
+    "query"
+   ],
+   "fn": "name_tokens",
+   "source": "AbilityAtomQuery"
+  },
+  {
+   "expected": [
+    "ability",
+    "atoms"
+   ],
+   "fn": "name_tokens",
+   "source": "_ability_atoms"
+  },
+  {
+   "expected": [
+    "atom",
+    "hash",
+    "valid"
+   ],
+   "fn": "name_tokens",
+   "source": "_valid_atom_hash"
+  },
+  {
+   "expected": [
+    "ability",
+    "atom",
+    "required"
+   ],
+   "fn": "name_tokens",
+   "source": "required_ability_atom"
+  },
+  {
+   "expected": [
+    "ability",
+    "atom",
+    "ranked",
+    "value"
+   ],
+   "fn": "name_tokens",
+   "source": "ranked_ability_atom_value"
+  },
+  {
+   "expected": [
+    "atom",
+    "attribute",
+    "ranked",
+    "required"
+   ],
+   "fn": "name_tokens",
+   "source": "required_ranked_attribute_atom"
+  },
+  {
+   "expected": [
+    "ability",
+    "field"
+   ],
+   "fn": "name_tokens",
+   "source": "ability_field"
+  },
+  {
+   "expected": [
+    "ability",
+    "payload"
+   ],
+   "fn": "name_tokens",
+   "source": "ability_payload"
+  },
+  {
+   "expected": [
+    "ability",
+    "payload",
+    "sub"
+   ],
+   "fn": "name_tokens",
+   "source": "ability_sub_payload"
+  },
+  {
+   "expected": [
+    "class",
+    "damage"
+   ],
+   "fn": "name_tokens",
+   "source": "DamageClass"
+  },
+  {
+   "expected": [
+    "attack",
+    "class"
+   ],
+   "fn": "name_tokens",
+   "source": "AttackClass"
+  },
+  {
+   "expected": [
+    "disposition"
+   ],
+   "fn": "name_tokens",
+   "source": "Disposition"
+  },
+  {
+   "expected": [
+    "has",
+    "no",
+    "value",
+    "withheld"
+   ],
+   "fn": "name_tokens",
+   "source": "WithheldHasNoValue"
+  },
+  {
+   "expected": [
+    "projection",
+    "starvation"
+   ],
+   "fn": "name_tokens",
+   "source": "_projection_starvation"
+  },
+  {
+   "expected": [
+    "algebra",
+    "quantity"
+   ],
+   "fn": "name_tokens",
+   "source": "_QuantityAlgebra"
+  },
+  {
+   "expected": [
+    "measured"
+   ],
+   "fn": "name_tokens",
+   "source": "Measured"
+  },
+  {
+   "expected": [
+    "structural",
+    "zero"
+   ],
+   "fn": "name_tokens",
+   "source": "StructuralZero"
+  },
+  {
+   "expected": [
+    "withheld"
+   ],
+   "fn": "name_tokens",
+   "source": "Withheld"
+  },
+  {
+   "expected": [
+    "starved"
+   ],
+   "fn": "name_tokens",
+   "source": "Starved"
+  },
+  {
+   "expected": [
+    "policy",
+    "zero"
+   ],
+   "fn": "name_tokens",
+   "source": "ZeroPolicy"
+  },
+  {
+   "expected": [
+    "authority"
+   ],
+   "fn": "name_tokens",
+   "source": "Authority"
+  },
+  {
+   "expected": [
+    "damage",
+    "part",
+    "types"
+   ],
+   "fn": "name_tokens",
+   "source": "part_damage_types"
+  },
+  {
+   "expected": [
+    "cc",
+    "kind",
+    "reviewed"
+   ],
+   "fn": "name_tokens",
+   "source": "cc_kind_reviewed"
+  },
+  {
+   "expected": [
+    "damage",
+    "part"
+   ],
+   "fn": "name_tokens",
+   "source": "DamagePart"
+  },
+  {
+   "expected": [
+    "control",
+    "scope"
+   ],
+   "fn": "name_tokens",
+   "source": "ControlScope"
+  },
+  {
+   "expected": [
+    "control",
+    "event"
+   ],
+   "fn": "name_tokens",
+   "source": "ControlEvent"
+  },
+  {
+   "expected": [
+    "add"
+   ],
+   "fn": "name_tokens",
+   "source": "__add__"
+  },
+  {
+   "expected": [
+    "read"
+   ],
+   "fn": "name_tokens",
+   "source": "read"
+  },
+  {
+   "expected": [
+    "disposition"
+   ],
+   "fn": "name_tokens",
+   "source": "disposition"
+  },
+  {
+   "expected": [
+    "init",
+    "post"
+   ],
+   "fn": "name_tokens",
+   "source": "__post_init__"
+  },
+  {
+   "expected": [
+    "repr"
+   ],
+   "fn": "name_tokens",
+   "source": "__repr__"
+  },
+  {
+   "expected": [
+    "reaches"
+   ],
+   "fn": "name_tokens",
+   "source": "reaches"
+  },
+  {
+   "expected": [
+    "ally",
+    "effect",
+    "stat"
+   ],
+   "fn": "name_tokens",
+   "source": "AllyStatEffect"
+  },
+  {
+   "expected": [
+    "flat",
+    "required",
+    "stat"
+   ],
+   "fn": "name_tokens",
+   "source": "_required_flat_stat"
+  },
+  {
+   "expected": [
+    "cached",
+    "duration",
+    "required"
+   ],
+   "fn": "name_tokens",
+   "source": "_required_cached_duration"
+  },
+  {
+   "expected": [
+    "agree"
+   ],
+   "fn": "name_tokens",
+   "source": "_agree"
+  },
+  {
+   "expected": [
+    "cached",
+    "passive",
+    "producer"
+   ],
+   "fn": "name_tokens",
+   "source": "_cached_producer_passive"
+  },
+  {
+   "expected": [
+    "effect",
+    "stat"
+   ],
+   "fn": "name_tokens",
+   "source": "_stat_effect"
+  },
+  {
+   "expected": [
+    "ally",
+    "effects",
+    "resolve",
+    "stat"
+   ],
+   "fn": "name_tokens",
+   "source": "resolve_ally_stat_effects"
+  },
+  {
+   "expected": [
+    "ally",
+    "combine",
+    "effects",
+    "stat"
+   ],
+   "fn": "name_tokens",
+   "source": "combine_ally_stat_effects"
+  },
+  {
+   "expected": [
+    "application",
+    "error"
+   ],
+   "fn": "name_tokens",
+   "source": "ApplicationError"
+  },
+  {
+   "expected": [
+    "complete",
+    "event",
+    "no",
+    "order"
+   ],
+   "fn": "name_tokens",
+   "source": "NoCompleteEventOrder"
+  },
+  {
+   "expected": [
+    "init"
+   ],
+   "fn": "name_tokens",
+   "source": "__init__"
+  },
+  {
+   "expected": [
+    "payload",
+    "public"
+   ],
+   "fn": "name_tokens",
+   "source": "public_payload"
+  },
+  {
+   "expected": [
+    "atom"
+   ],
+   "fn": "name_tokens",
+   "source": "Atom"
+  },
+  {
+   "expected": [
+    "atomizer"
+   ],
+   "fn": "name_tokens",
+   "source": "Atomizer"
+  },
+  {
+   "expected": [
+    "and",
+    "number",
+    "unit"
+   ],
+   "fn": "name_tokens",
+   "source": "number_and_unit"
+  },
+  {
+   "expected": [
+    "bytes",
+    "content",
+    "stable"
+   ],
+   "fn": "name_tokens",
+   "source": "_content_stable_bytes"
+  },
+  {
+   "expected": [
+    "content",
+    "hash"
+   ],
+   "fn": "name_tokens",
+   "source": "content_hash"
+  },
+  {
+   "expected": [
+    "domain",
+    "file",
+    "hash"
+   ],
+   "fn": "name_tokens",
+   "source": "hash_domain_file"
+  },
+  {
+   "expected": [
+    "atoms",
+    "write"
+   ],
+   "fn": "name_tokens",
+   "source": "write_atoms"
+  },
+  {
+   "expected": [
+    "manifest",
+    "write"
+   ],
+   "fn": "name_tokens",
+   "source": "write_manifest"
+  },
+  {
+   "expected": [
+    "effect",
+    "fragments",
+    "split"
+   ],
+   "fn": "name_tokens",
+   "source": "split_effect_fragments"
+  },
+  {
+   "expected": [
+    "dict",
+    "to"
+   ],
+   "fn": "name_tokens",
+   "source": "to_dict"
+  },
+  {
+   "expected": [
+    "add"
+   ],
+   "fn": "name_tokens",
+   "source": "add"
+  },
+  {
+   "expected": [
+    "emit"
+   ],
+   "fn": "name_tokens",
+   "source": "emit"
+  },
+  {
+   "expected": [
+    "atomize",
+    "item"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_item"
+  },
+  {
+   "expected": [
+    "atomize",
+    "catalogue",
+    "item"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_item_catalogue"
+  },
+  {
+   "expected": [
+    "abilities",
+    "atomize"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_abilities"
+  },
+  {
+   "expected": [
+    "atomize",
+    "catalogue",
+    "rune"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_rune_catalogue"
+  },
+  {
+   "expected": [
+    "atomize",
+    "economics"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_economics"
+  },
+  {
+   "expected": [
+    "atomize",
+    "stats"
+   ],
+   "fn": "name_tokens",
+   "source": "atomize_stats"
+  },
+  {
+   "expected": [
+    "stat",
+    "unit"
+   ],
+   "fn": "name_tokens",
+   "source": "_stat_unit"
+  },
+  {
+   "expected": [
+    "snake"
+   ],
+   "fn": "name_tokens",
+   "source": "_snake"
+  },
+  {
+   "expected": [
+    "numeric",
+    "values"
+   ],
+   "fn": "name_tokens",
+   "source": "numeric_values"
+  },
+  {
+   "expected": [
+    "for",
+    "unit"
+   ],
+   "fn": "name_tokens",
+   "source": "unit_for"
+  },
+  {
+   "expected": [
+    "visit"
+   ],
+   "fn": "name_tokens",
+   "source": "visit"
+  },
+  {
+   "expected": [
+    "cast",
+    "source",
+    "time"
+   ],
+   "fn": "name_tokens",
+   "source": "_source_cast_time"
+  },
+  {
+   "expected": [
+    "attack",
+    "auto",
+    "policy",
+    "resolve"
+   ],
+   "fn": "name_tokens",
+   "source": "resolve_auto_attack_policy"
+  },
+  {
+   "expected": [
+    "bis",
+    "main",
+    "request"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_main_request"
+  },
+  {
+   "expected": [
+    "bis",
+    "loadout",
+    "replaced"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_replaced_loadout"
+  },
+  {
+   "expected": [
+    "bis",
+    "candidates",
+    "role",
+    "scoped"
+   ],
+   "fn": "name_tokens",
+   "source": "role_scoped_bis_candidates"
+  },
+  {
+   "expected": [
+    "bis",
+    "candidate",
+    "pool"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_candidate_pool"
+  },
+  {
+   "expected": [
+    "coverage",
+    "roster",
+    "target"
+   ],
+   "fn": "name_tokens",
+   "source": "roster_target_coverage"
+  },
+  {
+   "expected": [
+    "bis",
+    "enemy",
+    "key",
+    "rank"
+   ],
+   "fn": "name_tokens",
+   "source": "enemy_bis_rank_key"
+  },
+  {
+   "expected": [
+    "bis",
+    "defensive",
+    "effect",
+    "receipt"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_defensive_effect_receipt"
+  },
+  {
+   "expected": [
+    "bis",
+    "meta",
+    "objective"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_objective_meta"
+  },
+  {
+   "expected": [
+    "bis",
+    "contract",
+    "objective"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_objective_contract"
+  },
+  {
+   "expected": [
+    "bis",
+    "defeat",
+    "target",
+    "time",
+    "to"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_time_to_target_defeat"
+  },
+  {
+   "expected": [
+    "focus",
+    "path",
+    "survival"
+   ],
+   "fn": "name_tokens",
+   "source": "_focus_survival_path"
+  },
+  {
+   "expected": [
+    "bis",
+    "objective",
+    "score"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_objective_score"
+  },
+  {
+   "expected": [
+    "candidate",
+    "withheld"
+   ],
+   "fn": "name_tokens",
+   "source": "_withheld_candidate"
+  },
+  {
+   "expected": [
+    "bis",
+    "coverage",
+    "receipt"
+   ],
+   "fn": "name_tokens",
+   "source": "_bis_coverage_receipt"
+  },
+  {
+   "expected": [
+    "bis",
+    "dispositions"
+   ],
+   "fn": "name_tokens",
+   "source": "_bis_dispositions"
+  },
+  {
+   "expected": [
+    "bis",
+    "payload"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_payload"
+  },
+  {
+   "expected": [
+    "batch",
+    "replace",
+    "slot",
+    "subject"
+   ],
+   "fn": "name_tokens",
+   "source": "_batch_replace_subject_slot"
+  },
+  {
+   "expected": [
+    "batch",
+    "bis",
+    "result"
+   ],
+   "fn": "name_tokens",
+   "source": "_bis_batch_result"
+  },
+  {
+   "expected": [
+    "batch",
+    "bis",
+    "payload"
+   ],
+   "fn": "name_tokens",
+   "source": "bis_batch_payload"
+  },
+  {
+   "expected": [
+    "part"
+   ],
+   "fn": "name_tokens",
+   "source": "part"
+  },
+  {
+   "expected": [
+    "comparison",
+    "curve"
+   ],
+   "fn": "name_tokens",
+   "source": "_comparison_curve"
+  },
+  {
+   "expected": [
+    "add",
+    "comparison",
+    "curve"
+   ],
+   "fn": "name_tokens",
+   "source": "_add_comparison_curve"
+  },
+  {
+   "expected": [
+    "engine",
+    "receipt"
+   ],
+   "fn": "name_tokens",
+   "source": "_engine_receipt"
+  },
+  {
+   "expected": [
+    "ally",
+    "effects",
+    "receipt"
+   ],
+   "fn": "name_tokens",
+   "source": "_ally_effects_receipt"
+  },
+  {
+   "expected": [
+    "breakdown",
+    "drop",
+    "unattributed"
+   ],
+   "fn": "name_tokens",
+   "source": "_drop_unattributed_breakdown"
+  },
+  {
+   "expected": [
+    "combat",
+    "receipt"
+   ],
+   "fn": "name_tokens",
+   "source": "_combat_receipt"
+  },
+  {
+   "expected": [
+    "quest",
+    "receipt",
+    "role"
+   ],
+   "fn": "name_tokens",
+   "source": "_role_quest_receipt"
+  },
+  {
+   "expected": [
+    "calculate",
+    "resolved"
+   ],
+   "fn": "name_tokens",
+   "source": "_calculate_resolved"
+  },
+  {
+   "expected": [
+    "name",
+    "response",
+    "the"
+   ],
+   "fn": "name_tokens",
+   "source": "_name_the_response"
+  },
+  {
+   "expected": [
+    "calculate",
+    "payload"
+   ],
+   "fn": "name_tokens",
+   "source": "calculate_payload"
+  },
+  {
+   "expected": [
+    "compare",
+    "payload"
+   ],
+   "fn": "name_tokens",
+   "source": "compare_payload"
+  }
+ ]
+}

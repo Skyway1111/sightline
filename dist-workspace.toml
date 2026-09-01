@@ -1,0 +1,21 @@
+[workspace]
+members = ["cargo:."]
+
+# Config for 'dist'
+[dist]
+# The preferred dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.32.0"
+# CI backends to support
+ci = "github"
+# The one-line installs the README quotes; each downloads its platform's
+# archive from the public release URL.
+installers = ["shell", "powershell"]
+# The attribution `cargo xtask third-party` generates, beside the binary.
+include = ["THIRD-PARTY.md"]
+# The three platforms of criterion 10.
+targets = ["x86_64-pc-windows-msvc", "x86_64-unknown-linux-gnu", "aarch64-apple-darwin"]
+# Where to host releases
+hosting = "github"
+# `.github/workflows/release-smoke.yml` runs `sightline --version` on each
+# published archive, on the platform that archive is built for (criterion 10).
+post-announce-jobs = ["./release-smoke"]

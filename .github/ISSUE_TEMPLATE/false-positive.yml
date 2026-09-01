@@ -1,0 +1,57 @@
+name: False positive
+description: A finding sightline should not have made
+title: "#<rule id>: "
+labels: ["false positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Run `sightline explain <id>` first. The rule's record says what the
+        rule checks and what precision it was measured at. A finding that sits
+        inside those arms and is still wrong is the one to report.
+  - type: input
+    id: header
+    attributes:
+      label: Provenance header
+      description: >
+        The first line that `sightline audit ROOT` prints. It starts with
+        `sightline` and the version, and it names what the run saw.
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: The finding
+      description: >
+        One entry of `findings` from `sightline audit ROOT --json`. It holds
+        the rule id, the file, the line, the message and the tier.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: The code the finding points at
+      description: >
+        The source itself, or a link to a public repository and the commit to
+        read it at.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why the finding is wrong
+      description: >
+        Name what sightline missed: the caller it did not resolve, the dynamic
+        reference it cannot follow, or the reason that two blocks it read as
+        one idea are two.
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Config
+      description: >
+        The `[tool.sightline]` table, or the `sightline.toml`, that the run
+        read. Leave this empty when the repository has no config.
+      render: toml

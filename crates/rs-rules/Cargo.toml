@@ -1,0 +1,31 @@
+[package]
+name = "sightline-rs-rules"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Rust rules for sightline: the readings that turn facts and provers into findings"
+
+[lib]
+name = "sightline_rs_rules"
+
+[dependencies]
+anyhow.workspace = true
+camino.workspace = true
+indexmap.workspace = true
+rayon.workspace = true
+regex.workspace = true
+serde_json.workspace = true
+sightline-core = { path = "../core" }
+# the fence (decision 1): `Node` reaches rules through `rs_facts::Node`,
+# never a tree-sitter path
+sightline-rs-facts = { path = "../rs-facts" }
+sightline-rs-provers = { path = "../rs-provers" }
+
+[dev-dependencies]
+sightline-testkit = { path = "../testkit" }
+tempfile = "3"
+
+[lints]
+workspace = true

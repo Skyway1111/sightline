@@ -1,0 +1,137 @@
+[
+ {
+  "full_name": "cookiecutter/cookiecutter-django",
+  "action": "accepted",
+  "reason": "slot 1",
+  "prod_loc": 3214,
+  "annotation_coverage": 0.426,
+  "typedness": "partial",
+  "domain": "web"
+ },
+ {
+  "full_name": "SolaceLabs/solace-agent-mesh",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 121958,
+  "annotation_coverage": 0.898,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "datacurve-ai/deep-swe",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 0,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "deepdoctection/deepdoctection",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 31418,
+  "annotation_coverage": 0.979,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "antoinezambelli/forge",
+  "action": "accepted",
+  "reason": "slot 2",
+  "prod_loc": 18263,
+  "annotation_coverage": 0.996,
+  "typedness": "typed",
+  "domain": "lib"
+ },
+ {
+  "full_name": "cleanlab/cleanvision",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2286,
+  "annotation_coverage": 1.0,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "mcordts/cityscapesScripts",
+  "action": "accepted",
+  "reason": "slot 3",
+  "prod_loc": 8775,
+  "annotation_coverage": 0.0,
+  "typedness": "untyped",
+  "domain": "data"
+ },
+ {
+  "full_name": "modelscope/sirchmunk",
+  "action": "rejected",
+  "reason": "loc-above-hard",
+  "prod_loc": 65705,
+  "annotation_coverage": 0.942,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "exaloop/codon",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 1703,
+  "annotation_coverage": 0.009,
+  "typedness": "untyped",
+  "domain": "data"
+ },
+ {
+  "full_name": "PKU-YuanGroup/LLaVA-CoT",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 1847,
+  "annotation_coverage": 0.113,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "tensorflow/graphics",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 30892,
+  "annotation_coverage": 0.336,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+  "action": "accepted",
+  "reason": "slot 4",
+  "prod_loc": 21693,
+  "annotation_coverage": 0.841,
+  "typedness": "typed",
+  "domain": "data"
+ },
+ {
+  "full_name": "hkust-nlp/simpleRL-reason",
+  "action": "rejected",
+  "reason": "loc-above-soft",
+  "prod_loc": 29960,
+  "annotation_coverage": 0.204,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "openai/swarm",
+  "action": "rejected",
+  "reason": "loc-below-min",
+  "prod_loc": 2831,
+  "annotation_coverage": 0.107,
+  "typedness": "untyped",
+  "domain": "lib"
+ },
+ {
+  "full_name": "neovim/pynvim",
+  "action": "accepted",
+  "reason": "slot 5",
+  "prod_loc": 3251,
+  "annotation_coverage": 0.757,
+  "typedness": "typed",
+  "domain": "lib"
+ }
+]

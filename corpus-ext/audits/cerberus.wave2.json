@@ -1,0 +1,3521 @@
+{
+  "findings": [
+    {
+      "cause": "lift:cerberus.utils.validator_factory:name",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "cerberus/utils.py",
+      "line": 105,
+      "message": "lift `name: str` in cerberus.utils.validator_factory - established at all 1 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "rule": {
+          "bar": 0.95,
+          "n": 13,
+          "of": "R+M lifts the bound-class transport added, after the Any restriction",
+          "seed": 20260845,
+          "tp": 13
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "symbol": "cerberus.utils.validator_factory",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone-block:2eb2a84b58b9",
+      "col": 8,
+      "engine": "idx",
+      "evidence": {
+        "detail": "2eb2a84b58b9"
+      },
+      "file": "cerberus/validator.py",
+      "line": 877,
+      "message": "structural block clone x2 (5 stmts): cerberus.validator.BareValidator.__normalize_sequence_per_items, cerberus.validator.BareValidator.__normalize_sequence_per_schema",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the 5-statement block floor",
+          "seed": 20260846,
+          "tp": 17
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "11",
+      "salience": 10.0,
+      "slug": "structural-clones",
+      "symbol": "cerberus.validator.BareValidator.__normalize_sequence_per_items",
+      "tier": "indexed"
+    },
+    {
+      "cause": "entangled:cerberus.errors<->cerberus.schema<->cerberus.utils<->cerberus.validator",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 13,
+      "message": "cerberus.errors, cerberus.schema, cerberus.utils, cerberus.validator import each other (cycle hidden behind a deferred import)",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "35",
+      "salience": 1.0,
+      "slug": "import-topology",
+      "symbol": "cerberus.errors",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.errors.KEYSCHEMA",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 72,
+      "message": "variable cerberus.errors.KEYSCHEMA is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.errors",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:cerberus.errors.ValidationError.__init__",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 95,
+      "message": "cerberus.errors.ValidationError.__init__ takes 7 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 7.0,
+      "slug": "positional-width",
+      "symbol": "cerberus.errors.ValidationError.__init__",
+      "tier": "indexed"
+    },
+    {
+      "cause": "assertion-free:cerberus.tests.test_normalization.test_allow_unknown_wo_schema",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/tests/test_normalization.py",
+      "line": 487,
+      "message": "cerberus.tests.test_normalization.test_allow_unknown_wo_schema asserts nothing - it can only fail by raising",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "family T on R+M",
+          "seed": 20260832,
+          "tp": 19
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "42",
+      "salience": 0.0,
+      "slug": "assertion-free-test",
+      "symbol": "cerberus.tests.test_normalization.test_allow_unknown_wo_schema",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:cerberus.validator",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/validator.py",
+      "line": 1,
+      "message": "cerberus.validator is 1674 lines carrying 4 hot symbols (Validator (84), BareValidator.validated (6), DocumentError (4)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 170748.0,
+      "slug": "purchase-price",
+      "symbol": "cerberus.validator",
+      "tier": "indexed"
+    },
+    {
+      "cause": "fold:cerberus.validator.BareValidator._normalize_default",
+      "col": 4,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "prod-callers:1",
+          "caller:cerberus.validator.BareValidator.__normalize_default_fields"
+        ]
+      },
+      "file": "cerberus/validator.py",
+      "line": 990,
+      "message": "cerberus.validator.BareValidator._normalize_default (one line) is called once, from cerberus.validator.BareValidator.__normalize_default_fields: fold it into the caller",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "48",
+      "salience": 0.0,
+      "slug": "fold-candidate",
+      "symbol": "cerberus.validator.BareValidator._normalize_default",
+      "tier": "indexed"
+    },
+    {
+      "cause": "positional-width:cerberus.validator.BareValidator.__normalize_coerce",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/validator.py",
+      "line": 745,
+      "message": "cerberus.validator.BareValidator.__normalize_coerce takes 5 positional params with no `*` - callers order them by memory",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the plugin-contract restriction",
+          "seed": 20260843,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "55",
+      "salience": 5.0,
+      "slug": "positional-width",
+      "symbol": "cerberus.validator.BareValidator.__normalize_coerce",
+      "tier": "indexed"
+    },
+    {
+      "cause": "clone-block:2eb2a84b58b9",
+      "col": 8,
+      "engine": "idx",
+      "evidence": {
+        "detail": "2eb2a84b58b9"
+      },
+      "file": "cerberus/validator.py",
+      "line": 861,
+      "message": "structural block clone x2 (5 stmts): cerberus.validator.BareValidator.__normalize_sequence_per_items, cerberus.validator.BareValidator.__normalize_sequence_per_schema",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "R+M after the 5-statement block floor",
+          "seed": 20260846,
+          "tp": 17
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "11",
+      "salience": 10.0,
+      "slug": "structural-clones",
+      "symbol": "cerberus.validator.BareValidator.__normalize_sequence_per_schema",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:cerberus.errors",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 1,
+      "message": "cerberus.errors is 655 lines carrying 27 hot symbols (BAD_TYPE (29), REQUIRED_FIELD (13), MAPPING_SCHEMA (10)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 121175.0,
+      "slug": "purchase-price",
+      "symbol": "cerberus.errors",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.errors.VALUESCHEMA",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 73,
+      "message": "variable cerberus.errors.VALUESCHEMA is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.errors",
+      "tier": "indexed"
+    },
+    {
+      "cause": "assertion-free:cerberus.tests.test_schema.test_rulename_space_is_normalized",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/tests/test_schema.py",
+      "line": 178,
+      "message": "cerberus.tests.test_schema.test_rulename_space_is_normalized asserts nothing - it can only fail by raising",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "family T on R+M",
+          "seed": 20260832,
+          "tp": 19
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "42",
+      "salience": 0.0,
+      "slug": "assertion-free-test",
+      "symbol": "cerberus.tests.test_schema.test_rulename_space_is_normalized",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:generate.load_module_members:name",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "docs/includes/generate.py",
+      "line": 15,
+      "message": "lift `name: str` in generate.load_module_members - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "rule": {
+          "bar": 0.95,
+          "n": 13,
+          "of": "R+M lifts the bound-class transport added, after the Any restriction",
+          "seed": 20260845,
+          "tp": 13
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "symbol": "generate.load_module_members",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.errors.ValidationError.is_normalization_error",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/errors.py",
+      "line": 191,
+      "message": "method cerberus.errors.ValidationError.is_normalization_error is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.errors.ValidationError.is_normalization_error",
+      "tier": "indexed"
+    },
+    {
+      "cause": "price:cerberus.schema",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/schema.py",
+      "line": 1,
+      "message": "cerberus.schema is 554 lines carrying 7 hot symbols (rules_set_registry (20), DefinitionSchema.update (13), SchemaError (13)) - every reader pays the whole file",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "27",
+      "salience": 38226.0,
+      "slug": "purchase-price",
+      "symbol": "cerberus.schema",
+      "tier": "indexed"
+    },
+    {
+      "cause": "assertion-free:cerberus.tests.test_validation.test_schema_validation_from_rules_set",
+      "col": 0,
+      "engine": "idx",
+      "file": "cerberus/tests/test_validation.py",
+      "line": 2006,
+      "message": "cerberus.tests.test_validation.test_schema_validation_from_rules_set asserts nothing - it can only fail by raising",
+      "precision": {
+        "rule": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "family T on R+M",
+          "seed": 20260832,
+          "tp": 19
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "42",
+      "salience": 0.0,
+      "slug": "assertion-free-test",
+      "symbol": "cerberus.tests.test_validation.test_schema_validation_from_rules_set",
+      "tier": "indexed"
+    },
+    {
+      "cause": "lift:generate.load_module_members:path",
+      "col": 0,
+      "engine": "wp",
+      "evidence": {
+        "premises": [
+          "counterfactual:clean"
+        ]
+      },
+      "file": "docs/includes/generate.py",
+      "line": 15,
+      "message": "lift `path: Path` in generate.load_module_members - established at all 2 prod call sites; receipt: counterfactual application produced no caller errors",
+      "precision": {
+        "rule": {
+          "bar": 0.95,
+          "n": 13,
+          "of": "R+M lifts the bound-class transport added, after the Any restriction",
+          "seed": 20260845,
+          "tp": 13
+        },
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "5",
+      "salience": 0.0,
+      "slug": "proof-lifting",
+      "symbol": "generate.load_module_members",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.schema.SchemaValidatorMixin.target_schema",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/schema.py",
+      "line": 332,
+      "message": "method cerberus.schema.SchemaValidatorMixin.target_schema is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.schema.SchemaValidatorMixin.target_schema",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.validator.BareValidator.root_require_all",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/validator.py",
+      "line": 543,
+      "message": "method cerberus.validator.BareValidator.root_require_all is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.validator.BareValidator.root_require_all",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-symbol:cerberus.validator.BareValidator.root_schema",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/validator.py",
+      "line": 571,
+      "message": "method cerberus.validator.BareValidator.root_schema is never referenced - its name occurs nowhere else in the repo",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 1.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.validator.BareValidator.root_schema",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-import:cerberus.platform:importlib_metadata",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/platform.py",
+      "line": 43,
+      "message": "import 'importlib_metadata' in cerberus.platform is never used",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.platform",
+      "tier": "indexed"
+    },
+    {
+      "cause": "dead-import:cerberus.platform:importlib_metadata",
+      "col": 4,
+      "engine": "idx",
+      "file": "cerberus/platform.py",
+      "line": 45,
+      "message": "import 'importlib_metadata' in cerberus.platform is never used",
+      "precision": {
+        "tier": {
+          "bar": 0.8,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 20
+        }
+      },
+      "rule": "32",
+      "salience": 0.0,
+      "slug": "dead-symbols",
+      "symbol": "cerberus.platform",
+      "tier": "indexed"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.schema.DefinitionSchema._expand_subschemas",
+      "col": 4,
+      "engine": "ast",
+      "file": "cerberus/schema.py",
+      "line": 159,
+      "message": "cerberus.schema.DefinitionSchema._expand_subschemas has cognitive complexity 23 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 23.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.schema.DefinitionSchema._expand_subschemas",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.validate",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "document, schema, update, normalize, return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 1009,
+      "message": "public boundary cerberus.validator.BareValidator.validate leaves unannotated: document, schema, update, normalize, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 5.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.validate",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:cerberus.utils.validator_factory:namespace",
+      "col": 50,
+      "engine": "ast",
+      "file": "cerberus/utils.py",
+      "line": 105,
+      "message": "mutable default for 'namespace' in cerberus.utils.validator_factory",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "cerberus.utils.validator_factory",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:globals:154",
+      "col": 35,
+      "engine": "ast",
+      "evidence": {
+        "detail": "globals"
+      },
+      "file": "cerberus/benchmarks/test_overall_performance_1.py",
+      "line": 154,
+      "message": "dynamic identifier construction via globals - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "cerberus.benchmarks.test_overall_performance_1.generate_sample_document_1",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-all:cerberus",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/__init__.py",
+      "line": 24,
+      "message": "__all__ of cerberus is assembled by code",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "26",
+      "salience": 0.0,
+      "slug": "declaration-literalness",
+      "symbol": "cerberus",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "invariant:cerberus.schema.SchemaValidatorMixin:5725810f",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/schema.py",
+      "line": 310,
+      "message": "`_hash in self.target_validator._valid_schemas` recurs in 3 methods of cerberus.schema.SchemaValidatorMixin - encapsulate the invariant",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "21",
+      "salience": 3.0,
+      "slug": "distributed-invariant",
+      "symbol": "cerberus.schema.SchemaValidatorMixin",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:cerberus.validator",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/validator.py",
+      "line": 1,
+      "message": "cerberus.validator (1674 lines, 5 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 1674.0,
+      "slug": "top-loading",
+      "symbol": "cerberus.validator",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.validator.BareValidator._error",
+      "col": 4,
+      "engine": "ast",
+      "file": "cerberus/validator.py",
+      "line": 234,
+      "message": "cerberus.validator.BareValidator._error has cognitive complexity 23 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 23.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.validator.BareValidator._error",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.validator_factory",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "name, bases, namespace, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 105,
+      "message": "public boundary cerberus.utils.validator_factory leaves unannotated: name, bases, namespace, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.validator_factory",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:cerberus.tests.assert_exception:document",
+      "col": 41,
+      "engine": "ast",
+      "file": "cerberus/tests/__init__.py",
+      "line": 11,
+      "message": "mutable default for 'document' in cerberus.tests.assert_exception",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "cerberus.tests.assert_exception",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-id:getattr:280",
+      "col": 15,
+      "engine": "ast",
+      "evidence": {
+        "detail": "getattr"
+      },
+      "file": "cerberus/errors.py",
+      "line": 280,
+      "message": "dynamic identifier construction via getattr - unfindable by search, blinds whole-program analysis",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "24",
+      "salience": 0.0,
+      "slug": "dynamic-identifiers",
+      "symbol": "cerberus.errors.ErrorTreeNode._path_of_",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "dynamic-all:cerberus.platform",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/platform.py",
+      "line": 48,
+      "message": "__all__ of cerberus.platform is assembled by code",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "26",
+      "salience": 0.0,
+      "slug": "declaration-literalness",
+      "symbol": "cerberus.platform",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:cerberus.schema",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/schema.py",
+      "line": 1,
+      "message": "cerberus.schema (554 lines, 9 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 554.0,
+      "slug": "top-loading",
+      "symbol": "cerberus.schema",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.validator.BareValidator.__normalize_containers",
+      "col": 4,
+      "engine": "ast",
+      "file": "cerberus/validator.py",
+      "line": 769,
+      "message": "cerberus.validator.BareValidator.__normalize_containers has cognitive complexity 23 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 23.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.validator.BareValidator.__normalize_containers",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.normalized",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "document, schema, always_return_document, return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 666,
+      "message": "public boundary cerberus.validator.BareValidator.normalized leaves unannotated: document, schema, always_return_document, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 4.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.normalized",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:cerberus.schema.UnvalidatedSchema.__init__:schema",
+      "col": 30,
+      "engine": "ast",
+      "file": "cerberus/schema.py",
+      "line": 287,
+      "message": "mutable default for 'schema' in cerberus.schema.UnvalidatedSchema.__init__",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "cerberus.schema.UnvalidatedSchema.__init__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:conf",
+      "col": 0,
+      "engine": "ast",
+      "file": "docs/conf.py",
+      "line": 1,
+      "message": "conf (295 lines, 0 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 295.0,
+      "slug": "top-loading",
+      "symbol": "conf",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.utils.compare_paths_lt",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/utils.py",
+      "line": 20,
+      "message": "cerberus.utils.compare_paths_lt has cognitive complexity 16 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 16.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.utils.compare_paths_lt",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.compare_paths_lt",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "x, y, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 20,
+      "message": "public boundary cerberus.utils.compare_paths_lt leaves unannotated: x, y, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.compare_paths_lt",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "top-loading:overalll_schema_2",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 1,
+      "message": "overalll_schema_2 (164 lines, 5 top-level defs) has no top-loading docstring",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "29",
+      "salience": 164.0,
+      "slug": "top-loading",
+      "symbol": "overalll_schema_2",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "mutable-default:cerberus.schema.Registry.__init__:definitions",
+      "col": 35,
+      "engine": "ast",
+      "file": "cerberus/schema.py",
+      "line": 482,
+      "message": "mutable default for 'definitions' in cerberus.schema.Registry.__init__",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "49",
+      "salience": 0.0,
+      "slug": "mutable-default",
+      "symbol": "cerberus.schema.Registry.__init__",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.utils.mapping_to_frozenset",
+      "col": 0,
+      "engine": "ast",
+      "file": "cerberus/utils.py",
+      "line": 61,
+      "message": "cerberus.utils.mapping_to_frozenset has cognitive complexity 15 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 15.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.utils.mapping_to_frozenset",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.get",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "item, default, return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 198,
+      "message": "public boundary cerberus.schema.DefinitionSchema.get leaves unannotated: item, default, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.get",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "cognitive-complexity:cerberus.validator.BareValidator.__normalize_default_fields",
+      "col": 4,
+      "engine": "ast",
+      "file": "cerberus/validator.py",
+      "line": 947,
+      "message": "cerberus.validator.BareValidator.__normalize_default_fields has cognitive complexity 15 (threshold 15)",
+      "precision": {
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "23",
+      "salience": 15.0,
+      "slug": "cognitive-complexity",
+      "symbol": "cerberus.validator.BareValidator.__normalize_default_fields",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.Registry.get",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "name, default, return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 521,
+      "message": "public boundary cerberus.schema.Registry.get leaves unannotated: name, default, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.Registry.get",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.drop_item_from_tuple",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "t, i, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 46,
+      "message": "public boundary cerberus.utils.drop_item_from_tuple leaves unannotated: t, i, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.drop_item_from_tuple",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:generate.load_module_members",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "name, path, return"
+      },
+      "file": "docs/includes/generate.py",
+      "line": 15,
+      "message": "public boundary generate.load_module_members leaves unannotated: name, path, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 3.0,
+      "slug": "unannotated-boundary",
+      "symbol": "generate.load_module_members",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.mapping_to_frozenset",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "mapping, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 61,
+      "message": "public boundary cerberus.utils.mapping_to_frozenset leaves unannotated: mapping, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.mapping_to_frozenset",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTree.fetch_node_from",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "path, return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 323,
+      "message": "public boundary cerberus.errors.ErrorTree.fetch_node_from leaves unannotated: path, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTree.fetch_node_from",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTree.fetch_errors_from",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "path, return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 310,
+      "message": "public boundary cerberus.errors.ErrorTree.fetch_errors_from leaves unannotated: path, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTree.fetch_errors_from",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.quote_string",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 87,
+      "message": "public boundary cerberus.utils.quote_string leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.quote_string",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:overalll_schema_2.allowed_tax",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 12,
+      "message": "public boundary overalll_schema_2.allowed_tax leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "overalll_schema_2.allowed_tax",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:overalll_schema_2.allowed_types",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 16,
+      "message": "public boundary overalll_schema_2.allowed_types leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "overalll_schema_2.allowed_types",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:overalll_schema_2.none_to_zero",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 20,
+      "message": "public boundary overalll_schema_2.none_to_zero leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "overalll_schema_2.none_to_zero",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:overalll_schema_2.empty_str_to_null",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 24,
+      "message": "public boundary overalll_schema_2.empty_str_to_null leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "overalll_schema_2.empty_str_to_null",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.encode_unicode",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "f, return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 436,
+      "message": "public boundary cerberus.errors.encode_unicode leaves unannotated: f, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.encode_unicode",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.expand",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema, return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 123,
+      "message": "public boundary cerberus.schema.DefinitionSchema.expand leaves unannotated: schema, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.expand",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:overalll_schema_2.to_bool",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value, return"
+      },
+      "file": "cerberus/benchmarks/schemas/overalll_schema_2.py",
+      "line": 8,
+      "message": "public boundary overalll_schema_2.to_bool leaves unannotated: value, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "overalll_schema_2.to_bool",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.Registry.add",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "name, definition"
+      },
+      "file": "cerberus/schema.py",
+      "line": 486,
+      "message": "public boundary cerberus.schema.Registry.add leaves unannotated: name, definition",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.Registry.add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.mapping_hash",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema, return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 57,
+      "message": "public boundary cerberus.utils.mapping_hash leaves unannotated: schema, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.mapping_hash",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.dummy_for_rule_validation",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "rule_constraints, return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 31,
+      "message": "public boundary cerberus.validator.dummy_for_rule_validation leaves unannotated: rule_constraints, return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 2.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.dummy_for_rule_validation",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTreeNode.add",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "error"
+      },
+      "file": "cerberus/errors.py",
+      "line": 261,
+      "message": "public boundary cerberus.errors.ErrorTreeNode.add leaves unannotated: error",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTreeNode.add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.schema.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema"
+      },
+      "file": "cerberus/validator.py",
+      "line": 588,
+      "message": "public boundary cerberus.validator.BareValidator.schema.setter leaves unannotated: schema",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.schema.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BasicErrorHandler.add",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "error"
+      },
+      "file": "cerberus/errors.py",
+      "line": 527,
+      "message": "public boundary cerberus.errors.BasicErrorHandler.add leaves unannotated: error",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BasicErrorHandler.add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.validated",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 1053,
+      "message": "public boundary cerberus.validator.BareValidator.validated leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.validated",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.definitions_errors",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 156,
+      "message": "public boundary cerberus.errors.ValidationError.definitions_errors leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.definitions_errors",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.field",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 171,
+      "message": "public boundary cerberus.errors.ValidationError.field leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.field",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTree.add",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "error"
+      },
+      "file": "cerberus/errors.py",
+      "line": 298,
+      "message": "public boundary cerberus.errors.ErrorTree.add leaves unannotated: error",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTree.add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.update",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema"
+      },
+      "file": "cerberus/schema.py",
+      "line": 204,
+      "message": "public boundary cerberus.schema.DefinitionSchema.update leaves unannotated: schema",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.update",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.validate",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema"
+      },
+      "file": "cerberus/schema.py",
+      "line": 252,
+      "message": "public boundary cerberus.schema.DefinitionSchema.validate leaves unannotated: schema",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.validate",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.allow_unknown.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value"
+      },
+      "file": "cerberus/validator.py",
+      "line": 452,
+      "message": "public boundary cerberus.validator.BareValidator.allow_unknown.setter leaves unannotated: value",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.allow_unknown.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.child_errors",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 149,
+      "message": "public boundary cerberus.errors.ValidationError.child_errors leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.child_errors",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BaseErrorHandler.extend",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "errors"
+      },
+      "file": "cerberus/errors.py",
+      "line": 407,
+      "message": "public boundary cerberus.errors.BaseErrorHandler.extend leaves unannotated: errors",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BaseErrorHandler.extend",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BasicErrorHandler.pretty_tree",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 520,
+      "message": "public boundary cerberus.errors.BasicErrorHandler.pretty_tree leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BasicErrorHandler.pretty_tree",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.Registry.extend",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "definitions"
+      },
+      "file": "cerberus/schema.py",
+      "line": 509,
+      "message": "public boundary cerberus.schema.Registry.extend leaves unannotated: definitions",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.Registry.extend",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.utils.get_Validator_class",
+      "col": 0,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/utils.py",
+      "line": 50,
+      "message": "public boundary cerberus.utils.get_Validator_class leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.utils.get_Validator_class",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.types",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 611,
+      "message": "public boundary cerberus.validator.BareValidator.types leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.types",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.is_group_error",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 179,
+      "message": "public boundary cerberus.errors.ValidationError.is_group_error leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.is_group_error",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.is_logic_error",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 184,
+      "message": "public boundary cerberus.errors.ValidationError.is_logic_error leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.is_logic_error",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ValidationError.is_normalization_error",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 191,
+      "message": "public boundary cerberus.errors.ValidationError.is_normalization_error leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ValidationError.is_normalization_error",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTreeNode.depth",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 254,
+      "message": "public boundary cerberus.errors.ErrorTreeNode.depth leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTreeNode.depth",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.ErrorTreeNode.tree_type",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/errors.py",
+      "line": 258,
+      "message": "public boundary cerberus.errors.ErrorTreeNode.tree_type leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.ErrorTreeNode.tree_type",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BaseErrorHandler.add",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "error"
+      },
+      "file": "cerberus/errors.py",
+      "line": 379,
+      "message": "public boundary cerberus.errors.BaseErrorHandler.add leaves unannotated: error",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BaseErrorHandler.add",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BaseErrorHandler.emit",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "error"
+      },
+      "file": "cerberus/errors.py",
+      "line": 388,
+      "message": "public boundary cerberus.errors.BaseErrorHandler.emit leaves unannotated: error",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BaseErrorHandler.emit",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BaseErrorHandler.end",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "validator"
+      },
+      "file": "cerberus/errors.py",
+      "line": 398,
+      "message": "public boundary cerberus.errors.BaseErrorHandler.end leaves unannotated: validator",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BaseErrorHandler.end",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BaseErrorHandler.start",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "validator"
+      },
+      "file": "cerberus/errors.py",
+      "line": 418,
+      "message": "public boundary cerberus.errors.BaseErrorHandler.start leaves unannotated: validator",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BaseErrorHandler.start",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.errors.BasicErrorHandler.start",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "validator"
+      },
+      "file": "cerberus/errors.py",
+      "line": 546,
+      "message": "public boundary cerberus.errors.BasicErrorHandler.start leaves unannotated: validator",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.errors.BasicErrorHandler.start",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.copy",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 119,
+      "message": "public boundary cerberus.schema.DefinitionSchema.copy leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.copy",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.DefinitionSchema.items",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 201,
+      "message": "public boundary cerberus.schema.DefinitionSchema.items leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.DefinitionSchema.items",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.UnvalidatedSchema.validate",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "schema"
+      },
+      "file": "cerberus/schema.py",
+      "line": 292,
+      "message": "public boundary cerberus.schema.UnvalidatedSchema.validate leaves unannotated: schema",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.UnvalidatedSchema.validate",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.UnvalidatedSchema.copy",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 295,
+      "message": "public boundary cerberus.schema.UnvalidatedSchema.copy leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.UnvalidatedSchema.copy",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.SchemaValidatorMixin.known_rules_set_refs",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 322,
+      "message": "public boundary cerberus.schema.SchemaValidatorMixin.known_rules_set_refs leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.SchemaValidatorMixin.known_rules_set_refs",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.SchemaValidatorMixin.known_schema_refs",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 327,
+      "message": "public boundary cerberus.schema.SchemaValidatorMixin.known_schema_refs leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.SchemaValidatorMixin.known_schema_refs",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.SchemaValidatorMixin.target_schema",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 332,
+      "message": "public boundary cerberus.schema.SchemaValidatorMixin.target_schema leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.SchemaValidatorMixin.target_schema",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.SchemaValidatorMixin.target_validator",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 337,
+      "message": "public boundary cerberus.schema.SchemaValidatorMixin.target_validator leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.SchemaValidatorMixin.target_validator",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.schema.Registry.all",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/schema.py",
+      "line": 499,
+      "message": "public boundary cerberus.schema.Registry.all leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.schema.Registry.all",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.allow_unknown",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 442,
+      "message": "public boundary cerberus.validator.BareValidator.allow_unknown leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.allow_unknown",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.require_all",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 458,
+      "message": "public boundary cerberus.validator.BareValidator.require_all leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.require_all",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.require_all.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value"
+      },
+      "file": "cerberus/validator.py",
+      "line": 466,
+      "message": "public boundary cerberus.validator.BareValidator.require_all.setter leaves unannotated: value",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.require_all.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.errors",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 470,
+      "message": "public boundary cerberus.validator.BareValidator.errors leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.errors",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.ignore_none_values",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 478,
+      "message": "public boundary cerberus.validator.BareValidator.ignore_none_values leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.ignore_none_values",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.ignore_none_values.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value"
+      },
+      "file": "cerberus/validator.py",
+      "line": 486,
+      "message": "public boundary cerberus.validator.BareValidator.ignore_none_values.setter leaves unannotated: value",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.ignore_none_values.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.is_child",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 490,
+      "message": "public boundary cerberus.validator.BareValidator.is_child leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.is_child",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.purge_unknown",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 508,
+      "message": "public boundary cerberus.validator.BareValidator.purge_unknown leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.purge_unknown",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.purge_unknown.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value"
+      },
+      "file": "cerberus/validator.py",
+      "line": 518,
+      "message": "public boundary cerberus.validator.BareValidator.purge_unknown.setter leaves unannotated: value",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.purge_unknown.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.purge_readonly",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 522,
+      "message": "public boundary cerberus.validator.BareValidator.purge_readonly leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.purge_readonly",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.purge_readonly.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "value"
+      },
+      "file": "cerberus/validator.py",
+      "line": 531,
+      "message": "public boundary cerberus.validator.BareValidator.purge_readonly.setter leaves unannotated: value",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.purge_readonly.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.root_allow_unknown",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 535,
+      "message": "public boundary cerberus.validator.BareValidator.root_allow_unknown leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.root_allow_unknown",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.root_require_all",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 543,
+      "message": "public boundary cerberus.validator.BareValidator.root_require_all leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.root_require_all",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.root_document",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 551,
+      "message": "public boundary cerberus.validator.BareValidator.root_document leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.root_document",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.rules_set_registry",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 559,
+      "message": "public boundary cerberus.validator.BareValidator.rules_set_registry leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.rules_set_registry",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.rules_set_registry.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "registry"
+      },
+      "file": "cerberus/validator.py",
+      "line": 567,
+      "message": "public boundary cerberus.validator.BareValidator.rules_set_registry.setter leaves unannotated: registry",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.rules_set_registry.setter",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.root_schema",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 571,
+      "message": "public boundary cerberus.validator.BareValidator.root_schema leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.root_schema",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.schema",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 579,
+      "message": "public boundary cerberus.validator.BareValidator.schema leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.schema",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.schema_registry",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "return"
+      },
+      "file": "cerberus/validator.py",
+      "line": 597,
+      "message": "public boundary cerberus.validator.BareValidator.schema_registry leaves unannotated: return",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.schema_registry",
+      "tier": "heuristic"
+    },
+    {
+      "cause": "unannotated:cerberus.validator.BareValidator.schema_registry.setter",
+      "col": 4,
+      "engine": "ast",
+      "evidence": {
+        "detail": "registry"
+      },
+      "file": "cerberus/validator.py",
+      "line": 605,
+      "message": "public boundary cerberus.validator.BareValidator.schema_registry.setter leaves unannotated: registry",
+      "precision": {
+        "rule": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "R+M",
+          "seed": 20260842,
+          "tp": 18
+        },
+        "tier": {
+          "bar": 0.6,
+          "n": 20,
+          "of": "#1-#41 on R+M",
+          "seed": 20260828,
+          "tp": 16
+        }
+      },
+      "rule": "50",
+      "salience": 1.0,
+      "slug": "unannotated-boundary",
+      "symbol": "cerberus.validator.BareValidator.schema_registry.setter",
+      "tier": "heuristic"
+    }
+  ],
+  "provenance": {
+    "counts": {
+      "baselined": 0,
+      "findings": 119,
+      "heuristic": 96,
+      "indexed": 23,
+      "proved": 0,
+      "suppressed": 0
+    },
+    "modules": 23,
+    "notes": [
+      "family P silent: no hot-roots config and no cost-declaring docstrings"
+    ],
+    "oracle": {
+      "calls_resolved_by_oracle": 119,
+      "enabled": true,
+      "unresolved_import_density": 0.0,
+      "unresolved_imports": 0,
+      "unresolved_modules": {}
+    },
+    "parse_errors": [],
+    "paths": [],
+    "rules_off": [],
+    "rules_only": [],
+    "sightline": "0.1.0"
+  }
+}

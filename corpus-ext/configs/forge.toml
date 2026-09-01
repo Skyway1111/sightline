@@ -1,0 +1,4 @@
+# gauntlet round-4 corpus config: forge
+# python-env points the oracle at the clone's own venv so third-party imports resolve. No vendored dirs (manifest4).
+[tool.sightline]
+python-env = "<GAUNTLET_CORPUS_ROOT>/.venv-forge"

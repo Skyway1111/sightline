@@ -1,0 +1,5 @@
+# gauntlet held-out config: ttt-video-dit
+# python-env points the oracle at the shared held-out venv so third-party
+# types resolve (criterion 6 proved-tier precision). No vendored dirs.
+[tool.sightline]
+python-env = "<GAUNTLET_CORPUS_ROOT>/.heldout-venv"
