@@ -55,11 +55,11 @@ it, except `explain`.
 | 0 | The run finished. For `gate`, nothing blocked |
 | 1 | `gate` found a blocking finding |
 | 2 | The command line or the repository is wrong, or the run failed |
-| 3 | sightline hit a bug and stopped. The panic prints above a line naming the verb and where to report it |
+| 3 | Sightline hit a bug and stopped. The panic prints above a line naming the verb and where to report it |
 
 ## Config keys
 
-sightline reads `[tool.sightline]` from `pyproject.toml` in the root, and from
+Sightline reads `[tool.sightline]` from `pyproject.toml` in the root, and from
 `sightline.toml` when the root has no `pyproject.toml`. A missing file is an
 empty table, which is a valid config.
 
@@ -81,7 +81,7 @@ The walk always skips dot-directories and these names: `__pycache__`, `venv`,
 vendored, environment and generated directories. Excluding source to move a
 number is out of contract.
 
-sightline matches an `excludes` entry against the whole relative path with
+Sightline matches an `excludes` entry against the whole relative path with
 Python's `fnmatch`, which lowercases both the entry and the path on Windows and
 neither on any other platform. An entry whose case differs from the paths it
 targets therefore excludes them on Windows and not on Linux or macOS. Spell an
@@ -127,9 +127,9 @@ A marker on a line of its own applies to the next line. A marker after code
 applies to its own line. Ids are numeric and permanent, and a retired id stays
 reserved; `sightline explain <id>` prints a retired id's burial rows.
 
-## Where sightline writes
+## Where Sightline writes
 
-Inside a repository, sightline writes only where you ask it to. `baseline ROOT`
+Inside a repository, Sightline writes only where you ask it to. `baseline ROOT`
 writes `.sightline-baseline.json` at the root. `fix --out PATH` and `audit
 --profile JSON` write the path you name. No other verb writes into a tree.
 
@@ -160,7 +160,7 @@ $h = [System.Security.Cryptography.SHA1]::HashData([Text.Encoding]::UTF8.GetByte
 (($h | ForEach-Object { $_.ToString('x2') }) -join '').Substring(0, 12)
 ```
 
-To clear every build sightline has made, delete the base directory. The next
+To clear every build Sightline has made, delete the base directory. The next
 audit of any root builds it again.
 
 `SIGHTLINE_CARGO_TARGET` replaces the whole path, the per-root directory
@@ -168,9 +168,9 @@ included. Every root audited while it is set builds into the single directory
 it names. That is how two checkouts of one repository share a warm build, and
 it is why two unrelated roots sharing it make cargo rebuild between audits.
 
-While the Rust index loads, sightline points `TMP` and `TEMP` at a temporary
+While the Rust index loads, Sightline points `TMP` and `TEMP` at a temporary
 directory of its own, because the proc-macro server copies every proc-macro
-dynamic library into that directory and holds the copies open. sightline sweeps
+dynamic library into that directory and holds the copies open. Sightline sweeps
 the directory when the load closes.
 
 ## Portability
@@ -199,7 +199,8 @@ they ratchet under.
 ## Known limitations
 
 **The corpus gate does not run in CI.** `cargo xtask check` reads the six
-corpus repositories as sibling clones of the urls `crates/xtask/corpus.toml`
-names, at the pins it records, with a `.venv` in each Python root. CI does not
-clone or provision them; it runs the format, clippy, test and install lanes
-only, so run the gate locally before you push.
+corpus repositories as clones under `../sightline-corpus/`, or the directory
+`SIGHTLINE_CORPUS_ROOT` names, of the urls `crates/xtask/corpus.toml` lists,
+at the pins it records, with a `.venv` in each Python root. CI does not clone
+or provision them; it runs format, clippy, the unit tests and a build of the
+binary, so run the gate locally before you push.

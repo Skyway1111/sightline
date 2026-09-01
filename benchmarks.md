@@ -2,7 +2,7 @@
 
 The canonical performance and quality numbers. Each entry is a measured value
 with the command that reproduces it. History lives in git and in
-`docs/review/decisions.tsv`. Per-rule precision and recall are encoded in
+`corpus-ext/decisions.tsv`. Per-rule precision and recall are encoded in
 `data/precision.toml`; this file quotes the pooled reads and the method.
 
 Four tables are generated. They sit between `<!-- generated: NAME -->` markers
@@ -107,9 +107,8 @@ powertools-lambda-python 364-line `base.py` 20 ms, salvo 509-line `.rs`
 19 ms, turmoil 2,451-line `.rs` 30 ms, merged-calculator 18,620-line
 `damage.py` 48 ms.
 This repository's PostToolUse hook (`banned` plus the gate, msys shell
-spawns included) lands near 120 ms per edit. The harness that measures
-those four, and the attempt log of the climb that produced them, are
-[docs/gate-latency/](docs/gate-latency/).
+spawns included) lands near 120 ms per edit. `cargo xtask gate-bench --hook`
+measures those four.
 
 ## Fire rates
 

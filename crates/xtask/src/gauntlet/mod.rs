@@ -148,8 +148,7 @@ pub fn read_lossy(path: &Path) -> std::io::Result<String> {
     Ok(String::from_utf8_lossy(&std::fs::read(path)?).into_owned())
 }
 
-/// `../gauntlet-corpus` of the main checkout: a linked worktree's own parent
-/// is not the corpus.
+/// `gauntlet-corpus/` under the corpus root.
 pub fn corpus_dir() -> PathBuf {
-    crate::paths::siblings().join("gauntlet-corpus")
+    crate::paths::corpus_root().join("gauntlet-corpus")
 }

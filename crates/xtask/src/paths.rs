@@ -1,7 +1,6 @@
-//! Where the trees this workspace measures live.
-//!
-//! A worktree lane has no corpus siblings of its own: the roots hang off the
-//! primary checkout's parent. `SIGHTLINE_CORPUS_ROOT` overrides it.
+//! Where the trees this workspace measures live: `sightline-corpus/` beside
+//! the primary checkout, so a worktree lane reads the same clones.
+//! `SIGHTLINE_CORPUS_ROOT` names another directory.
 
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -44,13 +43,17 @@ fn main_checkout() -> PathBuf {
     }
 }
 
-/// The directory holding this workspace and every corpus root.
-pub fn siblings() -> PathBuf {
+/// The directory holding every corpus root.
+pub fn corpus_root() -> PathBuf {
     if let Some(dir) = std::env::var_os("SIGHTLINE_CORPUS_ROOT") {
         return PathBuf::from(dir);
     }
     let checkout = main_checkout();
-    checkout.parent().map(Path::to_path_buf).unwrap_or(checkout)
+    checkout
+        .parent()
+        .map(Path::to_path_buf)
+        .unwrap_or(checkout)
+        .join("sightline-corpus")
 }
 
 /// The interpreter inside a virtual environment, on either platform layout.

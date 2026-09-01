@@ -1,6 +1,6 @@
 # Architecture
 
-sightline is an agent-ergonomics checker with one product flow:
+Sightline is an agent-ergonomics checker with one product flow:
 
 1. **Facts.** A repository becomes one `RepoFacts` per language: syntax trees,
    symbol, reference, call-site, import and class indexes, comments, and the
@@ -188,7 +188,7 @@ repositories.
 
 ## Oracle boundary
 
-Neither oracle is a subprocess of sightline's own protocol. Both run in
+Neither oracle is a subprocess of Sightline's own protocol. Both run in
 process, and nothing outside the provers crates reaches either.
 
 **Python.** `py-provers/src/oracle.rs` builds a `ty_project::ProjectDatabase`
@@ -254,7 +254,7 @@ the ty rule set for #58.
 | `data/precision.toml` | Measured precision and recall per rule and arm. Compiled into the binary, so a release answers `explain` with no checkout |
 | `data/retired.toml` | The burial rows of retired ids, extracted from the trail by `cargo xtask retired` |
 | `crates/xtask/corpus.toml` | The corpus table: name, root, config, language, role, and the commit the recorded measurements were taken at. Every ruler reads it and no second list |
-| `corpus/`, `corpus-ext/` | Corpus configs and the profile pin; the gauntlet sheets, reports and trail, which are append-only |
+| `corpus/`, `corpus-ext/` | Corpus configs and the profile pin; the gauntlet sheets and reports, and `decisions.tsv`, the append-only trail of every decision |
 
 ## Quality protocol
 

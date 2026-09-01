@@ -19,7 +19,7 @@ const RETIRED: [&str; 18] = [
 ];
 
 /// `test_every_rule_id_present`: the table holds `1..=61` less `RETIRED`,
-/// each id once. The burials are in `docs/review/decisions.tsv`: 52 at
+/// each id once. The burials are in `corpus-ext/decisions.tsv`: 52 at
 /// residue/cut, 8, 30 and 46 at g4/cut, 28 at todo3/py, 31 at
 /// release/31-buried, the rest at g3/cut.
 #[test]

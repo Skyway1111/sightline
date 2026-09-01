@@ -129,7 +129,7 @@ mod tests {
     #[test]
     fn the_ledgers_and_this_file_are_not_scanned() {
         let dir = tempfile::tempdir().unwrap();
-        for rel in ["docs/review/decisions.tsv", "corpus-ext/BRIEF.md"] {
+        for rel in ["corpus-ext/decisions.tsv", "corpus-ext/BRIEF.md"] {
             let path = dir.path().join(rel);
             std::fs::create_dir_all(path.parent().unwrap()).unwrap();
             std::fs::write(&path, "nobody \u{2014}\n").unwrap();

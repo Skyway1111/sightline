@@ -1,7 +1,7 @@
-# sightline
+# Sightline
 
-sightline is a linter for code an agent wrote. The code compiles and the tests
-pass; what it costs is a reader's attention. sightline reads a repository once,
+Sightline is a linter for code an agent wrote. The code compiles and the tests
+pass; what it costs is a reader's attention. Sightline reads a repository once,
 proves what it can with a type checker and a call graph, and prints findings
 ordered by the measured chance each one is real.
 
@@ -42,9 +42,9 @@ It prints the crate version, the pinned rev of the type-checker fork and the
 sightline 0.2.0 (ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183, ra_ap 0.0.328)
 ```
 
-sightline is not on crates.io, and `cargo install sightline` installs an
-unrelated project of that name. The name is registered to it, and the
-type-checker fork here is a git dependency, which cargo will not publish.
+Sightline is not on crates.io. `cargo install sightline` installs an unrelated
+crate that holds the name, and the type-checker fork here is a git dependency,
+which crates.io does not accept.
 
 ## Build from source
 
@@ -229,7 +229,7 @@ git -C doxx apply ../fixes.diff
 
 ## Configure
 
-sightline reads `[tool.sightline]` from `pyproject.toml`, and from
+Sightline reads `[tool.sightline]` from `pyproject.toml`, and from
 `sightline.toml` when there is no `pyproject.toml`. Pass `--config PATH` for a
 checkout you cannot write to. The keys are listed in
 [docs/reference.md](docs/reference.md).
@@ -238,7 +238,7 @@ checkout you cannot write to. The keys are listed in
 
 | Document | What it holds |
 | --- | --- |
-| [docs/reference.md](docs/reference.md) | Every verb, flag, config key, exit code, the suppression syntax, where sightline writes, and the known limitations |
+| [docs/reference.md](docs/reference.md) | Every verb, flag, config key, exit code, the suppression syntax, where Sightline writes, and the known limitations |
 | [architecture.md](architecture.md) | How a finding is produced: the pipeline, the crate boundaries, the two oracles |
 | [benchmarks.md](benchmarks.md) | Measured walls, fire rates, precision and recall, each with its reproduction command |
 | [SECURITY.md](SECURITY.md) | What an audit executes, and how to report a vulnerability |

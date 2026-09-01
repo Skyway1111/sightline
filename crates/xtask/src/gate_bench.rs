@@ -7,6 +7,7 @@
 //! Changed-files-only: no blocking finding sits outside the diff.
 
 use std::path::Path;
+use std::process::Command;
 use std::time::Instant;
 
 use anyhow::{Result, bail};
@@ -194,7 +195,62 @@ fn measure(t: &Target, diff: &[String], keys: &[Key]) -> Result<u8> {
     Ok(u8::from(!ok))
 }
 
+/// The hook case, one file per edit: the four frozen files `benchmarks.md`
+/// quotes, and the spawn floor `--version` pays.
+const HOOK_CASES: &[(&str, &str)] = &[
+    (
+        "powertools-lambda-python",
+        "aws_lambda_powertools/utilities/parameters/base.py",
+    ),
+    ("merged-calculator", "src/calculator/damage.py"),
+    ("turmoil", "crates/turmoil-fs/src/lib.rs"),
+    ("salvo", "crates/oapi/src/openapi/components.rs"),
+];
+const N_HOOK_RUNS: usize = 15;
+
+/// Milliseconds of `N_HOOK_RUNS` warm runs, a fresh process each.
+fn walls_ms(mut command: impl FnMut() -> Result<Command>) -> Result<Vec<f64>> {
+    (0..N_HOOK_RUNS)
+        .map(|_| {
+            let started = Instant::now();
+            command()?.output()?;
+            Ok(started.elapsed().as_secs_f64() * 1000.0)
+        })
+        .collect()
+}
+
+fn report(label: &str, walls: Vec<f64>) {
+    let min = walls.iter().copied().fold(f64::INFINITY, f64::min);
+    let max = walls.iter().copied().fold(0.0, f64::max);
+    println!(
+        "{label}: median {:.1} ms (min {min:.1}, max {max:.1})",
+        median(walls)
+    );
+}
+
+fn hook() -> Result<u8> {
+    for (name, rel) in HOOK_CASES {
+        let t = corpus::get(name)?;
+        let file = t.root.join(rel);
+        if !file.is_file() {
+            bail!("{} is not in the {name} clone", file.display());
+        }
+        let (root, file) = (t.root.to_string_lossy(), file.to_string_lossy());
+        let walls = walls_ms(|| corpus::command(&t, &["gate", &root, "--files", &file]))?;
+        report(&format!("{name} {rel}"), walls);
+    }
+    let bare = Target::bare(".", None);
+    report(
+        "spawn floor (--version)",
+        walls_ms(|| corpus::command(&bare, &["--version"]))?,
+    );
+    Ok(0)
+}
+
 pub fn main(args: &[&str]) -> Result<u8> {
+    if args == ["--hook"] {
+        return hook();
+    }
     let suffix = args
         .iter()
         .find_map(|a| a.strip_prefix("--suffix="))

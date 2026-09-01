@@ -1,5 +1,5 @@
 name: False positive
-description: A finding sightline should not have made
+description: A finding Sightline should not have made
 title: "#<rule id>: "
 labels: ["false positive"]
 body:
@@ -42,7 +42,7 @@ body:
     attributes:
       label: Why the finding is wrong
       description: >
-        Name what sightline missed: the caller it did not resolve, the dynamic
+        Name what Sightline missed: the caller it did not resolve, the dynamic
         reference it cannot follow, or the reason that two blocks it read as
         one idea are two.
     validations:

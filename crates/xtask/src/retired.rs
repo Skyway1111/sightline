@@ -1,4 +1,4 @@
-//! `data/retired.toml`: the burial rows of `docs/review/decisions.tsv`, so a
+//! `data/retired.toml`: the burial rows of `corpus-ext/decisions.tsv`, so a
 //! released binary answers `explain <retired id>` without a checkout
 //! (decision 10).
 //!
@@ -76,7 +76,7 @@ pub fn render(tsv: &str) -> Result<String> {
     let mut ids: Vec<&&str> = RETIRED.iter().collect();
     ids.sort_by_key(|id| id.parse::<u32>().unwrap_or(0));
     let mut out = String::from(
-        "# Written by `cargo xtask retired` from docs/review/decisions.tsv.\n\
+        "# Written by `cargo xtask retired` from corpus-ext/decisions.tsv.\n\
          # An id no rule holds; `explain <id>` prints its burial.\n",
     );
     for id in ids {
@@ -100,7 +100,7 @@ fn source(args: &[&str]) -> PathBuf {
     args.windows(2)
         .find(|w| w[0] == "--from")
         .map(|w| PathBuf::from(w[1]))
-        .unwrap_or_else(|| workspace_root().join("docs/review/decisions.tsv"))
+        .unwrap_or_else(|| workspace_root().join("corpus-ext/decisions.tsv"))
 }
 
 pub fn main(args: &[&str]) -> Result<u8> {
@@ -130,7 +130,7 @@ mod tests {
     use super::*;
 
     fn tsv() -> String {
-        std::fs::read_to_string(workspace_root().join("docs/review/decisions.tsv")).unwrap()
+        std::fs::read_to_string(workspace_root().join("corpus-ext/decisions.tsv")).unwrap()
     }
 
     #[test]

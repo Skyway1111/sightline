@@ -16,7 +16,7 @@ use sightline_core::pytext::repr_str;
 use sightline_core::registry::Registry;
 use sightline_core::rule::RuleRecord;
 
-/// One burial row of `docs/review/decisions.tsv`, as `xtask retired`
+/// One burial row of `corpus-ext/decisions.tsv`, as `xtask retired`
 /// extracted it.
 #[derive(Deserialize)]
 struct Burial {

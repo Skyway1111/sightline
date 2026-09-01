@@ -12,7 +12,7 @@ smallest repository or input that shows the problem.
 Expect a first reply within seven days. A fix ships in the next release, and
 the advisory is published with it.
 
-A finding sightline gets wrong is not a vulnerability. Report it as a false
+A finding Sightline gets wrong is not a vulnerability. Report it as a false
 positive, which [CONTRIBUTING.md](CONTRIBUTING.md) describes.
 
 ## Supported versions
@@ -37,7 +37,7 @@ That code runs as you, with your privileges, in your session. The exposure is
 the same as `cargo build`, `cargo check`, or opening the tree in an editor
 backed by rust-analyzer. Audit a Rust repository only when you would build it.
 
-Nothing sandboxes the build, and sightline does not try to. Audit a tree you do
+Nothing sandboxes the build, and Sightline does not try to. Audit a tree you do
 not trust inside a container or a virtual machine.
 
 Two limits hold whatever the tree does:
@@ -45,7 +45,7 @@ Two limits hold whatever the tree does:
 - Both cargo passes run with `CARGO_NET_OFFLINE=true`, so cargo fetches
   nothing. A dependency missing from the local registry cache leaves the check
   failing and the oracle silent, and the provenance header says so.
-- Cargo builds into a directory outside every tree sightline reads, so a build
+- Cargo builds into a directory outside every tree Sightline reads, so a build
   never writes into the audited repository.
   [docs/reference.md](docs/reference.md) names that directory.
 
@@ -53,7 +53,7 @@ Two limits hold whatever the tree does:
 header says `fast gate: oracle and repo-scope rules not run`.
 
 An audit of a Python tree runs no code from the tree. The type checker reads
-source and stubs, and imports nothing. Beyond cargo, the only program sightline
+source and stubs, and imports nothing. Beyond cargo, the only program Sightline
 runs is `git`, in the audited root, to read the diff and the history.
 
 ## In CI

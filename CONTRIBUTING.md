@@ -18,9 +18,9 @@ CI runs four lanes. Each one runs on any machine:
 
 ```
 cargo fmt --all --check
-cargo clippy --workspace --all-targets -- -D warnings
+cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace
-cargo install --path crates/sightline --locked
+cargo run -p sightline -- --version
 ```
 
 The tests that spawn the type checker or cargo are `#[ignore]`, so
@@ -45,15 +45,16 @@ Open a pull request with those seven green.
 ## The corpus trees
 
 `cargo xtask check` ends with a stage that audits the Python clean pole, one
-of six public repositories the gate expects beside the checkout.
-`crates/xtask/corpus.toml` names each one's url, config, language, role and
-pin. Clone them as siblings of this directory, checked out at their pin, and
-give each Python one a `.venv` holding its dependencies, or the oracle
-resolves that tree's imports against yours. A stage that cannot find its tree
-prints the `git clone` that fixes it.
+of six public repositories the gate reads from the corpus root:
+`../sightline-corpus/`, beside this checkout, or the directory
+`SIGHTLINE_CORPUS_ROOT` names. `crates/xtask/corpus.toml` names each one's
+url, config, language, role and pin. Clone them there, checked out at their
+pin, and give each Python one a `.venv` holding its dependencies, or the
+oracle resolves that tree's imports against yours. A stage that cannot find
+its tree prints the `git clone` that fixes it.
 
 The stages before that one are the CI lanes plus a release build and
-sightline's audit of its own tree, so the commands above cover them without a
+Sightline's audit of its own tree, so the commands above cover them without a
 single corpus tree.
 
 `cargo xtask check --slow` and the rulers read those trees too: `corpus`,
@@ -62,7 +63,7 @@ the `gauntlet` subcommands. A maintainer runs them before a merge.
 
 ## Report a false positive
 
-A finding sightline should not have made is the report worth sending. Each rule
+A finding Sightline should not have made is the report worth sending. Each rule
 has a measured precision, in `benchmarks.md` and `data/precision.toml`, and a
 false positive is evidence against that number.
 
@@ -77,7 +78,7 @@ Open an issue with the false positive template, which asks for five things:
 2. The finding, from `sightline audit ROOT --json`. One entry of `findings` is
    enough. It holds the rule id, the file, the line, the message and the tier.
 3. The code the finding points at, or a public repository that shows it.
-4. Why the finding is wrong. Name what sightline missed: the caller it did not
+4. Why the finding is wrong. Name what Sightline missed: the caller it did not
    resolve, the dynamic reference it cannot follow, the reason two blocks it
    read as one idea are two.
 5. The config the run read, when the repository has one. `hot-roots` and

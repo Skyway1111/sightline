@@ -21,7 +21,7 @@ use crate::util::{IGNORE_PRAGMA_RE, enclosing_at_line, in_typed_scope};
 /// inside such a module). Named as the shim maps them: ty ids, except where
 /// the shim gives a lint pyright's name. The judged cuts
 /// (`unresolved-attribute`, `invalid-assignment`, `invalid-argument-type`,
-/// `reportPossiblyUnbound`) and their samples: `docs/review/decisions.tsv`.
+/// `reportPossiblyUnbound`) and their samples: `corpus-ext/decisions.tsv`.
 pub const Z_RULES: [&str; 7] = [
     "invalid-return-type",
     // override incompatibilities: the Liskov breaks the judge waves found

@@ -1,4 +1,4 @@
-//! Clone one split of a round's manifest into `../gauntlet-corpus` at its
+//! Clone one split of a round's manifest into the corpus root's `gauntlet-corpus/` at its
 //! pinned SHAs, and make a Rust clone offline ready. This is what a re-clone
 //! of a written round needs; the steps that wrote those manifests are not
 //! here (`docs/todo.md`).
@@ -208,7 +208,7 @@ fn offline_ready(dest: &Path, name: &str) -> Result<String> {
     }
 }
 
-/// One full clone per repo in the split into `../gauntlet-corpus`; minutes.
+/// One full clone per repo in the split into `gauntlet-corpus/`; minutes.
 /// A Rust clone is then made offline ready.
 fn clone_split(round: &Round, ext: &Path, want: &str) -> Result<()> {
     let path = round.manifest(ext);

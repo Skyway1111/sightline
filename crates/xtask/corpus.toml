@@ -2,7 +2,8 @@
 # order. Python first, then Rust; per language the clean pole, the mid repo,
 # the scale repo.
 #
-# `name` is the sibling directory of this workspace and the stem of every
+# `name` is the tree's directory under the corpus root (`sightline-corpus/`
+# beside this checkout, or `SIGHTLINE_CORPUS_ROOT`) and the stem of every
 # file a run writes. `url` is the public repository to clone it from, which
 # `name` need not match. `config` is a path under the workspace root; a row
 # without one audits with the tree's own settings. `pin` is the commit the

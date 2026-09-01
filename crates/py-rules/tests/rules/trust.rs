@@ -1062,7 +1062,7 @@ fn undeclared_optional_in_a_typed_signature() {
 
 /// Nothing structural separates a settings object whose state two handlers
 /// replace from a log service three modules call. The cross-module arm is
-/// retired (docs/review/decisions.tsv, g3/cut).
+/// retired (corpus-ext/decisions.tsv, g3/cut).
 #[test]
 fn a_foreign_module_using_a_singleton_is_not_a_global_write() {
     let findings = run_rule(
@@ -1341,7 +1341,7 @@ fn declared_nonbool_predicate_fires() {
 
 /// The plural arm read the last name token, so a unit suffix, a counted noun,
 /// a verb-phrase object and a serialized collection all read as plural. It is
-/// retired (docs/review/decisions.tsv, g3/cut).
+/// retired (corpus-ext/decisions.tsv, g3/cut).
 #[test]
 fn a_plural_name_is_not_a_lie_about_its_return() {
     let findings = run_rule(

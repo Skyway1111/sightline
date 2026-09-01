@@ -1,11 +1,11 @@
 name: Bug
-description: sightline crashed, hung, or answered wrongly about itself
+description: Sightline crashed, hung, or answered wrongly about itself
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        For a finding sightline should not have made, use the false positive
+        For a finding Sightline should not have made, use the false positive
         template. For a vulnerability, use the Security tab, never an issue.
   - type: input
     id: version

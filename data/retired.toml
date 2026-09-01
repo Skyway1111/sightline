@@ -1,4 +1,4 @@
-# Written by `cargo xtask retired` from docs/review/decisions.tsv.
+# Written by `cargo xtask retired` from corpus-ext/decisions.tsv.
 # An id no rule holds; `explain <id>` prints its burial.
 
 [[retired]]
@@ -167,7 +167,7 @@ id = "52"
 ts = "2026-08-27T11:20"
 decision = "campaign closed: 39 todo rows -> 0 carried (shipped: 26 rows across index/surface/trust/worlds/context/tests-perf/emit/records/fork/profile incl. #57 dead-key, #51, #27 fan-out, the #5 transport, the fork's callee edges; cut with the next cut: #11 ordinals, #42 loop-verdict, #54 on the gauntlet, #15 residual, Unseen; retired on evidence: #52, load variance, #41 size prior, worktrees); docs/todo.md holds the round's residue (12 rows); status doc, benchmarks, architecture, CLAUDE.md traps current; merged to master fast-forward; the thirteen sightline-todo worktrees removed after the merge"
 why = "closes the 23:40 frame row"
-evidence = "docs/status-todo.md docs/review/decisions.tsv"
+evidence = "docs/status-todo.md corpus-ext/decisions.tsv"
 
 [[retired]]
 id = "52"

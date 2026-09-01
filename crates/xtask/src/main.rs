@@ -42,7 +42,7 @@ usage: cargo xtask <command>
   bench-tables [out-dir] [--doc PATH]
   corpus [out-dir] [--repeat-for-determinism] [--diff-against=DIR] [--lang=py|rs]
   fix-check [out-dir] [repo-name ...]
-  gate-bench <repo-root> <full-audit-json> [config] [--suffix=.rs]
+  gate-bench <repo-root> <full-audit-json> [config] [--suffix=.rs] | gate-bench --hook
   audit-bench [repo-name ...] [--n N] [--reference PATH]
   profile [repo-name] [--json OUT] [--reference PATH]
   gauntlet count <repo-root> [--json]

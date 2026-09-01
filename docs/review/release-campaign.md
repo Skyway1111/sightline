@@ -1,6 +1,6 @@
 # Public release campaign
 
-The one status doc. Every decision lands in `docs/review/decisions.tsv` under
+The one status doc. Every decision lands in `corpus-ext/decisions.tsv` under
 a `release/*` phase. The gate ladder runs once, fresh, at the close.
 
 ## Frame
@@ -45,7 +45,7 @@ gets its own worktree, except A, which needs the live root's sibling layout.
   the gate and adds no tool a contributor must install.
 - `rust-version` names the pinned toolchain, the only version this workspace
   is ever built at.
-- The campaign log is `docs/review/decisions.tsv`, phase `release/*`. No second
+- The campaign log is `corpus-ext/decisions.tsv`, phase `release/*`. No second
   ledger.
 - A code worker runs the verification its brief names, never `check --slow`.
   The ladder is run once, at the close.

@@ -1,13 +1,13 @@
 name: CI
 
 # `cargo xtask check` does not run here. It reads the six corpus repositories
-# as sibling clones of the urls crates/xtask/corpus.toml names, pinned, with a
-# .venv in each Python root, which this workflow does not clone or provision.
-# Run it locally before you push.
+# as clones under the corpus root (crates/xtask/corpus.toml names the urls),
+# pinned, with a .venv in each Python root, which this workflow does not clone
+# or provision. Run it locally before you push.
 
 on:
   push:
-    branches: ["**"]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -60,13 +60,14 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
 
       # `--cap-lints allow` covers the registry and git dependencies, so
-      # `-D warnings` reaches the workspace crates alone.
-      - run: cargo clippy --workspace --all-targets -- -D warnings
+      # `-D warnings` reaches the workspace crates alone. `--locked` on the
+      # first cargo command fails the run when Cargo.lock is stale.
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
 
       # The oracle and cargo tests are `#[ignore]`, so this is the unit half.
       - run: cargo test --workspace
 
-      - name: cargo install --path crates/sightline
-        run: cargo install --path crates/sightline --locked
-
-      - run: sightline --version
+      # The binary, on the artifacts the tests left behind. A release build
+      # here would compile ty and rust-analyzer a second time, and the release
+      # workflow builds the archives anyway.
+      - run: cargo run -p sightline -- --version

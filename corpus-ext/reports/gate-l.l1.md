@@ -5,7 +5,7 @@ row. Nothing was sampled, because no tree fired more than 20.
 
 #31 boundary-contracts reads 8 real of 110, 0.073, against the 0.80 bar its
 indexed tier is held to and the 0.70 floor the registered gate rule fixes
-(`docs/review/decisions.tsv release/gate-judged-rule`).
+(`corpus-ext/decisions.tsv release/gate-judged-rule`).
 
 `load_importlinter` read one file, a root `.importlinter`, so #31 fired zero on
 every tree unit H audited. This branch widens the reader to the three files

@@ -1,6 +1,6 @@
 /target
 __pycache__
+.ruff_cache
 corpus/results*
-/.claude/worktrees/
 /.claude/
 /CLAUDE.md

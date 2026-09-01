@@ -18,7 +18,7 @@ use std::time::Instant;
 use anyhow::{Context, Result, bail};
 use serde_json::Value;
 
-use crate::paths::{drop_toolchain, siblings, workspace_root};
+use crate::paths::{corpus_root, drop_toolchain, workspace_root};
 use crate::worktree;
 
 /// The corpus table, embedded so no run has to find the file.
@@ -108,7 +108,7 @@ pub fn table() -> Result<Vec<Target>> {
         };
         let name = field("name")?;
         out.push(Target {
-            root: siblings().join(&name),
+            root: corpus_root().join(&name),
             url: field("url")?,
             config: at("config").map(|rel| root.join(rel)),
             lang: field("lang")?,
