@@ -15,13 +15,13 @@ release, unpacks it, and puts `sightline` on your PATH.
 macOS or Linux:
 
 ```
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Skyway1111/sightline/releases/latest/download/sightline-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-installer.sh | sh
 ```
 
 Windows:
 
 ```
-powershell -ExecutionPolicy Bypass -c "irm https://github.com/Skyway1111/sightline/releases/latest/download/sightline-installer.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-installer.ps1 | iex"
 ```
 
 Where a script piped into a shell is not allowed, take the archive and its
@@ -31,10 +31,10 @@ it before unpacking. Windows x64, Linux x64 and macOS arm64 are built for every
 release; each archive holds the binary, LICENSE, THIRD-PARTY.md and this file:
 
 ```
-curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz
-curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz.sha256
-sha256sum --check sightline-x86_64-unknown-linux-gnu.tar.xz.sha256
-tar -xf sightline-x86_64-unknown-linux-gnu.tar.xz
+curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-x86_64-unknown-linux-gnu.tar.xz
+curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-x86_64-unknown-linux-gnu.tar.xz.sha256
+sha256sum --check sightline-lint-x86_64-unknown-linux-gnu.tar.xz.sha256
+tar -xf sightline-lint-x86_64-unknown-linux-gnu.tar.xz
 ```
 
 `sha256.sum` on the same page lists every archive's digest in one file.
@@ -46,12 +46,12 @@ the staged files with the `sightline` on your PATH:
 ```yaml
 repos:
   - repo: https://github.com/Skyway1111/sightline
-    rev: v0.2.0
+    rev: v0.3.0
     hooks:
       - id: sightline-gate
 ```
 
-For GitHub Actions, `uses: Skyway1111/sightline@v0.2.0` installs a release on
+For GitHub Actions, `uses: Skyway1111/sightline@v0.3.0` installs a release on
 a Linux runner and runs one verb; the CI section below shows it.
 
 Check the install:
@@ -60,36 +60,33 @@ Check the install:
 sightline --version
 ```
 
-It prints the crate version, the pinned rev of the type-checker fork and the
+It prints the crate version, the version of the type-checker fork and the
 `ra_ap_*` version the Rust index was compiled against:
 
 ```
-sightline 0.2.0 (ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183, ra_ap 0.0.328)
+sightline 0.3.0 (ty-unnecessary 0.1.0, ra_ap 0.0.328)
 ```
-
-Sightline is not on crates.io. `cargo install sightline` installs an unrelated
-crate that holds the name, and the type-checker fork here is a git dependency,
-which crates.io does not accept.
 
 ## Build from source
 
+The crate on crates.io is `sightline-lint`; the binary it installs is
+`sightline`. Another crate holds the bare name. The type-checker fork it
+builds on is published beside it as `sightline-ruff-*` and `sightline-ty-*`,
+each keeping its upstream library name.
+
 The workspace pins Rust 1.97.1 in `rust-toolchain.toml`. rustup reads that file
 from your current directory, not from the source that cargo fetches for you, so
-name the toolchain on the command line.
-
-On Windows, allow long paths first. One file in the type-checker fork has a
-path longer than 260 characters, and the git checkout stops without it:
-
-```
-git config --global core.longpaths true
-```
-
-Then:
+name the toolchain on the command line:
 
 ```
 rustup toolchain install 1.97.1
-cargo +1.97.1 install --git https://github.com/Skyway1111/sightline sightline --locked
+cargo +1.97.1 install sightline-lint --locked
 ```
+
+From a checkout, `cargo +1.97.1 install --path crates/sightline --locked` builds
+the same binary. On Windows, allow long paths before you clone; one fixture in
+the fork has a path longer than 260 characters, and the checkout stops without
+it: `git config --global core.longpaths true`.
 
 The build compiles ty and rust-analyzer from source and takes a few minutes.
 
@@ -116,7 +113,7 @@ file and then by symbol, in the order the findings rank. The file whose
 strongest finding ranks first comes first:
 
 ```
-sightline 0.2.0 | modules 39 | findings 92 (proved 0 / indexed 53 / heuristic 39) | suppressed 0 | baselined 0
+sightline 0.3.0 | modules 39 | findings 92 (proved 0 / indexed 53 / heuristic 39) | suppressed 0 | baselined 0
   languages: rs
 
 src/document/parsing/equation.rs  621 lines, fan-in 4 | 22 findings: #11 x19, #23 x3
@@ -189,7 +186,7 @@ baseline knows under another name is not new.
 Then take one of the two jobs below, or both. The first blocks a pull request.
 The second uploads the findings to code scanning, which annotates the diff and
 never blocks. Each job spells the install out; `uses:
-Skyway1111/sightline@v0.2.0` with `args: gate . --full` is the same install
+Skyway1111/sightline@v0.3.0` with `args: gate . --full` is the same install
 and run as one step.
 
 Both jobs build the checked-out tree, so a pull request from a fork runs that
@@ -211,8 +208,8 @@ jobs:
       - name: Install sightline
         run: |
           cd "$RUNNER_TEMP"
-          curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz
-          tar -xf sightline-x86_64-unknown-linux-gnu.tar.xz
+          curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-x86_64-unknown-linux-gnu.tar.xz
+          tar -xf sightline-lint-x86_64-unknown-linux-gnu.tar.xz
           sudo install "$(find "$RUNNER_TEMP" -type f -name sightline)" /usr/local/bin/
 
       # The Rust oracle runs `cargo check --offline`. Without a fetch the
@@ -243,8 +240,8 @@ jobs:
       - name: Install sightline
         run: |
           cd "$RUNNER_TEMP"
-          curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz
-          tar -xf sightline-x86_64-unknown-linux-gnu.tar.xz
+          curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-lint-x86_64-unknown-linux-gnu.tar.xz
+          tar -xf sightline-lint-x86_64-unknown-linux-gnu.tar.xz
           sudo install "$(find "$RUNNER_TEMP" -type f -name sightline)" /usr/local/bin/
 
       - run: cargo fetch

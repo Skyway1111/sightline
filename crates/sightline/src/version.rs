@@ -1,9 +1,10 @@
-//! `--version`: the crate version, the fork rev and the ra_ap version.
+//! `--version`: the crate version, the fork version and the ra_ap version.
 //! Each pin has one home in a manifest and one copy here; the
 //! tests below read the manifests and pin the two equal.
 
-/// The `rev` every fork dependency of the workspace `Cargo.toml` declares.
-const FORK_REV: &str = "284831cb43bb167d149b23f0e49bcae015c4d183";
+/// The version every `sightline-ruff-*` and `sightline-ty-*` dependency of
+/// the workspace `Cargo.toml` pins: the `ty-unnecessary` fork on crates.io.
+const FORK_VERSION: &str = "0.1.0";
 
 /// The version every `ra_ap_*` dependency of `crates/rs-provers` declares.
 const RA_AP_VERSION: &str = "0.0.328";
@@ -14,7 +15,7 @@ pub fn long() -> &'static str {
     static LONG: std::sync::OnceLock<String> = std::sync::OnceLock::new();
     LONG.get_or_init(|| {
         format!(
-            "{} (ty-unnecessary {FORK_REV}, ra_ap {RA_AP_VERSION})",
+            "{} (ty-unnecessary {FORK_VERSION}, ra_ap {RA_AP_VERSION})",
             env!("CARGO_PKG_VERSION")
         )
     })
@@ -22,7 +23,7 @@ pub fn long() -> &'static str {
 
 #[cfg(test)]
 mod tests {
-    use super::{FORK_REV, RA_AP_VERSION, long};
+    use super::{FORK_VERSION, RA_AP_VERSION, long};
 
     fn manifest(rel: &str) -> String {
         let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join(rel);
@@ -43,15 +44,11 @@ mod tests {
     }
 
     #[test]
-    fn fork_rev_matches_the_workspace_manifest() {
+    fn fork_version_matches_the_workspace_manifest() {
         let text = manifest("../../Cargo.toml");
-        let revs = pins(
-            &text,
-            "git = \"https://github.com/Skyway1111/ty-unnecessary\"",
-            "rev = \"",
-        );
-        assert_eq!(revs.len(), 12, "fork dependencies: {revs:?}");
-        assert!(revs.iter().all(|rev| *rev == FORK_REV), "{revs:?}");
+        let versions = pins(&text, "package = \"sightline-", "version = \"=");
+        assert_eq!(versions.len(), 12, "fork dependencies: {versions:?}");
+        assert!(versions.iter().all(|v| *v == FORK_VERSION), "{versions:?}");
     }
 
     #[test]
@@ -66,7 +63,7 @@ mod tests {
     fn long_names_all_three_pins() {
         let line = long();
         assert!(line.starts_with(env!("CARGO_PKG_VERSION")), "{line}");
-        assert!(line.contains(FORK_REV), "{line}");
+        assert!(line.contains(FORK_VERSION), "{line}");
         assert!(line.contains(RA_AP_VERSION), "{line}");
     }
 }

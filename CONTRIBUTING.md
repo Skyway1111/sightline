@@ -20,7 +20,7 @@ CI runs four lanes. Each one runs on any machine:
 cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace
-cargo run -p sightline -- --version
+cargo run -p sightline-lint -- --version
 ```
 
 The tests that spawn the type checker or cargo are `#[ignore]`, so

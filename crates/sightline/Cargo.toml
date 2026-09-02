@@ -1,5 +1,5 @@
 [package]
-name = "sightline"
+name = "sightline-lint"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -20,13 +20,13 @@ mimalloc = "0.1"
 rayon.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-sightline-core = { path = "../core" }
-sightline-py-facts = { path = "../py-facts" }
-sightline-py-provers = { path = "../py-provers" }
-sightline-py-rules = { path = "../py-rules" }
-sightline-rs-facts = { path = "../rs-facts" }
-sightline-rs-provers = { path = "../rs-provers" }
-sightline-rs-rules = { path = "../rs-rules" }
+sightline-core = { version = "0.3.0", path = "../core" }
+sightline-py-facts = { version = "0.3.0", path = "../py-facts" }
+sightline-py-provers = { version = "0.3.0", path = "../py-provers" }
+sightline-py-rules = { version = "0.3.0", path = "../py-rules" }
+sightline-rs-facts = { version = "0.3.0", path = "../rs-facts" }
+sightline-rs-provers = { version = "0.3.0", path = "../rs-provers" }
+sightline-rs-rules = { version = "0.3.0", path = "../rs-rules" }
 tempfile = "3"
 toml.workspace = true
 

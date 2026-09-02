@@ -70,9 +70,9 @@ pub const UNNECESSARY_RULES: [&str; 4] = [
 /// with it. `Provers::errors` reads them beside the errors.
 pub const WARNING_VERDICTS: [&str; 1] = ["reportPossiblyUnbound"];
 
-/// The build stamp the header prints (`oracle.build`): the fork rev baked
-/// in at build.
-pub const BUILD: &str = "ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183";
+/// The build stamp the header prints (`oracle.build`): the fork version
+/// baked in at build.
+pub const BUILD: &str = "ty-unnecessary 0.1.0";
 
 /// The directories no shadow tree is read from, ahead of `**/<exclude>` per
 /// config exclude.

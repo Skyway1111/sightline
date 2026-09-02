@@ -23,12 +23,12 @@ fn cargo_bin() -> Result<PathBuf> {
 pub fn main(_args: &[&str]) -> Result<u8> {
     let root = workspace_root();
     let status = Command::new("cargo")
-        .args(["build", "--release", "-p", "sightline"])
+        .args(["build", "--release", "-p", "sightline-lint"])
         .current_dir(&root)
         .status()
         .context("spawning cargo build")?;
     if !status.success() {
-        bail!("cargo build --release -p sightline failed");
+        bail!("cargo build --release -p sightline-lint failed");
     }
     let name = format!("sightline{}", std::env::consts::EXE_SUFFIX);
     let target =

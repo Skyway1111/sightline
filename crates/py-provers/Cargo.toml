@@ -21,8 +21,8 @@ serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
 toml.workspace = true
-sightline-core = { path = "../core" }
-sightline-py-facts = { path = "../py-facts" }
+sightline-core = { version = "0.3.0", path = "../core" }
+sightline-py-facts = { version = "0.3.0", path = "../py-facts" }
 
 ruff_python_ast.workspace = true
 ruff_python_parser.workspace = true

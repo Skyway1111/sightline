@@ -70,4 +70,4 @@ jobs:
       # The binary, on the artifacts the tests left behind. A release build
       # here would compile ty and rust-analyzer a second time, and the release
       # workflow builds the archives anyway.
-      - run: cargo run -p sightline -- --version
+      - run: cargo run -p sightline-lint -- --version

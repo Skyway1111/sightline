@@ -17,11 +17,11 @@ indexmap.workspace = true
 rayon.workspace = true
 regex.workspace = true
 serde_json.workspace = true
-sightline-core = { path = "../core" }
+sightline-core = { version = "0.3.0", path = "../core" }
 # the fence: `Node` reaches rules through `rs_facts::Node`,
 # never a tree-sitter path
-sightline-rs-facts = { path = "../rs-facts" }
-sightline-rs-provers = { path = "../rs-provers" }
+sightline-rs-facts = { version = "0.3.0", path = "../rs-facts" }
+sightline-rs-provers = { version = "0.3.0", path = "../rs-provers" }
 
 [dev-dependencies]
 sightline-testkit = { path = "../testkit" }

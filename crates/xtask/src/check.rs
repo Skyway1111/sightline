@@ -158,7 +158,7 @@ const FAST: &[Stage] = &[
     // every stage below drives `target/release/sightline`: a stale one is a
     // stale verdict
     ("build", |l| {
-        l.cargo(&["build", "--release", "-p", "sightline"])
+        l.cargo(&["build", "--release", "-p", "sightline-lint"])
     }),
     // the rule catalog a reader browses before installing, against the
     // registry the binary just built

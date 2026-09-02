@@ -3,7 +3,7 @@ members = ["crates/*"]
 resolver = "2"
 
 [workspace.package]
-version = "0.2.0"
+version = "0.3.0"
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/Skyway1111/sightline"
@@ -51,20 +51,20 @@ toml = "0.9"
 unicode-ident = "1"
 self_cell = "1"
 
-# The fork's ruff and ty crates at rev 284831cb: one parser serves
-# facts and the oracle. `crates/sightline/src/version.rs:FORK_REV` repeats the
-# rev for `--version`; `version::tests::rev_matches_manifest` reads this file and
-# pins the two equal, so the rev has one home.
-ruff_db = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183", features = ["os", "cache"] }
-ruff_diagnostics = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_python_ast = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_python_codegen = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_python_parser = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_python_stdlib = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_python_trivia = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_ranged_value = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_source_file = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ruff_text_size = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ty_project = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
-ty_python_semantic = { git = "https://github.com/Skyway1111/ty-unnecessary", rev = "284831cb43bb167d149b23f0e49bcae015c4d183" }
+# The ruff and ty crates of the `ty-unnecessary` fork, published on
+# crates.io under a `sightline-` prefix with their library names kept: one
+# parser serves facts and the oracle. `crates/sightline/src/version.rs`
+# repeats the version for `--version`, and a test there pins the two equal.
+ruff_db = { package = "sightline-ruff-db", version = "=0.1.0", features = ["os", "cache"] }
+ruff_diagnostics = { package = "sightline-ruff-diagnostics", version = "=0.1.0" }
+ruff_python_ast = { package = "sightline-ruff-python-ast", version = "=0.1.0" }
+ruff_python_codegen = { package = "sightline-ruff-python-codegen", version = "=0.1.0" }
+ruff_python_parser = { package = "sightline-ruff-python-parser", version = "=0.1.0" }
+ruff_python_stdlib = { package = "sightline-ruff-python-stdlib", version = "=0.1.0" }
+ruff_python_trivia = { package = "sightline-ruff-python-trivia", version = "=0.1.0" }
+ruff_ranged_value = { package = "sightline-ruff-ranged-value", version = "=0.1.0" }
+ruff_source_file = { package = "sightline-ruff-source-file", version = "=0.1.0" }
+ruff_text_size = { package = "sightline-ruff-text-size", version = "=0.1.0" }
+ty_project = { package = "sightline-ty-project", version = "=0.1.0" }
+ty_python_semantic = { package = "sightline-ty-python-semantic", version = "=0.1.0" }
 salsa = { version = "0.28.2", default-features = false, features = ["compact_str", "macros", "salsa_unstable", "inventory"] }

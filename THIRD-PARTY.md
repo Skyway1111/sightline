@@ -248,172 +248,172 @@ so a dependency this file misses stops the gate.
 | regex-automata | 0.4.18 | MIT OR Apache-2.0 | [9](#notice-9), [17](#notice-17) |
 | regex-syntax | 0.8.11 | MIT OR Apache-2.0 | [9](#notice-9), [17](#notice-17) |
 | rowan | 0.15.18 | MIT OR Apache-2.0 | [9](#notice-9), [5](#notice-5) |
-| ruff_annotate_snippets | 0.0.10 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
-| ruff_cache | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_db | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_diagnostics | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_index | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_macros | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_memory_usage | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_notebook | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_options_metadata | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_ast | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_codegen | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_literal | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_parser | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_stdlib | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_python_trivia | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_ranged_value | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_source_file | 0.0.10 | MIT | [125](#notice-125) |
-| ruff_text_size | 0.0.10 | MIT | [125](#notice-125) |
 | rustc-hash | 1.1.0 | Apache-2.0/MIT | [9](#notice-9), [5](#notice-5) |
 | rustc-hash | 2.1.3 | Apache-2.0 OR MIT | [4](#notice-4), [5](#notice-5) |
 | rustc-literal-escaper | 0.0.4 | Apache-2.0 OR MIT | [4](#notice-4), [5](#notice-5) |
 | rustc-literal-escaper | 0.0.5 | Apache-2.0 OR MIT | [4](#notice-4), [5](#notice-5) |
 | rustc-stable-hash | 0.1.2 | Apache-2.0 OR MIT | [4](#notice-4), [5](#notice-5) |
-| rustc_apfloat | 0.2.3+llvm-462a31f5a5ab | Apache-2.0 WITH LLVM-exception | [126](#notice-126), [127](#notice-127) |
+| rustc_apfloat | 0.2.3+llvm-462a31f5a5ab | Apache-2.0 WITH LLVM-exception | [125](#notice-125), [126](#notice-126) |
 | rustc_version | 0.4.1 | MIT OR Apache-2.0 | [9](#notice-9), [88](#notice-88) |
 | rustix | 1.1.4 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | [9](#notice-9), [87](#notice-87), [5](#notice-5) |
 | rustversion | 1.0.23 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
-| ryu | 1.0.23 | Apache-2.0 OR BSL-1.0 | [4](#notice-4), [128](#notice-128) |
+| ryu | 1.0.23 | Apache-2.0 OR BSL-1.0 | [4](#notice-4), [127](#notice-127) |
 | salsa | 0.25.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
 | salsa | 0.28.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
 | salsa-macro-rules | 0.25.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
 | salsa-macro-rules | 0.28.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
 | salsa-macros | 0.25.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
 | salsa-macros | 0.28.2 | Apache-2.0 OR MIT | [9](#notice-9), [5](#notice-5) |
-| same-file | 1.0.6 | Unlicense/MIT | [1](#notice-1), [129](#notice-129), [3](#notice-3) |
-| scopeguard | 1.2.0 | MIT OR Apache-2.0 | [9](#notice-9), [130](#notice-130) |
+| same-file | 1.0.6 | Unlicense/MIT | [1](#notice-1), [128](#notice-128), [3](#notice-3) |
+| scopeguard | 1.2.0 | MIT OR Apache-2.0 | [9](#notice-9), [129](#notice-129) |
 | seahash | 4.1.0 | MIT | none shipped |
-| self_cell | 1.3.0 | Apache-2.0 OR GPL-2.0-only | [131](#notice-131), [132](#notice-132) |
+| self_cell | 1.3.0 | Apache-2.0 OR GPL-2.0-only | [130](#notice-130), [131](#notice-131) |
 | semver | 1.0.28 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | serde | 1.0.229 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | serde_core | 1.0.229 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | serde_derive | 1.0.229 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | serde_json | 1.0.151 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | serde_spanned | 1.1.1 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
-| sha1 | 0.10.7 | MIT OR Apache-2.0 | [19](#notice-19), [133](#notice-133) |
-| sha2 | 0.10.9 | MIT OR Apache-2.0 | [19](#notice-19), [133](#notice-133) |
-| sharded-slab | 0.1.7 | MIT | [134](#notice-134) |
-| shellexpand | 3.1.2 | MIT/Apache-2.0 | [9](#notice-9), [135](#notice-135) |
-| shlex | 2.0.1 | MIT OR Apache-2.0 | [136](#notice-136), [137](#notice-137) |
+| sha1 | 0.10.7 | MIT OR Apache-2.0 | [19](#notice-19), [132](#notice-132) |
+| sha2 | 0.10.9 | MIT OR Apache-2.0 | [19](#notice-19), [132](#notice-132) |
+| sharded-slab | 0.1.7 | MIT | [133](#notice-133) |
+| shellexpand | 3.1.2 | MIT/Apache-2.0 | [9](#notice-9), [134](#notice-134) |
+| shlex | 2.0.1 | MIT OR Apache-2.0 | [135](#notice-135), [136](#notice-136) |
+| sightline-ruff-annotate-snippets | 0.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
+| sightline-ruff-cache | 0.1.0 | MIT | none shipped |
+| sightline-ruff-db | 0.1.0 | MIT | none shipped |
+| sightline-ruff-diagnostics | 0.1.0 | MIT | none shipped |
+| sightline-ruff-index | 0.1.0 | MIT | none shipped |
+| sightline-ruff-macros | 0.1.0 | MIT | none shipped |
+| sightline-ruff-memory-usage | 0.1.0 | MIT | none shipped |
+| sightline-ruff-notebook | 0.1.0 | MIT | none shipped |
+| sightline-ruff-options-metadata | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-ast | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-codegen | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-literal | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-parser | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-stdlib | 0.1.0 | MIT | none shipped |
+| sightline-ruff-python-trivia | 0.1.0 | MIT | none shipped |
+| sightline-ruff-ranged-value | 0.1.0 | MIT | none shipped |
+| sightline-ruff-source-file | 0.1.0 | MIT | none shipped |
+| sightline-ruff-text-size | 0.1.0 | MIT | none shipped |
+| sightline-ty-combine | 0.1.0 | MIT | none shipped |
+| sightline-ty-module-resolver | 0.1.0 | MIT | none shipped |
+| sightline-ty-project | 0.1.0 | MIT | none shipped |
+| sightline-ty-python-core | 0.1.0 | MIT | none shipped |
+| sightline-ty-python-semantic | 0.1.0 | MIT | none shipped |
+| sightline-ty-site-packages | 0.1.0 | MIT | none shipped |
+| sightline-ty-static | 0.1.0 | MIT | none shipped |
+| sightline-ty-vendored | 0.1.0 | MIT | none shipped |
 | similar | 2.7.0 | Apache-2.0 | [9](#notice-9) |
 | similar | 3.2.0 | Apache-2.0 | [9](#notice-9) |
-| siphasher | 1.0.3 | MIT/Apache-2.0 | [138](#notice-138) |
-| slab | 0.4.12 | MIT | [139](#notice-139) |
-| smallvec | 1.15.2 | MIT OR Apache-2.0 | [9](#notice-9), [140](#notice-140) |
+| siphasher | 1.0.3 | MIT/Apache-2.0 | [137](#notice-137) |
+| slab | 0.4.12 | MIT | [138](#notice-138) |
+| smallvec | 1.15.2 | MIT OR Apache-2.0 | [9](#notice-9), [139](#notice-139) |
 | smol_str | 0.3.6 | MIT OR Apache-2.0 | [9](#notice-9), [5](#notice-5) |
-| spin | 0.9.9 | MIT | [141](#notice-141) |
-| stable_deref_trait | 1.2.1 | MIT OR Apache-2.0 | [9](#notice-9), [142](#notice-142) |
+| spin | 0.9.9 | MIT | [140](#notice-140) |
+| stable_deref_trait | 1.2.1 | MIT OR Apache-2.0 | [9](#notice-9), [141](#notice-141) |
 | stacker | 0.1.25 | MIT OR Apache-2.0 | [9](#notice-9), [29](#notice-29) |
-| static_assertions | 1.1.0 | MIT OR Apache-2.0 | [49](#notice-49), [143](#notice-143) |
-| streaming-iterator | 0.1.9 | MIT OR Apache-2.0 | [6](#notice-6), [144](#notice-144) |
-| strsim | 0.11.1 | MIT | [145](#notice-145) |
-| strum | 0.28.0 | MIT | [146](#notice-146) |
-| strum_macros | 0.28.0 | MIT | [146](#notice-146) |
-| supports-hyperlinks | 3.2.0 | Apache-2.0 | [147](#notice-147) |
+| static_assertions | 1.1.0 | MIT OR Apache-2.0 | [49](#notice-49), [142](#notice-142) |
+| streaming-iterator | 0.1.9 | MIT OR Apache-2.0 | [6](#notice-6), [143](#notice-143) |
+| strsim | 0.11.1 | MIT | [144](#notice-144) |
+| strum | 0.28.0 | MIT | [145](#notice-145) |
+| strum_macros | 0.28.0 | MIT | [145](#notice-145) |
+| supports-hyperlinks | 3.2.0 | Apache-2.0 | [146](#notice-146) |
 | syn | 2.0.119 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | syn | 3.0.4 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
-| synstructure | 0.13.2 | MIT | [148](#notice-148) |
-| tap | 1.0.1 | MIT | [149](#notice-149) |
-| temp-dir | 0.1.16 | Apache-2.0 | [150](#notice-150) |
-| tempfile | 3.27.0 | MIT OR Apache-2.0 | [9](#notice-9), [151](#notice-151) |
+| synstructure | 0.13.2 | MIT | [147](#notice-147) |
+| tap | 1.0.1 | MIT | [148](#notice-148) |
+| temp-dir | 0.1.16 | Apache-2.0 | [149](#notice-149) |
+| tempfile | 3.27.0 | MIT OR Apache-2.0 | [9](#notice-9), [150](#notice-150) |
 | text-size | 1.1.1 | MIT OR Apache-2.0 | [9](#notice-9), [5](#notice-5) |
 | thin-vec | 0.2.19 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | thiserror | 2.0.20 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | thiserror-impl | 2.0.20 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | thread_local | 1.1.10 | MIT OR Apache-2.0 | [9](#notice-9), [88](#notice-88) |
-| time | 0.3.55 | MIT OR Apache-2.0 | [98](#notice-98), [152](#notice-152) |
-| time-core | 0.1.9 | MIT OR Apache-2.0 | [98](#notice-98), [152](#notice-152) |
-| time-macros | 0.2.32 | MIT OR Apache-2.0 | [98](#notice-98), [152](#notice-152) |
+| time | 0.3.55 | MIT OR Apache-2.0 | [98](#notice-98), [151](#notice-151) |
+| time-core | 0.1.9 | MIT OR Apache-2.0 | [98](#notice-98), [151](#notice-151) |
+| time-macros | 0.2.32 | MIT OR Apache-2.0 | [98](#notice-98), [151](#notice-151) |
 | tinystr | 0.8.4 | Unicode-3.0 | [79](#notice-79) |
-| tinyvec | 1.12.0 | Zlib OR Apache-2.0 OR MIT | [49](#notice-49), [153](#notice-153), [154](#notice-154) |
-| tinyvec_macros | 0.1.1 | MIT OR Apache-2.0 OR Zlib | [155](#notice-155), [156](#notice-156), [157](#notice-157) |
+| tinyvec | 1.12.0 | Zlib OR Apache-2.0 OR MIT | [49](#notice-49), [152](#notice-152), [153](#notice-153) |
+| tinyvec_macros | 0.1.1 | MIT OR Apache-2.0 OR Zlib | [154](#notice-154), [155](#notice-155), [156](#notice-156) |
 | toml | 0.9.12+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
 | toml | 1.1.4+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
 | toml_datetime | 0.7.5+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
 | toml_datetime | 1.1.1+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
 | toml_parser | 1.1.3+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
 | toml_writer | 1.1.2+spec-1.1.0 | MIT OR Apache-2.0 | [6](#notice-6), [7](#notice-7) |
-| tracing | 0.1.44 | MIT | [158](#notice-158) |
-| tracing-attributes | 0.1.31 | MIT | [158](#notice-158) |
-| tracing-core | 0.1.36 | MIT | [158](#notice-158) |
-| tracing-log | 0.2.0 | MIT | [158](#notice-158) |
-| tracing-subscriber | 0.3.23 | MIT | [158](#notice-158) |
-| tracing-tree | 0.4.1 | MIT OR Apache-2.0 | [159](#notice-159), [160](#notice-160) |
-| tree-sitter | 0.26.13 | MIT | [161](#notice-161) |
-| tree-sitter-language | 0.1.7 | MIT | [161](#notice-161) |
-| tree-sitter-rust | 0.24.2 | MIT | [162](#notice-162) |
-| triomphe | 0.1.16 | MIT OR Apache-2.0 | [163](#notice-163), [164](#notice-164) |
-| ty_combine | 0.0.10 | MIT | [125](#notice-125) |
-| ty_module_resolver | 0.0.10 | MIT | [125](#notice-125) |
-| ty_project | 0.0.0 | MIT | [125](#notice-125) |
-| ty_python_core | 0.0.10 | MIT | [125](#notice-125) |
-| ty_python_semantic | 0.0.10 | MIT | [125](#notice-125) |
-| ty_site_packages | 0.0.10 | MIT | [125](#notice-125) |
-| ty_static | 0.0.10 | MIT | [125](#notice-125) |
-| ty_vendored | 0.0.10 | MIT | [125](#notice-125) |
-| typed-arena | 2.0.2 | MIT | [165](#notice-165) |
+| tracing | 0.1.44 | MIT | [157](#notice-157) |
+| tracing-attributes | 0.1.31 | MIT | [157](#notice-157) |
+| tracing-core | 0.1.36 | MIT | [157](#notice-157) |
+| tracing-log | 0.2.0 | MIT | [157](#notice-157) |
+| tracing-subscriber | 0.3.23 | MIT | [157](#notice-157) |
+| tracing-tree | 0.4.1 | MIT OR Apache-2.0 | [158](#notice-158), [159](#notice-159) |
+| tree-sitter | 0.26.13 | MIT | [160](#notice-160) |
+| tree-sitter-language | 0.1.7 | MIT | [160](#notice-160) |
+| tree-sitter-rust | 0.24.2 | MIT | [161](#notice-161) |
+| triomphe | 0.1.16 | MIT OR Apache-2.0 | [162](#notice-162), [163](#notice-163) |
+| typed-arena | 2.0.2 | MIT | [164](#notice-164) |
 | typed-path | 0.12.3 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
 | typeid | 1.0.3 | MIT OR Apache-2.0 | [4](#notice-4), [5](#notice-5) |
-| typenum | 1.20.1 | MIT OR Apache-2.0 | [166](#notice-166), [167](#notice-167), [168](#notice-168) |
-| unicode-ident | 1.0.24 | (MIT OR Apache-2.0) AND Unicode-3.0 | [4](#notice-4), [5](#notice-5), [169](#notice-169) |
+| typenum | 1.20.1 | MIT OR Apache-2.0 | [165](#notice-165), [166](#notice-166), [167](#notice-167) |
+| unicode-ident | 1.0.24 | (MIT OR Apache-2.0) AND Unicode-3.0 | [4](#notice-4), [5](#notice-5), [168](#notice-168) |
 | unicode-normalization | 0.1.25 | MIT OR Apache-2.0 | [9](#notice-9), [78](#notice-78) |
 | unicode-properties | 0.1.4 | MIT/Apache-2.0 | [9](#notice-9), [78](#notice-78) |
 | unicode-width | 0.2.2 | MIT OR Apache-2.0 | [9](#notice-9), [78](#notice-78) |
 | unicode-xid | 0.2.6 | MIT OR Apache-2.0 | [9](#notice-9), [78](#notice-78) |
-| unicode_names2 | 1.3.0 | (MIT OR Apache-2.0) AND Unicode-DFS-2016 | [9](#notice-9), [170](#notice-170) |
-| unicode_names2_generator | 1.3.0 | MIT OR Apache-2.0 | [9](#notice-9), [170](#notice-170) |
+| unicode_names2 | 1.3.0 | (MIT OR Apache-2.0) AND Unicode-DFS-2016 | [9](#notice-9), [169](#notice-169) |
+| unicode_names2_generator | 1.3.0 | MIT OR Apache-2.0 | [9](#notice-9), [169](#notice-169) |
 | unscanny | 0.1.0 | MIT OR Apache-2.0 | [4](#notice-4), [22](#notice-22) |
-| utf8_iter | 1.0.4 | Apache-2.0 OR MIT | [49](#notice-49), [171](#notice-171) |
-| utf8parse | 0.2.2 | Apache-2.0 OR MIT | [4](#notice-4), [172](#notice-172) |
-| uuid | 1.26.0 | Apache-2.0 OR MIT | [9](#notice-9), [173](#notice-173) |
+| utf8_iter | 1.0.4 | Apache-2.0 OR MIT | [49](#notice-49), [170](#notice-170) |
+| utf8parse | 0.2.2 | Apache-2.0 OR MIT | [4](#notice-4), [171](#notice-171) |
+| uuid | 1.26.0 | Apache-2.0 OR MIT | [9](#notice-9), [172](#notice-172) |
 | valuable | 0.1.1 | MIT | none shipped |
-| version-ranges | 0.1.3 | MPL-2.0 | [174](#notice-174) |
-| version_check | 0.9.5 | MIT/Apache-2.0 | [9](#notice-9), [175](#notice-175) |
+| version-ranges | 0.1.3 | MPL-2.0 | [173](#notice-173) |
+| version_check | 0.9.5 | MIT/Apache-2.0 | [9](#notice-9), [174](#notice-174) |
 | walkdir | 2.5.0 | Unlicense/MIT | [1](#notice-1), [2](#notice-2), [3](#notice-3) |
 | wasi | 0.11.1+wasi-snapshot-preview1 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | [9](#notice-9), [87](#notice-87), [5](#notice-5) |
 | wasm-bindgen | 0.2.127 | MIT OR Apache-2.0 | [9](#notice-9), [29](#notice-29) |
 | wasm-bindgen-macro | 0.2.127 | MIT OR Apache-2.0 | [9](#notice-9), [29](#notice-29) |
 | wasm-bindgen-macro-support | 0.2.127 | MIT OR Apache-2.0 | [9](#notice-9), [29](#notice-29) |
 | wasm-bindgen-shared | 0.2.127 | MIT OR Apache-2.0 | [9](#notice-9), [29](#notice-29) |
-| web-time | 1.1.0 | MIT OR Apache-2.0 | [176](#notice-176), [177](#notice-177) |
-| which | 8.0.6 | MIT | [178](#notice-178) |
-| winapi-util | 0.1.11 | Unlicense OR MIT | [1](#notice-1), [129](#notice-129), [3](#notice-3) |
-| windows-link | 0.2.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows-sys | 0.60.2 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows-sys | 0.61.2 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows-targets | 0.53.5 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_aarch64_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_aarch64_msvc | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_i686_gnu | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_i686_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_i686_msvc | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_x86_64_gnu | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_x86_64_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| windows_x86_64_msvc | 0.53.1 | MIT OR Apache-2.0 | [179](#notice-179), [180](#notice-180) |
-| winnow | 0.7.15 | MIT | [181](#notice-181) |
-| winnow | 1.0.4 | MIT | [181](#notice-181) |
+| web-time | 1.1.0 | MIT OR Apache-2.0 | [175](#notice-175), [176](#notice-176) |
+| which | 8.0.6 | MIT | [177](#notice-177) |
+| winapi-util | 0.1.11 | Unlicense OR MIT | [1](#notice-1), [128](#notice-128), [3](#notice-3) |
+| windows-link | 0.2.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows-sys | 0.60.2 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows-sys | 0.61.2 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows-targets | 0.53.5 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_aarch64_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_aarch64_msvc | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_i686_gnu | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_i686_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_i686_msvc | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_x86_64_gnu | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_x86_64_gnullvm | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| windows_x86_64_msvc | 0.53.1 | MIT OR Apache-2.0 | [178](#notice-178), [179](#notice-179) |
+| winnow | 0.7.15 | MIT | [180](#notice-180) |
+| winnow | 1.0.4 | MIT | [180](#notice-180) |
 | writeable | 0.6.4 | Unicode-3.0 | [79](#notice-79) |
 | wyz | 0.5.1 | MIT | [18](#notice-18) |
 | yoke | 0.8.3 | Unicode-3.0 | [79](#notice-79) |
 | yoke-derive | 0.8.2 | Unicode-3.0 | [79](#notice-79) |
-| zerocopy | 0.8.56 | BSD-2-Clause OR Apache-2.0 OR MIT | [182](#notice-182), [183](#notice-183), [184](#notice-184) |
-| zerocopy-derive | 0.8.56 | BSD-2-Clause OR Apache-2.0 OR MIT | [182](#notice-182), [183](#notice-183), [184](#notice-184) |
+| zerocopy | 0.8.56 | BSD-2-Clause OR Apache-2.0 OR MIT | [181](#notice-181), [182](#notice-182), [183](#notice-183) |
+| zerocopy-derive | 0.8.56 | BSD-2-Clause OR Apache-2.0 OR MIT | [181](#notice-181), [182](#notice-182), [183](#notice-183) |
 | zerofrom | 0.1.8 | Unicode-3.0 | [79](#notice-79) |
 | zerofrom-derive | 0.1.7 | Unicode-3.0 | [79](#notice-79) |
 | zerotrie | 0.2.5 | Unicode-3.0 | [79](#notice-79) |
 | zerovec | 0.11.8 | Unicode-3.0 | [79](#notice-79) |
 | zerovec-derive | 0.11.6 | Unicode-3.0 | [79](#notice-79) |
-| zip | 8.6.0 | MIT | [141](#notice-141) |
+| zip | 8.6.0 | MIT | [140](#notice-140) |
 | zmij | 1.0.23 | MIT | [5](#notice-5) |
-| zstd | 0.13.3 | MIT | [185](#notice-185) |
-| zstd-safe | 7.2.4 | MIT OR Apache-2.0 | [186](#notice-186), [98](#notice-98), [185](#notice-185) |
-| zstd-sys | 2.0.16+zstd.1.5.7 | MIT/Apache-2.0 | [186](#notice-186), [98](#notice-98), [187](#notice-187), [185](#notice-185) |
+| zstd | 0.13.3 | MIT | [184](#notice-184) |
+| zstd-safe | 7.2.4 | MIT OR Apache-2.0 | [185](#notice-185), [98](#notice-98), [184](#notice-184) |
+| zstd-sys | 2.0.16+zstd.1.5.7 | MIT/Apache-2.0 | [185](#notice-185), [98](#notice-98), [186](#notice-186), [184](#notice-184) |
 
 ## Notices
 
-187 texts, one section each. The packages sharing a text are named under it.
+186 texts, one section each. The packages sharing a text are named under it.
 
 ### Notice 1
 
@@ -726,8 +726,8 @@ DEALINGS IN THE SOFTWARE.
 anstream 1.0.0, anstyle 1.0.14, anstyle-parse 1.0.0, anstyle-query 1.1.5,
 anstyle-wincon 3.0.11, clap 4.6.6, clap_builder 4.6.6, clap_derive 4.6.4,
 clap_lex 1.1.0, cobs 0.3.0, colorchoice 1.0.5, crc32fast 1.5.1,
-is_terminal_polyfill 1.70.2, once_cell_polyfill 1.70.2,
-ruff_annotate_snippets 0.0.10, serde_spanned 1.1.1, streaming-iterator 0.1.9,
+is_terminal_polyfill 1.70.2, once_cell_polyfill 1.70.2, serde_spanned 1.1.1,
+sightline-ruff-annotate-snippets 0.1.0, streaming-iterator 0.1.9,
 toml 0.9.12+spec-1.1.0, toml 1.1.4+spec-1.1.0, toml_datetime 0.7.5+spec-1.1.0,
 toml_datetime 1.1.1+spec-1.1.0, toml_parser 1.1.3+spec-1.1.0,
 toml_writer 1.1.2+spec-1.1.0
@@ -941,8 +941,9 @@ toml_writer 1.1.2+spec-1.1.0
 anstream 1.0.0, anstyle 1.0.14, anstyle-parse 1.0.0, anstyle-query 1.1.5,
 anstyle-wincon 3.0.11, clap 4.6.6, clap_builder 4.6.6, clap_derive 4.6.4,
 clap_lex 1.1.0, colorchoice 1.0.5, is_terminal_polyfill 1.70.2,
-once_cell_polyfill 1.70.2, ruff_annotate_snippets 0.0.10, serde_spanned 1.1.1,
-toml 0.9.12+spec-1.1.0, toml 1.1.4+spec-1.1.0, toml_datetime 0.7.5+spec-1.1.0,
+once_cell_polyfill 1.70.2, serde_spanned 1.1.1,
+sightline-ruff-annotate-snippets 0.1.0, toml 0.9.12+spec-1.1.0,
+toml 1.1.4+spec-1.1.0, toml_datetime 0.7.5+spec-1.1.0,
 toml_datetime 1.1.1+spec-1.1.0, toml_parser 1.1.3+spec-1.1.0,
 toml_writer 1.1.2+spec-1.1.0
 
@@ -10085,451 +10086,6 @@ SOFTWARE.
 
 ### Notice 125
 
-ruff_cache 0.0.10, ruff_db 0.0.10, ruff_diagnostics 0.0.10, ruff_index 0.0.10,
-ruff_macros 0.0.10, ruff_memory_usage 0.0.10, ruff_notebook 0.0.10,
-ruff_options_metadata 0.0.10, ruff_python_ast 0.0.10,
-ruff_python_codegen 0.0.10, ruff_python_literal 0.0.10,
-ruff_python_parser 0.0.10, ruff_python_stdlib 0.0.10,
-ruff_python_trivia 0.0.10, ruff_ranged_value 0.0.10, ruff_source_file 0.0.10,
-ruff_text_size 0.0.10, ty_combine 0.0.10, ty_module_resolver 0.0.10,
-ty_project 0.0.0, ty_python_core 0.0.10, ty_python_semantic 0.0.10,
-ty_site_packages 0.0.10, ty_static 0.0.10, ty_vendored 0.0.10
-
-```text
-MIT License
-
-Copyright (c) 2022 Charles Marsh
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-end of terms and conditions
-
-The externally maintained libraries from which parts of the Software is derived
-are:
-
-- autoflake, licensed as follows:
-  """
-    Copyright (C) 2012-2018 Steven Myint
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy of
-    this software and associated documentation files (the "Software"), to deal in
-    the Software without restriction, including without limitation the rights to
-    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-    of the Software, and to permit persons to whom the Software is furnished to do
-    so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- autotyping, licensed as follows:
-  """
-    MIT License
-
-    Copyright (c) 2023 Jelle Zijlstra
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- Flake8, licensed as follows:
-  """
-    == Flake8 License (MIT) ==
-
-    Copyright (C) 2011-2013 Tarek Ziade <tarek@ziade.org>
-    Copyright (C) 2012-2016 Ian Cordasco <graffatcolmingov@gmail.com>
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy of
-    this software and associated documentation files (the "Software"), to deal in
-    the Software without restriction, including without limitation the rights to
-    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-    of the Software, and to permit persons to whom the Software is furnished to do
-    so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- flake8-eradicate, licensed as follows:
-  """
-    MIT License
-
-    Copyright (c) 2018 Nikita Sobolev
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- flake8-pyi, licensed as follows:
-  """
-    The MIT License (MIT)
-
-    Copyright (c) 2016 Łukasz Langa
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- flake8-simplify, licensed as follows:
-  """
-    MIT License
-
-    Copyright (c) 2020 Martin Thoma
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- isort, licensed as follows:
-  """
-    The MIT License (MIT)
-
-    Copyright (c) 2013 Timothy Edmund Crosley
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
-  """
-
-- pygrep-hooks, licensed as follows:
-  """
-    Copyright (c) 2018 Anthony Sottile
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
-  """
-
-- pycodestyle, licensed as follows:
-  """
-    Copyright © 2006-2009 Johann C. Rocholl <johann@rocholl.net>
-    Copyright © 2009-2014 Florent Xicluna <florent.xicluna@gmail.com>
-    Copyright © 2014-2020 Ian Lee <IanLee1521@gmail.com>
-
-    Licensed under the terms of the Expat License
-
-    Permission is hereby granted, free of charge, to any person
-    obtaining a copy of this software and associated documentation files
-    (the "Software"), to deal in the Software without restriction,
-    including without limitation the rights to use, copy, modify, merge,
-    publish, distribute, sublicense, and/or sell copies of the Software,
-    and to permit persons to whom the Software is furnished to do so,
-    subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be
-    included in all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
-    BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- pydocstyle, licensed as follows:
-  """
-    Copyright (c) 2012 GreenSteam, <http://greensteam.dk/>
-
-    Copyright (c) 2014-2020 Amir Rachum, <http://amir.rachum.com/>
-
-    Copyright (c) 2020 Sambhav Kothari, <https://github.com/samj1912>
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy of
-    this software and associated documentation files (the "Software"), to deal in
-    the Software without restriction, including without limitation the rights to
-    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-    of the Software, and to permit persons to whom the Software is furnished to do
-    so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- Pyflakes, licensed as follows:
-  """
-    Copyright 2005-2011 Divmod, Inc.
-    Copyright 2013-2014 Florent Xicluna
-
-    Permission is hereby granted, free of charge, to any person obtaining
-    a copy of this software and associated documentation files (the
-    "Software"), to deal in the Software without restriction, including
-    without limitation the rights to use, copy, modify, merge, publish,
-    distribute, sublicense, and/or sell copies of the Software, and to
-    permit persons to whom the Software is furnished to do so, subject to
-    the following conditions:
-
-    The above copyright notice and this permission notice shall be
-    included in all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  """
-
-- Pyright, licensed as follows:
-  """
-    MIT License
-
-    Pyright - A static type checker for the Python language
-    Copyright (c) Microsoft Corporation. All rights reserved.
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE
-  """
-
-- pyupgrade, licensed as follows:
-  """
-    Copyright (c) 2017 Anthony Sottile
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    THE SOFTWARE.
-  """
-
-- rome/tools, licensed under the MIT license:
-  """
-    MIT License
-
-    Copyright (c) Rome Tools, Inc. and its affiliates.
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- RustPython, licensed as follows:
-  """
-    MIT License
-
-    Copyright (c) 2020 RustPython Team
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  """
-
-- rust-analyzer/text-size, licensed under the MIT license:
-  """
-    Permission is hereby granted, free of charge, to any
-    person obtaining a copy of this software and associated
-    documentation files (the "Software"), to deal in the
-    Software without restriction, including without
-    limitation the rights to use, copy, modify, merge,
-    publish, distribute, sublicense, and/or sell copies of
-    the Software, and to permit persons to whom the Software
-    is furnished to do so, subject to the following
-    conditions:
-
-    The above copyright notice and this permission notice
-    shall be included in all copies or substantial portions
-    of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
-    ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-    PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-    SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
-    IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-    DEALINGS IN THE SOFTWARE.
-  """
-```
-
-### Notice 126
-
 rustc_apfloat 0.2.3+llvm-462a31f5a5ab
 
 ```text
@@ -10615,7 +10171,7 @@ As such, these changes and all changes made to LLVM after the relicensing data a
 Therefore, the whole of this crate is Apache 2 with LLVM Exception licensed.
 ```
 
-### Notice 127
+### Notice 126
 
 rustc_apfloat 0.2.3+llvm-462a31f5a5ab
 
@@ -10844,7 +10400,7 @@ the License, but only in their entirety and only with respect to the Combined
 Software.
 ```
 
-### Notice 128
+### Notice 127
 
 ryu 1.0.23
 
@@ -10874,7 +10430,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 129
+### Notice 128
 
 same-file 1.0.6, winapi-util 0.1.11
 
@@ -10902,7 +10458,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### Notice 130
+### Notice 129
 
 scopeguard 1.2.0
 
@@ -10934,7 +10490,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 131
+### Notice 130
 
 self_cell 1.3.0
 
@@ -11142,7 +10698,7 @@ self_cell 1.3.0
    limitations under the License.
 ```
 
-### Notice 132
+### Notice 131
 
 self_cell 1.3.0
 
@@ -11488,7 +11044,7 @@ library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
 ```
 
-### Notice 133
+### Notice 132
 
 sha1 0.10.7, sha2 0.10.9
 
@@ -11522,7 +11078,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 134
+### Notice 133
 
 sharded-slab 0.1.7
 
@@ -11548,7 +11104,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### Notice 135
+### Notice 134
 
 shellexpand 3.1.2
 
@@ -11576,7 +11132,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 136
+### Notice 135
 
 shlex 2.0.1
 
@@ -11596,7 +11152,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-### Notice 137
+### Notice 136
 
 shlex 2.0.1
 
@@ -11624,7 +11180,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### Notice 138
+### Notice 137
 
 siphasher 1.0.3
 
@@ -11638,7 +11194,7 @@ http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
 option.
 ```
 
-### Notice 139
+### Notice 138
 
 slab 0.4.12
 
@@ -11670,7 +11226,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 140
+### Notice 139
 
 smallvec 1.15.2
 
@@ -11702,7 +11258,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 141
+### Notice 140
 
 spin 0.9.9, zip 8.6.0
 
@@ -11730,7 +11286,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 142
+### Notice 141
 
 stable_deref_trait 1.2.1
 
@@ -11762,7 +11318,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 143
+### Notice 142
 
 static_assertions 1.1.0
 
@@ -11790,7 +11346,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 144
+### Notice 143
 
 streaming-iterator 0.1.9
 
@@ -11816,7 +11372,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 145
+### Notice 144
 
 strsim 0.11.1
 
@@ -11846,7 +11402,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 146
+### Notice 145
 
 strum 0.28.0, strum_macros 0.28.0
 
@@ -11874,7 +11430,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 147
+### Notice 146
 
 supports-hyperlinks 3.2.0
 
@@ -12110,7 +11666,7 @@ governing permissions and
 limitations under the License.
 ```
 
-### Notice 148
+### Notice 147
 
 synstructure 0.13.2
 
@@ -12124,7 +11680,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 149
+### Notice 148
 
 tap 1.0.1
 
@@ -12152,7 +11708,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 150
+### Notice 149
 
 temp-dir 0.1.16
 
@@ -12172,7 +11728,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-### Notice 151
+### Notice 150
 
 tempfile 3.27.0
 
@@ -12204,7 +11760,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 152
+### Notice 151
 
 time 0.3.55, time-core 0.1.9, time-macros 0.2.32
 
@@ -12230,7 +11786,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 153
+### Notice 152
 
 tinyvec 1.12.0
 
@@ -12242,7 +11798,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 154
+### Notice 153
 
 tinyvec 1.12.0
 
@@ -12260,7 +11816,7 @@ Permission is granted to anyone to use this software for any purpose, including 
 3. This notice may not be removed or altered from any source distribution.
 ```
 
-### Notice 155
+### Notice 154
 
 tinyvec_macros 0.1.1
 
@@ -12468,7 +12024,7 @@ tinyvec_macros 0.1.1
    limitations under the License.
 ```
 
-### Notice 156
+### Notice 155
 
 tinyvec_macros 0.1.1
 
@@ -12496,7 +12052,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 157
+### Notice 156
 
 tinyvec_macros 0.1.1
 
@@ -12522,7 +12078,7 @@ freely, subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 ```
 
-### Notice 158
+### Notice 157
 
 tracing 0.1.44, tracing-attributes 0.1.31, tracing-core 0.1.36,
 tracing-log 0.2.0, tracing-subscriber 0.3.23
@@ -12555,7 +12111,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 159
+### Notice 158
 
 tracing-tree 0.4.1
 
@@ -12763,7 +12319,7 @@ tracing-tree 0.4.1
    limitations under the License.
 ```
 
-### Notice 160
+### Notice 159
 
 tracing-tree 0.4.1
 
@@ -12791,7 +12347,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 161
+### Notice 160
 
 tree-sitter 0.26.13, tree-sitter-language 0.1.7
 
@@ -12819,7 +12375,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 162
+### Notice 161
 
 tree-sitter-rust 0.24.2
 
@@ -12847,7 +12403,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 163
+### Notice 162
 
 triomphe 0.1.16
 
@@ -13055,7 +12611,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-### Notice 164
+### Notice 163
 
 triomphe 0.1.16
 
@@ -13089,7 +12645,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 165
+### Notice 164
 
 typed-arena 2.0.2
 
@@ -13117,7 +12673,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 166
+### Notice 165
 
 typenum 1.20.1
 
@@ -13125,7 +12681,7 @@ typenum 1.20.1
 MIT OR Apache-2.0
 ```
 
-### Notice 167
+### Notice 166
 
 typenum 1.20.1
 
@@ -13333,7 +12889,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-### Notice 168
+### Notice 167
 
 typenum 1.20.1
 
@@ -13361,7 +12917,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 169
+### Notice 168
 
 unicode-ident 1.0.24
 
@@ -13407,7 +12963,7 @@ dealings in these Data Files or Software without prior written
 authorization of the copyright holder.
 ```
 
-### Notice 170
+### Notice 169
 
 unicode_names2 1.3.0, unicode_names2_generator 1.3.0
 
@@ -13439,7 +12995,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 171
+### Notice 170
 
 utf8_iter 1.0.4
 
@@ -13471,7 +13027,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 172
+### Notice 171
 
 utf8parse 0.2.2
 
@@ -13503,7 +13059,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 173
+### Notice 172
 
 uuid 1.26.0
 
@@ -13536,7 +13092,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 174
+### Notice 173
 
 version-ranges 0.1.3
 
@@ -13916,7 +13472,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   defined by the Mozilla Public License, v. 2.0.
 ```
 
-### Notice 175
+### Notice 174
 
 version_check 0.9.5
 
@@ -13942,7 +13498,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 176
+### Notice 175
 
 web-time 1.1.0
 
@@ -14150,7 +13706,7 @@ web-time 1.1.0
    limitations under the License.
 ```
 
-### Notice 177
+### Notice 176
 
 web-time 1.1.0
 
@@ -14178,7 +13734,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### Notice 178
+### Notice 177
 
 which 8.0.6
 
@@ -14204,7 +13760,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-### Notice 179
+### Notice 178
 
 windows-link 0.2.1, windows-sys 0.60.2, windows-sys 0.61.2,
 windows-targets 0.53.5, windows_aarch64_gnullvm 0.53.1,
@@ -14417,7 +13973,7 @@ windows_x86_64_msvc 0.53.1
    limitations under the License.
 ```
 
-### Notice 180
+### Notice 179
 
 windows-link 0.2.1, windows-sys 0.60.2, windows-sys 0.61.2,
 windows-targets 0.53.5, windows_aarch64_gnullvm 0.53.1,
@@ -14450,7 +14006,7 @@ windows_x86_64_msvc 0.53.1
     SOFTWARE
 ```
 
-### Notice 181
+### Notice 180
 
 winnow 0.7.15, winnow 1.0.4
 
@@ -14475,7 +14031,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 182
+### Notice 181
 
 zerocopy 0.8.56, zerocopy-derive 0.8.56
 
@@ -14683,7 +14239,7 @@ zerocopy 0.8.56, zerocopy-derive 0.8.56
    limitations under the License.
 ```
 
-### Notice 183
+### Notice 182
 
 zerocopy 0.8.56, zerocopy-derive 0.8.56
 
@@ -14714,7 +14270,7 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
-### Notice 184
+### Notice 183
 
 zerocopy 0.8.56, zerocopy-derive 0.8.56
 
@@ -14746,7 +14302,7 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 185
+### Notice 184
 
 zstd 0.13.3, zstd-safe 7.2.4, zstd-sys 2.0.16+zstd.1.5.7
 
@@ -14761,7 +14317,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Notice 186
+### Notice 185
 
 zstd-safe 7.2.4, zstd-sys 2.0.16+zstd.1.5.7
 
@@ -14769,7 +14325,7 @@ zstd-safe 7.2.4, zstd-sys 2.0.16+zstd.1.5.7
 MIT or Apache-2.0
 ```
 
-### Notice 187
+### Notice 186
 
 zstd-sys 2.0.16+zstd.1.5.7
 
@@ -14810,7 +14366,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Packages that ship no notice
 
-48 of the packages above declare a license their published source holds no
+73 of the packages above declare a license their published source holds no
 copy of. Each is listed with the authors and the repository its manifest
 names, under the terms it declares.
 
@@ -14865,6 +14421,31 @@ names, under the terms it declares.
 | ra_ap_vfs | 0.0.328 | MIT OR Apache-2.0 | `rust-analyzer team` | `https://github.com/rust-lang/rust-analyzer` |
 | ra_ap_vfs-notify | 0.0.328 | MIT OR Apache-2.0 | `rust-analyzer team` | `https://github.com/rust-lang/rust-analyzer` |
 | seahash | 4.1.0 | MIT | `ticki <ticki@users.noreply.github.com>, Tom Almeida <tom@tommoa.me>` | `https://gitlab.redox-os.org/redox-os/seahash` |
+| sightline-ruff-cache | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-db | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-diagnostics | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-index | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-macros | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-memory-usage | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-notebook | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-options-metadata | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-ast | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-codegen | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-literal | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>, RustPython Team` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-parser | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>, RustPython Team` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-stdlib | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-python-trivia | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-ranged-value | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-source-file | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ruff-text-size | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-combine | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/astral-sh/ruff` |
+| sightline-ty-module-resolver | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-project | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-python-core | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-python-semantic | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-site-packages | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-static | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
+| sightline-ty-vendored | 0.1.0 | MIT | `Charlie Marsh <charlie.r.marsh@gmail.com>` | `https://github.com/Skyway1111/ty-unnecessary` |
 | valuable | 0.1.1 | MIT | - | `https://github.com/tokio-rs/valuable` |
 
 ```text

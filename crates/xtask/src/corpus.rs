@@ -148,7 +148,7 @@ pub fn binary() -> Result<PathBuf> {
     };
     let path = workspace_root().join("target/release").join(name);
     if !path.is_file() {
-        let build = "run `cargo build --release -p sightline`";
+        let build = "run `cargo build --release -p sightline-lint`";
         bail!("{} is not built; {build}", path.display());
     }
     Ok(path)

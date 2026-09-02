@@ -2419,260 +2419,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ruff_annotate_snippets"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "anstyle",
- "memchr",
- "unicode-width",
-]
-
-[[package]]
-name = "ruff_cache"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "char_str",
- "filetime",
- "glob",
- "globset",
- "itertools 0.15.0",
- "regex",
- "seahash",
-]
-
-[[package]]
-name = "ruff_db"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "anstyle",
- "arc-swap",
- "camino",
- "compact_str",
- "dashmap",
- "dunce",
- "etcetera",
- "filetime",
- "get-size2",
- "ignore",
- "matchit",
- "path-slash",
- "pathdiff",
- "ruff_annotate_snippets",
- "ruff_cache",
- "ruff_diagnostics",
- "ruff_memory_usage",
- "ruff_notebook",
- "ruff_python_ast",
- "ruff_python_parser",
- "ruff_python_trivia",
- "ruff_source_file",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "same-file",
- "serde",
- "serde_json",
- "similar 3.2.0",
- "supports-hyperlinks",
- "thiserror",
- "tracing",
- "ty_static",
- "web-time",
- "which",
- "zip",
-]
-
-[[package]]
-name = "ruff_diagnostics"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
- "is-macro",
- "ruff_text_size",
- "serde",
-]
-
-[[package]]
-name = "ruff_index"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
- "ruff_macros",
- "salsa 0.28.2",
-]
-
-[[package]]
-name = "ruff_macros"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "heck",
- "itertools 0.15.0",
- "proc-macro2",
- "quote",
- "regex",
- "ruff_python_trivia",
- "syn 3.0.4",
-]
-
-[[package]]
-name = "ruff_memory_usage"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
-]
-
-[[package]]
-name = "ruff_notebook"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "anyhow",
- "rand 0.10.2",
- "ruff_diagnostics",
- "ruff_source_file",
- "ruff_text_size",
- "serde",
- "serde_json",
- "thiserror",
- "uuid",
-]
-
-[[package]]
-name = "ruff_options_metadata"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-
-[[package]]
-name = "ruff_python_ast"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "aho-corasick",
- "arrayvec",
- "bitflags",
- "char_str",
- "compact_str",
- "get-size2",
- "is-macro",
- "memchr",
- "ruff_cache",
- "ruff_python_trivia",
- "ruff_source_file",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "serde",
- "thin-vec",
- "thiserror",
-]
-
-[[package]]
-name = "ruff_python_codegen"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "ruff_python_ast",
- "ruff_python_literal",
- "ruff_python_parser",
- "ruff_source_file",
- "ruff_text_size",
-]
-
-[[package]]
-name = "ruff_python_literal"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "bitflags",
- "icu_properties",
- "itertools 0.15.0",
- "ruff_python_ast",
-]
-
-[[package]]
-name = "ruff_python_parser"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "bitflags",
- "bstr",
- "drop_bomb",
- "get-size2",
- "memchr",
- "ruff_python_ast",
- "ruff_python_trivia",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "stacker",
- "static_assertions",
- "thin-vec",
- "unicode-ident",
- "unicode-normalization",
- "unicode_names2",
-]
-
-[[package]]
-name = "ruff_python_stdlib"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "bitflags",
- "unicode-ident",
-]
-
-[[package]]
-name = "ruff_python_trivia"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "itertools 0.15.0",
- "ruff_source_file",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "unicode-ident",
-]
-
-[[package]]
-name = "ruff_ranged_value"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
- "ruff_db",
- "ruff_python_ast",
- "ruff_text_size",
- "serde",
- "toml 1.1.4+spec-1.1.0",
-]
-
-[[package]]
-name = "ruff_source_file"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
- "memchr",
- "ruff_text_size",
- "serde",
-]
-
-[[package]]
-name = "ruff_text_size"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "get-size2",
- "serde",
-]
-
-[[package]]
 name = "rustc-hash"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2970,8 +2716,29 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
-name = "sightline"
-version = "0.2.0"
+name = "sightline-core"
+version = "0.3.0"
+dependencies = [
+ "anyhow",
+ "camino",
+ "indexmap",
+ "memchr",
+ "percent-encoding",
+ "rayon",
+ "regex",
+ "rustc-hash 2.1.3",
+ "serde",
+ "serde_json",
+ "sha2",
+ "similar 2.7.0",
+ "tempfile",
+ "toml 0.9.12+spec-1.1.0",
+ "unicode-ident",
+]
+
+[[package]]
+name = "sightline-lint"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
@@ -2994,47 +2761,26 @@ dependencies = [
 ]
 
 [[package]]
-name = "sightline-core"
-version = "0.2.0"
-dependencies = [
- "anyhow",
- "camino",
- "indexmap",
- "memchr",
- "percent-encoding",
- "rayon",
- "regex",
- "rustc-hash 2.1.3",
- "serde",
- "serde_json",
- "sha2",
- "similar 2.7.0",
- "tempfile",
- "toml 0.9.12+spec-1.1.0",
- "unicode-ident",
-]
-
-[[package]]
 name = "sightline-py-facts"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
  "indexmap",
  "rayon",
  "regex",
- "ruff_python_ast",
- "ruff_python_codegen",
- "ruff_python_parser",
- "ruff_python_stdlib",
- "ruff_python_trivia",
- "ruff_source_file",
- "ruff_text_size",
  "rustc-hash 2.1.3",
  "self_cell",
  "serde",
  "serde_json",
  "sightline-core",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-codegen",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-python-stdlib",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
  "sightline-testkit",
  "tempfile",
  "toml 0.9.12+spec-1.1.0",
@@ -3042,21 +2788,13 @@ dependencies = [
 
 [[package]]
 name = "sightline-py-provers"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
  "indexmap",
  "rayon",
  "regex",
- "ruff_db",
- "ruff_diagnostics",
- "ruff_python_ast",
- "ruff_python_parser",
- "ruff_python_stdlib",
- "ruff_ranged_value",
- "ruff_source_file",
- "ruff_text_size",
  "rustc-hash 2.1.3",
  "salsa 0.28.2",
  "serde",
@@ -3064,34 +2802,42 @@ dependencies = [
  "sha2",
  "sightline-core",
  "sightline-py-facts",
+ "sightline-ruff-db",
+ "sightline-ruff-diagnostics",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-python-stdlib",
+ "sightline-ruff-ranged-value",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
  "sightline-testkit",
+ "sightline-ty-project",
+ "sightline-ty-python-semantic",
  "tempfile",
  "toml 0.9.12+spec-1.1.0",
- "ty_project",
- "ty_python_semantic",
 ]
 
 [[package]]
 name = "sightline-py-rules"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
  "indexmap",
  "rayon",
  "regex",
- "ruff_python_ast",
  "serde_json",
  "sightline-core",
  "sightline-py-facts",
  "sightline-py-provers",
+ "sightline-ruff-python-ast",
  "sightline-testkit",
  "tempfile",
 ]
 
 [[package]]
 name = "sightline-rs-facts"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "camino",
  "indexmap",
@@ -3111,7 +2857,7 @@ dependencies = [
 
 [[package]]
 name = "sightline-rs-provers"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
@@ -3136,7 +2882,7 @@ dependencies = [
 
 [[package]]
 name = "sightline-rs-rules"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
@@ -3152,8 +2898,280 @@ dependencies = [
 ]
 
 [[package]]
+name = "sightline-ruff-annotate-snippets"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "51ef78d592140632b369fbaf3e81248e8ed8689887c36aa2032d7cc67b8bb380"
+dependencies = [
+ "anstyle",
+ "memchr",
+ "unicode-width",
+]
+
+[[package]]
+name = "sightline-ruff-cache"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eb7cd70b45be5ca9c10606d3cc25e1891386b5182f23030d0d971cb91bd50753"
+dependencies = [
+ "char_str",
+ "filetime",
+ "glob",
+ "globset",
+ "itertools 0.15.0",
+ "regex",
+ "seahash",
+]
+
+[[package]]
+name = "sightline-ruff-db"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09a0f692742f7e788c2de2cce7942256a3b4f4779a4619ef5702f7725a3b1f08"
+dependencies = [
+ "anstyle",
+ "arc-swap",
+ "camino",
+ "compact_str",
+ "dashmap",
+ "dunce",
+ "etcetera",
+ "filetime",
+ "get-size2",
+ "ignore",
+ "matchit",
+ "path-slash",
+ "pathdiff",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "same-file",
+ "serde",
+ "serde_json",
+ "sightline-ruff-annotate-snippets",
+ "sightline-ruff-cache",
+ "sightline-ruff-diagnostics",
+ "sightline-ruff-memory-usage",
+ "sightline-ruff-notebook",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "sightline-ty-static",
+ "similar 3.2.0",
+ "supports-hyperlinks",
+ "thiserror",
+ "tracing",
+ "web-time",
+ "which",
+ "zip",
+]
+
+[[package]]
+name = "sightline-ruff-diagnostics"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "728dec251027795b05400c6f35c53907a2d11d2f7b9134e5326b02cf55283d08"
+dependencies = [
+ "get-size2",
+ "is-macro",
+ "serde",
+ "sightline-ruff-text-size",
+]
+
+[[package]]
+name = "sightline-ruff-index"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8c8cd2dc8798c1eca35acaa2f2eb451ba9efee8c964eec73d300b819cfd26ff0"
+dependencies = [
+ "get-size2",
+ "salsa 0.28.2",
+ "sightline-ruff-macros",
+]
+
+[[package]]
+name = "sightline-ruff-macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "658839dba7c248bf12c7c6503da8f48a8dbfcac25a27b2b60a817b3d0c310802"
+dependencies = [
+ "heck",
+ "itertools 0.15.0",
+ "proc-macro2",
+ "quote",
+ "regex",
+ "sightline-ruff-python-trivia",
+ "syn 3.0.4",
+]
+
+[[package]]
+name = "sightline-ruff-memory-usage"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4fa6704b33da8a46be54700bf1e38212fcfb2215ec4acb8afb6dca974c3d6b1a"
+dependencies = [
+ "get-size2",
+]
+
+[[package]]
+name = "sightline-ruff-notebook"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "00fdb8967035825ebca53fdcaa33ffe6a99cd96801153318f071d617fc94916c"
+dependencies = [
+ "anyhow",
+ "rand 0.10.2",
+ "serde",
+ "serde_json",
+ "sightline-ruff-diagnostics",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "thiserror",
+ "uuid",
+]
+
+[[package]]
+name = "sightline-ruff-options-metadata"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61d5aa8fa4150056856dc59b3fbc1c817c935e247456e6a8f21c94fb48ab9888"
+
+[[package]]
+name = "sightline-ruff-python-ast"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2555b0d25501bb077f398b8019a155f6ecd2dd6ceb37860b8712059e2a7000b1"
+dependencies = [
+ "aho-corasick",
+ "arrayvec",
+ "bitflags",
+ "char_str",
+ "compact_str",
+ "get-size2",
+ "is-macro",
+ "memchr",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "serde",
+ "sightline-ruff-cache",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "thin-vec",
+ "thiserror",
+]
+
+[[package]]
+name = "sightline-ruff-python-codegen"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9e7902431588904d7c171f65c66516890b0f1bf8a6d3acf58650b7ae903ad67b"
+dependencies = [
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-literal",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+]
+
+[[package]]
+name = "sightline-ruff-python-literal"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1415b6950cd8c5c4b3045f46db5c53c87e351b1cb155bb5accdaafebcf094be4"
+dependencies = [
+ "bitflags",
+ "icu_properties",
+ "itertools 0.15.0",
+ "sightline-ruff-python-ast",
+]
+
+[[package]]
+name = "sightline-ruff-python-parser"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1e63ac19f1ef3b569e68d38c8014de331459010e3cdc14ceceb3323e186f7e4"
+dependencies = [
+ "bitflags",
+ "bstr",
+ "drop_bomb",
+ "get-size2",
+ "memchr",
+ "rustc-hash 2.1.3",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-text-size",
+ "stacker",
+ "static_assertions",
+ "thin-vec",
+ "unicode-ident",
+ "unicode-normalization",
+ "unicode_names2",
+]
+
+[[package]]
+name = "sightline-ruff-python-stdlib"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "66772cc2952810c2158e05250500c75b24c4b2de94b30c359cecf60bd73aa264"
+dependencies = [
+ "bitflags",
+ "unicode-ident",
+]
+
+[[package]]
+name = "sightline-ruff-python-trivia"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1bee068edfbc5333ec37cb20502b4d49d121a2e56a250da913f971f0ce3e7dce"
+dependencies = [
+ "itertools 0.15.0",
+ "rustc-hash 2.1.3",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "unicode-ident",
+]
+
+[[package]]
+name = "sightline-ruff-ranged-value"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e8072ecae32504c8c852265b0318911ad0c14c938f3cc9cda03bddb935e2f3b"
+dependencies = [
+ "get-size2",
+ "serde",
+ "sightline-ruff-db",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-text-size",
+ "toml 1.1.4+spec-1.1.0",
+]
+
+[[package]]
+name = "sightline-ruff-source-file"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cc0532e664a11e81e5859c2134819ea0be6e1f84f87f7cca5b73bd706326b9de"
+dependencies = [
+ "get-size2",
+ "memchr",
+ "serde",
+ "sightline-ruff-text-size",
+]
+
+[[package]]
+name = "sightline-ruff-text-size"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6259fb2383facd4a85c5ecaac9e2b650780689db440bce39a6804097b2979aa5"
+dependencies = [
+ "get-size2",
+ "serde",
+]
+
+[[package]]
 name = "sightline-testkit"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "camino",
  "indexmap",
@@ -3165,6 +3183,209 @@ dependencies = [
  "sightline-rs-provers",
  "sightline-rs-rules",
  "tempfile",
+]
+
+[[package]]
+name = "sightline-ty-combine"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f25bbb65a642a0c549a3e871306acab7d354d99fe8813a63fef7f8b12af24b41"
+dependencies = [
+ "ordermap",
+ "sightline-ruff-db",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-ranged-value",
+]
+
+[[package]]
+name = "sightline-ty-module-resolver"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b81d7a162929389f8858c98048120029bdff8e7bcd82fc1849d311770b02efa"
+dependencies = [
+ "anyhow",
+ "camino",
+ "compact_str",
+ "get-size2",
+ "ordermap",
+ "regex",
+ "regex-syntax",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "sightline-ruff-db",
+ "sightline-ruff-memory-usage",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-stdlib",
+ "strum",
+ "strum_macros",
+ "thiserror",
+ "tracing",
+]
+
+[[package]]
+name = "sightline-ty-project"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5b3fd746efe291326171ae02074d1a38630236d116acb24abd52f1d1e968cb19"
+dependencies = [
+ "anyhow",
+ "bitvec",
+ "camino",
+ "colored",
+ "compact_str",
+ "crossbeam",
+ "get-size2",
+ "globset",
+ "notify",
+ "ordermap",
+ "parking_lot",
+ "pep440_rs",
+ "rayon",
+ "regex",
+ "regex-automata",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "serde",
+ "serde_json",
+ "shellexpand",
+ "sightline-ruff-cache",
+ "sightline-ruff-db",
+ "sightline-ruff-macros",
+ "sightline-ruff-memory-usage",
+ "sightline-ruff-options-metadata",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-ranged-value",
+ "sightline-ruff-text-size",
+ "sightline-ty-combine",
+ "sightline-ty-module-resolver",
+ "sightline-ty-python-core",
+ "sightline-ty-python-semantic",
+ "sightline-ty-static",
+ "sightline-ty-vendored",
+ "strum",
+ "strum_macros",
+ "thiserror",
+ "toml 1.1.4+spec-1.1.0",
+ "tracing",
+]
+
+[[package]]
+name = "sightline-ty-python-core"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7fa6f227620627d582b325c8b1e5a180e30124b0d704e32bc6b18fa30b59d581"
+dependencies = [
+ "bitflags",
+ "bitvec",
+ "char_str",
+ "get-size2",
+ "hashbrown 0.17.1",
+ "itertools 0.15.0",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "serde",
+ "sightline-ruff-db",
+ "sightline-ruff-index",
+ "sightline-ruff-macros",
+ "sightline-ruff-memory-usage",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-text-size",
+ "sightline-ty-combine",
+ "sightline-ty-module-resolver",
+ "sightline-ty-site-packages",
+ "sightline-ty-vendored",
+ "smallvec",
+ "static_assertions",
+ "thin-vec",
+ "tracing",
+]
+
+[[package]]
+name = "sightline-ty-python-semantic"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "98b340c7a52f0f867e774b9e390c223a44a0775d8f002cc0026afba8a3fdde85"
+dependencies = [
+ "bitflags",
+ "char_str",
+ "compact_str",
+ "drop_bomb",
+ "get-size2",
+ "indexmap",
+ "itertools 0.15.0",
+ "memchr",
+ "ordermap",
+ "rayon",
+ "rustc-hash 2.1.3",
+ "salsa 0.28.2",
+ "serde",
+ "sightline-ruff-db",
+ "sightline-ruff-diagnostics",
+ "sightline-ruff-index",
+ "sightline-ruff-macros",
+ "sightline-ruff-memory-usage",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-literal",
+ "sightline-ruff-python-parser",
+ "sightline-ruff-python-stdlib",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "sightline-ty-module-resolver",
+ "sightline-ty-python-core",
+ "sightline-ty-site-packages",
+ "sightline-ty-static",
+ "smallvec",
+ "static_assertions",
+ "strum",
+ "strum_macros",
+ "thiserror",
+ "tracing",
+]
+
+[[package]]
+name = "sightline-ty-site-packages"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0dd82d9832b854f2e4bb11517dfa2a0f20df9487ee4f3ef681ce6d7c6c6d495f"
+dependencies = [
+ "camino",
+ "colored",
+ "get-size2",
+ "indexmap",
+ "sightline-ruff-annotate-snippets",
+ "sightline-ruff-db",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-trivia",
+ "sightline-ruff-source-file",
+ "sightline-ruff-text-size",
+ "sightline-ty-static",
+ "strum",
+ "strum_macros",
+ "tracing",
+]
+
+[[package]]
+name = "sightline-ty-static"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6fe7438d3a9e6618a673a32b74c2b7f4f6c39ad1158b439a3116bdb70205f893"
+dependencies = [
+ "sightline-ruff-macros",
+]
+
+[[package]]
+name = "sightline-ty-vendored"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a0f32c67ffcb5271d54fc619f66fd3205b5c5e9219beaace490792ee2f807ff"
+dependencies = [
+ "path-slash",
+ "sightline-ruff-db",
+ "static_assertions",
+ "walkdir",
+ "zip",
 ]
 
 [[package]]
@@ -3610,201 +3831,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b40688ea6389c8171614b25491f71d4a27946e0c7ce2da1c6de27e25abf1a0ae"
 
 [[package]]
-name = "ty_combine"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "ordermap",
- "ruff_db",
- "ruff_python_ast",
- "ruff_ranged_value",
-]
-
-[[package]]
-name = "ty_module_resolver"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "anyhow",
- "camino",
- "compact_str",
- "get-size2",
- "ordermap",
- "regex",
- "regex-syntax",
- "ruff_db",
- "ruff_memory_usage",
- "ruff_python_ast",
- "ruff_python_stdlib",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "strum",
- "strum_macros",
- "thiserror",
- "tracing",
-]
-
-[[package]]
-name = "ty_project"
-version = "0.0.0"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "anyhow",
- "bitvec",
- "camino",
- "colored",
- "compact_str",
- "crossbeam",
- "get-size2",
- "globset",
- "notify",
- "ordermap",
- "parking_lot",
- "pep440_rs",
- "rayon",
- "regex",
- "regex-automata",
- "ruff_cache",
- "ruff_db",
- "ruff_macros",
- "ruff_memory_usage",
- "ruff_options_metadata",
- "ruff_python_ast",
- "ruff_ranged_value",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "serde",
- "serde_json",
- "shellexpand",
- "strum",
- "strum_macros",
- "thiserror",
- "toml 1.1.4+spec-1.1.0",
- "tracing",
- "ty_combine",
- "ty_module_resolver",
- "ty_python_core",
- "ty_python_semantic",
- "ty_static",
- "ty_vendored",
-]
-
-[[package]]
-name = "ty_python_core"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "bitflags",
- "bitvec",
- "char_str",
- "get-size2",
- "hashbrown 0.17.1",
- "itertools 0.15.0",
- "ruff_db",
- "ruff_index",
- "ruff_macros",
- "ruff_memory_usage",
- "ruff_python_ast",
- "ruff_python_parser",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "serde",
- "smallvec",
- "static_assertions",
- "thin-vec",
- "tracing",
- "ty_combine",
- "ty_module_resolver",
- "ty_site_packages",
- "ty_vendored",
-]
-
-[[package]]
-name = "ty_python_semantic"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "bitflags",
- "char_str",
- "compact_str",
- "drop_bomb",
- "get-size2",
- "indexmap",
- "itertools 0.15.0",
- "memchr",
- "ordermap",
- "rayon",
- "ruff_db",
- "ruff_diagnostics",
- "ruff_index",
- "ruff_macros",
- "ruff_memory_usage",
- "ruff_python_ast",
- "ruff_python_literal",
- "ruff_python_parser",
- "ruff_python_stdlib",
- "ruff_python_trivia",
- "ruff_source_file",
- "ruff_text_size",
- "rustc-hash 2.1.3",
- "salsa 0.28.2",
- "serde",
- "smallvec",
- "static_assertions",
- "strum",
- "strum_macros",
- "thiserror",
- "tracing",
- "ty_module_resolver",
- "ty_python_core",
- "ty_site_packages",
- "ty_static",
-]
-
-[[package]]
-name = "ty_site_packages"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "camino",
- "colored",
- "get-size2",
- "indexmap",
- "ruff_annotate_snippets",
- "ruff_db",
- "ruff_python_ast",
- "ruff_python_trivia",
- "ruff_source_file",
- "ruff_text_size",
- "strum",
- "strum_macros",
- "tracing",
- "ty_static",
-]
-
-[[package]]
-name = "ty_static"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "ruff_macros",
-]
-
-[[package]]
-name = "ty_vendored"
-version = "0.0.10"
-source = "git+https://github.com/Skyway1111/ty-unnecessary?rev=284831cb43bb167d149b23f0e49bcae015c4d183#284831cb43bb167d149b23f0e49bcae015c4d183"
-dependencies = [
- "path-slash",
- "ruff_db",
- "static_assertions",
- "walkdir",
- "zip",
-]
-
-[[package]]
 name = "typed-arena"
 version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4139,14 +4165,12 @@ dependencies = [
 
 [[package]]
 name = "xtask"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "anyhow",
  "camino",
  "indexmap",
  "regex",
- "ruff_python_ast",
- "ruff_python_parser",
  "serde_json",
  "sha2",
  "sightline-core",
@@ -4154,6 +4178,8 @@ dependencies = [
  "sightline-py-rules",
  "sightline-rs-provers",
  "sightline-rs-rules",
+ "sightline-ruff-python-ast",
+ "sightline-ruff-python-parser",
  "sightline-testkit",
  "tempfile",
  "toml 0.9.12+spec-1.1.0",

@@ -134,7 +134,7 @@ fn linked(meta: &Value) -> Result<Vec<Pkg>> {
         .collect();
     let root = packages
         .iter()
-        .find(|p| p["name"] == "sightline" && p["source"].is_null())
+        .find(|p| p["name"] == "sightline-lint" && p["source"].is_null())
         .context("no `sightline` package in this workspace")?;
 
     // sorted, so two packages of one name and version never trade places

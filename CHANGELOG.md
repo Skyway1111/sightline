@@ -3,8 +3,11 @@
 The user-visible changes per release. The release workflow reads the matching
 section into the GitHub release notes.
 
-## Unreleased
+## 0.3.0 - 2026-09-01
 
+- The crate is `sightline-lint` on crates.io, and the `ty-unnecessary` fork it
+  builds on is published beside it as `sightline-ruff-*` and `sightline-ty-*`.
+  Release archives and installers are named `sightline-lint-*`.
 - The report ranks on a lower bound of each rule's judged precision, the
   posterior mean less one standard deviation, so a rule judged on five sites
   ranks under one judged on two hundred at the same fraction. `explain`,

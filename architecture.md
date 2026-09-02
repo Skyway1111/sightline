@@ -85,7 +85,7 @@ crosses one is a compile error rather than a convention.
 | `rs-facts` | The same contract for Rust, over tree-sitter |
 | `rs-provers` | All Rust analysis, and the only code that runs a Rust toolchain |
 | `rs-rules` | The Rust rule functions and the Rust `Stack` |
-| `sightline` | The binary: the verbs, the pipeline that collects a run, and the version line |
+| `sightline` | The binary, published as `sightline-lint`: the verbs, the pipeline that collects a run, and the version line |
 | `testkit` | Inline mini-repository fixtures for every crate's tests. Dev-only |
 | `xtask` | The workspace's own tooling. `cargo xtask check` is the gate |
 

@@ -19,7 +19,7 @@ rustc-hash.workspace = true
 self_cell.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-sightline-core = { path = "../core" }
+sightline-core = { version = "0.3.0", path = "../core" }
 toml.workspace = true
 tree-sitter = "0.26"
 tree-sitter-rust = "=0.24.2"
