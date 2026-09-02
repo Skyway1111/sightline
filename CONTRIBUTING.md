@@ -72,7 +72,7 @@ the `gauntlet` subcommands. A maintainer runs them before a merge.
 ## Report a false positive
 
 A finding Sightline should not have made is the report worth sending. Each rule
-has a measured precision, in `benchmarks.md` and `data/precision.toml`, and a
+has a measured precision, in `benchmarks.md` and `crates/core/data/precision.toml`, and a
 false positive is evidence against that number.
 
 Run `sightline explain <id>` first. The rule's record says what the rule checks

@@ -66,14 +66,14 @@ pub const POINTERS: &[&str] = &[
     r"docs/todo\.md",
 ];
 
-/// The burials ledger, the judges' ledger, `data/retired.toml` (the same
+/// The burials ledger, the judges' ledger, `crates/sightline/data/retired.toml` (the same
 /// ledger rows, extracted by `xtask retired`), this file, which holds the
 /// lists, and the two files of third-party license text, whose words are
 /// their authors' and not this repository's prose.
 const SKIP: &[&str] = &[
     "corpus-ext/",
     "docs/review/",
-    "data/retired.toml",
+    "crates/sightline/data/retired.toml",
     "crates/xtask/src/banned.rs",
     "crates/xtask/licenses/",
     "THIRD-PARTY.md",

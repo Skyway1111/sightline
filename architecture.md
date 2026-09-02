@@ -29,7 +29,7 @@ The words this document and `benchmarks.md` use as terms.
 | Clean repository | The corpus repository per language that a blocking rule must stay silent on. A GATE rule that fires there is demoted |
 | Held-out repositories | Public repositories drawn by seed for one round and never read to tune a rule. Also called the gauntlet |
 | Round | One judged measurement: a manifest of held-out repositories, a seed, and hand verdicts on a sample of findings |
-| Judged sample | The `tp` of `n` findings a round read at their sites, in `data/precision.toml` |
+| Judged sample | The `tp` of `n` findings a round read at their sites, in `crates/core/data/precision.toml` |
 | Restriction | A narrowing of a rule's arms, accepted when it removes three or more judged false positives per true positive lost |
 | Retired id | A rule cut on its measured precision. Its id is never reused, and `explain <id>` prints why it was cut |
 | Trail | `corpus-ext/decisions.tsv`, the append-only record of every cut, restriction and retirement with its evidence |
@@ -281,8 +281,8 @@ the ty rule set for #58.
 | --- | --- |
 | `.sightline-baseline` | RATCHET keys, counts and shapes, the only posture written; one line per key |
 | `sightline.toml` | This repository's own config |
-| `data/precision.toml` | Measured precision and recall per rule and arm. Compiled into the binary, so a release answers `explain` with no checkout |
-| `data/retired.toml` | The rows of the trail that retire an id, extracted by `cargo xtask retired` |
+| `crates/core/data/precision.toml` | Measured precision and recall per rule and arm. Compiled into the binary, so a release answers `explain` with no checkout |
+| `crates/sightline/data/retired.toml` | The rows of the trail that retire an id, extracted by `cargo xtask retired` |
 | `crates/xtask/corpus.toml` | The corpus table: name, root, config, language, role, and the commit the recorded measurements were taken at. Every measurement command reads it and no second list |
 | `corpus/`, `corpus-ext/` | Corpus configs and the profile pin; the judged sheets, reports and the trail, described in `corpus-ext/README.md` |
 

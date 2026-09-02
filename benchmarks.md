@@ -3,7 +3,7 @@
 The canonical performance and quality numbers. Each entry is a measured value
 with the command that reproduces it. History lives in git and in
 `corpus-ext/decisions.tsv`, the trail. `architecture.md` defines the terms. Per-rule precision and recall are encoded in
-`data/precision.toml`; this file quotes the pooled reads and the method.
+`crates/core/data/precision.toml`; this file quotes the pooled reads and the method.
 
 Four tables are generated. They sit between `<!-- generated: NAME -->` markers
 and `cargo xtask bench-tables` rewrites them from `corpus/results/`. Never edit
@@ -179,13 +179,13 @@ Pending the close run.
 
 Sampled per tier against a seed pinned before judging (`cargo xtask
 precision-sample`). The bars are 95% for proved, 80% for indexed and 70% for
-heuristic. Per-rule and per-arm judged samples live in `data/precision.toml`,
+heuristic. Per-rule and per-arm judged samples live in `crates/core/data/precision.toml`,
 which `sightline explain <id>` prints.
 
 ## Recall
 
 The blind judges' lists against fresh audits of the held-out repositories,
-tallied into `data/precision.toml`. Recall is re-measured with every precision
+tallied into `crates/core/data/precision.toml`. Recall is re-measured with every precision
 round: a cut is measured on both sides or it does not happen.
 
 ## Own repository

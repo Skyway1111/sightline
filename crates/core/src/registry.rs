@@ -13,7 +13,7 @@ use anyhow::bail;
 use crate::rule::{Posture, RuleRecord};
 
 /// Ids no rule holds. A retired id is never reused; `explain` answers one
-/// from `data/retired.toml`.
+/// from `crates/sightline/data/retired.toml`.
 pub const RETIRED: &[&str] = &[
     "4", "8", "13", "15", "16", "17", "19", "22", "25", "28", "30", "31", "43", "45", "46", "51",
     "52", "61",

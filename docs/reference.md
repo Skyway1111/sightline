@@ -115,7 +115,7 @@ read in no other place. `sightline explain <id>` prints it.
 
 No rule holds GATE. It is what a rule earns from a judged round, and the two
 that held it were measured instead: #44 moved to RATCHET at 0.585 and #31 was
-retired at 0.073 (`data/retired.toml`). So what `gate` blocks on today is
+retired at 0.073 (`crates/sightline/data/retired.toml`). So what `gate` blocks on today is
 RATCHET against the baseline, and a tree with a committed baseline blocks only
 on what a change adds.
 

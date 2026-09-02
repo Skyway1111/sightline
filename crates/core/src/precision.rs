@@ -1,7 +1,7 @@
 //! Measured precision and recall.
 //!
 //! What JSON and SARIF findings, `explain` and `rank` read. The rows
-//! themselves live in `data/precision.toml`, embedded here and parsed once. A
+//! themselves live in `crates/core/data/precision.toml`, embedded here and parsed once. A
 //! measurement is not a declaration: a rule record never holds one.
 
 use std::sync::LazyLock;
@@ -122,7 +122,7 @@ struct Tables {
     recall: Vec<RecallRow>,
 }
 
-/// The two tables of `data/precision.toml`, keyed by `key_of` (a
+/// The two tables of `crates/core/data/precision.toml`, keyed by `key_of` (a
 /// precision key is optionally suffixed `:<cause prefix>` where an arm was
 /// judged alone), in file order: `rule_sample` walks it.
 struct Keyed {
@@ -135,8 +135,8 @@ fn keyed() -> &'static Keyed {
         // the file is embedded at compile time, so a malformed table is a
         // build the tests catch, never a state a run can reach
         #[allow(clippy::expect_used, reason = "compile-time embedded input")]
-        let t: Tables = toml::from_str(include_str!("../../../data/precision.toml"))
-            .expect("data/precision.toml is malformed");
+        let t: Tables = toml::from_str(include_str!("../data/precision.toml"))
+            .expect("crates/core/data/precision.toml is malformed");
         Keyed {
             precision: t.precision.into_iter().map(|r| (r.key, r.sample)).collect(),
             recall: t.recall.into_iter().map(|r| (r.key, r.recall)).collect(),

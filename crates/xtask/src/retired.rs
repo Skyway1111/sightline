@@ -1,4 +1,4 @@
-//! `data/retired.toml`: the burial rows of `corpus-ext/decisions.tsv`, so a
+//! `crates/sightline/data/retired.toml`: the burial rows of `corpus-ext/decisions.tsv`, so a
 //! released binary answers `explain <retired id>` without a checkout.
 //!
 //! The reading: a row whose decision names the id
@@ -107,7 +107,7 @@ pub fn main(args: &[&str]) -> Result<u8> {
     let tsv = std::fs::read_to_string(&tsv_path)
         .with_context(|| format!("reading {}", tsv_path.display()))?;
     let text = render(&tsv)?;
-    let out = workspace_root().join("data/retired.toml");
+    let out = workspace_root().join("crates/sightline/data/retired.toml");
     write_lf(&out, &text)?;
     let ids = text.matches("\n[[retired]]\n").count();
     println!("{}: {ids} rows over {} ids", out.display(), RETIRED.len());
@@ -144,7 +144,9 @@ mod tests {
     #[test]
     fn the_committed_toml_is_what_this_writes() {
         let want = render(&tsv()).unwrap();
-        let got = std::fs::read_to_string(workspace_root().join("data/retired.toml")).unwrap();
+        let got =
+            std::fs::read_to_string(workspace_root().join("crates/sightline/data/retired.toml"))
+                .unwrap();
         assert_eq!(got.replace("\r\n", "\n"), want, "run `cargo xtask retired`");
     }
 

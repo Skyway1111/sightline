@@ -33,8 +33,8 @@ struct Retired {
 
 fn burials() -> &'static [Burial] {
     static TABLE: LazyLock<Retired> = LazyLock::new(|| {
-        toml::from_str(include_str!("../../../../data/retired.toml"))
-            .expect("data/retired.toml is malformed")
+        toml::from_str(include_str!("../../data/retired.toml"))
+            .expect("crates/sightline/data/retired.toml is malformed")
     });
     &TABLE.retired
 }
