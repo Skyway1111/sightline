@@ -1,7 +1,6 @@
-//! The `facts` verb's printout (`describe.py`). The Python tree has no test
-//! file of its own for it, so these pin the shape phase 9's verb prints: one
-//! line per accessor, a module qname answering for its whole file, and an
-//! unknown qname answering with the nearest names.
+//! The `facts` verb's printout: one line per accessor, a module qname
+//! answering for its whole file, and an unknown qname answering with the
+//! nearest names.
 
 use sightline_core::lang::Stack;
 use sightline_testkit::{build, run_rule};

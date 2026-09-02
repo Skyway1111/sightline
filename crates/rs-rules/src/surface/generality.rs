@@ -1,5 +1,5 @@
 //! #37, speculative generality: the single-impl trait and the monomorphic
-//! parameter (`rs/rules/surface.py` L310-394).
+//! parameter.
 
 use std::collections::HashSet;
 

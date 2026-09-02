@@ -1,4 +1,4 @@
-//! Suppression markers (port of `findings.py` `_MARKS` to `suppress`).
+//! Suppression markers.
 //!
 //! One concept, one grammar; a mark is a rule id or its slug. Code spells
 //! it in its language's comment syntax, a doc in HTML.
@@ -135,8 +135,8 @@ mod tests {
         }
     }
 
-    /// The mini repo `scratch/core-a/probe_order.py` builds, line for line;
-    /// `P` spells `#`, the prefix REF's Python facts report.
+    /// The mini repo these tests share, line for line; `P` spells its
+    /// comments with `#`.
     fn probe_stack() -> SyntheticStack {
         SyntheticStack::new(
             &P,
@@ -172,8 +172,7 @@ a third claim <!-- sightline-ok: 7 -->
 
     #[test]
     fn the_marker_reads_ids_slugs_and_lists_in_code_and_in_docs() {
-        // the two lists below are what REF's `sightline.findings.suppress`
-        // answered on this repo (scratch/core-a/probe_order.py)
+        // the two lists below are what `suppress` answers on that repo
         let stack = probe_stack();
         let (kept, suppressed) = suppress(
             vec![

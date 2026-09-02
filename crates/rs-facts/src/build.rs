@@ -1,7 +1,6 @@
-//! `build_facts`: discover, parse and index a Cargo root (port of
-//! `rs/facts.py`). Pass A indexes per-module items, `use` bindings and
-//! comments; pass B resolves name-level refs and calls against the symbol
-//! table A built.
+//! `build_facts`: discover, parse and index a Cargo root. Pass A indexes
+//! per-module items, `use` bindings and comments; pass B resolves
+//! name-level refs and calls against the symbol table A built.
 
 use std::cell::RefCell;
 use std::collections::HashMap;
@@ -29,7 +28,7 @@ use crate::nodes::{COMMENTS, children, has, named_children, nonempty};
 use crate::{SUFFIX, in_prelude, is_test_path};
 
 mod built {
-    // the one self-referential struct of the Rust stack (decision 7)
+    // the one self-referential struct of the Rust stack
     #![allow(unsafe_code)]
 
     use super::{RsFacts, RsTree};

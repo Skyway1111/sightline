@@ -1,4 +1,3 @@
-//! One integration binary for the crate (codemap 3.10), a module per
-//! Python test file.
+//! One integration binary for the crate, a module per test file.
 
 mod test_facts;

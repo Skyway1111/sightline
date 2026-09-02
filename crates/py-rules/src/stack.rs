@@ -1,5 +1,5 @@
-//! The Python side of the language seam (`lang.py`'s `PY` record, codemap
-//! 4.2): facts, provers and rules side by side.
+//! The Python side of the language seam: facts, provers and rules side by
+//! side.
 
 use std::collections::HashMap;
 use std::sync::Arc;
@@ -70,8 +70,8 @@ impl Language for PyLanguage {
         let built = build_facts(root, config, listing, only);
         let facts_wall = started.elapsed().as_secs_f64();
         let started = std::time::Instant::now();
-        // `lang.py:PY.file_provers`: the fast gate reads per-facts caches
-        // alone, no checker and no git history
+        // The fast gate reads per-facts caches alone, no checker and no git
+        // history
         let provers = match mode {
             BuildMode::Full => Provers::new(root, config, built.borrow_dependent(), true),
             BuildMode::File => Provers::bare(built.borrow_dependent()),
@@ -90,7 +90,8 @@ pub struct PyStack {
     pub provers: Provers,
     neutral: Neutral,
     ids_by_slug: HashMap<String, String>,
-    /// `profile_audit.py`'s two build stages; empty for a stack a test built.
+    /// The two build stages `audit --profile` prints; empty for a stack a
+    /// test built.
     pub walls: Vec<(String, f64)>,
 }
 
@@ -188,7 +189,7 @@ impl Stack for PyStack {
     }
 
     /// The build's two stages and every oracle pass, in the labels
-    /// `profile_audit.py` writes.
+    /// `audit --profile` prints.
     fn passes(&self) -> Vec<(String, f64)> {
         let mut out = self.walls.clone();
         out.extend(self.provers.oracle_passes());
@@ -201,7 +202,7 @@ impl Stack for PyStack {
         self.provers.provenance(self.facts())
     }
 
-    /// `lang.py:_py_fix`: one world pass over these findings, then the diff.
+    /// One world pass over these findings, then the diff.
     fn fix(&self, findings: &[Finding]) -> Option<String> {
         let facts = self.facts();
         let patched = crate::emit::attach_fixes(findings.to_vec(), facts, &self.provers);

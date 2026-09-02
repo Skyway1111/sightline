@@ -1,8 +1,6 @@
 //! `discover` and `any_name` over one tree holding a dot-dir, two of
 //! `DEFAULT_EXCLUDE_DIRS`, a junction, a mixed-case sibling pair and both
-//! shapes of config exclude. The expected listings come from a probe through
-//! REF's `sightline.facts.build.discover` over the same tree:
-//! `sightline-phase1/scratch/core-b/probe_discover.py`.
+//! shapes of config exclude.
 
 use camino::{Utf8Path, Utf8PathBuf};
 use sightline_core::config::Config;

@@ -1,7 +1,7 @@
 //! Clone one split of a round's manifest into the corpus root's `gauntlet-corpus/` at its
 //! pinned SHAs, and make a Rust clone offline ready. This is what a re-clone
 //! of a written round needs; the steps that wrote those manifests are not
-//! here (`docs/todo.md`).
+//! here (issue #2).
 
 use std::io::Read;
 use std::path::{Path, PathBuf};

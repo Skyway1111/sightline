@@ -1,7 +1,7 @@
-//! Family C, comment discipline (port of `rules/comments.py`, #39): the
-//! restates arms (a comment against its code line, a one-line docstring
-//! against its def's name, a dunder's docstring against its protocol's
-//! vocabulary). #34 owns the commented-out-code class.
+//! Family C, comment discipline (#39): the restates arms (a comment against
+//! its code line, a one-line docstring against its def's name, a dunder's
+//! docstring against its protocol's vocabulary). #34 owns the
+//! commented-out-code class.
 
 use std::collections::HashSet;
 use std::sync::LazyLock;
@@ -27,18 +27,17 @@ use crate::util::{decorator_lines, enclosing_at_line};
 
 static LICENSE_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)copyright|licen[cs]e|permission is hereby|redistribution")
-        .expect("a pattern copied from `rules/comments.py`")
+        .expect("a literal pattern compiles")
 });
 static EXEMPT_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"sightline-(ok|fix)|noqa|\b(type|pyright|mypy|pylint|flake8):|^#!")
-        .expect("a pattern copied from `rules/comments.py`")
+        .expect("a literal pattern compiles")
 });
 /// A bare or labelled banner.
-static DIVIDER_RE: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"^#\s*[-=~*#]{3,}(\s|$)").expect("a pattern copied from `rules/comments.py`")
-});
+static DIVIDER_RE: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"^#\s*[-=~*#]{3,}(\s|$)").expect("a literal pattern compiles"));
 static WORD_RE: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"[A-Za-z]+").expect("a pattern copied from `rules/comments.py`"));
+    LazyLock::new(|| Regex::new(r"[A-Za-z]+").expect("a literal pattern compiles"));
 
 const STOPWORDS: &str = "the a an to of in for is are it its this that and or with on at by as \
                          we into from then when each per not";

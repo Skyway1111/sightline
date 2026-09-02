@@ -19,6 +19,7 @@ mod perf_catalog;
 mod precision_sample;
 mod profile;
 mod retired;
+mod rules_doc;
 mod surface;
 mod text;
 mod third_party;
@@ -36,6 +37,7 @@ usage: cargo xtask <command>
   surface
   fence
   third-party [--check]
+  rules-doc [--check]
   catalog [--timeout N] [--self-test] [--python <exe>]
   perf-catalog [--self-test] [--python <exe>]
   precision-sample [--rules 35,36] [--arms cause,...] <audit.json> <root>...
@@ -62,6 +64,7 @@ fn main() -> ExitCode {
         Some("surface") => surface::main(&rest),
         Some("fence") => fence::main(&rest),
         Some("third-party") => third_party::main(&rest),
+        Some("rules-doc") => rules_doc::main(&rest),
         Some("catalog") => catalog::main(&rest),
         Some("perf-catalog") => perf_catalog::main(&rest),
         Some("precision-sample") => precision_sample::main(&rest),

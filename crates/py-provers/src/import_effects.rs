@@ -1,6 +1,5 @@
-//! Port of `provers/import_effects.py` without the oracle's span queries
-//! (phase 4 answers them). What an import runs: the import-time work no world
-//! can see, and so what an emitter may move (#35) or drop (#32) around.
+//! What an import runs: the import-time work no world can see, and so what
+//! an emitter may move (#35) or drop (#32) around.
 //! `import_time` walks what importing evaluates, `runs` reads one node
 //! against the catalog by its own spelling or the `<class>.<method>` its
 //! receiver's type spells, `import_time_effects` folds that over the graph's

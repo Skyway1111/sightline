@@ -104,7 +104,7 @@ it. Later audits reuse the build directory that
 [docs/reference.md](docs/reference.md) locates.
 
 No finding makes `audit` exit non-zero. To read one finding's rule, pass its id
-to `explain`:
+to `explain`, or browse every rule in [docs/rules.md](docs/rules.md):
 
 ```
 sightline explain 23
@@ -238,6 +238,7 @@ checkout you cannot write to. The keys are listed in
 
 | Document | What it holds |
 | --- | --- |
+| [docs/rules.md](docs/rules.md) | Every rule: what it checks, the goal it approximates, its posture and its measured precision |
 | [docs/reference.md](docs/reference.md) | Every verb, flag, config key, exit code, the suppression syntax, where Sightline writes, and the known limitations |
 | [architecture.md](architecture.md) | How a finding is produced: the pipeline, the crate boundaries, the two oracles |
 | [benchmarks.md](benchmarks.md) | Measured walls, fire rates, precision and recall, each with its reproduction command |

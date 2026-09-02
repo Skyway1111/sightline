@@ -14,7 +14,7 @@ explains how a finding is produced.
 | `baseline ROOT` | Writes `.sightline-baseline.json` | Repo-wide | 0 |
 | `fix ROOT` | Unified diff of verified fixes. It never writes to the tree | Repo-wide | 0 |
 | `facts ROOT QNAME` | What the provers hold about one symbol or module | Repo-wide | 0 |
-| `explain RULE` | One rule's record, its measured precision, and the burial rows of a retired id | None | 0 |
+| `explain RULE` | One rule's record and its measured precision, or why a retired id was cut | None | 0 |
 | `explain` | Every rule the binary runs, one line each, with its slug, language, family, posture, tier and judged precision | None | 0 |
 | `debug dump ROOT` | One JSON document per pipeline layer, for reading what a stage holds | Repo-wide | 0 |
 
@@ -99,7 +99,7 @@ read in no other place. `sightline explain <id>` prints it.
 | REPORT | Never blocks | Never written |
 
 No rule holds GATE. It is what a rule earns from a judged round, and the two
-that held it were priced instead: #44 moved to RATCHET at 0.585 and #31 was
+that held it were measured instead: #44 moved to RATCHET at 0.585 and #31 was
 retired at 0.073 (`data/retired.toml`). So what `gate` blocks on today is
 RATCHET against the baseline, and a tree with a committed baseline blocks only
 on what a change adds.
@@ -125,7 +125,7 @@ In a `.md` or `.rst` file, spell it in HTML:
 
 A marker on a line of its own applies to the next line. A marker after code
 applies to its own line. Ids are numeric and permanent, and a retired id stays
-reserved; `sightline explain <id>` prints a retired id's burial rows.
+reserved; `sightline explain <id>` prints why a retired id was cut.
 
 ## Where Sightline writes
 

@@ -1,6 +1,6 @@
-//! `callgraph.py`'s judging half: how an oracle callee edge re-judges a
-//! CHA verdict (`_oracle_judged`, `_judged`), and what a by-name guess
-//! becomes with and without one. Phase 4 feeds the edges.
+//! The judging half of the call graph: how an oracle callee edge re-judges
+//! a CHA verdict, and what a by-name guess becomes with and without one. The
+//! oracle feeds the edges.
 
 use super::*;
 

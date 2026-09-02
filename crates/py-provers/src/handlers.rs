@@ -1,7 +1,7 @@
-//! Port of `provers/handlers.py` (codemap 3.3): what an `except` handler does
-//! with the failure - one classifier for #34's prod swallows and family T's
-//! verdicts. The builtin exception table R16 names lives here too, since it
-//! answers both "is this name an exception" and #33's base question.
+//! What an `except` handler does with the failure - one classifier for #34's
+//! prod swallows and family T's verdicts. The builtin exception table R16
+//! names lives here too, since it answers both "is this name an exception"
+//! and #33's base question.
 
 use ruff_python_ast::{ExceptHandlerExceptHandler, Expr, ExprCall, Number, Stmt, StmtTry};
 use sightline_py_facts::astutil::{mentions, walk};
@@ -244,7 +244,7 @@ fn is_default(value: Option<&Expr>) -> bool {
 /// Every name `vars(builtins)` binds to a `BaseException` subclass in CPython
 /// 3.14, with its immediate base. Keyed by `__name__`, so the `OSError`
 /// aliases (`IOError`, `EnvironmentError`, `WindowsError`) are not names of
-/// their own, exactly as the Python dict comprehension leaves them.
+/// their own.
 /// `ruff_python_stdlib::builtins::is_exception(_, 14)` is not this set: it
 /// adds `ImportCycleError` and drops `_IncompleteInputError`.
 const EXCEPTIONS: [(&str, &str); 69] = [

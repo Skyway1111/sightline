@@ -1,4 +1,4 @@
-//! Measured precision and recall, the port of `precision.py`.
+//! Measured precision and recall.
 //!
 //! What JSON and SARIF findings, `explain` and `rank` read. The rows
 //! themselves live in `data/precision.toml`, embedded here and parsed once. A
@@ -41,8 +41,7 @@ pub struct Sample {
 }
 
 impl Sample {
-    /// The JSON body a finding reports, in the field order `precision.py`
-    /// writes. Every writer sorts keys, so the order is the record's.
+    /// The JSON body a finding reports, in this record's field order.
     #[must_use]
     pub fn json(&self) -> IndexMap<&'static str, Value> {
         let mut out = IndexMap::new();
@@ -195,22 +194,21 @@ mod tests {
             (one.tp, one.n, one.seed, one.bar),
             (66, 80, 202_608_284, Some(0.7))
         );
-        assert_eq!(
-            one.of,
-            "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
-        );
+        assert_eq!(one.of, "judged on 5 held-out Python repositories, round 4");
 
-        // the longest `of` in the table, and the only rows with a `%` in them
+        // a population with a second clause, read whole
         let rs48 = &rule_precision()["rs:48"];
         assert_eq!((rs48.tp, rs48.n, rs48.seed), (12, 14, 202_608_292));
-        assert!(rs48.of.contains("12/17 = 71 % pooled, so REPORT stands"));
-        assert!(rs48.of.ends_with("1:1 under its 3:1 bar, and reverted"));
+        assert!(
+            rs48.of
+                .ends_with("read 0 real of 3, so the rule stays REPORT")
+        );
 
         let rec = &rule_recall_table()["rs:29"];
         assert_eq!((rec.covered, rec.sites), (40, 41));
-        assert_eq!(
-            rec.of,
-            "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+        assert!(
+            rec.of
+                .starts_with("the blind judges' lists on 5 held-out Rust libraries")
         );
     }
 

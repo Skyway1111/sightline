@@ -1,4 +1,4 @@
-//! Framework-fixed guard (port of `rules/framework.py`): is a signature or
+//! Framework-fixed guard: is a signature or
 //! member owned by a dispatch contract, or relocatable? One home, read by
 //! #6, #10, #32, #40, #48, #55.
 

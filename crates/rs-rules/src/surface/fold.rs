@@ -1,4 +1,4 @@
-//! #48, the fold candidate (`rs/rules/surface.py` L397-546).
+//! #48, the fold candidate.
 
 use sightline_core::findings::{Evidence, Finding, Qname, Sink};
 use sightline_rs_facts::Node;

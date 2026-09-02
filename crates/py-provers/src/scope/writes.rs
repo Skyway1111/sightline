@@ -1,5 +1,5 @@
-//! `scope.py`'s write extraction: `Write`, `Guard`, and the free fns that
-//! read a binding, a guard or an alias root off a node.
+//! Write extraction: `Write`, `Guard`, and the free fns that read a
+//! binding, a guard or an alias root off a node.
 
 use super::*;
 

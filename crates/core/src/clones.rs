@@ -213,9 +213,8 @@ mod tests {
         assert_eq!(digest("a\nb"), "7e18f737311b");
     }
 
-    // Every expected value below comes from a probe through REF's
-    // `sightline.provers.clones.repeats` on the same input:
-    // `sightline-phase1/scratch/core-b/probe_repeats.py`.
+    // Every expected value below is the repeat set for the row sequences
+    // the test beside it builds.
 
     #[test]
     fn a_whole_body_duplicate_belongs_to_the_function_arm() {

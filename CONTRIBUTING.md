@@ -26,26 +26,33 @@ cargo run -p sightline -- --version
 The tests that spawn the type checker or cargo are `#[ignore]`, so
 `cargo test --workspace` is the unit half.
 
-Three of the repository's own checks run anywhere as well:
+Four of the repository's own checks run anywhere as well:
 
 ```
 cargo xtask banned --tree
 cargo xtask surface
 cargo xtask fence
+cargo xtask rules-doc --check
 ```
 
-`banned --tree` scans the tree for a word list and the em dash. It reads `git
-ls-files`, so a file you have not staged is invisible to it. Run `git add`
-first. `surface` counts non-test lines under `crates/` against a bound, which
+`banned --tree` is a prose lint. It fails on an em dash, on a short list of
+words this repository's comments and docs once reached for in place of a
+mechanism or a number, and on citations of the plan and the Python tool the
+rewrite replaced, which a reader here cannot open. The lists sit in
+`crates/xtask/src/banned.rs` with the reason for each. It scans every text
+file `git ls-files` names, code included, so stage a new file before you run
+it. `surface` counts non-test lines under `crates/` against a bound, which
 a commit that needs a higher one argues for. `fence` proves that no rules crate
-depends on a parser or an oracle crate.
+depends on a parser or an oracle crate. `rules-doc --check` proves that
+`docs/rules.md` matches the rule records the binary holds; a change to a rule's
+record regenerates it with `cargo xtask rules-doc`.
 
-Open a pull request with those seven green.
+Open a pull request with those eight green.
 
 ## The corpus trees
 
-`cargo xtask check` ends with a stage that audits the Python clean pole, one
-of six public repositories the gate reads from the corpus root:
+`cargo xtask check` ends with a stage that audits the clean Python
+repository, one of six public repositories the gate reads from the corpus root:
 `../sightline-corpus/`, beside this checkout, or the directory
 `SIGHTLINE_CORPUS_ROOT` names. `crates/xtask/corpus.toml` names each one's
 url, config, language, role and pin. Clone them there, checked out at their
@@ -57,7 +64,8 @@ The stages before that one are the CI lanes plus a release build and
 Sightline's audit of its own tree, so the commands above cover them without a
 single corpus tree.
 
-`cargo xtask check --slow` and the rulers read those trees too: `corpus`,
+`cargo xtask check --slow` and the measurement commands read those trees
+too: `corpus`,
 `fix-check`, `audit-bench`, `profile`, `bench-tables`, `precision-sample` and
 the `gauntlet` subcommands. A maintainer runs them before a merge.
 
@@ -90,5 +98,6 @@ slug>` above the line. [docs/reference.md](docs/reference.md) holds the syntax.
 ## Change a rule
 
 A rule's precision and recall are both measured, on trees a contributor cannot
-reach. A change to a rule's arms is priced on both sides before it lands. Open
-an issue before you write the code, so the measurement is agreed first.
+reach. A change to a rule's arms is measured on both before it lands: the false
+positives it removes and the true positives it loses. Open an issue before you
+write the code, so the measurement is agreed first.

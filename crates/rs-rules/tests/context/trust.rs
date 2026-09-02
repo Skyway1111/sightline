@@ -1,5 +1,5 @@
-//! `tests/rs/test_rules_trust.py`: #9 and #53 over Rust facts, the firing
-//! shape, the silent sibling and the exemption each arm names.
+//! #9 and #53 over Rust facts, the firing shape, the silent sibling and
+//! the exemption each arm names.
 
 use sightline_core::findings::Finding;
 use sightline_core::rule::Posture;
@@ -192,8 +192,7 @@ fn rule_53_a_question_mark_and_a_private_function_are_unread() {
 }
 
 /// One and two judged rows: neither reading holds the n >= 5 a blocking
-/// posture is priced on, so each reports until a fresh seed measures it
-/// (`docs/todo.md`).
+/// posture is priced on, so each reports until a fresh seed measures it.
 #[test]
 fn the_family_reports_until_a_round_prices_it() {
     for id in ["9", "53"] {

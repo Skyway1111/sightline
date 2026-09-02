@@ -1,7 +1,6 @@
-//! Dev-only fixtures every crate's tests build on (`codemap.md`, 3.10):
-//! the mini repo a test writes to disk, `core::testing`'s synthetic
-//! languages and registry, and `run_rule`, the port of
-//! `tests/rules/conftest.py`.
+//! Dev-only fixtures every crate's tests build on: the mini repo a test
+//! writes to disk, `core::testing`'s synthetic languages and registry,
+//! and `run_rule`.
 
 pub use sightline_core::testing::*;
 pub use sightline_py_rules::stack::{PyLanguage, PyStack};
@@ -22,15 +21,15 @@ use sightline_rs_provers::oracle::index::{RsEdge, RsGraph};
 use sightline_rs_provers::oracle::{RsAnswers, RsMember, RsOracle, answers_of};
 use tempfile::TempDir;
 
-/// `tests/rs/conftest.py:MANIFEST`: the manifest a Rust fixture gets where
-/// it writes none, so a facts test is its `.rs` sources alone.
+/// The manifest a Rust fixture gets where it writes none, so a facts test
+/// is its `.rs` sources alone.
 pub const MANIFEST: &str = "[package]\nname = \"demo-crate\"\nversion = \"0.1.0\"\n";
 
-/// One row of `tests/test_wholeprogram_honesty.py:ESCAPE_FIXTURES`: a
-/// closed-world escape reason, the repo that produces it, the symbol it lands
-/// on, and whether the effects summary is unknown (`framework-base` opens the
-/// caller set, not the body). Phase 5's `rules/test_oracle_rules.py` judges
-/// #4/#5 over the same table.
+/// One row of `ESCAPE_FIXTURES`: a closed-world escape reason, the repo
+/// that produces it, the symbol it lands on, and whether the effects
+/// summary is unknown (`framework-base` opens the caller set, not the
+/// body). The escape tests in `py-provers` and the oracle-trust tests in
+/// `py-rules` both read this table.
 pub struct EscapeFixture {
     pub reason: &'static str,
     pub files: &'static [(&'static str, &'static str)],
@@ -135,7 +134,7 @@ pub const ESCAPE_FIXTURES: [EscapeFixture; 7] = [
     },
 ];
 
-/// `tests/conftest.py:repo`: a mini repo written to disk and built, with
+/// A mini repo written to disk and built, with
 /// bare provers (`Provers()`: no git read, no notes). The tree lives as long
 /// as the returned handle, which every borrow of the stack outlives.
 pub fn build(files: &[(&str, &str)]) -> (TempDir, PyStack) {
@@ -152,7 +151,7 @@ pub fn build_with(files: &[(&str, &str)], config: Config) -> (TempDir, PyStack) 
     (dir, stack)
 }
 
-/// `tests/rules/conftest.py:run_rule`: one rule over an inline mini repo
+/// One rule over an inline mini repo
 /// with bare provers, findings in yield order with `lang` stamped.
 pub fn run_rule(id: &str, files: &[(&str, &str)]) -> Vec<Finding> {
     let (_dir, stack) = build(files);
@@ -197,7 +196,7 @@ pub fn run_rs_rule_on(id: &str, stack: &RsStack) -> Vec<Finding> {
     sink.0
 }
 
-/// `tests/rs/conftest.py:rs_repo`: a Rust mini repo written to disk and
+/// A Rust mini repo written to disk and
 /// built, with bare provers. The fixture's own `Cargo.toml` wins; without
 /// one it gets `MANIFEST`, as `run_rs_rule` writes it.
 pub fn build_rs(files: &[(&str, &str)]) -> (TempDir, RsStack) {
@@ -230,11 +229,10 @@ pub fn build_rs_stack(
     (dir, stack)
 }
 
-/// `tests/rs/test_rs_oracle.py`'s `crate`, `workspace` and `siblings`
-/// fixtures: the mini repo built with the toolchain on, its cargo target
-/// under the repo's own temp dir so no build lands in the user's cache
-/// (`tests/rs/conftest.py:cargo_target_in_pytest_tmp`). A test that calls
-/// this spawns cargo and loads the index: `#[ignore]`, run by `xtask check`.
+/// The mini repo built with the toolchain on, its cargo target under the
+/// repo's own temp dir so no build lands in the user's cache. A test that
+/// calls this spawns cargo and loads the index: `#[ignore]`, run by
+/// `xtask check`.
 pub fn build_rs_oracle(files: &[(&str, &str)]) -> (TempDir, RsStack) {
     let config = Config::new();
     let dir = make_repo(files);
@@ -249,10 +247,9 @@ pub fn build_rs_oracle(files: &[(&str, &str)]) -> (TempDir, RsStack) {
     (dir, stack)
 }
 
-/// `tests/rs/test_closed_world.py:Answers`: the graph rows a prover reads in
-/// place of the degraded run's empty one, and the members a splice is
-/// verifiable in. Only a member's name is read; its dir and kind are the
-/// index's, so they stay empty until phase 7.
+/// The graph rows a prover reads in place of the degraded run's empty one,
+/// and the members a splice is verifiable in. Only a member's name is
+/// read; its dir and kind are the index's, so they stay empty here.
 pub fn rs_answers(edges: &[(&str, &str, &str, u32, bool)], checked: &[&str]) -> RsAnswers {
     RsAnswers {
         graph: rs_graph(edges),

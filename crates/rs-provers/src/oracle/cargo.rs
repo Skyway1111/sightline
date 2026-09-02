@@ -1,7 +1,7 @@
 //! `cargo metadata --no-deps` and `cargo check --workspace --all-targets
-//! --keep-going` per project root (`rs/oracle.py`'s cargo half): the members,
-//! the base diagnostics, the unchecked set and the versions. One subprocess
-//! per call, and a spawn that fails ends that project root, never the audit.
+//! --keep-going` per project root: the members, the base diagnostics, the
+//! unchecked set and the versions. One subprocess per call, and a spawn that
+//! fails ends that project root, never the audit.
 
 use std::collections::{BTreeSet, HashSet};
 use std::ffi::OsStr;
@@ -279,8 +279,8 @@ impl RsOracle {
     /// test or an example stays checked, and the note names that target.
     pub fn unchecked(&self) -> &BTreeSet<String> {
         self.cargo.unchecked.get_or_init(|| {
-            // the check runs before the member list, as `rs/oracle.py` forces
-            // them, and `members` is forced before the lock it also takes
+            // the check runs before the member list, and `members` is forced
+            // before the lock it also takes
             if self.diagnostics().is_empty() && self.failure().is_some() {
                 return BTreeSet::new();
             }

@@ -1,5 +1,5 @@
-//! `tests/test_fixes.py`, the #33 half and the fold that owns a lift's def:
-//! a verified splice rides its finding as a `Fix`, a vetoed one keeps the
+//! The #33 half of the fix suite and the fold that owns a lift's def: a
+//! verified splice rides its finding as a `Fix`, a vetoed one keeps the
 //! finding and drops only the patch. The #32, #35, #39 and #48 splices are
 //! judged in their own rule files; what is here needs `emit::attach_fixes`.
 

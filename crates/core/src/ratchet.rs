@@ -1,4 +1,4 @@
-//! Baseline ratchet (port of `ratchet.py`): `.sightline-baseline.json`
+//! Baseline ratchet: `.sightline-baseline.json`
 //! holds finding counts keyed (rule, qualified symbol name), and counts only
 //! decrease per key. Symbol grain survives file moves and exposes
 //! fix-one-add-one churn.
@@ -181,11 +181,9 @@ mod tests {
 
     #[test]
     fn save_writes_the_reference_tools_bytes() {
-        // scratch/core-a/probe_ratchet.py printed these from REF's
-        // `ratchet.save`. Python's `write_text` translates \n to the
-        // platform terminator, so its Windows bytes carry CR; the repo
-        // stores the file with LF (its .gitattributes normalizes) and this
-        // port writes LF everywhere.
+        // `save` writes LF on every platform, never the platform
+        // terminator; the repo stores the baseline with LF too, and its
+        // .gitattributes normalizes it.
         let (_dir, path) = tmp();
         let fs = [
             at("1", "m.f", 2),

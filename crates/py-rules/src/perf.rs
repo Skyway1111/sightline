@@ -1,4 +1,4 @@
-//! Family P (port of `rules/perf.py`, #41): the perf shape catalog, emitted
+//! Family P (#41): the perf shape catalog, emitted
 //! only in the hot set (`py_provers::hotness`). Every entry ships a committed
 //! micro-bench proving 2x or better at its pinned n (`xtask perf-catalog`).
 //! Shapes ruff PERF covers are excluded. REPORT forever: only bench-ratchet

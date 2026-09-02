@@ -1,5 +1,4 @@
-//! `sightline gate` (port of `gate.py`'s gate half): the one blocking
-//! surface, and the only reader that acts on posture. Fast mode: changed
+//! `sightline gate`: the one blocking surface, and the only reader that acts on posture. Fast mode: changed
 //! files, single-file facts, the `scope="file"` GATE and RATCHET rules of
 //! the file's language; no oracle, sub-second. Full mode: the whole audit
 //! pipeline.

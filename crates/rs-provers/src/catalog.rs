@@ -1,9 +1,9 @@
-//! What a call to a callable outside the repo does (port of
-//! `rs/catalog.py`), on the effect-class axis `core::catalog` names for both
-//! languages. A callable is keyed by its absolute path (`std::fs`, a root
-//! standing for its whole module, a member overriding it), by the bare name
-//! a macro spells (`println`), or - with a leading dot - by the method it
-//! spells on any receiver (`.lock`). The longest `::` prefix wins.
+//! What a call to a callable outside the repo does, on the effect-class axis
+//! `core::catalog` names for both languages. A callable is keyed by its
+//! absolute path (`std::fs`, a root standing for its whole module, a member
+//! overriding it), by the bare name a macro spells (`println`), or - with a
+//! leading dot - by the method it spells on any receiver (`.lock`). The
+//! longest `::` prefix wins.
 //!
 //! An unlisted callable is assumed pure: it computes and returns. The
 //! receiver keys are name-level and say nothing about the type they land on,

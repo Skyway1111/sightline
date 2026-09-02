@@ -1,11 +1,10 @@
-//! `tests/provers/test_counterfactual.py`: group testing that keeps the
-//! isolated verdict. Proposals sharing a caller file are judged
-//! independently, so one proposal's breakage vetoes it alone and a receipt
-//! is the splice's own. The groups only buy back the passes.
+//! Group testing that keeps the isolated verdict. Proposals sharing a caller
+//! file are judged independently, so one proposal's breakage vetoes it alone
+//! and a receipt is the splice's own. The groups only buy back the passes.
 //!
 //! Every test that needs a real answer builds an `Oracle` at the mini repo's
 //! root. The nine of them run always: the whole file takes 2.1 s at one
-//! thread, so none is over decision 17's one-second bar.
+//! thread, so none is over the one-second bar that would make it `#[ignore]`.
 
 use std::collections::HashSet;
 
@@ -55,8 +54,7 @@ fn with_oracle(files: &[(&str, &str)]) -> (TempDir, PyStack, Oracle) {
 }
 
 /// Every pass the run cost: the worlds of each non-empty `verify_worlds`
-/// batch (an empty batch answers without a pass), as the Python `worlds`
-/// fixture records them.
+/// batch (an empty batch answers without a pass).
 fn passes(oracle: &Oracle) -> Vec<Vec<String>> {
     oracle
         .world_calls()
@@ -110,7 +108,7 @@ fn a_breaking_proposal_does_not_veto_its_neighbour() {
 fn a_possibly_unbound_read_a_splice_reveals_never_vetoes() {
     // a deletion splice (module-owned, so every file is watched) whose only
     // new diagnostic is the dropped store leaving the read bound on some
-    // paths only. The shim reports that at warning severity for exactly this
+    // paths only. The oracle reports that at warning severity for exactly this
     // reason: as an error it would veto every patch that reveals one.
     let source = concat!(
         "def f(flag: bool) -> int:\n",

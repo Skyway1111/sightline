@@ -58,7 +58,7 @@ fn ratio(a: &str, b: &str) -> f64 {
 }
 
 fn compiled(pattern: &str) -> Regex {
-    Regex::new(pattern).expect("a pattern copied from `provers/comments.py`")
+    Regex::new(pattern).expect("a literal pattern that compiles")
 }
 
 static RAISES_HEADER_RE: LazyLock<Regex> =

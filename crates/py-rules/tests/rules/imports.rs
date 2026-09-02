@@ -1,4 +1,4 @@
-//! `tests/rules/test_imports.py`: #35's import topology and `hoist_splice`.
+//! #35's import topology and `hoist_splice`.
 
 use sightline_core::findings::Finding;
 use sightline_py_provers::counterfactual::Splice;
@@ -440,7 +440,7 @@ fn rule_35_hoist_message_names_the_targets_import_time_work() {
     );
 }
 
-// --- `tests/test_fixes.py`'s #35 cases, at the splice the emitter rides -------
+// --- #35's fix cases, at the splice the emitter rides -----------------------
 // The `attach_fixes` half (the verified `Fix` riding the finding) waits for
 // `py-rules-close`; the splice's own edits and imports are checked here.
 

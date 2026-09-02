@@ -1,8 +1,14 @@
-//! Always-ban: the em dash and a word list, in every text file of the tree.
+//! The prose lint: every text file of the tree, against three lists.
 //!
-//! One line per hit, `path:line: <match>`. No suppression: an escape hatch
-//! would make this a limit that only tightens. Not scanned: the judges' and
-//! burials' ledgers, and this file, which holds the list.
+//! The em dash, a word list, and the citation patterns. The words are the
+//! ones this repository's prose reached for as filler or drama in place of
+//! a mechanism or a number; each earned its row by appearing twice. The
+//! citation patterns name a planning document and a Python tool that are
+//! not in this repository, so a comment that cites one points a reader at
+//! nothing. One line per hit, `path:line: <match>`. No suppression: an
+//! escape hatch would make this a limit that only tightens. Not scanned:
+//! the judges' and burials' ledgers, test data, and this file, which holds
+//! the lists.
 
 use std::path::{Path, PathBuf};
 
@@ -11,7 +17,8 @@ use regex::Regex;
 
 use crate::paths::{git, workspace_root};
 
-/// The one home of the list. A word joins it when its second sighting lands.
+/// Words that stand in for a mechanism or a number. A word joins the list
+/// on its second sighting in a review.
 pub const WORDS: &[&str] = &[
     "deliberate",
     "deliberately",
@@ -44,9 +51,24 @@ pub const WORDS: &[&str] = &[
     "buys",
 ];
 
+/// Citations of the plan the rewrite was built under and of the Python tool
+/// it replaced. Neither is in this repository, so a comment that cites one
+/// sends a reader to nothing; the comment says what its own code does instead.
+pub const POINTERS: &[&str] = &[
+    r"codemap",
+    r"dump_layers",
+    r"[Pp]ort of .*\.py",
+    r"criterion \d",
+    r"decision \d",
+    r"`scripts/[a-z_]+\.py`",
+    r"rewrite contract",
+    r"plan\.md",
+    r"docs/todo\.md",
+];
+
 /// The burials ledger, the judges' ledger, `data/retired.toml` (the same
 /// ledger rows, extracted by `xtask retired`), this file, which holds the
-/// list, and the two files of third-party license text, whose words are
+/// lists, and the two files of third-party license text, whose words are
 /// their authors' and not this repository's prose.
 const SKIP: &[&str] = &[
     "corpus-ext/",
@@ -57,14 +79,21 @@ const SKIP: &[&str] = &[
     "THIRD-PARTY.md",
 ];
 
+/// Recorded probe inputs, whose strings are data.
+const SKIP_DIR: &str = "/tests/data/";
+
 fn pattern() -> Regex {
     let words: Vec<String> = WORDS.iter().map(|w| regex::escape(w)).collect();
-    Regex::new(&format!(r"(?i)\u{{2014}}|\b(?:{})\b", words.join("|")))
-        .expect("the word list builds a valid pattern")
+    Regex::new(&format!(
+        r"(?i)\u{{2014}}|\b(?:{})\b|(?-i:{})",
+        words.join("|"),
+        POINTERS.join("|")
+    ))
+    .expect("the word list builds a valid pattern")
 }
 
 fn hits(root: &Path, rel: &str, re: &Regex) -> Vec<String> {
-    if SKIP.iter().any(|s| rel.starts_with(s)) {
+    if SKIP.iter().any(|s| rel.starts_with(s)) || rel.contains(SKIP_DIR) {
         return Vec::new();
     }
     let Ok(text) = std::fs::read_to_string(root.join(rel)) else {
@@ -124,6 +153,33 @@ mod tests {
         .unwrap();
         let got = hits(dir.path(), "a.md", &pattern());
         assert_eq!(got, ["a.md:1: \u{2014}", "a.md:2: NOBODY"]);
+    }
+
+    #[test]
+    fn a_citation_of_the_retired_plan_or_tool_is_a_hit() {
+        let dir = tempfile::tempdir().unwrap();
+        std::fs::write(
+            dir.path().join("a.rs"),
+            "//! Port of `x.py` (codemap 3.3)\n// see criterion 5 and decision 17\n// `scripts/run.py`\n",
+        )
+        .unwrap();
+        let got = hits(dir.path(), "a.rs", &pattern());
+        assert_eq!(
+            got,
+            [
+                "a.rs:1: Port of `x.py",
+                "a.rs:1: codemap",
+                "a.rs:2: criterion 5",
+                "a.rs:2: decision 1",
+                "a.rs:3: `scripts/run.py`",
+            ]
+        );
+        // a fixture path under tests/data is data, not prose
+        let data = "crates/core/tests/data/x.json";
+        let path = dir.path().join(data);
+        std::fs::create_dir_all(path.parent().unwrap()).unwrap();
+        std::fs::write(&path, "docs/todo.md\n").unwrap();
+        assert!(hits(dir.path(), data, &pattern()).is_empty());
     }
 
     #[test]

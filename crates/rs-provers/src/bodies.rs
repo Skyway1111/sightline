@@ -1,11 +1,11 @@
-//! `rs/provers.py`'s body queries: one symbol's calls, macros, closures,
-//! `unsafe` blocks and `?`s, walked once, and the readings off one call.
+//! Body queries: one symbol's calls, macros, closures, `unsafe` blocks and
+//! `?`s, walked once, and the readings off one call.
 
 use super::*;
 
 /// A call or macro invocation as a body query answers it. `src` is the
 /// module's bytes: a tree-sitter node does not know its file, so every
-/// reader of the call's text holds them (`rs/model.py:text`).
+/// reader of the call's text holds them.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct RsCall<'t> {
     /// the last path segment, or the method name

@@ -1,6 +1,5 @@
-//! Every row of `data/astutil.json` is CPython's answer for one `astutil.py`
-//! helper on one source. The generator is
-//! `../sightline-phase2/scratch/facts-ast/gen_astutil.py`.
+//! Every row of `data/astutil.json` is CPython's answer for one `astutil`
+//! helper on one source, and this file re-checks each one.
 
 use ruff_python_ast::{Expr, Stmt, StmtFunctionDef};
 use ruff_python_parser::parse_module;

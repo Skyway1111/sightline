@@ -1,7 +1,7 @@
-//! The Rust index in process (`rs/resolve.py` joined to `ra_ap_*`, codemap
-//! section 6): `RsEdge` and `RsGraph`, the resolved references by either
-//! end, and `graph`, which loads every project root, resolves every token
-//! of every module file and joins the definitions to facts symbols.
+//! The Rust index in process: `RsEdge` and `RsGraph`, the resolved
+//! references by either end, and `graph`, which loads every project root,
+//! resolves every token of every module file and joins the definitions to
+//! facts symbols.
 
 mod join;
 mod load;

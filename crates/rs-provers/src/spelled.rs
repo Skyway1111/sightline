@@ -1,7 +1,7 @@
-//! What the source spells where no index answers for it (port of
-//! `rs/spelled.py`): the type arguments every use of a generic item names
-//! (#37's monomorphic arm), and the names a macro body or an attribute's
-//! strings mention (#48). Both are folds over facts the rules reach through
+//! What the source spells where no index answers for it: the type arguments
+//! every use of a generic item names (#37's monomorphic arm), and the names
+//! a macro body or an attribute's strings mention (#48). Both are folds over
+//! facts the rules reach through
 //! `RsProvers`, and neither holds an opinion.
 
 use std::collections::{BTreeSet, HashSet};

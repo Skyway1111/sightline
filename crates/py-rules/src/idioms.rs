@@ -1,7 +1,7 @@
 //! Family B, the idiom catalog (#12): whole-function and node-level stdlib
-//! reimplementations. Port of `rules/idioms.py`. Entries are machine-validated
-//! equivalences: the exemplar pairs are `catalog/idioms/*.py` and
-//! `cargo xtask catalog` proves them.
+//! reimplementations. Entries are machine-validated equivalences: the
+//! exemplar pairs are `catalog/idioms/*.py` and `cargo xtask catalog` proves
+//! them.
 
 use ruff_python_ast::{CmpOp, Expr, Number, Operator, Stmt, StmtFunctionDef};
 
@@ -481,8 +481,8 @@ fn node_idioms(
     out
 }
 
-/// A lambda is its own scope (`provers/scope.py` agrees), so an idiom inside
-/// one is not the enclosing function's.
+/// A lambda is its own scope, so an idiom inside one is not the enclosing
+/// function's.
 fn inside_lambda(module: &Module<'_>, node: NodeIndex, func: NodeIndex) -> bool {
     let mut cur = module.parent_of(node);
     while let Some(at) = cur {
@@ -505,8 +505,9 @@ pub const RULE_12: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "whole-function reimplementations of stdlib/builtins",
-        goal: "Use the vocabulary (Parent; Wheeler): a hand-rolled stdlib \
-               reimplementation hides intent and keeps bugs the library fixed.",
+        goal: "Use the vocabulary (Sean Parent; David Wheeler): a \
+               hand-rolled stdlib reimplementation hides intent and keeps \
+               bugs the library fixed.",
         lang: "py",
         scope: Scope::File,
         complement: "",

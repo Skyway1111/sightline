@@ -1,5 +1,5 @@
-//! `facts/build.py:build_facts`: read the listing, parse under rayon, then
-//! the passes in module order.
+//! Building `RepoFacts`: read the listing, parse under rayon, then the
+//! passes in module order.
 //!
 //! `only` restricts the build to the given rel paths (the gate's
 //! single-file facts). Module qnames come from `qnames::module_qname_map`
@@ -26,7 +26,7 @@ use crate::module::{Module, Source, Tree};
 use crate::{complexity, inputs, qnames, resolve, typecomments};
 
 mod built {
-    // the one self-referential struct of the Python stack (decision 7)
+    // the one self-referential struct of the Python stack
     #![allow(unsafe_code)]
 
     use super::{RepoFacts, Tree};
@@ -43,7 +43,7 @@ mod built {
 
 pub use built::PyBuilt;
 
-/// The reference parses with CPython 3.14 (decision 11), and `Parsed`
+/// The reference parses with CPython 3.14, and `Parsed`
 /// counts version-related syntax as an error: at ruff's default `PY310` a
 /// `type X = ...` statement makes its module a parse error.
 fn options() -> ruff_python_parser::ParseOptions {
@@ -318,7 +318,7 @@ fn index_tree<'t>(
 }
 
 /// R20's memo: the ranking prior for every function symbol, computed once at
-/// build. Phase 3's `Provers` reads it rather than the AST.
+/// build. Rank and the rules read it rather than the AST.
 fn complexity_prior(facts: &RepoFacts<'_>) -> HashMap<Qname, u32> {
     let defs: Vec<(&Qname, &Symbol)> = facts
         .symbols

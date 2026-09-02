@@ -1,6 +1,5 @@
-//! `tests/rs/test_rules_context.py`: #27, #29 and #59 over Rust facts,
-//! paired firing and silent shapes per rule plus the exemption each arm
-//! names.
+//! #27, #29 and #59 over Rust facts, paired firing and silent shapes per
+//! rule plus the exemption each arm names.
 
 use indexmap::IndexSet;
 use tempfile::TempDir;
@@ -28,9 +27,8 @@ fn symbols(findings: &[Finding]) -> Vec<&str> {
     findings.iter().map(|f| &*f.site.symbol).collect()
 }
 
-/// `run_rs_rule` with the two knobs the Python fixture takes: the rows the
-/// oracle's graph would have answered, and the files single-file facts are
-/// built from.
+/// `run_rs_rule` with two knobs: the rows the oracle's graph would have
+/// answered, and the files single-file facts are built from.
 fn run_on(id: &str, files: &[(&str, &str)], edges: &[Edge], only: &[&str]) -> Vec<Finding> {
     let (_dir, stack) = stack_of(files, edges, only);
     run_rs_rule_on(id, &stack)

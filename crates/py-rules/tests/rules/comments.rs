@@ -1,6 +1,5 @@
-//! #39 comment discipline: the restatement and divider arms
-//! (`tests/rules/test_comments.py`), and the splice `fix` rides
-//! (`tests/test_fixes.py`, the #39 pair).
+//! #39 comment discipline: the restatement and divider arms, and the splice
+//! the `fix` verb rides.
 
 use sightline_core::edits::apply_edits;
 use sightline_core::findings::Finding;
@@ -237,9 +236,8 @@ const COMMENTS: &str = concat!(
     "    return rows_total  # return rows total\n",
 );
 
-/// The comment fix takes the line it owns and only the text it shares
-/// (`tests/test_fixes.py`, the #39 pair, read off the splice the emitter
-/// attaches).
+/// The comment fix takes the line it owns and only the text it shares, read
+/// off the splice the emitter attaches.
 #[test]
 fn the_comment_splice_takes_the_line_it_owns_and_only_the_shared_text() {
     let (_dir, stack) = build(&[("m.py", COMMENTS)]);

@@ -1,8 +1,7 @@
-//! Port of `provers/oracle.py`, `provers/unresolved.py` and the shim
-//! (`ty_pyright_shim/src/{main,batch}.rs`), codemap section 5: the Python
-//! oracle in process, on a `ty_project::ProjectDatabase` built with the
-//! shim's options. The only module of the workspace naming `ty_*` and
-//! `ruff_db`.
+//! The Python oracle: the ty checker in process, on a
+//! `ty_project::ProjectDatabase` this module builds, plus a count of the
+//! imports it could not resolve. The only module of the workspace naming
+//! `ty_*` and `ruff_db`.
 //!
 //! One database per audit: the base pass (`db.check()` plus the callee edges)
 //! is memoized, span and member queries run on clones under rayon, worlds run
@@ -65,7 +64,7 @@ pub const UNNECESSARY_RULES: [&str; 4] = [
     "reportUnnecessaryCast",
 ];
 
-/// Verdicts the shim reports at warning severity by design: the
+/// Verdicts the oracle reports at warning severity by design: the
 /// counterfactual veto (#5/#10) fires on new error-severity diagnostics, so a
 /// possibly-unbound read a splice reveals reports without taking the patch
 /// with it. `Provers::errors` reads them beside the errors.
@@ -75,8 +74,8 @@ pub const WARNING_VERDICTS: [&str; 1] = ["reportPossiblyUnbound"];
 /// in at build.
 pub const BUILD: &str = "ty-unnecessary 284831cb43bb167d149b23f0e49bcae015c4d183";
 
-/// The directories no shadow tree is read from (`oracle.py:_SHADOW_EXCLUDES`),
-/// ahead of `**/<exclude>` per config exclude.
+/// The directories no shadow tree is read from, ahead of `**/<exclude>` per
+/// config exclude.
 const SHADOW_EXCLUDES: [&str; 7] = [
     "**/__pycache__",
     "**/venv",
@@ -152,19 +151,17 @@ pub struct Oracle {
     root: Utf8PathBuf,
     sys_root: SystemPathBuf,
     /// `None` when the construction failed: `failure` names it and every
-    /// answer is empty from there, as for a shim that crashed under its first
-    /// pass.
+    /// answer is empty from there.
     db: Mutex<Option<ProjectDatabase>>,
     base: OnceLock<Base>,
     failure: Mutex<Option<String>>,
     calls: Mutex<Vec<WorldCall>>,
-    /// `(label, seconds)` per pass, counted and printed as `oracle.py:_pass`
-    /// does (`provers/__init__.py` wires the print to stderr).
+    /// `(label, seconds)` per pass, counted and printed to stderr.
     passes: Mutex<Vec<(String, f64)>>,
 }
 
 impl Oracle {
-    /// The shim's construction (codemap 5): `OsSystem` at `root`,
+    /// Construction: `OsSystem` at `root`,
     /// `ProjectMetadata::discover`, `apply_configuration_files`, the
     /// `Options` with `environment.python` from `python_exe`, `extra_paths`
     /// from `import_roots`, `src.exclude` from the shadow excludes plus
@@ -236,8 +233,7 @@ impl Oracle {
 
     /// One pass over the database, under the lock and inside `catch_unwind`:
     /// `None` when the oracle never started, already failed, or panicked here.
-    /// The pass is counted and its start and finish printed, as
-    /// `oracle.py:_pass` reports them through `on_event`.
+    /// The pass is counted and its start and finish printed.
     fn pass<R>(&self, label: &str, body: impl FnOnce(&mut ProjectDatabase) -> R) -> Option<R> {
         let mut held = self.db.lock().unwrap_or_else(PoisonError::into_inner);
         let db = held.as_mut()?;
@@ -300,8 +296,8 @@ impl Oracle {
             .collect()
     }
 
-    /// Checker-resolved callee definitions per call site (the shim's
-    /// `call_edges`, from the same base state).
+    /// Checker-resolved callee definitions per call site, from the same base
+    /// state.
     pub fn call_edges(&self) -> &[CallEdge] {
         &self.base().edges
     }
@@ -335,9 +331,9 @@ pub fn detect_python_env(root: &Utf8Path, configured: Option<&str>) -> Option<Ut
         .find(|p| p.is_file())
 }
 
-/// `provers/unresolved.py`: how many imports the oracle could not resolve,
-/// per missing module, so the header says how much of the tree it could see.
-/// Without an oracle: nothing unresolved.
+/// How many imports the oracle could not resolve, per missing module, so the
+/// header says how much of the tree it could see. Without an oracle: nothing
+/// unresolved.
 #[derive(Debug, Default, Clone)]
 pub struct UnresolvedImports {
     /// unresolved module -> import sites, in first-seen order
@@ -370,8 +366,8 @@ impl UnresolvedImports {
     }
 }
 
-/// `layer_oracle` (`dump_layers.py:_oracle_answers`): the empty document
-/// without an oracle, else the base pass, the edges and every query answer.
+/// The `oracle` dump layer: the empty document without an oracle, else the
+/// base pass, the edges and every query answer.
 pub fn dump(facts: &RepoFacts<'_>, provers: &Provers) -> Option<Value> {
     let Some(oracle) = provers.oracle() else {
         return Some(json!({

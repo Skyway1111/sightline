@@ -1,4 +1,4 @@
-//! Port of `provers/typestrings.py` (codemap 3.3): type-string algebra over
+//! Type-string algebra over
 //! oracle answers, its own home so argtypes and the oracle never entangle
 //! through it.
 
@@ -123,7 +123,6 @@ pub fn join<S: AsRef<str>>(members: &[S]) -> Vec<String> {
 mod tests {
     use super::*;
 
-    /// `tests/provers/test_typestrings.py:test_union_members_and_join`.
     #[test]
     fn union_members_and_join() {
         assert_eq!(
@@ -150,7 +149,6 @@ mod tests {
         assert_eq!(join(&["int", "int", "str"]), ["int", "str"]);
     }
 
-    /// `tests/provers/test_typestrings.py:test_split_top_skips_quoted_separators`.
     #[test]
     fn split_top_skips_quoted_separators() {
         assert_eq!(

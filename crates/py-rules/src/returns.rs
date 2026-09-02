@@ -1,6 +1,6 @@
-//! Family A, the return contract (#33) and the raise contract (#53). Port of
-//! `rules/returns.py`. `return_contract_finding` is #34's overlap oracle: a
-//! handler #33 reports is #33's alone.
+//! Family A, the return contract (#33) and the raise contract (#53).
+//! `return_contract_finding` is #34's overlap oracle: a handler #33 reports
+//! is #33's alone.
 
 use std::collections::BTreeSet;
 

@@ -1,13 +1,12 @@
-//! `provers/rettypes.py`: the oracle-revealed return types of
-//! return-unannotated internal functions (#36/#40).
+//! The oracle-revealed return types of return-unannotated internal
+//! functions (#36/#40).
 
 use crate::oracle_fixture;
 
 use sightline_testkit::build;
 
-/// `tests/provers/test_degraded.py:test_oracle_backed_accessors_answer_empty_without_an_oracle`,
-/// the `ret_types` half: no candidates, no queries, and the reveal path never
-/// reaches the absent checker.
+/// The `ret_types` half of a run with no oracle: no candidates, no queries,
+/// and the reveal path never reaches the absent checker.
 #[test]
 fn ret_types_answer_empty_without_an_oracle() {
     let (_dir, stack) = build(&[(
@@ -42,7 +41,7 @@ fn a_return_unannotated_function_reveals_its_return() {
     assert!(candidates.contains(&"m.C.m"), "{candidates:?}");
     // a declared return is no one's question
     assert!(!candidates.contains(&"m.g"), "{candidates:?}");
-    // the reference's own answers on this repo (`scratch/py-queries/probe_rets.py`)
+    // values pinned from a probe of `ret_types` over this fixture
     assert_eq!(rets.return_type("m.f"), Some("Literal[1]"));
     assert_eq!(rets.return_type("m.C.m"), Some("Literal[\"a\"]"));
 }

@@ -1,4 +1,4 @@
-//! `provers/liveness.py`: name-level liveness and what defeats it.
+//! Name-level liveness and what defeats it.
 
 use std::collections::BTreeSet;
 

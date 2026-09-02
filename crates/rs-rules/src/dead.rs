@@ -1,4 +1,4 @@
-//! Port of `rs/rules/dead.py`: the two dead-weight readings the resolved
+//! The two dead-weight readings the resolved
 //! edges carry, #32 (an item no edge reaches, deleted in a world cargo
 //! accepted) and #56 (an item only tests reach). Both judge the same set -
 //! what a crate root reaches through bare `pub` - because that is the set

@@ -1,8 +1,8 @@
-//! The `scope` dump layer (`dump_layers.py:layer_scope`).
+//! The `scope` dump layer.
 
 use super::*;
 
-/// `dump_layers._footprint`.
+/// One footprint row of the layer.
 pub(super) fn footprint_row(fp: &Footprint) -> Value {
     let mut forwarded: Vec<Value> = fp
         .forwarded

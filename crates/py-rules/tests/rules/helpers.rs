@@ -1,11 +1,8 @@
-//! `util.rs` and `framework.rs` against the Python helpers, one mini repo.
+//! `util.rs` and `framework.rs` over one mini repo.
 //!
-//! No Python rules test reads these helpers on its own: every one of them
-//! is judged through a rule, and the rules that read most of them
-//! (#6, #10, #32, #40, #48, #55, #38, #41) land in wave 1. The expected
-//! values here are what the Python helpers answer on this repo, printed by
-//! `sightline-phase5/scratch/py-rules-base/helpers_probe.py` under REF's
-//! venv.
+//! Every helper here is also judged through a rule that reads it (#6, #10,
+//! #32, #38, #40, #41, #48, #55). These pin the helpers on their own, and
+//! the expected values are what they answer on the repo built below.
 
 use sightline_core::findings::SpanEdit;
 use sightline_py_facts::kinds::Kind;

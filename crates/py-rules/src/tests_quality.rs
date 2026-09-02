@@ -1,4 +1,4 @@
-//! Family T, tests quality (port of `rules/tests_quality.py`): #42
+//! Family T, tests quality: #42
 //! assertion-free test, #44 tautological assertion, #47 sleepy test. Binary,
 //! structural shapes only.
 //!

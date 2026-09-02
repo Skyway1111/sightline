@@ -5,7 +5,7 @@
 id = "4"
 ts = "2026-08-27T23:30"
 decision = "#4 `interprocedural-redundant-check` cut, id retired: 1 real : 13 fp pooled over the five wave-1 clones (93 percent)"
-why = "both fp classes are the rule's premise, not a missing predicate: five guards discharge the parameter's own declared type (`pool: dict | None`, `raw: object`) where callers merely narrow first, and eight are module-public entry points published by a skill manifest whose one or two in-repo callers are not the caller set; with one real pooled no structural predicate keeps >= 3 reals under the bar. `_called_closed_world` stays as #5's candidate universe; `typestrings.establishes` and its tests went with the rule. Re-measure once `facts.published` exists (docs/todo.md)"
+why = "both fp classes are the rule's premise, not a missing predicate: five guards discharge the parameter's own declared type (`pool: dict | None`, `raw: object`) where callers merely narrow first, and eight are module-public entry points published by a skill manifest whose one or two in-repo callers are not the caller set; with one real pooled no structural predicate keeps >= 3 reals under the bar. `_called_closed_world` stays as #5's candidate universe; `typestrings.establishes` and its tests went with the rule. Re-measure once `facts.published` exists"
 evidence = "corpus-ext/sheets/*.wave1.tsv rows $2==\"4\"; ../sightline-g3/trust-b-after/"
 
 [[retired]]
@@ -96,7 +96,7 @@ evidence = "docs/status-g4.md rule-28 rows; corpus-ext/sheets/*.wave2.tsv rule 2
 id = "30"
 ts = "2026-08-27T23:30"
 decision = "#30's self-field arm cut: 17 real / 25 fp (60 percent); the rule fires on parameter-rooted chains only (2 real / 0 fp pooled)"
-why = "the two judges read the same shape opposite ways - asciimatics' `self._frame.canvas.unicode_aware` real 17/17, wee-slack's `self.workspace.my_user.id` fp - and no file-scope predicate tells them apart (both are `self.<field>.<obj>.<scalar>` through an unannotated or repo-typed field); reaching through own fields needs a judged standard before the arm returns (docs/todo.md)"
+why = "the two judges read the same shape opposite ways - asciimatics' `self._frame.canvas.unicode_aware` real 17/17, wee-slack's `self.workspace.my_user.id` fp - and no file-scope predicate tells them apart (both are `self.<field>.<obj>.<scalar>` through an unannotated or repo-typed field); reaching through own fields needs a judged standard before the arm returns"
 evidence = "../sightline-g3/context-after/{asciimatics,wee-slack}.tsv"
 
 [[retired]]

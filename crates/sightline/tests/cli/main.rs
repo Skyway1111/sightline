@@ -1,5 +1,4 @@
-//! The verbs end to end on mini repos (port of `tests/test_cli.py`,
-//! `test_gate.py`, `test_lang.py` and `tests/rs/test_rs_gate.py`): the built
+//! The verbs end to end on mini repos: the built
 //! binary is driven as a reader drives it, and the oracle is off by config
 //! for speed. The oracle-on end to end is the corpus gate.
 

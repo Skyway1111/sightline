@@ -1,12 +1,12 @@
-//! CPython's PEP 484 comment tokens, which REF's `_parse` turns on
-//! (`ast.parse(text, type_comments=True)`).
+//! CPython's PEP 484 comment tokens, the ones
+//! `ast.parse(text, type_comments=True)` turns on.
 //!
 //! Three things follow from that parse. `Module.type_ignores` and the end of
 //! an `Assign` holding a `# type:` comment are shape, so they belong to the
 //! traversal. The annotations `_lift_type_comments` writes onto parameters
-//! and returns are a side table here (R15, decision 11): no reader touches
-//! `Parameter.annotation` directly, they ask `Module::annotation` and
-//! `Module::returns`.
+//! and returns are a side table here (R15, CPython 3.14 semantics): no
+//! reader touches `Parameter.annotation` directly, they ask
+//! `Module::annotation` and `Module::returns`.
 
 use std::collections::HashMap;
 

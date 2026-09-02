@@ -1,9 +1,9 @@
-//! Port of REF `tests/test_wholeprogram_honesty.py`: for each closed-world
-//! escape condition, the closed world fails with the named reason and the
-//! effects summary reports unknown rather than clean - except
-//! `framework-base`, which opens the caller set and not the body (a library
-//! dispatches to the hook; what the hook does is still what it wrote). The
-//! no-#4/#5-findings half lands in phase 5 over the same table.
+//! For each closed-world escape condition, the closed world fails with the
+//! named reason and the effects summary reports unknown rather than clean -
+//! except `framework-base`, which opens the caller set and not the body (a
+//! library dispatches to the hook; what the hook does is still what it
+//! wrote). No test here checks that #4 and #5 emit no findings over the same
+//! table.
 
 use sightline_testkit::{ESCAPE_FIXTURES, build};
 

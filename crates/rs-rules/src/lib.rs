@@ -1,13 +1,11 @@
-//! Rust rules (`docs/rewrite/codemap.md`, section 3.7): one file per family
-//! module of the Python tree's `rs/rules/` package, one
-//! `pub const RULE_N: Rule` beside each `fn rule_n`. A rule reads facts and
-//! provers and nothing else (the fence, decision 1): the crate lists no
-//! parser and no oracle crate, `Node` reaches it through `rs_facts::Node`,
-//! and `clippy.toml` beside `Cargo.toml` bans file, process and environment
-//! reads inside it.
+//! Rust rules: one file per rule family, one `pub const RULE_N: Rule` beside
+//! each `fn rule_n`. A rule reads facts and provers and nothing else (the
+//! fence): the crate lists no parser and no oracle crate, `Node` reaches it
+//! through `rs_facts::Node`, and `clippy.toml` beside `Cargo.toml` bans
+//! file, process and environment reads inside it.
 //!
 //! `deny(dead_code)` is what makes a `RULE_N` the `RULES` list forgot a
-//! build error (decision 9).
+//! build error.
 
 #![deny(dead_code)]
 
@@ -66,7 +64,7 @@ pub static RULES: &[&Rule] = &[
 ];
 
 /// The one rule `run_rules` keeps out of the parallel group: #32 cargo-checks
-/// its deletion worlds inside its fn (`codemap.md` 3.7), after every reader.
+/// its deletion worlds inside its fn, after every reader.
 const WORLD_OWNERS: [&str; 1] = ["32"];
 
 /// Every rule over one pass's provers, findings pushed in `RULES` order

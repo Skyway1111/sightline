@@ -1,4 +1,4 @@
-//! The rule record (port of `rules/model.py`'s record half). A rule's whole
+//! The rule record. A rule's whole
 //! record is the `Rule` const beside the fn it describes; posture and scope
 //! are declared there and in no other place. The fn half is each language's.
 

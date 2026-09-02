@@ -1,11 +1,10 @@
-//! Port of `tests/rs/test_provers.py`: what `RsProvers` answers. Body
+//! What `RsProvers` answers. Body
 //! queries, the trait-impl index, module literals and `#[allow]`s, the Rust
 //! complexity classification over the neutral scorer, and the digest
 //! sequences the neutral repeat mining reads.
 //!
-//! `test_describe_prints_one_symbols_record` and
-//! `test_describe_names_the_nearest_symbol_for_a_typo` wait for `rs/describe.py`,
-//! which lands with `rs-rules` in phase 8.
+//! `describe` is covered next door: the symbols record it prints and the
+//! nearest symbol it names for a typo are `rs-rules/tests/comments`.
 
 use std::collections::BTreeSet;
 

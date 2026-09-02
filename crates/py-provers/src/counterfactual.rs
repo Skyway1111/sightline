@@ -1,8 +1,7 @@
-//! Port of `provers/counterfactual.py` and `provers/__init__.py:_placed`
-//! (phase 4, unit `py-counterfactual`): the counterfactual arbiter. A
-//! proposal is one exact splice, judged by the oracle's worlds: a new error
-//! in the proposal's watched files is a `Veto`, a `reportUnnecessary*` newly
-//! firing in the callee body is the `Receipt`, else verified non-breaking.
+//! The counterfactual arbiter. A proposal is one exact splice, judged by the
+//! oracle's worlds: a new error in the proposal's watched files is a `Veto`,
+//! a `reportUnnecessary*` newly firing in the callee body is the `Receipt`,
+//! else verified non-breaking.
 //! The split of a merged world's implicated set is `core::worlds::vetoed`.
 //!
 //! Splices land in line, so line numbers are preserved and the diff is

@@ -1,5 +1,5 @@
-//! `tests/rules/test_returns.py`: #53 raise-contract and #33's sentinel arm,
-//! each positive beside the near-miss twin that stays silent.
+//! #53 raise-contract and #33's sentinel arm, each positive beside the
+//! near-miss twin that stays silent.
 
 use std::collections::BTreeSet;
 
@@ -23,7 +23,7 @@ fn set(items: &[&str]) -> BTreeSet<String> {
     items.iter().map(|s| (*s).to_string()).collect()
 }
 
-// --- `declared_raises` (`provers/comments.py`, landed in `core::text`) --------
+// --- `declared_raises`, which lives in `core::text` --------------------------
 
 #[test]
 fn google_numpy_and_sphinx_sections() {

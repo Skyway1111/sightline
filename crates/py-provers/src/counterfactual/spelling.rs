@@ -94,7 +94,7 @@ pub fn spell(
 }
 
 /// `local.name` through the one stdlib module the file binds holding a class
-/// so named, else `None` (`_stdlib_home`, decision 11).
+/// so named, else `None`.
 fn stdlib_home(name: &str, module: &Module<'_>, oracle: &Oracle) -> Option<String> {
     let mut homes: Vec<String> = Vec::new();
     for (local, target) in &module.bindings {

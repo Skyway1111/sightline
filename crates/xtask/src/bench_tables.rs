@@ -1,4 +1,4 @@
-//! `scripts/bench_tables.py`: `benchmarks.md`'s measured tables, regenerated
+//! `cargo xtask bench-tables`: `benchmarks.md`'s measured tables, regenerated
 //! from a corpus out-dir, never pasted by hand. One per-rule fire-rate table
 //! per language (its repos are the corpus table, one column each, keyed by
 //! initial), the Rust corpus table and merged-calculator's per-pass profile.

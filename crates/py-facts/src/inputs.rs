@@ -1,4 +1,4 @@
-//! `facts/build.py`: the non-Python inputs a repo declares about itself.
+//! The non-Python inputs a repo declares about itself.
 //! Entry points (#32), the type-check scope (#1, #50) and what a
 //! distribution packages. Parsed once at build time.
 

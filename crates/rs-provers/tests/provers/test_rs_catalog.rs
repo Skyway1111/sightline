@@ -1,4 +1,4 @@
-//! Port of `tests/rs/test_rs_catalog.py`: the class of a listed path, the
+//! The class of a listed path, the
 //! lookup rule (longest `::` prefix, then the method any receiver spells),
 //! and the one resolver both readers share - a callee's spelling through the
 //! module's `use` bindings before the table is asked.

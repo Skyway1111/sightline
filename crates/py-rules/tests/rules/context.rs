@@ -1,4 +1,4 @@
-//! `tests/rules/test_context.py`: #24, #26, #27, #29, #36, #38, #59.
+//! The context rules: #24, #26, #27, #29, #36, #38, #59.
 
 use sightline_core::findings::Finding;
 use sightline_testkit::run_rule;

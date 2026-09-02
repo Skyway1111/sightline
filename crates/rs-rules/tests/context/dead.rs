@@ -1,8 +1,8 @@
-//! `tests/rs/test_rules_dead.py`: #32 and #56 against a real workspace under
-//! a temp root - a bin crate, an unpublished lib with an integration test,
-//! and a member whose base check fails. Every test that builds the workspace
-//! spawns cargo and is `#[ignore]` (decision 17); the fixture loads once per
-//! binary. The crates have no dependencies, so no run touches the network.
+//! #32 and #56 against a real workspace under a temp root - a bin crate, an
+//! unpublished lib with an integration test, and a member whose base check
+//! fails. Every test that builds the workspace spawns cargo and is
+//! `#[ignore]`; the fixture loads once per binary. The crates have no
+//! dependencies, so no run touches the network.
 
 use std::collections::BTreeMap;
 use std::sync::LazyLock;

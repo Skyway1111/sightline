@@ -1,4 +1,4 @@
-//! The `fix` verb (port of `emit.py`): verified findings' span edits into
+//! The `fix` verb: verified findings' span edits into
 //! one git-apply-able unified diff against the file's raw bytes, line
 //! endings preserved. Each rule that proposes a patch owns the splice that
 //! builds it; this module batches them through one counterfactual pass, so
@@ -30,8 +30,8 @@ use sightline_py_provers::typestrings::union_members;
 /// A rule's own splice builder, keyed by the finding's cause.
 type Splicer = fn(&str, &RepoFacts<'_>, &Provers) -> Option<Splice>;
 
-/// The rules that propose a patch (`emit.py:_SPLICERS`). Every entry but
-/// #33's lives with the rule that reads the cause.
+/// The rules that propose a patch. Every entry but #33's lives with the rule
+/// that reads the cause.
 const SPLICERS: &[(&str, Splicer)] = &[
     ("32", crate::dead::dead_symbol_splice),
     ("33", return_splice),
@@ -100,8 +100,8 @@ fn return_splice(cause: &str, facts: &RepoFacts<'_>, provers: &Provers) -> Optio
 }
 
 /// R15 writes a `# type:` return onto the def with the def's own position
-/// (`facts/build.py:_lift_type_comments`), so an annotation with no node of
-/// its own reads the def's span, as `ast.copy_location` left it.
+/// (`py_facts::typecomments` lifts it), so an annotation with no node of its
+/// own reads the def's span.
 fn full_span(module: &Module<'_>, node: Option<&Expr>, fallback: u32) -> Option<[u32; 4]> {
     let at = node.and_then(|e| Cn::Expr(e).stamped()).unwrap_or(fallback);
     let span = module.span(at)?;

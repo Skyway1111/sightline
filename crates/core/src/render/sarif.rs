@@ -235,7 +235,7 @@ mod tests {
 
     #[test]
     fn sarif_is_the_ranked_list_with_level_by_posture() {
-        // `test_render.py`: one driver rule per id, level by the reading's
+        // one driver rule per id, level by the reading's
         // own posture, and a uri that is a URI
         let stack = SyntheticStack::new(&P, &[("a.p", "x\ny\n")]);
         let findings = vec![

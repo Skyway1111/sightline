@@ -1,4 +1,4 @@
-//! `sightline baseline` (port of `cli.cmd_baseline`): the full audit
+//! `sightline baseline`: the full audit
 //! pipeline, oracle passes included, then the RATCHET keys written or
 //! pruned.
 

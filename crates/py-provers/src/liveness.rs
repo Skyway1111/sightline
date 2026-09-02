@@ -1,4 +1,4 @@
-//! Port of `provers/liveness.py` (codemap 3.3). Name-level liveness (#32,
+//! Name-level liveness (#32,
 //! vulture semantics) and the reflection vocabulary that defeats it - #24
 //! reads the same dynamic-name calls.
 

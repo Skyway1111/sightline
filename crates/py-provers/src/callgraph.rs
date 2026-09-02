@@ -1,4 +1,4 @@
-//! Port of `provers/callgraph.py` and `callers.py` (codemap 3.3): the call
+//! The call
 //! graph consumers read, and `callee_of` - the one answer to "what body does
 //! this site run".
 //!
@@ -42,8 +42,8 @@ const UNTYPED: [Resolution; 3] = [
 /// A call's checker-resolved callee definitions (the oracle's `call_edges`):
 /// the span in CPython `ast` terms, targets as `(rel, definition line)`.
 /// `external` (no targets): every definition lies outside the root, and the
-/// definitions' dotted homes are what effects' io catalog reads. Phase 4 fills
-/// these; phase 3 always passes `None`.
+/// definitions' dotted homes are what effects' io catalog reads. The oracle
+/// fills these; without one there are no edges.
 #[derive(Debug, Clone)]
 pub struct CallEdge {
     pub rel: Rel,
@@ -86,7 +86,8 @@ impl CallGraph {
     }
 }
 
-/// facts' CHA resolution; the oracle re-judges it from phase 4.
+/// facts' CHA resolution alone; `judged_call_graph` re-judges it against
+/// the oracle's edges.
 pub fn build_call_graph(facts: &RepoFacts<'_>) -> CallGraph {
     judged_call_graph(facts, None)
 }

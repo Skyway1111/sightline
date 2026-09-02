@@ -1,4 +1,4 @@
-//! `provers/imports.py`: the internal import graph and its readings.
+//! The internal import graph and its readings.
 
 use indexmap::IndexSet;
 
@@ -26,15 +26,15 @@ fn the_import_graph_is_built_once_per_provers() {
     assert!(first.top["app"].is_empty());
 }
 
-/// PEP 420: `scripts/tool.py` imports `ns.pkg.mod` across a namespace
-/// package (`tests/facts/test_build.py`'s import-graph assertion).
+/// PEP 420: `bin/tool.py` imports `ns.pkg.mod` across a namespace
+/// package.
 #[test]
 fn a_namespace_package_import_is_an_edge() {
     let (_dir, stack) = build(&[
         ("src/ns/pkg/__init__.py", ""),
         ("src/ns/pkg/mod.py", "def f():\n    pass\n"),
         (
-            "scripts/tool.py",
+            "bin/tool.py",
             "from ns.pkg import mod\n\n\ndef run():\n    mod.f()\n",
         ),
     ]);

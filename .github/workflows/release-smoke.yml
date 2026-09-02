@@ -3,7 +3,7 @@ name: Release smoke
 # dist runs this after it publishes the GitHub Release
 # (`dist-workspace.toml`, `post-announce-jobs`). Each platform downloads the
 # archive built for it, unpacks it, and runs `sightline --version` on the
-# binary a user would install. That is criterion 10 of the rewrite contract.
+# binary a user would install.
 
 on:
   workflow_call:

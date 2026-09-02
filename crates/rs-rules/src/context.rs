@@ -1,4 +1,4 @@
-//! Port of `rs/rules/context.py`: what a module costs the reader who must
+//! What a module costs the reader who must
 //! load it (#27, #29) and what an entry point spends without saying so
 //! (#59). Thresholds are the Python siblings'.
 

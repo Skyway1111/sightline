@@ -1,8 +1,8 @@
 //! Fixtures the crate's own tests and `sightline-testkit` share.
 //!
-//! Two languages that do not exist (`p` and `q`, `test_lang.py`), whose whole
-//! model is the neutral attributes every facts type holds, and a small
-//! registry for the readers that need rule records.
+//! Two languages that do not exist, `p` and `q`, whose whole model is the
+//! neutral attributes every facts type holds, and a small registry for the
+//! readers that need rule records.
 //!
 //! Behind `feature = "testing"`, so a release build holds none of it.
 

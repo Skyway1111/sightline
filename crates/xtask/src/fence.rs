@@ -1,4 +1,4 @@
-//! Criterion 8, the import fence: a rule reads facts and provers and nothing
+//! The import fence: a rule reads facts and provers and nothing
 //! else. Four checks, all of them over the two rules crates.
 //!
 //! 1. Direct dependencies through `cargo metadata` (never the transitive
@@ -6,7 +6,7 @@
 //! 2. No source line of either rules crate names one of their paths.
 //! 3. No provers crate re-exports one, which would smuggle it in.
 //! 4. `cargo clippy` on both rules crates passes, so the `disallowed-methods`
-//!    and `disallowed-types` lists beside their manifests bind (codemap 2).
+//!    and `disallowed-types` lists beside their manifests bind.
 
 use std::path::Path;
 use std::process::Command;
@@ -192,7 +192,7 @@ pub fn main(_args: &[&str]) -> Result<u8> {
         println!("  FAULT {fault}");
     }
     if faults.is_empty() {
-        println!("fence: criterion 8 holds");
+        println!("fence: holds");
         return Ok(0);
     }
     println!("fence: {} faults", faults.len());

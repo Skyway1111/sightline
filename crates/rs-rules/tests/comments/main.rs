@@ -1,5 +1,4 @@
-//! One integration binary for this unit (codemap 3.10), a module per Python
-//! test file.
+//! One integration binary for this unit, a module per test file.
 
 mod test_describe;
 mod test_rs_emit;

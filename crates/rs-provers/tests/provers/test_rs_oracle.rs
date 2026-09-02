@@ -1,7 +1,6 @@
-//! The toolchain-free part of `tests/rs/test_rs_oracle.py`: the two arms
-//! where `build_answers` never asks the toolchain and says so in the header.
-//! Every other test in that file spawns cargo and lands with the index in
-//! phase 7.
+//! The toolchain-free part of the oracle: the two arms where `build_answers`
+//! never asks the toolchain and says so in the header. The tests that spawn
+//! cargo live in `tests/oracle`.
 
 use sightline_core::config::Config;
 use sightline_core::rule::RuleSet;

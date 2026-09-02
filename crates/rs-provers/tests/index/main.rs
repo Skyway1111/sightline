@@ -1,14 +1,14 @@
-//! The index half of `tests/rs/test_rs_oracle.py`: the three dispatch
-//! shapes, a call edge against a plain reference, a call written inside a
-//! macro, a definition outside the project root, a reference across two
-//! crates, two audits of one tree, and a root whose load stops.
+//! The index half of the oracle tests: the three dispatch shapes, a call
+//! edge against a plain reference, a call written inside a macro, a
+//! definition outside the project root, a reference across two crates, two
+//! audits of one tree, and a root whose load stops.
 //!
 //! Every test here spawns cargo and loads the workspace, so every one is
-//! `#[ignore]` (decision 17) and `xtask check` runs them. Each fixture loads
-//! once for the binary.
+//! `#[ignore]` and `xtask check` runs them. Each fixture loads once for
+//! the binary.
 //!
-//! `test_an_index_that_reads_ranges_in_another_encoding_is_a_fault` has no
-//! twin: there is no dump and no position encoding to read wrong.
+//! Nothing here reads a range in the wrong position encoding: the index
+//! resolves in process, so there is no dump and no encoding to get wrong.
 
 use std::sync::LazyLock;
 
@@ -24,7 +24,7 @@ use sightline_testkit::rs_fixtures::{self, borrowed};
 use sightline_testkit::{build_rs, build_rs_oracle, make_repo};
 use tempfile::TempDir;
 
-/// `LIB` as one package: the `crate` fixture of the Python file.
+/// `LIB` as one package: the `crate` fixture.
 static ONE: LazyLock<(TempDir, RsStack)> = LazyLock::new(|| build_rs_oracle(rs_fixtures::CRATE));
 
 /// Two packages under a root with no manifest, one a path dependency of the

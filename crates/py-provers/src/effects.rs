@@ -1,9 +1,8 @@
-//! Port of `provers/effects.py` (codemap 3.3): effect summaries, bottom-up
-//! over the SCC condensation of the call graph's callee edges
-//! (`callgraph::callee_of`: a class call runs `__init__`). Unknown taints: any
-//! site the graph cannot follow to a body makes a summary `unknown` rather
-//! than clean. An external call has the effect classes `catalog.rs` gives it -
-//! a heuristic priced by the WP tier.
+//! Effect summaries, bottom-up over the SCC condensation of the call graph's
+//! callee edges (`callgraph::callee_of`: a class call runs `__init__`).
+//! Unknown taints: any site the graph cannot follow to a body makes a summary
+//! `unknown` rather than clean. An external call has the effect classes
+//! `catalog.rs` gives it - a heuristic priced by the WP tier.
 
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 

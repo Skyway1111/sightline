@@ -1,5 +1,4 @@
-//! Family B (surface count): port of `rules/surface.py`. #11 clones, #14
-//! data clump, #18 section comments, #20 repeated lambda, #21 distributed
+//! Family B (surface count). #11 clones, #14 data clump, #18 section comments, #20 repeated lambda, #21 distributed
 //! invariant, #37 speculative generality, #48 fold candidate, #54 kind
 //! switch, #55 positional width and #23 cognitive complexity.
 //!
@@ -636,8 +635,8 @@ pub const RULE_20: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "same nontrivial lambda body >=3 times in a module",
-        goal: "Interface symmetry (Parent): a predicate written three times \
-               drifts; name it once.",
+        goal: "Interface symmetry (Sean Parent): a predicate written three \
+               times drifts; name it once.",
         lang: "py",
         scope: Scope::File,
         complement: "",
@@ -1229,10 +1228,9 @@ pub const RULE_48: Rule = Rule {
         posture: Posture::Ratchet,
         meaning: "private def with one prod call site and no other reference, \
                   body on one line: fold it into its caller",
-        goal: "A name is a promise of reuse (Ousterhout's shallow module): a \
-               helper one reader calls once costs a hop and a signature for \
-               nothing - the largest unflagged cut class of the simplify \
-               campaign (scripts/cut_receipt.py).",
+        goal: "A name is a promise of reuse (John Ousterhout's shallow \
+               module): a helper one reader calls once costs a hop and a \
+               signature for nothing.",
         lang: "py",
         scope: Scope::Repo,
         complement: "",
@@ -1894,7 +1892,8 @@ pub const RULE_23: Rule = Rule {
         posture: Posture::Report,
         meaning: "cognitive complexity >= 15; also the ranking prior",
         goal: "Complexity predicts comprehension time (meta-analysis); \
-               REPORT-tier only - gating would incentivize extract-to-duck.",
+               REPORT only: a gate here would push authors to extract \
+               helpers to dodge it.",
         lang: "py",
         scope: Scope::File,
         complement: "",

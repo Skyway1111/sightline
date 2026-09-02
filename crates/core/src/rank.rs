@@ -1,4 +1,4 @@
-//! The total order (port of `findings.py` `rank`).
+//! The total order.
 //!
 //! Measured P(real) first (`p_real`: the rule's or arm's own judged sample,
 //! its tier's bar until a round judges one), then the finding's integer rank
@@ -130,8 +130,8 @@ mod tests {
         }
     }
 
-    /// The priors REF's facts report for the probe's mini repo: `m.hairy`
-    /// 6, every other symbol 0 (scratch/core-a/probe_order.py).
+    /// The mini repo these tests share: `m.hairy` scores 6, every other
+    /// symbol 0.
     fn stack() -> SyntheticStack {
         let mut stack = SyntheticStack::new(&P, &[("m.p", "x\n"), ("b.p", "y\n"), ("z.rs", "w\n")]);
         let cc = &mut stack.neutral_mut().cc;
@@ -146,8 +146,7 @@ mod tests {
 
     #[test]
     fn the_order_is_the_reference_tools() {
-        // scratch/core-a/probe_order.py: the same ten findings through REF's
-        // `sightline.findings.rank`, printed in the order it returned them
+        // the ten findings below, in the order `rank` returns them
         let stack = stack();
         let neutral: &Neutral = stack.neutral();
         let input = vec![

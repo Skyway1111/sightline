@@ -1,4 +1,4 @@
-//! Port of `rs/emit.py`: verified findings' deletions as one unified diff
+//! Verified findings' deletions as one unified diff
 //! against each file's raw bytes, line endings preserved. Writes text, never
 //! the tree.
 //!

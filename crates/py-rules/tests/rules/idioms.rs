@@ -1,5 +1,5 @@
-//! `tests/rules/test_surface.py`'s `TestRule12IdiomCatalog`: the whole-function
-//! catalog and the node-level idioms.
+//! #12's idiom catalog: the whole-function catalog and the node-level
+//! idioms.
 
 use sightline_core::findings::Finding;
 use sightline_testkit::run_rule;

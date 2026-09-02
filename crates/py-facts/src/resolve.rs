@@ -1,9 +1,9 @@
-//! `facts/build.py` pass B: the per-module walk that records references and
+//! Pass B of the build: the per-module walk that records references and
 //! resolves call sites.
 //!
 //! One `Resolver` per module, run under rayon; `build.rs` appends each
 //! module's `Vec<Ref>` and `Vec<CallSite>` in `facts.modules` order, so one
-//! thread and all cores answer the same lists (decision 8). A visited node's
+//! thread and all cores answer the same lists. A visited node's
 //! `NodeIndex` is the one the traversal stamped on it (R3), so no reader
 //! recomputes a position.
 

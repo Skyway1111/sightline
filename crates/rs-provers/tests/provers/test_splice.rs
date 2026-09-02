@@ -1,7 +1,5 @@
-//! `rs/splice.py` has no Python test outside the cargo-marked
-//! `tests/rs/test_rules_dead.py`, so these two are new. Every expected value
-//! comes from REF's own `deletion` and `verify_splice` on the same fixture
-//! (`sightline-phase6/scratch/rs-provers/probe_splice.py`).
+//! `deletion` and `verify_splice` over the `LIB` fixture below. Every
+//! expected value comes from running the two on that fixture.
 
 use sightline_rs_provers::oracle::RsAnswers;
 use sightline_rs_provers::splice::{deletion, verify_splice};

@@ -1,5 +1,5 @@
-# The config `cargo xtask check`'s `own-gate` stage audits this tree with
-# (criterion 12); a Cargo root has no pyproject to hang the table off.
+# The config `cargo xtask check`'s `own-gate` stage audits this tree with;
+# a Cargo root has no pyproject to hang the table off.
 [tool.sightline]
 # the binary is the product and every reader is in this tree, so a symbol only
 # tests reach is dead (#56) or scaffolding under a marker.

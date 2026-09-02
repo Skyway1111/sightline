@@ -1,5 +1,5 @@
-//! The fn half of `rules/model.py`: what a rule is here, and the two
-//! catalog types #12 and #41 match through. The record half is
+//! The fn half of a rule: what one is here, and the two catalog types
+//! #12 and #41 match through. The record half is
 //! `core::rule::RuleRecord`, which every language-blind reader holds.
 
 use ruff_python_ast::{Stmt, StmtFunctionDef};

@@ -1,9 +1,9 @@
-//! The Rust oracle (`rs/oracle.py`): cargo's members and verdicts
-//! (`cargo.rs`), rust-analyzer's resolution in process (`index.rs`) and the
-//! worlds (`worlds.rs`). The one place in the Rust stack that runs a
+//! The Rust oracle: cargo's members and verdicts (`cargo.rs`),
+//! rust-analyzer's resolution in process (`index.rs`) and the worlds
+//! (`worlds.rs`). The one place in the Rust stack that runs a
 //! toolchain; `RsAnswers` is what every Rust reading asks of it, with empty
 //! answers where the oracle is off or a pass of it stopped, so a degraded
-//! run reports a subset of its twin.
+//! run reports a subset of a full one.
 //!
 //! `project_roots` is what the tools are pointed at: the audited root where
 //! it holds a manifest, else every crate root under it. Every answer is
@@ -204,8 +204,8 @@ impl RsOracle {
         self.state.lock().unwrap().faults.clone()
     }
 
-    /// Pass progress, as `rs/oracle.py`'s `on_event` prints it, and the wall
-    /// `audit --profile` reads back.
+    /// Pass progress as each pass prints it, and the wall `audit --profile`
+    /// reads back.
     pub fn event(&self, label: &str, started: Instant) {
         let wall = started.elapsed().as_secs_f64();
         progress(&format!("sightline: rs {label} in {wall:.1}s"));
@@ -234,8 +234,8 @@ impl RsOracle {
 }
 
 /// An absolute path in the platform's own spelling, never the `\\?\`
-/// verbatim form `canonicalize` gives on Windows: the target dir key must
-/// equal the Python tool's `str(root.resolve())`.
+/// verbatim form `canonicalize` gives on Windows: the target dir key is
+/// digested from this spelling.
 pub fn absolute(path: &Utf8Path) -> Utf8PathBuf {
     let found = std::path::absolute(path.as_std_path()).ok();
     let utf8 = found.and_then(|p| Utf8PathBuf::from_path_buf(p).ok());
@@ -275,8 +275,8 @@ pub fn project_roots(root: &Utf8Path, crates: &IndexMap<String, String>) -> Vec<
 
 /// One build directory per project root, outside every tree it audits:
 /// `base` where the harness points a worktree run at the live root's, else
-/// a per-root dir under the user's cache, keyed as `rs/oracle.py:target_dir`
-/// keys it so both tools share one warm build. `project` is a rel under the
+/// a per-root dir under the user's cache, keyed by a digest of the root's
+/// path so repeat runs share one warm build. `project` is a rel under the
 /// audited root, and gets a directory of its own: two crates of one tree may
 /// pin different profiles, which cargo rebuilds a shared dir's dependencies
 /// to switch between.
@@ -423,10 +423,10 @@ pub fn answers_with(
     answers_of(oracle, facts)
 }
 
-/// The passes over a built oracle in the order the Python tool forces
-/// them, so the notes come out in its order: the index, then the members,
-/// the check, the unchecked set and the versions. A test hands an oracle
-/// pointed at its own target directory.
+/// The passes over a built oracle in a fixed order, so the notes come out
+/// in that order: the index, then the members, the check, the unchecked set
+/// and the versions. A test builds an oracle pointed at its own target
+/// directory.
 pub fn answers_of(oracle: RsOracle, facts: &RsFacts<'_>) -> RsAnswers {
     let graph = index::graph(&oracle, facts);
     let unchecked = oracle.unchecked().clone();

@@ -1,5 +1,4 @@
-//! Port of `provers/rettypes.py` (phase 4, unit `py-queries`): the
-//! oracle-revealed return types of return-unannotated internal functions
+//! The oracle-revealed return types of return-unannotated internal functions
 //! (#36/#40), one `Oracle::module_member_type` per candidate module-level
 //! code can name and never rebinds.
 
@@ -147,7 +146,6 @@ fn candidates(facts: &RepoFacts<'_>) -> Vec<(Qname, Rel, String)> {
 mod tests {
     use super::*;
 
-    /// `tests/provers/test_rettypes.py:test_return_of`, the whole table.
     #[test]
     fn return_of_reads_the_arrow_shape() {
         let table = [

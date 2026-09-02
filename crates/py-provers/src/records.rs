@@ -1,4 +1,4 @@
-//! Port of `provers/records.py` (codemap 3.3): the string-key sets a
+//! The string-key sets a
 //! function returns as dict literals (a closed producer) and the keys each
 //! receiver of its result reads by constant (a sink), joined over RESOLVED
 //! call sites. Closure is literal: a producer closes only when every return
@@ -128,7 +128,7 @@ struct Uses {
 }
 
 /// The test of an `If` (an `elif` included), a `While`, an `Assert` or an
-/// `IfExp`: `records.py`'s `_TESTS`.
+/// `IfExp`.
 fn test_of<'t>(module: &Module<'t>, node: NodeIndex) -> Option<&'t Expr> {
     match module.nodes[node as usize] {
         Cn::Stmt(Stmt::If(n)) => Some(&n.test),

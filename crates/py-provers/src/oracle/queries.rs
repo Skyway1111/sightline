@@ -5,7 +5,7 @@
 use super::*;
 
 impl Oracle {
-    /// The shim's `span_type` per query, in query order: `None` for a miss
+    /// One `span_type` per query, in query order: `None` for a miss
     /// (no expression at exactly that range, no inferred type). Chunked across
     /// rayon workers over `db.clone()`.
     pub fn span_types(&self, queries: &[TypeQuery]) -> Vec<Option<String>> {
@@ -31,7 +31,7 @@ impl Oracle {
     }
 
     /// The type module-level code sees under `dotted` (`f`, `Cls.m`) in the
-    /// module at `rel`: the shim's appended `reveal_type(<expr>)` answer,
+    /// module at `rel`: the answer to an appended `reveal_type(<expr>)`,
     /// displayed and normalized as a span query is.
     pub fn module_member_type(&self, rel: &Rel, dotted: &str) -> Option<String> {
         let one = [dotted.to_string()];
@@ -56,8 +56,8 @@ impl Oracle {
         .unwrap_or_else(|| vec![None; dotted.len()])
     }
 
-    /// Decision 11: does the module bound to `local` in the module at `rel`
-    /// hold a class named `name`? (`counterfactual._stdlib_home`)
+    /// Does the module bound to `local` in the module at `rel` hold a class
+    /// named `name`? The counterfactual's `stdlib_home` asks.
     pub fn member_is_class(&self, rel: &Rel, local: &str, name: &str) -> bool {
         let one = [format!("{local}.{name}")];
         self.base();

@@ -1,7 +1,6 @@
-//! Port of `provers/spend.py`'s contract (REF has no test file of its own for
-//! it: #59's assertions live in the rules tests phase 5 ports). Expected values
-//! from a probe through REF's own `spend_of` / `own_params` /
-//! `handed_through`: `sightline-phase3/scratch/py-provers-a/probe_shipping_spend.py`.
+//! The contract of `spend_of`, `own_params` and `handed_through`; #59's own
+//! assertions live in the rules tests. Expected values are pinned from a
+//! probe of those three over the `SRC` fixture below.
 
 use std::collections::BTreeSet;
 

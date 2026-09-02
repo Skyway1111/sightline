@@ -1,18 +1,17 @@
-//! Port of `provers/catalog.py` (codemap 3.3): what a call to an external
-//! callable does. One table, each consumer projecting the classes it cares
-//! about. A callable is keyed dotted - through the module's bindings
-//! (`os.remove`), a root standing for its whole module, a `<class>.<method>`
-//! the receiver's type spells (`str.join`), a bare builtin - or, with a
-//! leading dot, by the name it spells on any receiver (`.append`). The
-//! longest dotted prefix wins, so a member overrides its root
-//! (`urllib.parse` under `urllib`).
+//! What a call to an external callable does. One table, each consumer
+//! projecting the classes it cares about. A callable is keyed dotted -
+//! through the module's bindings (`os.remove`), a root standing for its whole
+//! module, a `<class>.<method>` the receiver's type spells (`str.join`), a
+//! bare builtin - or, with a leading dot, by the name it spells on any
+//! receiver (`.append`). The longest dotted prefix wins, so a member
+//! overrides its root (`urllib.parse` under `urllib`).
 //!
 //! An unlisted callable is assumed pure: it computes and returns. It is never
 //! assumed *inert* - only a listed pure entry answers `inert`, and a kind
 //! joins that set measured: a hoist over it applied and passed its repo's
 //! suite. The lookup is `core::catalog::Catalog`; the rows are here, one row
-//! per line of the Python `_BY_CLASS` (a class may take several rows, and a
-//! name listed under several classes takes all of them).
+//! per name (a class may take several rows, and a name listed under several
+//! classes takes all of them).
 
 use std::collections::BTreeSet;
 use std::sync::LazyLock;
@@ -239,7 +238,6 @@ mod tests {
 
     use sightline_core::catalog::{IO, SPENDS};
 
-    /// `tests/provers/test_catalog.py`'s parametrized class fixtures.
     #[test]
     fn every_class_answers_for_a_spelling_a_consumer_sees() {
         let rows: &[(Option<&str>, Option<&str>, &str)] = &[

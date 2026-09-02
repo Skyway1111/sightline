@@ -1,10 +1,7 @@
-//! `tests/rules/test_neutrality.py`: for every finding-emitting rule, its
-//! fixture and a twin that differs only by an unrelated extraction (a helper
-//! split out in a side module, away from the flagged structure) yield
-//! identical findings. The tool never rewards or punishes extraction count.
-//!
-//! The fixture tables are the Python file's own, transcribed by
-//! `sightline-phase5/scratch/py-rules-close/gen_neutrality.py`.
+//! For every finding-emitting rule, its fixture and a twin that differs only
+//! by an unrelated extraction (a helper split out in a side module, away from
+//! the flagged structure) yield identical findings. The tool never rewards or
+//! punishes extraction count.
 
 use camino::Utf8Path;
 use sightline_py_provers::oracle::Oracle;

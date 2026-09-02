@@ -1,6 +1,6 @@
-//! Family A: what the code claims about itself. Port of `rules/trust.py`
-//! (#1, #2, #3, #5, #6, #7, #9, #10, #40, #49, #50). Thin queries over facts
-//! and provers; evidence objects stamp the engine.
+//! Family A: what the code claims about itself (#1, #2, #3, #5, #6, #7, #9,
+//! #10, #40, #49, #50). Thin queries over facts and provers; evidence objects
+//! stamp the engine.
 
 use std::collections::{BTreeSet, HashSet};
 use std::sync::LazyLock;
@@ -93,7 +93,7 @@ pub const RULE_2: Rule = Rule {
         // not GATE: even clean code has real hits
         posture: Posture::Ratchet,
         meaning: "isinstance/comparison/contains/cast provable from annotations",
-        goal: "Guards die when invariants are named (Parent's Chromium \
+        goal: "Guards die when invariants are named (Sean Parent's Chromium \
                walkthrough): a check the types already discharge is noise.",
         lang: "py",
         scope: Scope::Repo,
@@ -557,9 +557,9 @@ pub const RULE_5: Rule = Rule {
         engine_class: "WP+ORACLE",
         posture: Posture::Ratchet,
         meaning: "propose annotations callers already prove; never auto-apply",
-        goal: "Name the invariant once (Parent's Chromium walkthrough): a \
-               lifted annotation converts global analysis into permanent local \
-               checks.",
+        goal: "Name the invariant once (Sean Parent's Chromium walkthrough): \
+               a lifted annotation converts global analysis into permanent \
+               local checks.",
         lang: "py",
         scope: Scope::Repo,
         complement: "",
@@ -1069,8 +1069,9 @@ pub const RULE_3: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "emptiness guard implied by the guarded call's contract",
-        goal: "No redundant state checks (Parent, Better Code goal 1): a guard \
-               the callee's contract already discharges is defensive noise.",
+        goal: "No redundant state checks (Sean Parent, Better Code, goal 1): \
+               a guard the callee's contract already discharges is defensive \
+               noise.",
         lang: "py",
         scope: Scope::Repo,
         complement: "",
@@ -1307,8 +1308,9 @@ pub const RULE_9: Rule = Rule {
         posture: Posture::Ratchet,
         meaning: "a module global rebound by three of its own functions; \
                   monkeypatching; import-time process mutation in imported modules",
-        goal: "No shared mutable state (Parent, Better Code goal 3): a module \
-               global mutated from many places is action at a distance.",
+        goal: "No shared mutable state (Sean Parent, Better Code, goal 3): a \
+               module global mutated from many places is action at a \
+               distance.",
         lang: "py",
         scope: Scope::Repo,
         complement: "",
@@ -1470,8 +1472,9 @@ pub const RULE_49: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "a mutable literal as a parameter default",
-        goal: "No shared mutable state (Parent, Better Code goal 3): a default \
-               built once at def time is state every call silently shares.",
+        goal: "No shared mutable state (Sean Parent, Better Code, goal 3): a \
+               default built once at def time is state every call silently \
+               shares.",
         lang: "py",
         scope: Scope::File,
         complement: "",

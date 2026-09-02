@@ -1,5 +1,4 @@
-//! The gate round trip (port of `tests/test_gate.py`'s gate half): block,
-//! suppress, baseline, untouched files, parse errors, `--since` and the two
+//! The gate round trip: block, suppress, baseline, untouched files, parse errors, `--since` and the two
 //! postures. The single-file / full-repo identity half is the rules crates'.
 
 use std::process::Command;

@@ -1,5 +1,5 @@
 //! `RsProvers`: every question a Rust rule asks of a body or a module,
-//! walked once and memoized (port of `rs/provers.py`). The mining, the
+//! walked once and memoized. The mining, the
 //! comment predicates and the complexity scorer are the language-neutral
 //! cores; this crate only builds their inputs out of tree-sitter nodes.
 //!

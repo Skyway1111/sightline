@@ -1,4 +1,4 @@
-//! `sightline audit` (port of `cli.cmd_audit`): the whole pipeline, ranked,
+//! `sightline audit`: the whole pipeline, ranked,
 //! rendered as text, JSON or SARIF. An exit-0 report: only `gate` blocks.
 
 use std::io::Write;

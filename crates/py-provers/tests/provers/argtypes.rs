@@ -1,5 +1,4 @@
-//! `provers/argtypes.py`: the oracle-established argument types at call
-//! sites.
+//! The oracle-established argument types at call sites.
 
 use crate::oracle_fixture;
 
@@ -38,7 +37,7 @@ fn arg_expr_reads_positions_keywords_and_splats() {
 }
 
 /// `prod_args` reads one enumeration over the bare graph, test callers
-/// dropped (#14 reads it in phase 5).
+/// dropped (#14 reads it).
 #[test]
 fn prod_args_drops_test_callers() {
     let (_dir, stack) = build(&[
@@ -55,9 +54,9 @@ fn prod_args_drops_test_callers() {
     assert!(matches!(args[0], Arg::Expr(_)));
 }
 
-/// `tests/provers/test_degraded.py:test_oracle_backed_accessors_answer_empty_without_an_oracle`,
-/// the `arg_types` half (`unresolved`, `diagnostics` and `errors` are unit
-/// `py-oracle`'s).
+/// The `arg_types` half of a run with no oracle: the accessor answers
+/// empty, never absent. `unresolved`, `diagnostics` and `errors` are the
+/// oracle tests'.
 #[test]
 fn arg_types_answer_empty_without_an_oracle() {
     let (_dir, stack) = build(&[(
@@ -97,7 +96,7 @@ fn every_call_site_of_an_unannotated_param_gets_a_type() {
         .for_param("m._scale", "n")
         .expect("the closed-world callee's param");
 
-    // the reference's own answers on this repo (`scratch/py-queries/probe_rets.py`)
+    // values pinned from a probe of `arg_types` over this fixture
     let spelled: Vec<(bool, Option<&str>)> = observed
         .iter()
         .map(|o| (o.call.is_some(), o.ty.as_deref()))

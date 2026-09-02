@@ -1,6 +1,5 @@
-//! #58 checker-error (`tests/rules/test_oracle_rules.py`,
-//! `TestRule58CheckerError`): the checker's own verdicts, forwarded. Every
-//! case builds a real shim at a mini repo.
+//! #58 checker-error: the checker's own verdicts, forwarded. Every case
+//! builds a real shim at a mini repo.
 
 use std::collections::BTreeSet;
 

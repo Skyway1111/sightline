@@ -1,7 +1,6 @@
-//! Port of `provers/shipping.py`'s contract (REF has no test file of its own
-//! for it: #35's assertions live in the rules tests phase 5 ports). Expected
-//! values from a probe through REF's own `shipped_subsets`:
-//! `sightline-phase3/scratch/py-provers-a/probe_shipping_spend.py`.
+//! `shipped_subsets`'s contract; #35's own assertions live in the rules
+//! tests. Expected values are pinned from a probe of `shipped_subsets` over
+//! each test's fixture tree.
 
 use sightline_py_provers::shipping::shipped_subsets;
 use sightline_testkit::build;

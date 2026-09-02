@@ -1,5 +1,5 @@
-//! `rs/facts.py` pass A: one module's items, the names it spells bare and
-//! the `use` bindings behind them.
+//! Pass A of `build_facts`: one module's items, the names it spells bare
+//! and the `use` bindings behind them.
 
 use super::*;
 

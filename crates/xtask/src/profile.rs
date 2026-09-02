@@ -1,4 +1,4 @@
-//! `cargo xtask profile`: the compare half of `scripts/profile_audit.py`.
+//! `cargo xtask profile`: compare an audit's per-pass walls to the reference.
 //!
 //! The binary records the per-pass walls itself (`audit --profile <json>`).
 //! This reads that receipt, prints it biggest pass first, and diffs it

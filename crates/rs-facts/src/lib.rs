@@ -1,10 +1,9 @@
-//! The Rust stack's facts over tree-sitter (port of `src/sightline/rs/`
-//! minus the provers): the vocabulary every module of it shares, the
-//! parsed modules, the crate layout a path spells, and the cross-module
-//! indexes.
+//! The Rust stack's facts over tree-sitter, provers apart: the vocabulary
+//! every module of it shares, the parsed modules, the crate layout a path
+//! spells, and the cross-module indexes.
 //!
 //! `Node` is re-exported so `rs-rules` reads tree-sitter through this
-//! crate and never lists the parser in its own manifest (decision 1).
+//! crate and never lists the parser in its own manifest.
 
 pub mod attrs;
 pub mod build;

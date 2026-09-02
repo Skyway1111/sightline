@@ -1,7 +1,6 @@
-//! Port of `provers/imports.py` (codemap 3.3). Module coupling: the import
-//! graph (top-level and any-scope edges, reach, importers, readers). One home
-//! for "who reaches whom" - #9, #27 and #35 read it. What an import
-//! *runs* is `import_effects.rs`'s question.
+//! Module coupling: the import graph (top-level and any-scope edges, reach,
+//! importers, readers). One home for "who reaches whom" - #9, #27 and #35
+//! read it. What an import *runs* is `import_effects.rs`'s question.
 
 use std::collections::{HashMap, HashSet};
 use std::sync::Mutex;

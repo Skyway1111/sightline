@@ -126,7 +126,7 @@ fn keep(kids: &mut Vec<Cc>, c: Cc) {
     }
 }
 
-/// `complexity.py:_classify`. `name` is the enclosing def's, for the
+/// The complexity of one node. `name` is the enclosing def's, for the
 /// recursive-call increment; `inner` puts this node one level in from its
 /// parent; `elif_` makes it flat instead of nesting.
 pub fn classify(node: Cn<'_>, name: Option<&str>, inner: bool, elif_: bool) -> Cc {

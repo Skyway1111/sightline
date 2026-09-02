@@ -1,5 +1,4 @@
-//! Family T (`tests/rules/test_tests_quality.py`): #42, #44, #47, each a
-//! pos/neg pair.
+//! Family T: #42, #44, #47, each a pos/neg pair.
 //!
 //! file-length-ok: one file per rule family, mirroring `src/tests_quality.rs`.
 
@@ -308,7 +307,7 @@ fn a_call_on_the_tests_own_parameter_may_verdict_when_handed_a_repo_result() {
     );
 }
 
-/// The skippable-verdict arms are cut at their bar (`docs/todo.md`):
+/// The skippable-verdict arms are cut at their bar:
 /// loop-verdict judged four times, conditional-verdict twice. The Python file
 /// keeps both fixtures under a strict xfail; here the reading is that #42
 /// yields its one cause prefix and never those arms'.

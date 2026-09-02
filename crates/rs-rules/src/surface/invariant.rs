@@ -1,4 +1,4 @@
-//! #21, an invariant a panic arm enforces (`rs/rules/surface.py` L139-274).
+//! #21, an invariant a panic arm enforces.
 
 use std::collections::HashMap;
 

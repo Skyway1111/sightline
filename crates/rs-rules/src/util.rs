@@ -1,4 +1,4 @@
-//! `rs/rules/util.py`: the one `site` helper every Rust rule calls.
+//! The one `site` helper every Rust rule calls.
 
 use sightline_core::findings::Site;
 use sightline_rs_facts::Node;

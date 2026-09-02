@@ -1,6 +1,5 @@
-//! `facts/build.py`: the module naming, over the listing and the file
-//! system. Path logic only, so the gate computes full-build identities
-//! without parsing.
+//! Module naming, over the listing and the file system. Path logic only,
+//! so the gate computes full-build identities without parsing.
 
 use crate::model::RepoFacts;
 use crate::module::Module;
@@ -148,7 +147,7 @@ pub fn under(root: &Utf8Path, path: &Utf8Path) -> String {
     }
 }
 
-// --- dotted-name resolution (`build.py:resolve_qname`) ----------------------
+// --- dotted-name resolution -------------------------------------------------
 
 /// A `Name` or `Attribute` chain to the repo symbol or module it denotes
 /// through the module's bindings, re-export hops included; `None` where it

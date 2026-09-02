@@ -1,4 +1,4 @@
-//! Port of REF `tests/provers/test_scope.py`: one pin per `Scope` query.
+//! One pin per `Scope` query.
 
 use ruff_python_ast::{Expr, Stmt};
 use sightline_py_facts::cn::Cn;
@@ -557,7 +557,7 @@ fn bound_from_names_the_iterable_an_enclosing_loop_binds_from() {
     );
 }
 
-/// The name-up mutation predicate (REF `tests/test_astutil.py`).
+/// The name-up mutation predicate.
 #[test]
 fn mutation_context_uses_the_parent_index() {
     let (_dir, stack) = build(&[("m.py", "items.append(1)\nitems[0] = 2\nitems += [3]\n")]);

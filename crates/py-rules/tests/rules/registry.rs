@@ -1,18 +1,13 @@
-//! Registry-level checks (`tests/rules/test_registry.py`): rule presence,
-//! the posture table, tier derivation over every emitted finding.
-//!
-//! Dropped from the Python file: `test_rule_23_is_a_ranking_input` reads
-//! `inspect.getsource`, which no Rust build has;
-//! `test_explain_prints_every_record_under_one_id` is phase 9's `explain`
-//! verb; `test_module_docstring_names_its_family_and_rules` reads
-//! `__doc__`, which a compiled crate does not carry.
-//!
+//! Registry-level checks: rule presence, the posture table, tier derivation
+//! over every emitted finding. What `explain` prints out of the registry is
+//! pinned by the binary's own CLI tests.
+
 use sightline_core::rule::{Posture, Scope};
 use sightline_py_rules::{RULES, run_rules};
 use sightline_testkit::build;
 
 /// Ids no rule table may hold: retired, and answered by `explain` out of the
-/// burial table instead (codemap 7).
+/// burial table instead.
 const RETIRED: [&str; 18] = [
     "4", "8", "13", "15", "16", "17", "19", "22", "25", "28", "30", "31", "43", "45", "46", "51",
     "52", "61",

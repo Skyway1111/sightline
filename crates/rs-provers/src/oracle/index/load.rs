@@ -1,9 +1,8 @@
-//! The `ra_ap_*` side (`rs/oracle.py:_lsif`'s replacement, codemap section
-//! 6): a project root loaded in process, the vfs walked into file maps, every
-//! token that can name a definition, and each definition reduced to its name
-//! range. The resolver is `IdentClass::classify_token`, what
-//! `ide::static_index` runs and so what the reference's dump was built from;
-//! the codemap recipe answered 65 fewer edges on salvo.
+//! The `ra_ap_*` side: a project root loaded in process, the vfs walked into
+//! file maps, every token that can name a definition, and each definition
+//! reduced to its name range. The resolver is `IdentClass::classify_token`,
+//! what `ide::static_index` runs; the earlier loader recipe answered 65
+//! fewer edges on salvo.
 
 use std::collections::{BTreeSet, HashMap};
 
@@ -97,8 +96,7 @@ pub fn load(oracle: &RsOracle, project: &Utf8Path, rels: &[String]) -> anyhow::R
         };
         let rel = text[text.len() - cut..].to_string();
         files.documents_in.insert(text);
-        // the `where` of the Python join: only the documents facts calls
-        // modules, which is what the LSIF dump held
+        // the join's `where`: only the documents facts calls modules
         if wanted.contains(rel.as_str()) {
             files.by_rel.insert(rel.clone(), file);
             files.by_file.insert(file, rel);

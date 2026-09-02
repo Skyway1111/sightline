@@ -1,4 +1,4 @@
-//! Port of `rs/rules/comments.py`: Family B's #18, labeled phases narrated
+//! Family B's #18, labeled phases narrated
 //! inside one `fn`; Family C's #34, code that does nothing (commented out, or
 //! a `match` that returns what it matched); and Family C's #39, one doc run
 //! pasted onto several items. #18 and #34 ask what a body holds that no run
@@ -235,7 +235,7 @@ pub const RULE_39: Rule = Rule {
         goal: "Comments hold only what the code cannot: a doc that fits two operations \
                describes neither, and the reader who trusts it on the second one is reading \
                the first one's contract. Four judged rows of six are no sample to gate on, so \
-               this reports until a fresh seed prices it (`docs/todo.md`).",
+               this reports until a larger round measures it.",
         lang: "rs",
         scope: Scope::Repo,
         complement: "clippy reads no doc for a copy; `doc_markdown` only spells its prose",

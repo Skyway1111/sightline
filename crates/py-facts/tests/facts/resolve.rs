@@ -1,5 +1,5 @@
-//! `tests/facts/test_build.py`, the pass-B half: what a name refers to, how a
-//! call resolves, and which nodes a signature's expressions belong to.
+//! The pass-B half of the build: what a name refers to, how a call
+//! resolves, and which nodes a signature's expressions belong to.
 
 use std::collections::BTreeMap;
 
@@ -47,8 +47,8 @@ fn resolutions<'a>(facts: &'a RepoFacts<'_>, hit: Resolution) -> Vec<(&'a str, O
 #[test]
 fn type_comments_are_the_annotations_they_spell() {
     // cityscapesScripts annotates three modules by PEP 484 comments: every
-    // reader of an annotation or a return sees the declared type. The #32
-    // assertion beside it waits for phase 5's rules.
+    // reader of an annotation or a return sees the declared type. This test
+    // asserts the annotations alone; #32 over them is a rules test.
     let (_dir, stack) = build(&[(
         "m.py",
         concat!(

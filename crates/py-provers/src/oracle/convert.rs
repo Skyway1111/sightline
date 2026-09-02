@@ -1,7 +1,5 @@
-//! The shim's own code, moved here as decision 3 rules
-//! (`ty_pyright_shim/src/main.rs`): the six lints the oracle turns on, a ty
-//! diagnostic as sightline reads one, and the type displays the type-string
-//! algebra expects.
+//! The six lints the oracle turns on, a ty diagnostic as sightline reads
+//! one, and the type displays the type-string algebra expects.
 
 use ruff_db::diagnostic::{Diagnostic, DiagnosticId, Severity, UnifiedFile};
 use ruff_db::source::{line_index, source_text};

@@ -12,10 +12,10 @@ ci = "github"
 installers = ["shell", "powershell"]
 # The attribution `cargo xtask third-party` generates, beside the binary.
 include = ["THIRD-PARTY.md"]
-# The three platforms of criterion 10.
+# The three platforms every release builds and smoke-tests.
 targets = ["x86_64-pc-windows-msvc", "x86_64-unknown-linux-gnu", "aarch64-apple-darwin"]
 # Where to host releases
 hosting = "github"
 # `.github/workflows/release-smoke.yml` runs `sightline --version` on each
-# published archive, on the platform that archive is built for (criterion 10).
+# published archive, on the platform that archive is built for.
 post-announce-jobs = ["./release-smoke"]

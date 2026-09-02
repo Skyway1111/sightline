@@ -1,6 +1,5 @@
-//! Port of REF `tests/provers/test_wp.py`: closed-world escapes, effects over
-//! the SCC condensation, callers, usage footprints. Every named escape reason
-//! is pinned here.
+//! Closed-world escapes, effects over the SCC condensation, callers, usage
+//! footprints. Every named escape reason is pinned here.
 
 use ruff_python_ast::Stmt;
 use sightline_core::findings::Qname;

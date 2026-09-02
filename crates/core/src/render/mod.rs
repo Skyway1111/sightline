@@ -1,6 +1,5 @@
-//! Output: ranked text, JSON and SARIF, each with the provenance header
-//! (port of `render.py`). Deterministic by construction: no timestamps, no
-//! temp paths.
+//! Output: ranked text, JSON and SARIF, each with the provenance header.
+//! Deterministic by construction: no timestamps, no temp paths.
 
 pub mod json;
 pub mod sarif;
@@ -132,7 +131,7 @@ mod tests {
         result.rules_off = vec!["32".into(), "5".into(), "11".into()];
         let prov = provenance(&result);
         assert_eq!(prov["rules_only"], serde_json::json!(["5", "11", "32"]));
-        // `rules_off` is a plain string sort, as `render.py` writes it
+        // `rules_off` is a plain string sort
         assert_eq!(prov["rules_off"], serde_json::json!(["11", "32", "5"]));
     }
 

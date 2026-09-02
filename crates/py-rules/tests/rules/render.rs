@@ -1,5 +1,5 @@
-//! `tests/test_render.py`, the half that needs a built Python stack rather
-//! than the synthetic one `core::render`'s own tests use: the rollup over
+//! The render half that needs a built Python stack rather than the synthetic
+//! one `core::render`'s own tests use: the rollup over
 //! real module sizes and fan-in, the SARIF rule table over the real
 //! registry, the oracle header, the judged-sample keys, and a #5 patch
 //! applied straight out of the JSON.

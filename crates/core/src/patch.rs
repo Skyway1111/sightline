@@ -1,6 +1,6 @@
-//! Patch composition and the unified diff (port of `emit.py`'s diff half).
+//! Patch composition and the unified diff.
 //! Language-blind: it reads a `Fix`'s spans and two line lists, never source.
-//! Building the patched lines is each language's emitter (phase 5).
+//! Building the patched lines is each language's emitter.
 
 use std::collections::HashSet;
 
@@ -157,7 +157,6 @@ mod tests {
 
     #[test]
     fn a_deletion_inside_another_loses_its_patch_and_its_imports() {
-        // `test_emit.py`
         let lines = ["def dead():", "    import os", "    return os"];
         let dead = with_fix("m.py", blank(&lines, 1, 3), &[]);
         let hoist = with_fix("m.py", blank(&lines, 2, 2), &["import os"]);

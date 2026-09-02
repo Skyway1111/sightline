@@ -1,8 +1,8 @@
-//! The cargo half of `tests/rs/test_rs_oracle.py`: the members, the check,
-//! the unchecked set, the worlds and every degraded mode the toolchain can
-//! reach. A test that builds a fixture spawns cargo and is `#[ignore]`
-//! (decision 17); `xtask check` runs those as their own stage. Each fixture
-//! loads once per binary.
+//! The cargo half of the oracle tests: the members, the check, the
+//! unchecked set, the worlds and every degraded mode the toolchain can
+//! reach. A test that builds a fixture spawns cargo and is `#[ignore]`;
+//! `xtask check` runs those as their own stage. Each fixture loads once
+//! per binary.
 
 use std::collections::BTreeSet;
 use std::sync::LazyLock;

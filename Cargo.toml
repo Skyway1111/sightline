@@ -22,10 +22,8 @@ all = "warn"
 [profile.dev.package."*"]
 debug = false
 
-# Measured on this machine, medians of 5 interleaved runs (benchmarks.md,
-# "Release profile"): thin LTO audits doxx in 15,259 ms against 15,377 and
-# cuts the binary from 94.5 MB to 80.6 MB. A clean release build costs 157 s
-# against 143 s.
+# Thin LTO: a faster audit and a smaller binary for a slower clean build.
+# The numbers are in benchmarks.md, "Release profile".
 [profile.release]
 lto = "thin"
 
@@ -53,7 +51,7 @@ toml = "0.9"
 unicode-ident = "1"
 self_cell = "1"
 
-# The fork's ruff and ty crates at rev 284831cb (decision 2): one parser serves
+# The fork's ruff and ty crates at rev 284831cb: one parser serves
 # facts and the oracle. `crates/sightline/src/version.rs:FORK_REV` repeats the
 # rev for `--version`; `version::tests::rev_matches_manifest` reads this file and
 # pins the two equal, so the rev has one home.

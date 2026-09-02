@@ -1,10 +1,11 @@
-# The fence (plan.md decision 1, codemap 2): a rule reads facts and provers.
+# The fence: a rule reads facts and provers.
 # It never touches the filesystem, the environment, a process or a parser.
 # Clippy reads the nearest clippy.toml walking up from the crate directory,
 # so this file binds this crate alone.
 #
-# `tree_sitter::Parser::parse` joins the rs-rules copy in phase 6; naming a
-# path no dependency of this crate holds makes clippy warn about the config.
+# The rs-rules copy holds the same list. Naming a path no dependency of this
+# crate holds makes clippy warn about the config, so no parser entry point
+# is listed here; `cargo xtask fence` greps the source for parser paths.
 disallowed-methods = [
     "std::fs::read",
     "std::fs::read_to_string",

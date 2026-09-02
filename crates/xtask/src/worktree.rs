@@ -138,7 +138,7 @@ mod tests {
     }
 
     /// The Cargo half copies the lockfile in and names the live root's build
-    /// directory (`test_fix_check.py`'s worktree seam).
+    /// directory.
     #[test]
     fn the_worktree_seam_copies_the_lockfile_and_names_the_live_build_dir() {
         let dir = tempfile::tempdir().unwrap();

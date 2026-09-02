@@ -13,6 +13,26 @@ Sightline is an agent-ergonomics checker with one product flow:
    then baseline diff, then rank.
 5. **Verbs.** `audit` renders, `gate` blocks, `fix` emits a diff.
 
+## Vocabulary
+
+The words this document and `benchmarks.md` use as terms.
+
+| Term | Meaning |
+| --- | --- |
+| Arm | One shape a rule reports, named in the finding's slug suffix. A rule's precision is judged per arm where the arms differ |
+| Tier | How the finding was proved: proved, indexed or heuristic. Each tier has a precision bar |
+| Posture | What `gate` does with a rule: GATE blocks, RATCHET blocks what is new against the baseline, REPORT never blocks |
+| Corpus | The six public repositories `crates/xtask/corpus.toml` pins, audited by every measurement |
+| Clean repository | The corpus repository per language that a blocking rule must stay silent on. A GATE rule that fires there is demoted |
+| Held-out repositories | Public repositories drawn by seed for one round and never used to tune a rule. Also called the gauntlet |
+| Round | One judged measurement: a manifest of held-out repositories, a seed, and hand verdicts on a sample of findings |
+| Judged sample | The `tp` of `n` findings a round read at their sites, in `data/precision.toml` |
+| Restriction | A narrowing of a rule's arms, accepted when it removes three or more judged false positives per true positive lost |
+| Retired id | A rule cut on its measured precision. Its id is never reused, and `explain <id>` prints why it was cut |
+| Trail | `corpus-ext/decisions.tsv`, the append-only record of every cut, restriction and retirement with its evidence |
+| World | An in-memory edit of the tree the oracle re-checks, to verify a fix |
+| Splice | One exact edit set in one file, the unit a world verifies |
+
 ```mermaid
 flowchart LR
     A["repo + pyproject / Cargo.toml"] --> B["RepoFacts"]
@@ -81,8 +101,7 @@ a base, a dispatch protocol or a consumer".
 
 A rules crate lists no parser and no oracle crate in its `Cargo.toml`. It reads
 tree-sitter's `Node` through a `rs_facts::Node` re-export, so it never names the
-parser. `cargo xtask fence` proves three things and is criterion 8 of the
-rewrite contract:
+parser. `cargo xtask fence` proves three things:
 
 - The direct dependencies of `sightline-py-rules` and `sightline-rs-rules`,
   read from `cargo metadata`, include no `ruff_python_parser`, `ty_*`,
@@ -94,7 +113,9 @@ rewrite contract:
 - The clippy `disallowed-methods` and `disallowed-types` lists pass on both
   rules crates. Those lists sit in a `clippy.toml` beside each rules crate, and
   they are what keeps I/O out of a rule: `std::fs`, `std::process::Command`,
-  `std::env`, `std::io::stdin`, and the three parser entry points.
+  `std::env` and `std::io::stdin`. The parser entry points are caught by the
+  source grep above, since clippy warns about a disallowed path no dependency
+  of the crate holds.
 
 `#![deny(dead_code)]` in each rules crate is what turns a rule constant the
 `RULES` list forgot into a build error.
@@ -252,20 +273,18 @@ the ty rule set for #58.
 | `.sightline-baseline.json` | RATCHET keys and counts, the only posture written |
 | `sightline.toml` | This repository's own config, and the cargo version pin the Rust oracle expects |
 | `data/precision.toml` | Measured precision and recall per rule and arm. Compiled into the binary, so a release answers `explain` with no checkout |
-| `data/retired.toml` | The burial rows of retired ids, extracted from the trail by `cargo xtask retired` |
-| `crates/xtask/corpus.toml` | The corpus table: name, root, config, language, role, and the commit the recorded measurements were taken at. Every ruler reads it and no second list |
-| `corpus/`, `corpus-ext/` | Corpus configs and the profile pin; the gauntlet sheets and reports, and `decisions.tsv`, the append-only trail of every decision |
+| `data/retired.toml` | The rows of the trail that retire an id, extracted by `cargo xtask retired` |
+| `crates/xtask/corpus.toml` | The corpus table: name, root, config, language, role, and the commit the recorded measurements were taken at. Every measurement command reads it and no second list |
+| `corpus/`, `corpus-ext/` | Corpus configs and the profile pin; the judged sheets, reports and the trail, described in `corpus-ext/README.md` |
 
 ## Quality protocol
 
 Precision is sampled per tier against a seed pinned before judging. The bars
 are 95% for proved, 80% for indexed and 70% for heuristic. A round that fails
-yields monotone restrictions, each priced at three or more judged false
-positives removed per true positive lost, and then a fresh seed. Held-out
-gauntlet clones are counted and never judged. Corpus polarity demotes a GATE
-rule that the clean pole does not leave silent, and suppression is never the
-answer.
+yields restrictions, each accepted at three or more judged false positives
+removed per true positive lost, and then a fresh seed. A GATE rule that fires
+on a clean repository is demoted, and suppression is never the answer.
 
 Rules and metrics are never tuned against corpus results to force an expected
-ordering. A cut is priced on both sides, precision and recall, or it does not
-happen.
+ordering. A cut is measured on both sides, precision and recall, or it does
+not happen.

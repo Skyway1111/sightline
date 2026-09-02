@@ -1,6 +1,6 @@
-//! `RsFacts` data model over tree-sitter nodes (port of `rs/model.py`'s
-//! data half): indexes only, no opinions and no oracle. The Rust cognitive
-//! complexity classification is `complexity.rs`.
+//! `RsFacts` data model over tree-sitter nodes: indexes only, no opinions
+//! and no oracle. The Rust cognitive complexity classification is
+//! `complexity.rs`.
 
 use std::borrow::{Borrow, Cow};
 use std::collections::{HashMap, HashSet};

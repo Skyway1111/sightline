@@ -1,7 +1,7 @@
 # Peak working set of one process tree, in MB, sampled until the root exits.
 # The pid arrives as SIGHTLINE_ROOT_PID so nothing has to be quoted.
-# `xtask audit-bench` drives this for both tools, so criterion 6 compares two
-# numbers taken the same way.
+# `xtask audit-bench` drives this for every binary it compares, so the two
+# numbers are taken the same way.
 $root = [int]$env:SIGHTLINE_ROOT_PID
 $max = 0
 while ($true) {

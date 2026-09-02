@@ -1,6 +1,5 @@
-//! Port of `provers/argtypes.py` (phase 4, unit `py-queries`): the
-//! oracle-established argument types at call sites, batched once for all #5
-//! candidates and #2's grounding. The type-string algebra is
+//! The oracle-established argument types at call sites, batched once for all
+//! #5 candidates and #2's grounding. The type-string algebra is
 //! `typestrings.rs`'s.
 
 use indexmap::IndexMap;
@@ -180,8 +179,8 @@ fn enumerate(facts: &RepoFacts<'_>, provers: &Provers) -> Enumeration {
     let mut slots: IndexMap<(Qname, String), Vec<Row>> = IndexMap::new();
     for (qname, sym) in &facts.symbols {
         let sites = calls.calls_to.get(qname).map_or(&[][..], |v| v);
-        // a symbol no def backs never reaches the Python loop, which reads
-        // `fn_pos_args` of the node before anything else
+        // a symbol no def backs has no params to align, so it is dropped
+        // before anything else is read
         let Some(fn_def) = func_def(facts, sym) else {
             continue;
         };
@@ -332,8 +331,7 @@ pub(crate) fn mini_repo(
 mod tests {
     use super::*;
 
-    /// `tests/test_astutil.py:test_arg_types_aligns_defaults_before_dropping_receiver`:
-    /// a defaulted receiver must not shift default alignment onto later
+    /// A defaulted receiver must not shift default alignment onto later
     /// params.
     #[test]
     fn candidate_params_align_defaults_before_dropping_the_receiver() {

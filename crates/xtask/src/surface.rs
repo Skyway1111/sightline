@@ -1,4 +1,4 @@
-//! This tree's own line budget (criterion 11): non-test lines under
+//! This tree's own line budget: non-test lines under
 //! `crates/` against `BOUND`. The bound moves only by an argument in the
 //! commit that needs it.
 

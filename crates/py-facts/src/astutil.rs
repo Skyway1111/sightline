@@ -1,7 +1,6 @@
 //! Pure-AST predicates shared by rules and provers (no facts, no opinions
-//! about findings). The port of `astutil.py` over `ruff_python_ast` and
-//! `order::Cn`; every walk here is `order::children`, CPython's `_fields`
-//! order (R5).
+//! about findings), over `ruff_python_ast` and `order::Cn`; every walk
+//! here is `order::children`, CPython's `_fields` order (R5).
 
 use std::collections::{HashSet, VecDeque};
 use std::sync::LazyLock;

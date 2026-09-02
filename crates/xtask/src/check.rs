@@ -1,4 +1,4 @@
-//! `cargo xtask check`: the one gate (rewrite of `scripts/check.py`).
+//! `cargo xtask check`: the one gate.
 //!
 //! Stages run in order under one deadline for the lane, each printing its
 //! wall. A stage that outruns what is left of the budget fails there instead
@@ -14,7 +14,9 @@ use anyhow::{Result, bail};
 use crate::corpus::{self, Target, tail};
 use crate::paths::workspace_root;
 use crate::worktree;
-use crate::{banned, bench_tables, fix_check, gate_bench, perf_catalog, profile, third_party};
+use crate::{
+    banned, bench_tables, fix_check, gate_bench, perf_catalog, profile, rules_doc, third_party,
+};
 
 const FAST_S: u64 = 180;
 const SLOW_S: u64 = 900;
@@ -87,7 +89,7 @@ fn work() -> Result<std::path::PathBuf> {
     Ok(dir)
 }
 
-/// The workspace's own `gate --full` (criterion 12): the binary blocks on
+/// The workspace's own `gate --full`: the binary blocks on
 /// nothing in the tree that built it.
 fn own_gate(_: &Lane) -> Result<u8> {
     let root = workspace_root().to_string_lossy().into_owned();
@@ -158,6 +160,9 @@ const FAST: &[Stage] = &[
     ("build", |l| {
         l.cargo(&["build", "--release", "-p", "sightline"])
     }),
+    // the rule catalog a reader browses before installing, against the
+    // registry the binary just built
+    ("rules-doc", |_| rules_doc::main(&["--check"])),
     // the rs stack end to end on this tree, then the py oracle on the Python
     // pole: the fast lane's oracle coverage on both languages
     ("own-gate", own_gate),
@@ -165,8 +170,8 @@ const FAST: &[Stage] = &[
 ];
 
 const SLOW: &[Stage] = &[
-    // every test that spawns the oracle, cargo or a corpus tree (decision
-    // 17), the whole workspace at once so no crate's `#[ignore]` runs in no
+    // every test that spawns the oracle, cargo or a corpus tree, the whole
+    // workspace at once so no crate's `#[ignore]` runs in no
     // gate.
     // the Rust pole pays two full runs (baseline, then the gate), so the
     // fast lane leaves it here
@@ -260,6 +265,7 @@ mod tests {
                 "clippy",
                 "test",
                 "build",
+                "rules-doc",
                 "own-gate",
                 "polarity"
             ]

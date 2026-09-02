@@ -1,4 +1,4 @@
-//! The text rollup (port of `render.py`'s text half): prod modules then test
+//! The text rollup: prod modules then test
 //! modules, each set by finding count then size; symbols by finding count
 //! then first line; findings in rank order. The unit of work is a module or
 //! a symbol, and everything stacked on it reads in one place. The JSON is
@@ -204,8 +204,8 @@ mod tests {
         }
     }
 
-    /// `test_render.py`'s mini repo, in the synthetic language: `a.p` is the
-    /// longest, `t_z.p` is the one test module.
+    /// The mini repo these tests render, in the synthetic language: `a.p`
+    /// is the longest, `t_z.p` is the one test module.
     fn stack() -> SyntheticStack {
         let mut stack = SyntheticStack::new(
             &P,

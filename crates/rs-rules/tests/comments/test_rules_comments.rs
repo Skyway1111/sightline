@@ -4,7 +4,7 @@
 use sightline_core::findings::Finding;
 use sightline_testkit::run_rs_rule;
 
-/// (cause, line, salience), the triple the Python tests read.
+/// (cause, line, salience), the triple these tests read.
 fn rows(found: &[Finding]) -> Vec<(&str, u32, f64)> {
     found
         .iter()

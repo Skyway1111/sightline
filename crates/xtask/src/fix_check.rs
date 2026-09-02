@@ -1,5 +1,4 @@
-//! `cargo xtask fix-check`: emitter honesty on the pinned corpus
-//! (`scripts/fix_check.py`), criterion 7.
+//! `cargo xtask fix-check`: emitter honesty on the pinned corpus.
 //!
 //! file-length-ok: one ruler, one file - the apply/judge/revert spine plus a
 //! suite reader per language, and a split would put the spine and its
@@ -257,7 +256,7 @@ impl CargoBase {
     /// Members whose lib or bin fails the base check: nothing about them is
     /// verifiable, so they enter neither the check nor the suite. A member
     /// whose only failing target is a test keeps the rest, the line
-    /// `rs/oracle.py` draws for a world.
+    /// the Rust oracle draws for a world.
     fn unchecked(&self) -> BTreeSet<String> {
         self.failed
             .iter()
@@ -802,7 +801,7 @@ mod tests {
     }
 
     /// The base check names `broken` unchecked and selects `good`'s lib and
-    /// its integration test (`test_fix_check.py`'s passing case).
+    /// its integration test, the passing case.
     #[test]
     #[ignore = "runs cargo"]
     fn the_base_check_names_the_member_the_host_cannot_compile() {
@@ -828,7 +827,7 @@ mod tests {
     }
 
     /// A deletion its own test needs fails on the error it added
-    /// (`test_fix_check.py`'s failing case).
+    /// (the failing case).
     #[test]
     #[ignore = "runs cargo"]
     fn a_deletion_its_own_test_needs_fails_on_the_error_it_added() {

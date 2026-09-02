@@ -1,5 +1,5 @@
-//! `rs/facts.py` pass B: one walk per module for its comments, refs and
-//! call sites, resolved against the table pass A built.
+//! Pass B of `build_facts`: one walk per module for its comments, refs
+//! and call sites, resolved against the table pass A built.
 
 use super::*;
 

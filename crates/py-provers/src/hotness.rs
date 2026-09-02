@@ -1,4 +1,4 @@
-//! Port of `provers/hotness.py` (codemap 3.3): `[tool.sightline] hot-roots`
+//! Hot roots: `[tool.sightline] hot-roots`
 //! plus #59 cost-declaring docstrings, propagated over the SCC condensation
 //! of the call graph's callee edges (`callgraph::callee_of`). The
 //! amplification factor is the loop depth crossed along the path, a recursive

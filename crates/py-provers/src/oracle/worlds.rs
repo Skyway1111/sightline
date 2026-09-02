@@ -1,12 +1,12 @@
-//! The counterfactual worlds the oracle runs (codemap 5): every overlay
+//! The counterfactual worlds the oracle runs: every overlay
 //! overridden on the one database, the check, the diagnostics the overlay
 //! adds against the base pass.
 
 use super::*;
 
 /// Watched files past which a world takes the whole-project check instead of
-/// one `check_file` each (codemap 5; phase 0b measured 4.41 s against 5.75 s
-/// and 6.25 s for the pure arms).
+/// one `check_file` each: the mixed policy measured 4.41 s against 5.75 s
+/// and 6.25 s for the pure arms.
 const MAX_WATCHED: usize = 20;
 
 impl Oracle {
@@ -14,7 +14,7 @@ impl Oracle {
     /// keyed `(rel, line, rule)`; worlds run one after another under the
     /// lock. `files` is the union of the group's watched files plus each
     /// overlay's own file, `None` when any proposal watches every file
-    /// (codemap 5: `check()` past 20 files or at `None`, `check_file` on each
+    /// (`check()` past 20 files or at `None`, `check_file` on each
     /// otherwise). Every call is logged for the `verify` layer.
     pub fn verify_worlds(
         &self,

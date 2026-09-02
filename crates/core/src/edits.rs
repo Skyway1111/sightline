@@ -1,4 +1,4 @@
-//! Span edits (port of `findings.py`'s edit half). Columns are the units
+//! Span edits. Columns are the units
 //! the reporting site used, which for every edit site is a code point
 //! count (R17), so the slicing is by code point too.
 

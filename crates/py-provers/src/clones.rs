@@ -1,7 +1,7 @@
-//! Port of `provers/clones.py`'s mining half (codemap 3.3): #11's function,
-//! block and expression groups over the one blind normalization
-//! (`dump.rs`). The suffix-array half is `core::clones`; the prover mines
-//! groups, the rule prices and reports them.
+//! The mining half of clone detection: #11's function, block and expression
+//! groups over the one blind normalization (`dump.rs`). The suffix-array
+//! half is `core::clones`; the prover mines groups, the rule prices and
+//! reports them.
 
 use std::cell::RefCell;
 use std::collections::{HashMap, HashSet, VecDeque};
@@ -71,7 +71,7 @@ pub struct Clones {
     pub exprs: Vec<CloneGroup>,
 }
 
-/// `rules/util.py:iter_functions`: every symbol a def backs, in facts order.
+/// Every symbol a def backs, in facts order.
 pub fn iter_functions<'f>(facts: &'f RepoFacts<'_>) -> Vec<&'f Symbol> {
     facts
         .symbols
@@ -80,8 +80,8 @@ pub fn iter_functions<'f>(facts: &'f RepoFacts<'_>) -> Vec<&'f Symbol> {
         .collect()
 }
 
-/// `rules/surface.py:_foreign_roots`, one home (phase 5's #11 reads it here):
-/// names the module binds to third-party or stdlib imports, plus self/cls. A
+/// The one home for foreign roots, which #11 reads: names the module binds
+/// to third-party or stdlib imports, plus self/cls. A
 /// walk rooted there is that object's API path or an instance's own field,
 /// not repo knowledge.
 pub fn foreign_roots(facts: &RepoFacts<'_>, module: &Module<'_>) -> HashSet<Box<str>> {

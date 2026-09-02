@@ -1,4 +1,3 @@
-//! `tests/rules/test_trust.py:test_method_tail_identity_under_cross_file_override`:
 //! #33's tail verdict must not depend on which build mode ran.
 
 use camino::Utf8Path;

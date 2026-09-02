@@ -1,4 +1,4 @@
-//! What Cargo says about a tree's layout (port of `rs/crates.py`): whether
+//! What Cargo says about a tree's layout: whether
 //! it runs the Rust stack, where each crate is rooted, and the qname a
 //! file's path spells. Path readings only, so `only=` names a module as the
 //! full build does.

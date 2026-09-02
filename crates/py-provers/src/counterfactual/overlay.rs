@@ -18,9 +18,9 @@ pub(super) fn world_content(source: &str, body: &[Stmt], props: &[&Proposal]) ->
     lines.join("\n") + "\n"
 }
 
-/// Line count preserved (the shim diffs by line): ahead of the first
-/// non-`__future__` top-of-file import, else a blank line before the first
-/// statement, else EOF (unresolved below 3.14: an honest veto).
+/// Line count preserved, since diagnostics are keyed by line: ahead of the
+/// first non-`__future__` top-of-file import, else a blank line before the
+/// first statement, else EOF (unresolved below 3.14: an honest veto).
 fn ride_import_line(lines: &mut Vec<String>, stmt: &str, source: &str, body: &[Stmt]) {
     let index = Lines::new(source);
     // ruff's node range starts at the first decorator, which is what
@@ -61,7 +61,7 @@ fn ride_import_line(lines: &mut Vec<String>, stmt: &str, source: &str, body: &[S
 }
 
 /// The files one world's check must reach: the union of the group's watched
-/// sets plus each overlay's own file, in first-seen order (codemap 5).
+/// sets plus each overlay's own file, in first-seen order.
 /// `None` where a member watches every file, which asks for a whole check.
 pub(super) fn files_of(group: &[&Proposal]) -> Option<IndexSet<Rel>> {
     let mut out: IndexSet<Rel> = IndexSet::new();

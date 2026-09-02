@@ -1,5 +1,4 @@
-//! `sightline facts <qname>` over a Rust symbol (the two `test_describe_*` of
-//! `tests/rs/test_provers.py`).
+//! `sightline facts <qname>` over a Rust symbol.
 
 use sightline_rs_rules::describe::describe;
 use sightline_testkit::build_rs;

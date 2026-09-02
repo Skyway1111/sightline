@@ -180,8 +180,8 @@ pub(super) fn fields<'a>(node: Cn<'a>, module: &'a Module<'a>) -> Vec<Row<'a>> {
             }
             out.push(("value", Part::Child(Cn::Expr(&k.value))));
         }
-        // The cooked text of a run spanning several chunks is phase 5's: the
-        // blind reading, which every phase-3 layer takes, blinds it.
+        // The cooked text of a run spanning several chunks is not recovered
+        // here: the blind reading every dump layer takes blinds it.
         Cn::FConst { owner, .. } => out.push(("value", text(owner.map_or("", |l| &l.value)))),
         Cn::Interp(i, template) => {
             out.push(("value", Part::Child(Cn::Expr(&i.expression))));

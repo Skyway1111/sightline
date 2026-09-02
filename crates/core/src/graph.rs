@@ -135,8 +135,6 @@ mod tests {
         edges(rows.iter().map(|(n, outs)| (n, outs.iter())))
     }
 
-    /// Expected values from a probe through REF's `provers.effects.tarjan_scc`:
-    /// `sightline-phase1/scratch/core-b/probe_tarjan.py`.
     #[test]
     fn components_emit_callees_first_with_members_in_pop_order() {
         let edges = graph(&[

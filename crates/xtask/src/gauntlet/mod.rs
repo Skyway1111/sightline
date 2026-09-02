@@ -4,7 +4,7 @@
 //! `git` and `cargo` stay subprocesses. Sourcing a new round, meaning
 //! building the candidate pool and selecting from it, is not here: the three
 //! written rounds need only the clone step, and a fourth needs the selection
-//! written first (`docs/todo.md`).
+//! written first (issue #2).
 
 pub mod clone;
 pub mod count;

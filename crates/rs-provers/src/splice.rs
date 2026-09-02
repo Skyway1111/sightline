@@ -1,4 +1,4 @@
-//! The Rust half of a verify pass (port of `rs/splice.py`): an item's
+//! The Rust half of a verify pass: an item's
 //! deletion as a splice, and the worlds that judge a batch of them. The
 //! batching is `core::worlds`, which is language-blind; this module builds
 //! the overlays, hands them to the oracle through `RsAnswers::verify_worlds`

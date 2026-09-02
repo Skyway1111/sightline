@@ -1,4 +1,4 @@
-//! `tests/rules/test_dead.py`: #32, #34, #56, #60 and `dead_symbol_splice`.
+//! The dead-code rules: #32, #34, #56, #60 and `dead_symbol_splice`.
 //!
 //! file-length-ok: one test file per rule family, the shape `src/dead.rs`
 //! states for the sources these tests pin.
@@ -1624,7 +1624,7 @@ fn rule_56_the_roots_32_respects_stay_silent() {
     assert!(findings.is_empty());
 }
 
-// --- `tests/test_fixes.py`'s #32 cases, at the splice the emitter rides -------
+// --- #32's fix cases, at the splice the emitter rides -----------------------
 // The `attach_fixes` half (the verified `Fix` riding the finding) waits for
 // `py-rules-close`; the splice's own edits are checked here.
 

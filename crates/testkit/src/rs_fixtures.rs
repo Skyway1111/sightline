@@ -1,6 +1,5 @@
-//! `tests/rs/test_rs_oracle.py`'s fixture crates, one home for every test
-//! that drives the toolchain (`build_rs_oracle`): dependency-free, so no
-//! run touches the network.
+//! The fixture crates, one home for every test that drives the toolchain
+//! (`build_rs_oracle`): dependency-free, so no run touches the network.
 
 pub const MANIFEST: &str =
     "[workspace]\n\n[package]\nname = \"fixture\"\nversion = \"0.1.0\"\nedition = \"2021\"\n";

@@ -1,4 +1,4 @@
-//! `facts/build.py` pass A: the one traversal, the module-local reads
+//! Pass A of the build: the one traversal, the module-local reads
 //! (`__all__`, bindings, comments) and the symbol, class and binding indexes.
 //!
 //! Everything here but the merge is per module, so `build.rs` runs it under

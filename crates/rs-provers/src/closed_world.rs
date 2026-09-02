@@ -1,7 +1,6 @@
-//! Closed-world verdicts over the resolved edges (port of
-//! `rs/closed_world.py`): may we claim to know every reference to a Rust
-//! item? Fail-closed with a named escape reason, one fixture per reason, and
-//! the graph rules run only on a pass.
+//! Closed-world verdicts over the resolved edges: may we claim to know
+//! every reference to a Rust item? Fail-closed with a named escape reason,
+//! one fixture per reason, and the graph rules run only on a pass.
 //!
 //! The Python sibling (`py-provers/src/closed_world.rs`) reads names and
 //! reflection; here the index answers, so an escape is a place the index

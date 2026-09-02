@@ -1,4 +1,4 @@
-//! Family B over Rust (port of `tests/rs/test_rules_surface.py`): #11 clone
+//! Family B over Rust: #11 clone
 //! groups, #20 repeated closures, #21 panic arms, #23 complexity, #37's two
 //! arms and #48's fold candidates. Each rule gets its firing shape, the
 //! silent sibling one step away, and the exemption the reading names.

@@ -1,4 +1,4 @@
-//! `json.dumps(obj, indent=2, sort_keys=True)` byte for byte (decision 10):
+//! `json.dumps(obj, indent=2, sort_keys=True)` byte for byte:
 //! keys sorted by code point at every level, one item per line, non-ASCII as
 //! `\uXXXX` with surrogate pairs, floats as CPython `repr`. `serde_json`'s own
 //! pretty printer agrees on none of the four.

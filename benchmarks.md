@@ -2,7 +2,7 @@
 
 The canonical performance and quality numbers. Each entry is a measured value
 with the command that reproduces it. History lives in git and in
-`corpus-ext/decisions.tsv`. Per-rule precision and recall are encoded in
+`corpus-ext/decisions.tsv`, the trail. `architecture.md` defines the terms. Per-rule precision and recall are encoded in
 `data/precision.toml`; this file quotes the pooled reads and the method.
 
 Four tables are generated. They sit between `<!-- generated: NAME -->` markers
@@ -52,12 +52,10 @@ takes a receipt in the commit that moves it.
 | turmoil | 10 s | 9.2 s | 1,443 MB |
 | salvo | 35 s | 18.2 s | 3,150 MB |
 
-Wave-2 sweep, 2026-08-31, the binary at the corpus swap's close. The retired
-Python tool's final walls, its budgets and the RSS comparison it was held to
-live in git at the phase-9 close.
+Measured 2026-08-31.
 
 Two consecutive audits are identical byte for byte on every corpus repository,
-at one thread and at every core (criterion 3).
+at one thread and at every core.
 
 ## Per-pass profile (merged-calculator)
 
@@ -86,8 +84,8 @@ do not partition the wall. Passes at 1% or more are listed.
 ## Gate latency
 
 `cargo xtask gate-bench` on a ten-file diff, median of 5. The budget is
-criterion 5: 50 ms or less, 100% subset of the full audit, and zero findings
-outside the diff.
+50 ms or less, 100% subset of the full audit, and zero findings outside the
+diff.
 
 | diff | budget | measured |
 | --- | ---: | ---: |
@@ -186,13 +184,12 @@ which `sightline explain <id>` prints.
 
 ## Recall
 
-The judges' blind lists against fresh audits of the pinned gauntlet clones,
-tallied into `data/precision.toml` and quoted here. Recall is re-measured at
-every campaign close, beside the precision round: a cut is priced on both sides
-or it does not happen.
+The blind judges' lists against fresh audits of the held-out repositories,
+tallied into `data/precision.toml`. Recall is re-measured with every precision
+round: a cut is measured on both sides or it does not happen.
 
 ## Own repository
 
-`sightline audit .` under `gate --full` reports zero blocking findings at every
-unit close (criterion 12). `cargo xtask surface` counts non-test lines under
-`crates/` against the cap criterion 11 sets.
+`sightline gate . --full` reports zero blocking findings on this tree at every
+release. `cargo xtask surface` counts non-test lines under `crates/` against a
+fixed cap.

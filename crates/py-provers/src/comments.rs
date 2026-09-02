@@ -1,5 +1,5 @@
-//! Port of `provers/comments.py` (the AST half; the text predicates are
-//! `core::text`'s). Comment runs as a rule may read them: whether a run of
+//! The AST half of comment analysis; the text predicates are `core::text`'s.
+//! Comment runs as a rule may read them: whether a run of
 //! standalone comments reads as Python (#34), whether the first screen
 //! documents the module (#29), and whether a def says in its own words that
 //! what it calls must not raise (#42).

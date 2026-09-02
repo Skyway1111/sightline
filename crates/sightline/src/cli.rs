@@ -1,17 +1,23 @@
-//! The verb set of `cli.py`: the same verbs, flags, help strings and
-//! defaults, declared with clap derive.
+//! The command line: verbs, flags, help strings and defaults, declared
+//! with clap derive.
 
 use clap::{Args, Parser, Subcommand};
 
 use sightline_core::rule::RuleSet;
 
 #[derive(Parser)]
-#[command(name = "sightline", version = crate::version::long(), about = "Rank findings for a repo")]
+#[command(
+    name = "sightline",
+    version = crate::version::long(),
+    about = "A linter for code an agent wrote: ranked findings for a Python or Rust repository",
+    after_help = "Docs and source: https://github.com/Skyway1111/sightline\n\
+                  `sightline explain` prints the rule roster; `sightline explain <id>` prints one rule."
+)]
 pub struct Cli {
-    /// worker threads (default: every core)
+    /// Worker threads (default: every core)
     #[arg(long, global = true, value_name = "N")]
     pub threads: Option<usize>,
-    /// no oracle progress lines on stderr (a hook, a CI job)
+    /// No oracle progress lines on stderr, for a hook or a CI job
     #[arg(long, global = true)]
     pub quiet: bool,
     #[command(subcommand)]
@@ -20,8 +26,9 @@ pub struct Cli {
 
 #[derive(Args)]
 pub struct Repo {
+    /// The repository to read
     pub root: String,
-    /// config file (read-only checkouts)
+    /// Read the config from this file instead of the tree, for a checkout you cannot write to
     #[arg(long)]
     pub config: Option<String>,
 }
@@ -45,72 +52,80 @@ pub fn rule_ids(spec: &str) -> Result<RuleSet, String> {
     Ok(ids)
 }
 
-const RULES_HELP: &str = "run only these rules: ids or slugs, comma-separated";
+const RULES_HELP: &str = "Run only these rules: ids or slugs, comma-separated";
 
 #[derive(Subcommand)]
 pub enum Command {
-    /// rank findings for a repo
+    /// Report every finding in a repository, worst first
     Audit {
         #[command(flatten)]
         repo: Repo,
+        /// Write the report as one JSON document
         #[arg(long)]
         json: bool,
-        /// SARIF 2.1.0 (GitHub upload)
+        /// Write SARIF 2.1.0, which GitHub code scanning accepts
         #[arg(long, conflicts_with = "json")]
         sarif: bool,
-        /// ignore the baseline: every finding, not only new ones
+        /// Ignore the baseline and report every finding, not only new ones
         #[arg(long)]
         all: bool,
-        /// report only findings under these paths (facts stay repo-wide)
+        /// Report only findings under these paths (facts stay repo-wide)
         #[arg(long, num_args = 1.., value_name = "PATH")]
         paths: Option<Vec<String>>,
         #[arg(long, help = RULES_HELP, value_parser = rule_ids)]
         rules: Option<RuleSet>,
-        /// write the per-pass walls of this audit here (`xtask profile`)
+        /// Write this audit's per-pass walls to a JSON file
         #[arg(long, value_name = "JSON")]
         profile: Option<String>,
     },
-    /// blocking check: changed files (fast) or --full
+    /// Block on the files a change touched, or on the whole tree with --full
     Gate {
         #[command(flatten)]
         repo: Repo,
-        /// files to gate; default: git working-tree diff vs HEAD
+        /// Files to gate (default: the git working-tree diff against HEAD)
         #[arg(long, num_args = 0..)]
         files: Option<Vec<String>>,
-        /// also gate files changed in commits since the merge base with REF
+        /// Also gate files changed in commits since the merge base with REF
         #[arg(long, value_name = "REF")]
         since: Option<String>,
-        /// whole audit pipeline (CI)
+        /// Run the whole audit pipeline, for CI
         #[arg(long)]
         full: bool,
     },
-    /// write or prune the ratchet baseline
+    /// Write the baseline that RATCHET rules block against
     Baseline {
         #[command(flatten)]
         repo: Repo,
+        /// Drop baseline keys no finding claims any more
         #[arg(long)]
         prune: bool,
     },
-    /// unified diff of verified mechanical fixes (never touches the tree)
+    /// Print a unified diff of verified fixes; never writes to the tree
     Fix {
         #[command(flatten)]
         repo: Repo,
-        /// write the diff here instead of stdout
+        /// Write the diff to this file instead of stdout
         #[arg(long)]
         out: Option<String>,
         #[arg(long, help = RULES_HELP, value_parser = rule_ids)]
         rules: Option<RuleSet>,
     },
-    /// what the provers hold about one symbol or module
+    /// Print what the provers hold about one symbol or module
     Facts {
         #[command(flatten)]
         repo: Repo,
-        /// dotted symbol or module qname
+        /// Dotted symbol or module name, as the report spells it
         qname: String,
     },
-    /// a rule's meaning and goal; without one, the roster of every rule
-    Explain { rule: Option<String> },
-    /// what a layer of the pipeline holds
+    /// Print one rule's meaning, goal and measured precision; with no rule, the roster
+    Explain {
+        /// Rule id or slug
+        rule: Option<String>,
+        /// Every rule's record and measured rows as one JSON document
+        #[arg(long, conflicts_with = "rule")]
+        json: bool,
+    },
+    /// Dump what a layer of the pipeline holds
     #[command(subcommand)]
     Debug(Debug),
 }
@@ -132,17 +147,18 @@ impl Command {
 
 #[derive(Subcommand)]
 pub enum Debug {
-    /// one JSON document per layer of the pipeline
+    /// Write one JSON document per layer of the pipeline
     Dump {
+        /// The repository to read
         root: String,
-        /// `all`, one layer, or a comma-separated list; a list comes off one
-        /// build of the tree
+        /// `all`, one layer, or a comma-separated list (a list comes off one
+        /// build of the tree)
         #[arg(long, value_name = "L")]
         layer: String,
-        /// config file (read-only checkouts)
+        /// Read the config from this file instead of the tree
         #[arg(long)]
         config: Option<String>,
-        /// one layer's file, or the directory a layer list fills
+        /// One layer's file, or the directory a layer list fills
         #[arg(short = 'o', long, value_name = "FILE")]
         out: Option<String>,
     },

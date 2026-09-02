@@ -1,11 +1,8 @@
-//! Python provers (`docs/rewrite/codemap.md`, section 3.3 in the Python
-//! tree): the analysis machinery rules read, over `py-facts`. `Provers` is
-//! `provers/__init__.py`'s container: one per build, every product memoized
-//! in a `OnceLock` cell (R20), every accessor taking the facts it reads as
-//! Python's do. Nothing outside this crate talks to the oracle (`oracle.rs`).
-//!
-//! Each module is the port of the Python source its header names; a stub
-//! module is one a phase-4 unit has not filled yet.
+//! All of sightline's Python analysis: the machinery rules read, over
+//! `py-facts`. One module per prover family, plus `oracle.rs`, the only code
+//! in the workspace that talks to the ty checker. `Provers` is the container:
+//! one per build, every product memoized in a `OnceLock` cell (R20), every
+//! accessor taking the facts it reads.
 //!
 //! file-length-ok: the crate's facade. The `Provers` memo table and its
 //! accessors live at the root; each prover family already has its own
@@ -69,10 +66,9 @@ pub const NO_ORACLE_NOTE: &str = "rules #2/#5/#10/#58 silent, #36 loses its Any-
      and #40 its inferred-return arm";
 
 /// A provenance note's producer. Each keeps its notes in its own cell and
-/// the header reads the cells in this order (decision 8), so no note is
+/// the header reads the cells in this order, so no note is
 /// pushed onto a shared list by whichever rule's thread touched the lazy
-/// accessor first. The order is the Python tool's sequential one, pinned
-/// by the `audit` layer from phase 5 on.
+/// accessor first. The `audit` layer pins the order.
 #[derive(Clone, Copy)]
 pub enum Producer {
     Build,
@@ -136,8 +132,7 @@ pub struct Provers {
     pub ret_types: OnceLock<RetTypes>,
     pub unresolved: OnceLock<UnresolvedImports>,
     /// Every `verify_splice` call's placed proposals and their verdicts, in
-    /// call order. The `verify` dump layer prints this log; the reference
-    /// records the same calls by wrapping `verify`.
+    /// call order. The `verify` dump layer prints this log.
     splice_log: Mutex<Vec<SplicePass>>,
 }
 

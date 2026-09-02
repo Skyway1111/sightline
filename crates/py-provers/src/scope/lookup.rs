@@ -1,4 +1,4 @@
-//! `scope.py`'s free lookups: class fields, where a name was bound or
+//! The free lookups over a scope: class fields, where a name was bound or
 //! drawn from, and the mutation-context test.
 
 use super::*;
@@ -164,7 +164,7 @@ pub fn is_mutation_context(module: &Module<'_>, node: NodeIndex) -> bool {
 
 // --- the `scope` dump layer ------------------------------------------------
 
-/// `dump_layers._functions`: the function symbols in `facts.symbols` order.
+/// The function symbols in `facts.symbols` order.
 pub fn functions<'a>(facts: &'a RepoFacts<'_>) -> Vec<&'a Qname> {
     facts
         .symbols

@@ -1,7 +1,9 @@
-//! The language-blind core (`docs/rewrite/codemap.md`, section 3.1 in the
-//! Python tree): everything past the rules and every shared prover core.
-//! Each module is the port of the Python source its header names; a stub
-//! module is one a phase-1 unit has not filled yet.
+//! The language-blind core: everything past the rules, and every prover
+//! core both languages share. Config, the finding model, suppression,
+//! rank and ratchet, the four renderers, precision data, the rule record
+//! and registry, the `Stack` and `Repo` seam, the discovery walk, git,
+//! patches and edits, worlds, clone mining, the complexity score, comment
+//! predicates, the catalog vocabulary and Tarjan SCC.
 
 pub mod catalog;
 pub mod clones;

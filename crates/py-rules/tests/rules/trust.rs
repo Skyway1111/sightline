@@ -1,5 +1,5 @@
-//! `tests/rules/test_trust.py`: family A's non-oracle classes, each firing on
-//! its crafted positive and silent on the paired negative.
+//! Family A's non-oracle classes, each firing on its crafted positive and
+//! silent on the paired negative.
 
 use sightline_core::findings::{Evidence, Finding, Tier};
 use sightline_testkit::run_rule;

@@ -1,4 +1,4 @@
-//! Facts-aware helpers shared by rule fns (port of `rules/util.py`).
+//! Facts-aware helpers shared by rule fns.
 //! Pure-AST predicates live in `py_facts::astutil`; what an annotation says
 //! in `py_provers::annotations`.
 

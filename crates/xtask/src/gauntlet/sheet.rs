@@ -1,4 +1,4 @@
-//! `scripts/gauntlet_precision.py`: gauntlet precision sheets. One row per
+//! `cargo xtask gauntlet sheet`: gauntlet precision sheets. One row per
 //! finding, a judge's verdict per row, rates per rule and per arm.
 //!
 //! The key `file:line:rule:cause` is stable across engine versions on a

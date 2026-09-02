@@ -1,7 +1,7 @@
-//! Family P (#41, `tests/rules/test_perf.py`): hot-scoping honesty and the
-//! catalog's matchers. The gate and baseline parts of
-//! `test_family_p_never_blocks_or_enters_the_baseline` wait for phase 9's
-//! verbs; what stands here is the rule's own reading and the header note.
+//! Family P (#41): hot-scoping honesty and the catalog's matchers. What
+//! stands here is the rule's own reading and the header note. Nothing here
+//! checks that a #41 finding stays out of the gate and the baseline; only its
+//! REPORT posture is pinned.
 
 use sightline_core::config::Config;
 use sightline_core::findings::Finding;
@@ -86,8 +86,8 @@ fn hot_scoping_is_honest() {
     );
 }
 
-/// Static perf findings never hold gate posture. The gate and baseline parts
-/// of the Python case wait for the close unit's verbs.
+/// Static perf findings never hold gate posture. This pins the posture
+/// alone, not the gate and baseline behavior that follows from it.
 #[test]
 fn family_p_never_blocks() {
     assert_eq!(RULE_41.record.posture, Posture::Report);

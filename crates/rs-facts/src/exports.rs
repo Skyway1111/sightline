@@ -1,4 +1,4 @@
-//! What a crate's outside can name (port of `rs/exports.py`): the definition
+//! What a crate's outside can name: the definition
 //! a `pub use` re-exports, and the items a publishable lib crate's root
 //! reaches, both off what `build.rs` collected. Whether an unreached `pub`
 //! item is dead is a rule's question.

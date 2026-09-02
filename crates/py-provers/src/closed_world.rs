@@ -1,4 +1,4 @@
-//! Port of `provers/closed_world.py` (codemap 3.3): may we claim to know
+//! May we claim to know
 //! every caller of a symbol? Fail-closed with a named escape reason; #5 runs
 //! only on passes, and fixtures pin every named reason.
 //!
@@ -57,7 +57,7 @@ const NAMERS: [&str; 2] = ["operator.methodcaller", "operator.attrgetter"];
 /// a module by name
 const IMPORTERS: [&str; 2] = ["importlib.import_module", "__import__"];
 
-/// The receiver of a reflective read (R19: the Python sentinels as variants).
+/// The receiver of a reflective read (R19: sentinels as variants).
 #[derive(Clone, Copy)]
 enum Receiver<'t> {
     /// the expression the read reflects on
@@ -448,7 +448,7 @@ fn declared_classes(facts: &RepoFacts<'_>, module: &Module<'_>, ann: Option<&Exp
 
 // --- the `world` dump layer ------------------------------------------------
 
-/// `dump_layers._verdict`.
+/// One symbol's verdict row.
 fn verdict_row(world: &ClosedWorld, qname: &str) -> Value {
     let v = world.verdict(qname);
     let mut reasons: Vec<&str> = v.reasons.iter().map(String::as_str).collect();

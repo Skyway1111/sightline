@@ -1,6 +1,5 @@
-//! `provers/grounding.py`: is an oracle verdict grounded in a claim the repo
-//! wrote? Every predicate here reads a hand-built `OracleDiag`, so none of
-//! them needs a checker.
+//! Is an oracle verdict grounded in a claim the repo wrote? Every predicate
+//! here reads a hand-built `OracleDiag`, so none of them needs a checker.
 
 use std::collections::HashSet;
 
@@ -26,7 +25,6 @@ fn at_rule(rule: &str, line: u32, col: u32, message: &str) -> OracleDiag {
     }
 }
 
-/// `tests/provers/test_oracle.py:test_grounding_annotated_vs_not`.
 #[test]
 fn an_annotated_param_grounds_and_an_inferred_local_does_not() {
     let (_dir, stack) = build(&[(
@@ -54,9 +52,8 @@ fn an_annotated_param_grounds_and_an_inferred_local_does_not() {
     ));
 }
 
-/// `tests/provers/test_oracle.py:test_never_operand_never_grounds`: the fork
-/// reports `"Never" is always an instance of "X"` where its own narrowing
-/// emptied the type, a checker artifact rather than a claim.
+/// The fork reports `"Never" is always an instance of "X"` where its own
+/// narrowing emptied the type, a checker artifact rather than a claim.
 #[test]
 fn a_never_operand_never_grounds() {
     let (_dir, stack) = build(&[(
@@ -128,8 +125,7 @@ fn module_level_never_grounds() {
 
 /// `none_default_lie`: the def contradicts its own declaration, by a literal
 /// `None` default or by the fallback its body supplies. Rule #2 skips both;
-/// #1 owns the default's half. Nothing else pins this predicate until phase
-/// 5's `tests/rules/test_oracle_rules.py`.
+/// #1 owns the default's half.
 #[test]
 fn a_none_default_and_a_supplied_fallback_are_both_the_lie() {
     let (_dir, stack) = build(&[(

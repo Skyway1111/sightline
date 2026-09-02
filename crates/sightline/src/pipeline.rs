@@ -1,5 +1,4 @@
-//! `gate.collect` (port of `gate.py`): the one audit collection every verb
-//! shares. Per detected language, facts and provers are built, the rules run
+//! `collect`: the one audit collection every verb shares. Per detected language, facts and provers are built, the rules run
 //! into one list, and the list is suppressed as one. The baseline diff and
 //! the rank stay with the callers: `audit` and `gate` split there.
 //!
@@ -48,7 +47,7 @@ pub fn registry() -> Result<Registry> {
     Registry::new(records)
 }
 
-/// The language records, in registry order (`lang.py:LANGUAGES`): a Rust
+/// The language records, in registry order: a Rust
 /// tree builds the Rust stack alone, an unmarked tree falls back to the
 /// Python one.
 pub struct Languages {
@@ -213,7 +212,7 @@ mod tests {
 
     use sightline_core::testing::{Q, SyntheticStack};
 
-    /// `test_lang.py`: a language with no emitter contributes nothing to the
+    /// A language with no emitter contributes nothing to the
     /// diff and says so, rather than being skipped silently.
     #[test]
     fn a_language_with_no_emitter_is_an_empty_diff_and_a_note() {

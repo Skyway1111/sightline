@@ -1,6 +1,5 @@
-//! Every row of `data/pytext.json` is one CPython 3.14 answer. The generator
-//! is `sightline-phase1/scratch/core-b/gen_pytext.py`; regenerate with the REF
-//! venv's python and this file re-checks it.
+//! Every row of `data/pytext.json` is one CPython 3.14 answer, and this
+//! file re-checks each one against `pyjson` and `pytext`.
 
 use std::collections::HashMap;
 

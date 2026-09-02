@@ -1,12 +1,11 @@
-//! Python rules (`docs/rewrite/codemap.md`, section 3.4): one file per
-//! family module of the Python tree's `rules/` package, one
-//! `pub const RULE_N: Rule` beside each `fn rule_n`. A rule reads facts and
-//! provers and nothing else (the fence, decision 1): the crate lists no
-//! parser and no oracle crate, and `clippy.toml` beside `Cargo.toml` bans
-//! file, process and environment reads inside it.
+//! Python rules: one file per rule family, one `pub const RULE_N: Rule`
+//! beside each `fn rule_n`. A rule reads facts and provers and nothing else
+//! (the fence): the crate lists no parser and no oracle crate, and
+//! `clippy.toml` beside `Cargo.toml` bans file, process and environment
+//! reads inside it.
 //!
 //! `deny(dead_code)` is what makes a `RULE_N` the `RULES` list forgot a
-//! build error (decision 9).
+//! build error.
 
 #![deny(dead_code)]
 
@@ -88,15 +87,14 @@ pub static RULES: &[&Rule] = &[
 ];
 
 /// The ids `run_rules` keeps out of the parallel group: each owns a world,
-/// which takes the checker mutably (decision 8).
+/// which takes the checker mutably.
 const WORLD_OWNERS: [&str; 2] = ["5", "10"];
 
 /// Every rule over one build, findings pushed in `RULES` order through
 /// `core::rule::run_split` (group A under rayon, then #5 and #10 sequential:
-/// each owns a world, which takes the checker mutably, decision 8). A rule
-/// in `off` is skipped and timed at zero, as the Python runner times it. The
-/// runner stamps each finding's language, as prover machinery stamps its
-/// engine.
+/// each owns a world, which takes the checker mutably). The order is
+/// deterministic. A rule in `off` is skipped and timed at zero. The runner
+/// stamps each finding's language, as prover machinery stamps its engine.
 pub fn run_rules(
     facts: &RepoFacts<'_>,
     provers: &Provers,

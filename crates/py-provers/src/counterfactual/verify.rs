@@ -68,7 +68,7 @@ fn by_operand(
         } else {
             ""
         };
-        // the shim's column is a code point offset (`LineIndex::line_column`
+        // the checker's column is a code point offset (`LineIndex::line_column`
         // at `PositionEncoding::Utf32`), so the slice counts code points
         let tail = char_slice(line, d.col as usize, usize::MAX);
         let named: IndexSet<&str> = IDENT_RE
@@ -185,7 +185,7 @@ pub fn verify(
         }
     }
 
-    // the Python calls the checker even with an empty list, and the oracle logs it
+    // the checker runs even on an empty list, and the oracle logs the call
     let batch: Vec<(String, World)> = alone.iter().map(|p| (p.id.clone(), world(&[p]))).collect();
     let isolated = oracle.verify_worlds(&batch, files_of(&alone).as_ref());
     for p in &alone {

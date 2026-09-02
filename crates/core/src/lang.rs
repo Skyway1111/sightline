@@ -1,4 +1,4 @@
-//! The language seam (port of `lang.py`): one `Language` per source
+//! The language seam: one `Language` per source
 //! language sightline reads, the detection that picks the stacks a root
 //! runs, the neutral view every stack exposes, and `Repo`, several stacks
 //! as one view.
@@ -64,8 +64,7 @@ pub trait Stack: Send + Sync {
     /// `Err` holds the candidate qnames a miss should suggest.
     fn describe(&self, findings: &[Finding], qname: &str) -> Result<String, Vec<String>>;
     /// `(label, seconds)` per pass this build measured, for `audit
-    /// --profile` (`profile_audit.py`). A stack that times nothing answers
-    /// empty.
+    /// --profile`. A stack that times nothing answers empty.
     fn passes(&self) -> Vec<(String, f64)> {
         Vec::new()
     }
@@ -291,9 +290,9 @@ pub fn detect<'a>(root: &Utf8Path, languages: &[&'a dyn Language]) -> Vec<&'a dy
     }
 }
 
-/// `dump_layers.py:layer_neutral`: what suppress, rank and render read
-/// (this view), plus the marker lines the port builds its own table from.
-/// One home for both stacks (criterion 11): the view is all it reads.
+/// The `neutral` dump layer: what suppress, rank and render read (this
+/// view), plus the marker lines they build their own table from. One home
+/// for both stacks: the view is all it reads.
 pub fn neutral_layer(view: &Neutral, ids_by_slug: &HashMap<String, String>) -> Value {
     let mut suppressions = Map::new();
     let mut markers = Map::new();
@@ -382,8 +381,8 @@ pub fn neutral_layer(view: &Neutral, ids_by_slug: &HashMap<String, String>) -> V
 
 #[cfg(test)]
 mod tests {
-    //! The seam proved with two languages that do not exist: `p` and `q`
-    //! (`test_lang.py`), which `crate::testing` builds.
+    //! The seam proved with two languages that do not exist, `p` and `q`,
+    //! which `crate::testing` builds.
 
     use super::*;
     use crate::testing::{P, Q, SyntheticStack, two_language_repo};

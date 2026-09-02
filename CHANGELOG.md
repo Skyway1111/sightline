@@ -3,6 +3,17 @@
 The user-visible changes per release. The release workflow reads the matching
 section into the GitHub release notes.
 
+## Unreleased
+
+- `docs/rules.md` lists every rule with what it checks, its goal, posture and
+  measured precision. `cargo xtask rules-doc` renders it from `sightline
+  explain --json`, a new flag, and `cargo xtask check` fails when it drifts.
+- `sightline explain` prints each measured sample's population in plain words,
+  and the rule goals spell out their citations.
+- `--help` copy is sentence-cased and ends with the repository link.
+- Comments and docs no longer cite the rewrite's plan or the Python tool it
+  replaced; the prose lint fails on such a citation.
+
 ## 0.2.0 - 2026-08-31
 
 The first public release.
@@ -33,4 +44,4 @@ The first public release.
 
 ## 0.1.0 - 2026-08-31
 
-The rewrite's close, released privately.
+Released privately.

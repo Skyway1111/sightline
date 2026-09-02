@@ -1,5 +1,5 @@
-//! `rs/provers.py`'s clone queries: the per-function digest, the mined
-//! sequences and block repeats, and the two node-keyed caches under them.
+//! Clone queries: the per-function digest, the mined sequences and block
+//! repeats, and the two node-keyed caches under them.
 
 use super::*;
 

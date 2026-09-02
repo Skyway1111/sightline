@@ -1,5 +1,4 @@
-//! Family Z, the checker's own verdicts (port of `rules/oracle_errors.py`,
-//! #58). sightline's other oracle rules ask the checker questions of their
+//! Family Z, the checker's own verdicts (#58). sightline's other oracle rules ask the checker questions of their
 //! own; this one forwards what it already said. Nothing here re-derives a
 //! type: the whole rule is a projection of pass 1's verdicts onto findings.
 

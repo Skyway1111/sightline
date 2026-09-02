@@ -1,4 +1,4 @@
-//! `sightline facts` (port of `cli.cmd_facts`): one audit, then the model
+//! `sightline facts`: one audit, then the model
 //! it built printed for one symbol or module.
 
 use std::io::Write;

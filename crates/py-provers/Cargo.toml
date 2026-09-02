@@ -28,7 +28,7 @@ ruff_python_parser.workspace = true
 ruff_python_stdlib.workspace = true
 ruff_text_size.workspace = true
 
-# the in-process oracle (`oracle.rs` alone names them; decision 3)
+# the in-process oracle (`oracle.rs` alone names them)
 ruff_db.workspace = true
 ruff_diagnostics.workspace = true
 ruff_ranged_value.workspace = true

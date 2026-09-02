@@ -1,6 +1,5 @@
-//! Port of `provers/clones.py`'s normalization half (codemap 3.3): CPython's
-//! `ast.dump(annotate_fields=True, show_empty=False)` field grammar over
-//! ruff nodes (R9, R13), and the node count `ast.walk` gives a subtree.
+//! CPython's `ast.dump(annotate_fields=True, show_empty=False)` field grammar
+//! over ruff nodes (R9, R13), and the node count `ast.walk` gives a subtree.
 //!
 //! `fields` is the one enumeration of a node's CPython `_fields` with their
 //! values, so `normalize` and `size` never disagree about what a node holds:

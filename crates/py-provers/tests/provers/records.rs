@@ -1,4 +1,4 @@
-//! `provers/records.py`: which producers close, and where their results flow.
+//! Which producers close, and where their results flow.
 
 use std::collections::BTreeSet;
 

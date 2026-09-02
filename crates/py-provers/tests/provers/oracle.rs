@@ -1,7 +1,6 @@
-//! Port of REF `tests/provers/test_oracle.py`, `tests/provers/test_fused_pass.py`
-//! (the two parts that are the oracle's own) and `tests/provers/test_unresolved.py`:
-//! the checker in process. Each test builds one `ProjectDatabase` on a mini
-//! repo, so each pays a cold check of the vendored typeshed.
+//! The checker in process: the oracle's own passes, the fused pass, and the
+//! unresolved imports. Each test builds one `ProjectDatabase` on a mini repo,
+//! so each pays a cold check of the vendored typeshed.
 
 use camino::Utf8Path;
 use indexmap::IndexMap;
@@ -186,9 +185,8 @@ fn unresolved_imports_are_counted_per_module() {
 
 #[test]
 fn a_checker_that_never_started_degrades_the_run_and_the_header_says_so() {
-    // the in-process twin of the shim that crashed: a root the project cannot be
-    // discovered at is a crashed oracle, never a `None` one, so `close` names
-    // it and the rules it serves go silent
+    // a root the project cannot be discovered at is a crashed oracle, never a
+    // `None` one, so `close` names it and the rules it serves go silent
     let (dir, stack) = build(&[(
         "m.py",
         "def check(x: str) -> bool:\n    return isinstance(x, str)\n",

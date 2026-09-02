@@ -1,5 +1,5 @@
-//! One parsed module and its arenas (`facts/model.py:Module`): the source,
-//! the tree, the dense node index with its side tables, the bindings.
+//! One parsed module and its arenas: the source, the tree, the dense node
+//! index with its side tables, the bindings.
 
 use crate::cn::Cn;
 use crate::kinds::Kind;

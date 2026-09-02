@@ -1,4 +1,4 @@
-//! `provers/clones.py`: the three clone populations, and the shape
+//! The three clone populations, and the shape
 //! differential the `clones` layer rests on.
 
 use serde_json::{Value, json};
@@ -55,10 +55,8 @@ fn foreign_roots_hold_the_names_a_third_party_import_binds() {
 }
 
 /// The blind normalization and the node count of every function body
-/// statement of a corpus tree, one TSV row each, against
-/// `sightline-phase3/scratch/py-provers-b/py_shapes.py`'s rows from the
-/// Python tool. The `clones` layer shows equality classes; this shows the
-/// text they were hashed from.
+/// statement of a corpus tree, one TSV row each. The `clones` layer shows
+/// equality classes; this shows the text they were hashed from.
 ///
 /// `SIGHTLINE_SHAPES_ROOT=<tree> SIGHTLINE_SHAPES_CONFIG=<toml>
 /// SIGHTLINE_SHAPES_OUT=<tsv> cargo test -p sightline-py-provers --test

@@ -1,5 +1,5 @@
-//! `--version`: the crate version, the fork rev and the ra_ap version
-//! (decision 15). Each pin has one home in a manifest and one copy here; the
+//! `--version`: the crate version, the fork rev and the ra_ap version.
+//! Each pin has one home in a manifest and one copy here; the
 //! tests below read the manifests and pin the two equal.
 
 /// The `rev` every fork dependency of the workspace `Cargo.toml` declares.

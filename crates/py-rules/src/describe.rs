@@ -1,4 +1,4 @@
-//! `sightline facts <root> <qname>` (port of `describe.py`): what the
+//! `sightline facts <root> <qname>`: what the
 //! provers already hold about one symbol, printed in the order an agent
 //! asks. What it is, who calls it, what it does, whether its world is
 //! closed, whether it is hot, whether it is live, what fires on it, and what

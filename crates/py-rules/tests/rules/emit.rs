@@ -1,7 +1,6 @@
-//! `tests/test_emit.py`: span edits and import insertion into one
-//! git-apply-able unified diff. The corpus half (every patch applies, the
-//! target suites pass, patched findings vanish) is phase 9's `xtask
-//! fix-check`.
+//! Span edits and import insertion into one git-apply-able unified diff.
+//! The corpus half (every patch applies, the target suites pass, patched
+//! findings vanish) is `xtask fix-check`.
 
 use std::fs;
 

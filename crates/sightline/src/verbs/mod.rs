@@ -1,4 +1,4 @@
-//! One module per verb of `cli.py`, and the two helpers they share.
+//! One module per verb, and the two helpers they share.
 
 pub mod audit;
 pub mod baseline;

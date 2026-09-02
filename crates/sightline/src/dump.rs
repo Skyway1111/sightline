@@ -94,7 +94,7 @@ pub fn run(
         }
     }
     match out {
-        // `dump_layers.py:main`: a layer list names a directory, one layer a file
+        // a layer list names a directory, one layer a file
         Some(path) if many => {
             let dir = Utf8Path::new(path);
             std::fs::create_dir_all(dir)?;

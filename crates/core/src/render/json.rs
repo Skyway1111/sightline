@@ -1,5 +1,5 @@
-//! The `--json` output: the flat ranked list under the provenance header
-//! (port of `render.py`'s JSON half), written through `pyjson`.
+//! The `--json` output: the flat ranked list under the provenance header,
+//! written through `pyjson`.
 
 use serde_json::{Map, Value};
 
@@ -126,7 +126,7 @@ mod tests {
 
     #[test]
     fn findings_carry_the_premise_they_rest_on() {
-        // `test_render.py`: a detail string or the WP premises, and nothing
+        // a detail string or the WP premises, and nothing
         // where the evidence holds neither
         let stack = SyntheticStack::new(&P, &[("a.p", "one\ntwo\n")]);
         let findings = vec![

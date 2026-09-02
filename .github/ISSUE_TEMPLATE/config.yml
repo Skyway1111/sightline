@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability
+    url: https://github.com/Skyway1111/sightline/security/advisories/new
+    about: Opens a private advisory only the maintainers can read. Never a public issue.

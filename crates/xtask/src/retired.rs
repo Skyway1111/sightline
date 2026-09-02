@@ -1,8 +1,7 @@
 //! `data/retired.toml`: the burial rows of `corpus-ext/decisions.tsv`, so a
-//! released binary answers `explain <retired id>` without a checkout
-//! (decision 10).
+//! released binary answers `explain <retired id>` without a checkout.
 //!
-//! The reading is `cli.py:cmd_retired`'s: a row whose decision names the id
+//! The reading: a row whose decision names the id
 //! and holds `cut` or `retired`, narrowed to the rows whose decision leads
 //! with the id when any does. One table per row; `explain` prints them in
 //! order.
@@ -23,7 +22,7 @@ pub struct Burial {
     pub evidence: String,
 }
 
-/// `#<id>` not followed by another digit (`cli.py:207`, R7: the lookahead is
+/// `#<id>` not followed by another digit (the lookahead is
 /// a digit check on the next character).
 fn names(decision: &str, id: &str) -> bool {
     let needle = format!("#{id}");

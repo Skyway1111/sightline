@@ -1,6 +1,6 @@
-//! `tests/facts/test_build.py`, the pass-A half: modules, qnames, symbols,
-//! classes, the node index and what the tree declares about itself. The tests
-//! whose whole subject is refs and call sites live in `resolve.rs`.
+//! The pass-A half of the build: modules, qnames, symbols, classes, the
+//! node index and what the tree declares about itself. The tests whose
+//! whole subject is refs and call sites live in `resolve.rs`.
 
 use sightline_core::config::Config;
 use sightline_py_facts::kinds::Kind;
@@ -65,8 +65,8 @@ fn module_qnames_use_import_names() {
 fn namespace_package_dirs_count_above_a_regular_package() {
     // PEP 420: a bare dir contributes its name only above a regular
     // package, never the root or a `src` directly under it; a bare dir
-    // with no package below it still yields the stem. The `import_graph`
-    // assertion waits for phase 3.
+    // with no package below it still yields the stem. The import graph over
+    // these modules is `py-provers`' to assert, not this test's.
     let (_dir, stack) = build(&[
         ("src/ns/pkg/__init__.py", ""),
         ("src/ns/pkg/mod.py", "def f():\n    pass\n"),

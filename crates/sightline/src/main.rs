@@ -73,7 +73,7 @@ fn run(cli: Cli) -> Result<u8> {
             config.as_deref(),
             out.as_deref(),
         ),
-        Command::Explain { rule } => verbs::explain::run(&registry, rule.as_deref()),
+        Command::Explain { rule, json } => verbs::explain::run(&registry, rule.as_deref(), *json),
         Command::Audit {
             repo,
             json,

@@ -1,6 +1,5 @@
-//! The half of `rs/resolve.py:graph` that needs no toolchain: what the join
-//! asks of facts (`_Symbols`, `_callee_name`, `_macro_call`), the fold of one
-//! site's definitions into an edge, and the counts.
+//! The half of `graph` that needs no toolchain: what the join asks of
+//! facts, the fold of one site's definitions into an edge, and the counts.
 
 use std::collections::{HashMap, HashSet};
 

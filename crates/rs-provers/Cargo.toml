@@ -23,7 +23,7 @@ tempfile = "3"
 toml.workspace = true
 sightline-core = { path = "../core" }
 sightline-rs-facts = { path = "../rs-facts" }
-# the toolchain, `oracle/` alone names them (decision 4; `xtask fence`):
+# only `oracle/` names the toolchain, and `xtask fence` proves it:
 # cargo's JSON streams, and rust-analyzer's crates at the release cut the
 # day before the `rust-analyzer 1.95.0` component
 cargo_metadata = "0.23"

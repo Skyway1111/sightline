@@ -1,4 +1,4 @@
-//! `cargo xtask gate-bench` (port of `scripts/gate_bench.py`), criterion 5.
+//! `cargo xtask gate-bench`.
 //!
 //! Latency: the fast gate end to end, a fresh process per run, over a
 //! synthetic ten-file diff on the target tree, with a real baseline in place
@@ -22,7 +22,7 @@ type Key = (String, String, i64, i64);
 const N_FILES: usize = 10;
 const N_RUNS: usize = 5;
 
-/// Criterion 5: 50 ms, the median of five runs.
+/// The fast gate's budget: 50 ms, the median of five runs.
 const BUDGET_S: f64 = 0.050;
 
 /// `statistics.median`: the middle wall, or the mean of the middle two.

@@ -1,4 +1,4 @@
-//! `provers/comments.py`'s AST half: comment runs as a rule reads them.
+//! The AST half of comment analysis: comment runs as a rule reads them.
 
 use sightline_py_provers::comments::*;
 use sightline_testkit::build;

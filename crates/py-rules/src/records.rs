@@ -1,4 +1,4 @@
-//! Family C, record contracts (port of `rules/records.py`, #57): a key a
+//! Family C, record contracts (#57): a key a
 //! closed producer writes on every return path that none of its closed sinks
 //! reads, work computed and discarded, or one fact kept in two homes.
 

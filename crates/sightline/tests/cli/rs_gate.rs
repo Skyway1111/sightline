@@ -1,5 +1,4 @@
-//! The fast gate over a Cargo root (port of `tests/rs/test_rs_gate.py`): the
-//! one place its verdict differs from Python's, and what a Rust reading's
+//! The fast gate over a Cargo root: the one place its verdict differs from Python's, and what a Rust reading's
 //! posture does to the gate and the baseline. Anything that runs the whole
 //! pipeline over a Cargo root drives `cargo` and is `#[ignore]`.
 
@@ -48,7 +47,7 @@ fn a_parsing_rust_file_is_gated_silently() {
 }
 
 /// A file the language's suffix does not spell is never gated by it, whatever
-/// the root marks (`test_lang.py`'s two-language gate).
+/// the root marks.
 #[test]
 fn the_gate_reaches_only_the_files_of_a_detected_languages_suffix() {
     let dir = make_repo(&[

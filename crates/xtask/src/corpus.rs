@@ -1,7 +1,7 @@
 //! `cargo xtask corpus`: audit every tree of `crates/xtask/corpus.toml`,
 //! record walls, prove two runs identical byte for byte, dump fire rates,
-//! then check each clean pole's polarity (`scripts/corpus_run.py` and
-//! `scripts/corpus_check.py`). The out dir is cleared first, so every file
+//! then check that the clean repository of each language blocks on
+//! nothing. The out dir is cleared first, so every file
 //! in it is this run's.
 //!
 //! The table and the binary's command line live here; the seam a detached

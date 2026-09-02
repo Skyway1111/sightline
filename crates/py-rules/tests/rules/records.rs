@@ -1,5 +1,5 @@
-//! #57 dead-key (`tests/rules/test_records.py`): a key every closed producer
-//! writes that no closed sink reads. Each pair: the positive fires, its
+//! #57 dead-key: a key every closed producer writes that no closed sink
+//! reads. Each pair: the positive fires, its
 //! near-miss twin stays silent.
 
 use std::collections::BTreeSet;

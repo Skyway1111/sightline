@@ -1,4 +1,4 @@
-//! Port of `tests/rs/test_closed_world.py`: every closed-world escape over
+//! Every closed-world escape over
 //! the resolved edges, one fixture per named reason, plus the judged set the
 //! rustc probe pinned. An escape dropped is a dead-weight finding claimed
 //! over a caller the index cannot show, so each reason is red first: the same

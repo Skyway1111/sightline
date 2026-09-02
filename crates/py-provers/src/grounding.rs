@@ -1,8 +1,8 @@
-//! Port of `provers/grounding.py` (phase 4, unit `py-queries`): is an
-//! oracle verdict grounded in a claim the repo wrote? Every predicate takes an
-//! `OracleDiag` or an `ArgTypes` (`operand_grounded`, `none_default_lie`,
+//! Is an oracle verdict grounded in a claim the repo wrote? Every predicate
+//! takes an `OracleDiag` or an `ArgTypes` (`operand_grounded`,
+//! `none_default_lie`,
 //! `container_shape_check`, `broken_declaration`, `grounding`); #2 and #58
-//! read them in phase 5.
+//! read them.
 
 use std::collections::{BTreeSet, HashSet};
 use std::sync::LazyLock;

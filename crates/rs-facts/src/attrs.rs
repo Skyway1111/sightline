@@ -1,4 +1,4 @@
-//! What an item's `#[...]` run says (port of `rs/attrs.py`): the attributes
+//! What an item's `#[...]` run says: the attributes
 //! above a node, the test readings among them, and the cfgs a `mod` or a
 //! `mod x;` declaration hands what it holds. Facts asks these; no rule does.
 

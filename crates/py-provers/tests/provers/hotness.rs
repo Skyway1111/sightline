@@ -1,7 +1,7 @@
-//! `provers/hotness.py`: roots from config plus #59 cost docstrings,
-//! propagated over the resolved callee graph; amplification is the loop depth
-//! crossed. The last two are `tests/provers/test_degraded.py`'s `repo` tests,
-//! which live here because they read the same accessor and the same notes.
+//! Roots from config plus #59 cost docstrings, propagated over the resolved
+//! callee graph; amplification is the loop depth crossed. The last two are
+//! degraded-run tests, which live here because they read the same accessor
+//! and the same notes.
 
 use camino::Utf8Path;
 use tempfile::TempDir;
@@ -301,7 +301,7 @@ fn glob_roots_expand_in_config_order_then_sorted() {
     );
 }
 
-/// `test_degraded.py`: without an oracle the graph lets a by-name guess stand
+/// Without an oracle the graph lets a by-name guess stand
 /// (effects and #37 inherit it); hotness does not, so the hot set is a subset
 /// of the oracle twin's. Its twin: the same method reached through `self`.
 #[test]
@@ -338,7 +338,7 @@ fn degraded_hotness_propagates_over_typed_edges_only() {
     );
 }
 
-/// `test_degraded.py`: what an absent oracle costs is the header's to report.
+/// What an absent oracle costs is the header's to report.
 #[test]
 fn a_run_without_an_oracle_names_what_goes_silent() {
     let config = Config {

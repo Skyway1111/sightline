@@ -1,6 +1,5 @@
-//! `tests/rules/test_surface.py`: family B's paired positive/negative
-//! fixtures for #11, #14, #18, #20, #21, #23, #37, #48, #54 and #55, plus
-//! `tests/test_fixes.py`'s `fold_splice` cases.
+//! Family B's paired positive/negative fixtures for #11, #14, #18, #20, #21,
+//! #23, #37, #48, #54 and #55, plus the `fold_splice` cases.
 //!
 //! `clippy.toml` bans a process spawn inside the crate so no rule reads the
 //! world; `aged_run` is a fixture writing a git history for #11's migration
@@ -1833,7 +1832,7 @@ fn fold_never_into_a_caller_23_flags() {
     }
 }
 
-// --- fold_splice (`tests/test_fixes.py`'s #48 half) --------------------------
+// --- fold_splice, the #48 half of the fix suite ------------------------------
 
 fn splice_of(src: &str, name: &str) -> Option<sightline_py_provers::counterfactual::Splice> {
     let (_dir, stack) = build(&[("m.py", src)]);

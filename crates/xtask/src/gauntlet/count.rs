@@ -1,4 +1,4 @@
-//! `scripts/gauntlet_count.py`: the pinned prod-LoC counter for the gauntlet
+//! `cargo xtask gauntlet count`: the pinned prod-LoC counter for the gauntlet
 //! corpus.
 //!
 //! Python prod LoC = non-blank lines of non-test, non-vendored,

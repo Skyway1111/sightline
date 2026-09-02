@@ -1,6 +1,6 @@
-//! The Rust cognitive-complexity classification (`rs/model.py`, `_NESTERS`
-//! down to `cognitive_complexity`): `if`/`match`/loops nest, a run of like
-//! boolean operators is one flat increment, a direct recursive call another.
+//! The Rust cognitive-complexity classification: `if`/`match`/loops nest, a
+//! run of like boolean operators is one flat increment, a direct recursive
+//! call another.
 //! A nested `fn` scores on its own; a closure sinks its body without scoring.
 
 use sightline_core::complexity::{Cc, score};

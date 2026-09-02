@@ -1,5 +1,5 @@
-//! Finding model (port of `findings.py` up to its pipeline banner). The
-//! pipeline stages live beside it: `edits`, `suppress`, `rank`.
+//! The finding model. The pipeline stages live beside it: `edits`,
+//! `suppress`, `rank`.
 //!
 //! Engine is stamped by the evidence a prover produced; tier derives from
 //! engine. Rules set neither.
@@ -228,7 +228,7 @@ pub fn precision(f: &Finding) -> Option<IndexMap<&'static str, Value>> {
     rule_sample(f.rule, &f.cause, f.lang).map(Sample::json)
 }
 
-/// `dump_layers.py:_evidence`: one shape per `Evidence` variant.
+/// One JSON shape per `Evidence` variant.
 fn evidence_json(evidence: &Evidence) -> Value {
     match evidence {
         Evidence::Wp { premises } => json!({ "premises": premises }),
@@ -242,7 +242,7 @@ fn evidence_json(evidence: &Evidence) -> Value {
     }
 }
 
-/// `dump_layers.py:_edits`.
+/// A finding's span edits, one array per edit.
 fn edits_json(edits: &[SpanEdit]) -> Value {
     Value::Array(
         edits
@@ -252,7 +252,7 @@ fn edits_json(edits: &[SpanEdit]) -> Value {
     )
 }
 
-/// One `raw`-layer row (`dump_layers.py:layer_raw`); both stacks print it.
+/// One row of the `raw` dump layer; both stacks print it.
 pub fn finding_json(f: &Finding) -> Value {
     let mut row = Map::new();
     row.insert("rule".into(), Value::from(f.rule));
@@ -360,8 +360,7 @@ pub(crate) mod tests {
 
     #[test]
     fn p_real_reads_the_arm_then_the_rule_then_the_bar() {
-        // scratch/core-a/probe_order.py: the same findings through REF's
-        // `sightline.findings.p_real`
+        // each value is `p_real` for the finding built beside it
         let arm = Finding {
             cause: "commented-code:m.f:1".into(),
             ..finding("34", ast())
@@ -388,7 +387,7 @@ pub(crate) mod tests {
     fn an_exact_arm_name_reads_the_rules_sample() {
         // `rule_sample` wants a cause *under* the arm, not the arm itself:
         // "11:clone" does not start with "11:clone:", so #11's own 232/256
-        // answers. REF does the same (probe_order.py).
+        // answers.
         let f = Finding {
             cause: "clone".into(),
             ..finding("11", idx())

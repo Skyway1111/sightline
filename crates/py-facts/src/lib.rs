@@ -1,10 +1,7 @@
-//! Python facts (`docs/rewrite/codemap.md`, section 3.2 in the Python
-//! tree): `facts/model.py`, `facts/build.py`, `astutil.py` and the Python
-//! half of `complexity.py`, over `ruff_python_parser`'s tree. Facts are
-//! arenas with indices (decision 7); the one traversal orders children as
-//! CPython does (R5, `order.rs`). Each module is the port of the Python
-//! source its header names; a stub module is one a phase-2 unit has not
-//! filled yet.
+//! Python facts: `RepoFacts` built once over `ruff_python_parser`'s tree,
+//! with the AST model, the pure-AST predicates and the Python half of the
+//! complexity score. Facts are arenas with indices; the one traversal
+//! orders children as CPython does (R5, `order.rs`).
 
 pub mod astutil;
 pub mod build;

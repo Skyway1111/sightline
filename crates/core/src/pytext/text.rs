@@ -38,10 +38,6 @@ fn is_linebreak(c: char) -> bool {
     )
 }
 
-/// Python `str.splitlines()`: eleven break characters, `\r\n` as one break,
-/// and no trailing empty field. `str::lines` breaks at `\n` alone, so a
-/// module holding a `\f` reads one line short there (REF `CLAUDE.md`, the
-/// `str.splitlines` trap).
 /// Lines as CPython's tokenizer and AST count them: split on `\n` alone,
 /// one trailing empty element dropped (R2). `splitlines` also breaks at
 /// `\f`, `\v`, `\x1c`-`\x1e`, `\x85`, U+2028 and U+2029, and every line
@@ -54,6 +50,9 @@ pub fn source_lines(source: &str) -> Vec<&str> {
     lines
 }
 
+/// Python `str.splitlines()`: eleven break characters, `\r\n` as one
+/// break, and no trailing empty field. `str::lines` breaks at `\n` alone,
+/// so a module holding a `\f` reads one line short there.
 pub fn splitlines(s: &str) -> Vec<&str> {
     let mut out = Vec::new();
     let (mut start, mut i) = (0, 0);

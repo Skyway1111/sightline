@@ -1,7 +1,7 @@
-//! `sightline explain` (port of `cli.cmd_explain` and `cmd_retired`): every
+//! `sightline explain`: every
 //! record under an id, or, for an id no rule holds, its burial from the
 //! trail. Without an id it prints the roster, the registry read straight
-//! out. Both tables are embedded (decision 10), so a released binary
+//! out. Both tables are embedded, so a released binary
 //! answers without a checkout.
 
 use std::io::Write;
@@ -39,7 +39,11 @@ fn burials() -> &'static [Burial] {
     &TABLE.retired
 }
 
-pub fn run(registry: &Registry, rule: Option<&str>) -> Result<u8> {
+pub fn run(registry: &Registry, rule: Option<&str>, json: bool) -> Result<u8> {
+    if json {
+        std::io::stdout().write_all(self::json(registry).as_bytes())?;
+        return Ok(0);
+    }
     let Some(rule) = rule else {
         std::io::stdout().write_all(roster(registry).as_bytes())?;
         return Ok(0);
@@ -129,6 +133,43 @@ fn roster(registry: &Registry) -> String {
             &judged,
         ]));
     }
+    out
+}
+
+/// Every reading as one JSON array, each with its judged rows: what
+/// `cargo xtask rules-doc` renders `docs/rules.md` from, so the catalog and
+/// `explain` cannot disagree.
+fn json(registry: &Registry) -> String {
+    let rows: Vec<serde_json::Value> = registry
+        .rules
+        .iter()
+        .map(|r| {
+            let precision: Vec<serde_json::Value> = rule_samples(r.id, r.lang)
+                .into_iter()
+                .map(|(arm, s)| {
+                    serde_json::json!({"arm": arm, "tp": s.tp, "n": s.n, "seed": s.seed, "of": s.of})
+                })
+                .collect();
+            let recall = rule_recall(r.id, r.lang)
+                .map(|c| serde_json::json!({"covered": c.covered, "sites": c.sites, "of": c.of}));
+            serde_json::json!({
+                "id": r.id,
+                "slug": r.slug,
+                "lang": r.lang,
+                "family": r.family,
+                "engine": r.engine_class,
+                "tier": engine_of(r).map_or("mixed", |e| e.tier().value()),
+                "posture": r.posture.value(),
+                "meaning": r.meaning,
+                "goal": r.goal,
+                "complement": r.complement,
+                "precision": precision,
+                "recall": recall,
+            })
+        })
+        .collect();
+    let mut out = serde_json::to_string_pretty(&rows).expect("records serialize");
+    out.push('\n');
     out
 }
 
@@ -238,7 +279,7 @@ mod tests {
         }
     }
 
-    /// `test_rs_gate.py`: a reading no round has judged names the key a
+    /// A reading no round has judged names the key a
     /// round would fill and the bar `rank` reads.
     #[test]
     fn an_unjudged_reading_names_its_key_and_its_bar() {
@@ -260,8 +301,7 @@ mod tests {
         );
     }
 
-    /// Every retired id the registry buries has a row in the embedded table
-    /// (`test_cli.py:test_explain_answers_every_retired_id_with_its_burial`).
+    /// Every retired id the registry buries has a row in the embedded table.
     #[test]
     fn every_retired_id_has_its_burial() {
         for id in sightline_core::registry::RETIRED {

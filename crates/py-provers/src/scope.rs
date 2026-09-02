@@ -1,8 +1,8 @@
-//! Port of `provers/scope.py` (codemap 3.3): one `Scope` per function - what
-//! its body declares, rebinds, aliases, writes through and demands of each
-//! param. Built from facts' node index and parent map, no second traversal,
-//! and memoized per symbol in `Provers` (R20), so a body is never walked
-//! twice. Every scope question is a query here.
+//! One `Scope` per function - what its body declares, rebinds, aliases,
+//! writes through and demands of each param. Built from facts' node index and
+//! parent map, no second traversal, and memoized per symbol in `Provers`
+//! (R20), so a body is never walked twice. Every scope question is a query
+//! here.
 
 use std::collections::{BTreeSet, HashSet};
 use std::sync::OnceLock;
@@ -36,14 +36,14 @@ const DEFS: [Kind; 3] = [Kind::FunctionDef, Kind::AsyncFunctionDef, Kind::ClassD
 const LOOPS: [Kind; 3] = [Kind::For, Kind::AsyncFor, Kind::While];
 /// `_CHAIN`: a call result on the way is no one's.
 const CHAIN: [Kind; 2] = [Kind::Attribute, Kind::Subscript];
-/// `_BINDS`: rebinds a local name.
+/// Rebinds a local name.
 const BINDS: [&str; 4] = ["name", "del", "except", "import"];
-/// `_THROUGH`: writes through a reference.
+/// Writes through a reference.
 const THROUGH: [&str; 3] = ["attr", "subscript", "call"];
 const OUTER: [&str; 2] = ["global", "nonlocal"];
 
-/// `_WRITE_NODES`: every node kind that binds a name or writes through a
-/// reference, in the order the Python tuple lists them (R5).
+/// Every node kind that binds a name or writes through a reference, in a
+/// pinned order (R5).
 const WRITE_NODES: [Kind; 20] = [
     Kind::Assign,
     Kind::AnnAssign,

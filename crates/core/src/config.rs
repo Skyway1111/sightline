@@ -1,5 +1,4 @@
-//! `[tool.sightline]` from `pyproject.toml`, else from `sightline.toml`
-//! (port of `config.py`).
+//! `[tool.sightline]` from `pyproject.toml`, else from `sightline.toml`.
 
 use std::collections::BTreeSet;
 

@@ -1,5 +1,5 @@
-//! The Rust side of the language seam (`lang.py`'s `RS` record, codemap
-//! 4.2): the record whole, rules beside the facts and provers they read.
+//! The Rust side of the language seam: the record whole, rules beside the
+//! facts and provers they read.
 
 use std::collections::HashMap;
 use std::sync::Arc;
@@ -76,13 +76,12 @@ pub struct RsStack {
     notes: Vec<String>,
     neutral: Neutral,
     ids_by_slug: HashMap<String, String>,
-    /// `profile_audit.py`'s two build stages; empty for a stack a test built.
+    /// The two build stages; empty for a stack a test built.
     pub walls: Vec<(String, f64)>,
 }
 
 impl RsStack {
-    /// The facts' own notes come first, as `RsProvers.__post_init__` orders
-    /// them; `close` appends the toolchain's.
+    /// The facts' own notes come first; `close` appends the toolchain's.
     pub fn new(built: RsBuilt, rust: RsAnswers, ids_by_slug: HashMap<String, String>) -> RsStack {
         let facts = built.borrow_dependent();
         let notes = facts.notes.clone();
@@ -180,7 +179,8 @@ impl Stack for RsStack {
     }
 
     /// The build's two stages and every toolchain pass the oracle timed (the
-    /// `ra_ap` index load among them), in `profile_audit.py`'s labels.
+    /// `ra_ap` index load among them), labeled as `audit --profile` prints
+    /// them.
     fn passes(&self) -> Vec<(String, f64)> {
         let mut out = self.walls.clone();
         if let Some(oracle) = &self.rust.oracle {

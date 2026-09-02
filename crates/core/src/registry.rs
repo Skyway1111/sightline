@@ -1,7 +1,7 @@
-//! The rule registry (rewrite of `rules/__init__.py`): every language's
-//! `RULES` aggregated into one table. A reading is per language, so an id
-//! may hold one record per language: they share slug and family, and
-//! `by_id` answers with the one every consumer of those means. Posture is
+//! The rule registry: every language's `RULES` aggregated into one table.
+//! A reading is per language, so an id may hold one record per language:
+//! they share slug and family, and `by_id` answers with the one every
+//! consumer of those means. Posture is
 //! the reading's own, since a reading no round has judged ships REPORT
 //! while its sibling ratchets.
 
@@ -11,8 +11,8 @@ use anyhow::bail;
 
 use crate::rule::{Posture, RuleRecord};
 
-/// Ids no rule holds. `explain` answers one from `data/retired.toml`
-/// (`codemap.md`, section 7); the id is never reused.
+/// Ids no rule holds. A retired id is never reused; `explain` answers one
+/// from `data/retired.toml`.
 pub const RETIRED: &[&str] = &[
     "4", "8", "13", "15", "16", "17", "19", "22", "25", "28", "30", "31", "43", "45", "46", "51",
     "52", "61",
@@ -157,7 +157,7 @@ mod tests {
 
     #[test]
     fn the_retired_list_is_the_one_the_rule_table_buries() {
-        // `codemap.md`, section 7; `explain` prints each one's burial
+        // a retired id is never reused; `explain` prints its burial rows
         assert_eq!(RETIRED.len(), 18);
         let mut ids: Vec<u32> = RETIRED.iter().map(|s| s.parse().unwrap()).collect();
         let sorted = {

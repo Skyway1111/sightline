@@ -1,5 +1,5 @@
-//! The checker database the oracle asks: the shim's construction, and the
-//! two path maps every query goes through.
+//! The checker database the oracle asks: how it is built, and the two path
+//! maps every query goes through.
 
 use super::*;
 
@@ -20,7 +20,7 @@ pub(super) fn resolve(db: &ProjectDatabase, root: &SystemPath, rel: &str) -> Opt
     system_path_to_file(db, SystemPathBuf::from(root.as_str()).join(rel)).ok()
 }
 
-/// The shim's construction, on the options `oracle.py:_config` writes.
+/// The database itself, on the options `Oracle::new` spells out.
 pub(super) fn database(
     root: &SystemPath,
     excludes: &[String],
@@ -43,11 +43,11 @@ pub(super) fn database(
     let options = Options {
         environment: Some(EnvironmentOptions {
             python: python_exe.map(|p| RelativePathBuf::cli(p.as_str())),
-            // With an interpreter to ask, ty infers the version from it, as the
-            // Python tool does. With none, it infers from the host, so the same
-            // tree reads one way here and another on a machine whose `python`
-            // is older. Fall back to the version the rest of the port assumes
-            // (port rule R16: builtins and the stdlib list are 3.14).
+            // With an interpreter to ask, ty infers the version from it. With
+            // none, it infers from the host, so the same tree reads one way
+            // here and another on a machine whose `python` is older. Fall back
+            // to the version the rest of the crate assumes (R16: builtins and
+            // the stdlib list are 3.14).
             python_version: python_exe.is_none().then(|| {
                 RangedValue::cli(
                     ty_project::metadata::python_version::SupportedPythonVersion::Py314,

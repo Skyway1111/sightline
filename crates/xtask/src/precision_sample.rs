@@ -1,4 +1,4 @@
-//! `scripts/precision_sample.py`: seeded stratified precision sample.
+//! `cargo xtask precision-sample`: seeded stratified precision sample.
 //!
 //! Pools findings from every given audit, stratifies by tier (or by cause
 //! prefix under `--arms`), samples `min(20, n)` per stratum with the pinned

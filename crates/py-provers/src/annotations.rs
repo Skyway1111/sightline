@@ -1,5 +1,4 @@
-//! Port of `provers/annotations.py` (codemap 3.3): reading an annotation, the
-//! one home for what a repo's annotations say.
+//! Reading an annotation, the one home for what a repo's annotations say.
 //!
 //! Two depths, and the difference is a decision. What a type *admits* is read
 //! through the repo's own aliases and string forms - `MaybeStr = str | None`

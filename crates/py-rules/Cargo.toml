@@ -21,7 +21,7 @@ sightline-core = { path = "../core" }
 sightline-py-facts = { path = "../py-facts" }
 sightline-py-provers = { path = "../py-provers" }
 
-# the fence (decision 1): the AST vocabulary and nothing that parses or checks
+# the fence: the AST vocabulary and nothing that parses or checks
 ruff_python_ast.workspace = true
 
 [dev-dependencies]

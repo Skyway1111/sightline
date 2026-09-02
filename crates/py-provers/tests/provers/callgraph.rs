@@ -1,6 +1,6 @@
-//! Port of REF `tests/provers/test_callgraph.py`, the oracle-free half: facts'
-//! CHA re-judged by callee edges wherever CHA had no typed evidence. A by-name
-//! guess the edges do not confirm goes unknown; overrides keep taint;
+//! Facts' CHA re-judged by callee edges wherever CHA had no typed evidence.
+//! A by-name guess the edges do not confirm goes unknown; overrides keep
+//! taint;
 //! `callee_of` is the one answer to "what body runs" (class -> `__init__`,
 //! instance -> `__call__`), and the three tests that ask a real `Oracle` for
 //! the edges.

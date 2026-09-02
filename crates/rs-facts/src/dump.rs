@@ -6,8 +6,8 @@ use sightline_core::pyjson::object;
 
 use crate::model::RsFacts;
 
-/// `layer_listing` on a Rust tree: the shared walk, and the repo-wide inputs
-/// only the Python build reads.
+/// `layer_listing` on a Rust tree: the shared walk, and the repo-wide
+/// inputs a Rust tree has none of.
 pub fn listing(facts: &RsFacts<'_>) -> Value {
     json!({
         "files": facts.all_files.iter().map(|r| &**r).collect::<Vec<_>>(),

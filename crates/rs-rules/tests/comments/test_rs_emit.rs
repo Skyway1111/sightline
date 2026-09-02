@@ -1,5 +1,5 @@
 //! The Rust `fix`: what the diff says. `crates/py-rules/tests/rules/emit.rs`
-//! is the Python emitter's.
+//! is the Python side's.
 
 use sightline_core::edits::blank;
 use sightline_core::findings::{Evidence, Finding, Fix, Site, SpanEdit};

@@ -1,4 +1,4 @@
-//! `scope.py`'s footprint half: what a body demands of each param, and
+//! The footprint half of `scope`: what a body demands of each param, and
 //! the alias and mutation questions that read the footprints.
 
 use super::*;

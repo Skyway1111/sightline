@@ -1,7 +1,7 @@
-//! `facts/model.py`: the arenas and their indexes. No opinions, no oracle.
+//! The arenas and their indexes. No opinions, no oracle.
 //!
 //! Facts are a `Tree` of parsed modules owned by the stack and a `RepoFacts`
-//! borrowing it (decision 7, codemap 4.3). Every node of a module has a dense
+//! borrowing it. Every node of a module has a dense
 //! `NodeIndex` in traversal order; `parent`, `enclosing` and `spans` are
 //! `Vec`s on that index, and no reader recomputes a position.
 

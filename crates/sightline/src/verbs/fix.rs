@@ -1,4 +1,4 @@
-//! `sightline fix` (port of `cli.cmd_fix`): one diff, the languages'
+//! `sightline fix`: one diff, the languages'
 //! patches concatenated. It never touches the tree.
 
 use std::io::Write;

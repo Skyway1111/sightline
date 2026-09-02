@@ -1,4 +1,4 @@
-//! Port of `rs/describe.py`: the `facts` verb's Rust printout, one symbol's
+//! The `facts` verb's Rust printout, one symbol's
 //! or module's record as the stack holds it, from existing facts and prover
 //! accessors and no analysis of its own.
 

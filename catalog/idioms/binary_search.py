@@ -1,7 +1,6 @@
 """#12 catalog entry `binary-search`: exemplar pair and near miss.
 
-Proof input for `cargo xtask catalog`, kept at the Python bytes
-`scripts/catalog_check.py` shipped.
+Proof input for `cargo xtask catalog`.
 """
 
 import bisect

@@ -1,9 +1,7 @@
-//! The shim's `call_edges` (`ty_pyright_shim/src/batch.rs`), moved here as
-//! decision 3 rules: every call expression in a project `.py` file whose
-//! callee type denotes definitions, with its targets inside the root, or its
-//! definitions' dotted homes when no body under the root runs. The rows are
-//! sorted by the absolute path the checker knows the file by, which is the
-//! order the reference prints.
+//! The oracle's `call_edges`: every call expression in a project `.py` file
+//! whose callee type denotes definitions, with its targets inside the root,
+//! or its definitions' dotted homes when no body under the root runs. The
+//! rows are sorted by the absolute path the checker knows the file by.
 
 use ruff_db::files::File;
 use ruff_db::parsed::parsed_module;

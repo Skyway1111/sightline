@@ -1,6 +1,5 @@
-//! The closed-world verdict (port of `provers/closed_world.py`'s
-//! `CwVerdict`), shared because both languages' closed-world provers answer
-//! in it.
+//! The closed-world verdict, shared because both languages' closed-world
+//! provers answer in it.
 
 use indexmap::IndexSet;
 

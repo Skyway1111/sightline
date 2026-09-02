@@ -1,6 +1,5 @@
-//! Port of `rs/rules/trust.py`: #9 a shared static that several functions of
-//! one module write, and #53 an `# Errors` section against what the body
-//! returns. Thresholds are the Python siblings'.
+//! #9 a shared static that several functions of one module write, and #53
+//! an `# Errors` section against what the body returns.
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::sync::LazyLock;
@@ -32,9 +31,9 @@ pub const RULE_9: Rule = Rule {
         engine_class: "IDX",
         posture: Posture::Report,
         meaning: "a shared static written by three functions of its own module",
-        goal: "No shared mutable state (Parent, Better Code goal 3): a static mutated from many \
-               places is action at a distance. One judged row is no sample to gate on, so this \
-               reports until a fresh seed prices it (`docs/todo.md`).",
+        goal: "No shared mutable state (Sean Parent, Better Code, goal 3): a static mutated \
+               from many places is action at a distance. One judged row is no sample to gate \
+               on, so this reports until a larger round measures it.",
         lang: "rs",
         scope: Scope::Repo,
         complement: "",
@@ -143,8 +142,8 @@ pub const RULE_53: Rule = Rule {
         posture: Posture::Report,
         meaning: "an `# Errors` section missing an error the body returns",
         goal: "Honest contracts: an Errors section missing a returned error makes every caller \
-               re-read the body to learn what to match on. Two judged rows are no sample to gate \
-               on, so this reports until a fresh seed prices it (`docs/todo.md`).",
+               re-read the body to learn what to match on. Two judged rows are no sample to \
+               gate on, so this reports until a larger round measures it.",
         lang: "rs",
         scope: Scope::Repo,
         complement: "clippy `missing_errors_doc` owns the absent section, and \

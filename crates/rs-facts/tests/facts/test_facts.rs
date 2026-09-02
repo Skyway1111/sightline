@@ -1,4 +1,4 @@
-//! Port of `tests/rs/test_facts.py`: what `build_facts` indexes off a Cargo
+//! What `build_facts` indexes off a Cargo
 //! root. Qnames from the file layout, symbols with their kinds, name-level
 //! refs and call resolution through `use` bindings, comments from the CST,
 //! the test readings, and a parse that keeps what it could read.

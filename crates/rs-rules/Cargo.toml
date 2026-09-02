@@ -18,7 +18,7 @@ rayon.workspace = true
 regex.workspace = true
 serde_json.workspace = true
 sightline-core = { path = "../core" }
-# the fence (decision 1): `Node` reaches rules through `rs_facts::Node`,
+# the fence: `Node` reaches rules through `rs_facts::Node`,
 # never a tree-sitter path
 sightline-rs-facts = { path = "../rs-facts" }
 sightline-rs-provers = { path = "../rs-provers" }

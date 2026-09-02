@@ -1,4 +1,4 @@
-//! `provers/import_effects.py`: what an import runs.
+//! What an import runs.
 
 use crate::oracle_fixture;
 
@@ -25,8 +25,7 @@ fn a_module_whose_import_calls_something_uncatalogued_runs_work() {
 }
 
 /// A degraded run keeps `callee`'s reading: a method on a module global
-/// stays import-time work (`tests/provers/test_import_graph.py`'s
-/// `test_degraded_run_keeps_the_unspelled_reading`).
+/// stays import-time work.
 #[test]
 fn a_degraded_run_keeps_the_unspelled_reading() {
     let (_dir, stack) = build(&[
@@ -90,9 +89,9 @@ fn a_function_body_runs_when_it_is_called_not_when_it_is_imported() {
     );
 }
 
-// --- the typed receiver (`test_import_graph.py:TestTypedReceiver`) ---------
+// --- the typed receiver ----------------------------------------------------
 
-/// The three files that class's `_facts` helper writes, with the import-time
+/// The three files every typed-receiver test shares, with the import-time
 /// call under test, and an in-process checker at the root.
 fn typed_receiver(call: &str) -> (tempfile::TempDir, sightline_testkit::PyStack) {
     let data = format!("_SEP = ', '\nHEADER = {call}\n");
@@ -108,9 +107,8 @@ fn typed_receiver(call: &str) -> (tempfile::TempDir, sightline_testkit::PyStack)
     (dir, stack)
 }
 
-/// `test_catalogued_receiver_class_lifts_the_guard`: the span query names
-/// `str.join`, a kind the catalog holds, so the import runs nothing. That
-/// test's #35 hoist half waits for phase 5.
+/// The span query names `str.join`, a kind the catalog holds, so the import
+/// runs nothing. No test here checks the #35 hoist over it.
 #[test]
 fn a_catalogued_receiver_class_lifts_the_guard() {
     let (_dir, stack) = typed_receiver("_SEP.join(['a', 'b'])");
@@ -122,8 +120,8 @@ fn a_catalogued_receiver_class_lifts_the_guard() {
     );
 }
 
-/// `test_a_paths_resolve_is_inert_through_its_receiver`: `Path(__file__)`
-/// spells itself, and only the span query spells the `.resolve()` off it.
+/// `Path(__file__)` spells itself, and only the span query spells the
+/// `.resolve()` off it.
 #[test]
 fn a_paths_resolve_is_inert_through_its_receiver() {
     let (dir, mut stack) = build(&[

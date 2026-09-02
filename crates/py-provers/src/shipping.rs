@@ -1,9 +1,8 @@
-//! Port of `provers/shipping.py` (codemap 3.3): what the repo ships as a unit,
-//! the module sets a prod list of source-file names copies into a runtime of
-//! its own. The import surface of a module inside such a set is pinned by the
-//! copy, and no kind of import-time work in the target tells that hoist from a
-//! safe one (#35's emitter rejects it; `import_effects.rs` owns the kind
-//! question).
+//! What the repo ships as a unit, the module sets a prod list of source-file
+//! names copies into a runtime of its own. The import surface of a module
+//! inside such a set is pinned by the copy, and no kind of import-time work
+//! in the target tells that hoist from a safe one (#35's emitter rejects it;
+//! `import_effects.rs` owns the kind question).
 
 use std::collections::BTreeSet;
 

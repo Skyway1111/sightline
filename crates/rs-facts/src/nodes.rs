@@ -1,5 +1,5 @@
 //! The tree-sitter node vocabulary and the pure node walks the Rust facts
-//! and provers share (port of `rs/nodes.py`): kind sets, descent, statement
+//! and provers share: kind sets, descent, statement
 //! sequences, closure parameters, literal values. Nothing here reads a repo.
 
 use std::collections::HashSet;
@@ -47,7 +47,7 @@ pub const DURATION_SCALE: [(&str, f64); 6] = [
 ];
 
 /// `kind in SET`: the tables above are space-separated word lists, so a set
-/// is one row of data (`rs/nodes.py`'s frozensets).
+/// is one row of data.
 pub fn has(table: &str, kind: &str) -> bool {
     table.split(' ').any(|k| k == kind)
 }

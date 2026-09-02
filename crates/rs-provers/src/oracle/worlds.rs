@@ -1,8 +1,8 @@
-//! `verify_worlds` (`rs/oracle.py`'s world half): overlays written into one
-//! copy of the tree without `.git`, `target` and the config excludes, `cargo
-//! check` per owning root, and the diagnostics each overlay adds over the
-//! base check keyed by `RsDiag::key`. Every severity is passed through: a
-//! filter by code disarms every veto that reads them.
+//! `verify_worlds`: overlays written into one copy of the tree without
+//! `.git`, `target` and the config excludes, `cargo check` per owning root,
+//! and the diagnostics each overlay adds over the base check keyed by
+//! `RsDiag::key`. Every severity is passed through: a filter by code disarms
+//! every veto that reads them.
 
 use std::collections::HashSet;
 use std::fs;

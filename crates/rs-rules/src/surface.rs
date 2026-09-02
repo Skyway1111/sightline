@@ -1,4 +1,4 @@
-//! Port of `rs/rules/surface.py`: rs #11 (structural-clones), #20
+//! Rs #11 (structural-clones), #20
 //! (repeated-lambda), #21 (distributed-invariant), #23
 //! (cognitive-complexity), #37 (speculative-generality), #48
 //! (fold-candidate).
@@ -134,7 +134,8 @@ pub const RULE_20: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "same nontrivial closure body >=3 times in a module",
-        goal: "Interface symmetry (Parent): a predicate written three times drifts; name it once.",
+        goal: "Interface symmetry (Sean Parent): a predicate written three times drifts; name \
+               it once.",
         lang: "rs",
         scope: Scope::File,
         complement: "",
@@ -226,8 +227,8 @@ pub const RULE_23: Rule = Rule {
         engine_class: "AST",
         posture: Posture::Report,
         meaning: "cognitive complexity >= 15; also the ranking prior",
-        goal: "Complexity predicts comprehension time (meta-analysis); REPORT-tier only - \
-               gating would incentivize extract-to-duck.",
+        goal: "Complexity predicts comprehension time (meta-analysis); REPORT-tier only - a \
+               gate here would push authors to extract helpers to dodge it.",
         lang: "rs",
         scope: Scope::File,
         complement: "",
@@ -292,7 +293,8 @@ pub const RULE_48: Rule = Rule {
         goal: "A name is a promise of reuse (Ousterhout's shallow module): a helper one reader \
                calls once costs a hop and a signature for nothing. The round that judged the \
                reading is the seed its exemptions were written against, so gating it would \
-               block on a precision of its own making: REPORT until a fresh seed prices it.",
+               block on a precision of its own making: REPORT until a later round measures \
+               it.",
         lang: "rs",
         scope: Scope::Repo,
         complement: "",

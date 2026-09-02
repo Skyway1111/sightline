@@ -1,4 +1,4 @@
-//! Port of `rs/rules/tests_quality.py`: Family T over Rust, #42
+//! Family T over Rust, #42
 //! assertion-free test and #47 sleepy test. Binary structural shapes over the
 //! `#[test]` items, as the Python siblings are over the collected test defs.
 

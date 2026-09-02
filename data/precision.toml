@@ -1,13 +1,17 @@
-# Generated from the reference tree's src/sightline/precision.py by
-# sightline-phase1/scratch/core-a/gen_precision.py. The one home for
-# the measured tables: edit a row here, never in two places.
+# Measured precision and recall per rule and per arm, edited by hand after
+# each judged round. Compiled into the binary: `sightline explain <id>` prints
+# a rule's rows, `rank` reads them, and docs/rules.md is rendered from them.
+#
+# [[precision]]: `tp` of `n` sampled findings were real, drawn with `seed`
+# from the population `of` names, judged against the tier bar `bar`.
+# [[recall]]: `covered` of `sites` the blind judges flagged were reported.
 
 [[precision]]
 key = "1"
 tp = 66
 n = 80
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -15,7 +19,7 @@ key = "1:lying-default"
 tp = 11
 n = 11
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -23,7 +27,7 @@ key = "1:weak"
 tp = 55
 n = 69
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -31,7 +35,7 @@ key = "2"
 tp = 11
 n = 11
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.95
 
 [[precision]]
@@ -39,7 +43,7 @@ key = "5"
 tp = 44
 n = 46
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -47,7 +51,7 @@ key = "6"
 tp = 5
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -55,7 +59,7 @@ key = "7"
 tp = 4
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -63,7 +67,7 @@ key = "10"
 tp = 61
 n = 66
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -71,7 +75,7 @@ key = "11"
 tp = 232
 n = 256
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -79,7 +83,7 @@ key = "11:clone"
 tp = 70
 n = 83
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -87,7 +91,7 @@ key = "11:clone-block"
 tp = 159
 n = 170
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -95,7 +99,7 @@ key = "12"
 tp = 30
 n = 30
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -103,7 +107,7 @@ key = "14"
 tp = 16
 n = 18
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -111,7 +115,7 @@ key = "18"
 tp = 9
 n = 9
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -119,7 +123,7 @@ key = "20"
 tp = 19
 n = 20
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -127,7 +131,7 @@ key = "21"
 tp = 10
 n = 10
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -135,7 +139,7 @@ key = "23"
 tp = 146
 n = 168
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -143,7 +147,7 @@ key = "24"
 tp = 6
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -151,7 +155,7 @@ key = "26"
 tp = 4
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -159,7 +163,7 @@ key = "27"
 tp = 23
 n = 27
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -167,7 +171,7 @@ key = "27:price"
 tp = 23
 n = 26
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -175,7 +179,7 @@ key = "29"
 tp = 17
 n = 19
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -183,7 +187,7 @@ key = "32"
 tp = 145
 n = 158
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -191,7 +195,7 @@ key = "32:dead-import"
 tp = 62
 n = 63
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -199,7 +203,7 @@ key = "32:dead-param"
 tp = 22
 n = 24
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -207,7 +211,7 @@ key = "32:dead-symbol"
 tp = 61
 n = 71
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -215,7 +219,7 @@ key = "33"
 tp = 34
 n = 35
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -223,7 +227,7 @@ key = "33:lying-return"
 tp = 27
 n = 28
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -231,7 +235,7 @@ key = "33:mixed-returns"
 tp = 6
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -239,7 +243,7 @@ key = "34"
 tp = 20
 n = 20
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -247,7 +251,7 @@ key = "34:commented-code"
 tp = 19
 n = 19
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -255,7 +259,7 @@ key = "35"
 tp = 8
 n = 8
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -263,7 +267,7 @@ key = "36"
 tp = 5
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -271,7 +275,7 @@ key = "37"
 tp = 22
 n = 22
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -279,7 +283,7 @@ key = "37:monomorphic"
 tp = 6
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -287,7 +291,7 @@ key = "37:unused-default"
 tp = 13
 n = 13
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -295,7 +299,7 @@ key = "38"
 tp = 8
 n = 8
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -303,7 +307,7 @@ key = "39"
 tp = 92
 n = 93
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -311,7 +315,7 @@ key = "39:comment-restates"
 tp = 81
 n = 82
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -319,7 +323,7 @@ key = "39:docstring-restates"
 tp = 6
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -327,7 +331,7 @@ key = "39:dunder-restates"
 tp = 5
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -335,7 +339,7 @@ key = "41"
 tp = 4
 n = 5
 seed = 20260852
-of = "g4 top-up: five M sites, the majority of three judgments (g3 twice, g4 once) - the g4 judge alone read 3/5"
+of = "judged on 5 sites of merged-calculator by three judges, majority verdict"
 bar = 0.8
 
 [[precision]]
@@ -343,7 +347,7 @@ key = "42"
 tp = 5
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -351,7 +355,7 @@ key = "44"
 tp = 7
 n = 33
 seed = 202608312
-of = "k1: every firing of the narrowed rule on 8 fresh public Python trees h1 never audited (LibCST, hypothesis, sqlalchemy, wagtail, celery, poetry, rich, scrapy), each read at its site; nothing was drawn, so the seed labels the round. 18 of the 26 false positives are one repo helper, LibCST's assertCodemod(input, expected), read as an operand comparison; on h1's own pool the same narrowing reads 48/52 = 0.923 with no true positive lost"
+of = "every firing on 8 fresh public Python repositories (LibCST, hypothesis, sqlalchemy, wagtail, celery, poetry, rich, scrapy); 18 of the 26 false positives are one LibCST test helper"
 bar = 0.7
 
 [[precision]]
@@ -359,7 +363,7 @@ key = "47"
 tp = 5
 n = 6
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -367,7 +371,7 @@ key = "48"
 tp = 4
 n = 5
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2; judged before the prose exemption, which took 15 fp : 4 real on the Python corpus"
+of = "judged on 5 held-out Python repositories, round 4, before the prose exemption that removed 15 false positives for 4 real"
 bar = 0.8
 
 [[precision]]
@@ -375,7 +379,7 @@ key = "49"
 tp = 8
 n = 8
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -383,7 +387,7 @@ key = "50"
 tp = 349
 n = 371
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -391,7 +395,7 @@ key = "54"
 tp = 9
 n = 10
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -399,7 +403,7 @@ key = "55"
 tp = 115
 n = 121
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -407,7 +411,7 @@ key = "56"
 tp = 18
 n = 22
 seed = 20260852
-of = "g4 top-up 9/12 pooled with todo2 9/10 (seed 20260849); the residue is a research toolkit its module docstring declares"
+of = "judged on held-out Python repositories, round 4, pooled with a later 9/10 sample (seed 20260849)"
 bar = 0.8
 
 [[precision]]
@@ -415,7 +419,7 @@ key = "57"
 tp = 16
 n = 17
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -423,7 +427,7 @@ key = "58"
 tp = 57
 n = 61
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -431,7 +435,7 @@ key = "58:invalid-method-override"
 tp = 11
 n = 15
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -439,7 +443,7 @@ key = "58:invalid-return-type"
 tp = 46
 n = 46
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -447,7 +451,7 @@ key = "59"
 tp = 9
 n = 11
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.7
 
 [[precision]]
@@ -455,7 +459,7 @@ key = "60"
 tp = 15
 n = 15
 seed = 202608284
-of = "g4: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 4"
 bar = 0.8
 
 [[precision]]
@@ -463,7 +467,7 @@ key = "53"
 tp = 8
 n = 8
 seed = 202608273
-of = "g3: 5 never-seen clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Python repositories, round 3"
 bar = 0.7
 
 [[precision]]
@@ -471,7 +475,7 @@ key = "9:import-time-effect"
 tp = 12
 n = 12
 seed = 20260834
-of = "corpus + gauntlet clones"
+of = "judged on the corpus and the held-out repositories"
 bar = 0.8
 
 [[precision]]
@@ -479,7 +483,7 @@ key = "rs:11"
 tp = 251
 n = 300
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2; + todo3/clones-rs: the rows a path read as a name added"
+of = "judged on 5 held-out Rust repositories, round 1, plus the rows a later fix to path-as-name reading added"
 bar = 0.8
 
 [[precision]]
@@ -487,7 +491,7 @@ key = "rs:11:clone"
 tp = 103
 n = 121
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2; + todo3/clones-rs: the rows a path read as a name added"
+of = "judged on 5 held-out Rust repositories, round 1, plus the rows a later fix to path-as-name reading added"
 bar = 0.8
 
 [[precision]]
@@ -495,7 +499,7 @@ key = "rs:11:clone-block"
 tp = 148
 n = 179
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2; + todo3/clones-rs: the rows a path read as a name added"
+of = "judged on 5 held-out Rust repositories, round 1, plus the rows a later fix to path-as-name reading added"
 bar = 0.8
 
 [[precision]]
@@ -503,7 +507,7 @@ key = "rs:18"
 tp = 7
 n = 9
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -511,7 +515,7 @@ key = "rs:20"
 tp = 8
 n = 9
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -519,7 +523,7 @@ key = "rs:23"
 tp = 77
 n = 91
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -527,7 +531,7 @@ key = "rs:27"
 tp = 15
 n = 18
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2; todo3 judged the one-concept ceiling's seven new rows (salvo request/response/router, indextree id/arena, gigatoken tiktoken real; salvo swagger_ui/config fp, a serde wire record)"
+of = "judged on 5 held-out Rust repositories, round 1, plus the seven rows the one-concept ceiling added"
 bar = 0.8
 
 [[precision]]
@@ -535,7 +539,7 @@ key = "rs:29"
 tp = 38
 n = 45
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -543,7 +547,7 @@ key = "rs:34"
 tp = 22
 n = 22
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -551,7 +555,7 @@ key = "rs:37"
 tp = 4
 n = 4
 seed = 202608292
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2; todo3 dropped log4rs's fp (an impl on a type it parameterizes) and drew wl-screenrec's TypedObjectId once the monomorphic arm stopped reading an argument-free use as inference"
+of = "judged on 5 held-out Rust repositories, round 1, re-read after the monomorphic arm stopped counting argument-free uses"
 bar = 0.8
 
 [[precision]]
@@ -559,7 +563,7 @@ key = "rs:42"
 tp = 13
 n = 13
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.8
 
 [[precision]]
@@ -567,7 +571,7 @@ key = "rs:47"
 tp = 15
 n = 15
 seed = 202608281
-of = "rs1: 5 never-seen Rust clones + top-up, all findings judged, wave 2"
+of = "judged on 5 held-out Rust repositories, round 1"
 bar = 0.7
 
 [[precision]]
@@ -575,7 +579,7 @@ key = "rs:9"
 tp = 1
 n = 1
 seed = 202608292
-of = "rs2: 5 never-seen Rust clones + 3 never-seen applications + top-up, the rs-2 readings judged, wave 3"
+of = "judged on 5 held-out Rust libraries and 3 held-out Rust applications, round 2"
 bar = 0.8
 
 [[precision]]
@@ -583,7 +587,7 @@ key = "rs:32"
 tp = 11
 n = 11
 seed = 202608301
-of = "todo3/dead-rs: doxx and mcfly read as applications, every row judged at its site"
+of = "every row on doxx and mcfly, read as applications"
 bar = 0.8
 
 [[precision]]
@@ -591,7 +595,7 @@ key = "rs:56"
 tp = 14
 n = 14
 seed = 202608301
-of = "todo3/dead-rs: doxx and mcfly read as applications, every row judged at its site; + todo4/seed-56: gigatoken 10"
+of = "every row on doxx and mcfly, read as applications, plus 10 rows on gigatoken"
 bar = 0.8
 
 [[precision]]
@@ -599,7 +603,7 @@ key = "rs:34:noop-match"
 tp = 1
 n = 1
 seed = 202608292
-of = "rs2: 5 never-seen Rust clones + 3 never-seen applications + top-up, the rs-2 readings judged, wave 3"
+of = "judged on 5 held-out Rust libraries and 3 held-out Rust applications, round 2"
 bar = 0.7
 
 [[precision]]
@@ -607,7 +611,7 @@ key = "rs:48"
 tp = 12
 n = 14
 seed = 202608292
-of = "rs2: 5 never-seen Rust clones + 3 never-seen applications + top-up, the rs-2 readings judged, wave 3; the blind re-admission seed (todo3/seed-48, eight gauntlet clones the exemptions never saw) drew 0 real / 3 fp on the three whose rs oracle ran, n = 3 under its bar and 12/17 = 71 % pooled, so REPORT stands; the dispatch-arm exemption that tally earned was written and priced at 2 fp off (salvo list_json, mcfly handle_init) for 2 real lost (nftables nft.rs:499, salvo handshake.rs:166), 1:1 under its 3:1 bar, and reverted"
+of = "judged on 5 held-out Rust libraries and 3 held-out Rust applications, round 2; a blind re-check on 8 more repositories read 0 real of 3, so the rule stays REPORT"
 bar = 0.8
 
 [[precision]]
@@ -615,7 +619,7 @@ key = "rs:53"
 tp = 1
 n = 2
 seed = 202608292
-of = "rs2: 5 never-seen Rust clones + 3 never-seen applications + top-up, the rs-2 readings judged, wave 3"
+of = "judged on 5 held-out Rust libraries and 3 held-out Rust applications, round 2"
 bar = 0.7
 
 [[precision]]
@@ -623,7 +627,7 @@ key = "rs:59"
 tp = 1
 n = 1
 seed = 202608292
-of = "rs2: 5 never-seen Rust clones + 3 never-seen applications + top-up, the rs-2 readings judged, wave 3"
+of = "judged on 5 held-out Rust libraries and 3 held-out Rust applications, round 2"
 bar = 0.8
 
 [[precision]]
@@ -631,7 +635,7 @@ key = "rs:21"
 tp = 8
 n = 9
 seed = 202608295
-of = "rs4: the AI tree (Godot-CRPG-Prototype) and doxx, every sampled row read at its site; turmoil and salvo were read too (5/6 and 2/3 real) and their `todo!`/`unimplemented!` arms priced at 0 real / 5, so those two macros left the reading"
+of = "every sampled row on Godot-CRPG-Prototype and doxx, round 4; the `todo!` and `unimplemented!` arms read 0 real of 5 on turmoil and salvo and left the rule"
 bar = 0.7
 
 [[precision]]
@@ -639,245 +643,245 @@ key = "rs:39"
 tp = 4
 n = 6
 seed = 202608295
-of = "rs4: the AI tree (Godot-CRPG-Prototype) and doxx, every sampled row read at its site; Godot drew 1 row, so turmoil and salvo joined the pool"
+of = "every sampled row on Godot-CRPG-Prototype, doxx, turmoil and salvo, round 4"
 bar = 0.8
 
 [[recall]]
 key = "1"
 covered = 42
 sites = 169
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "2"
 covered = 7
 sites = 62
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "3"
 covered = 0
 sites = 16
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "6"
 covered = 0
 sites = 53
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "7"
 covered = 0
 sites = 21
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "9"
 covered = 2
 sites = 101
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "11"
 covered = 71
 sites = 295
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "12"
 covered = 16
 sites = 115
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "14"
 covered = 0
 sites = 24
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "18"
 covered = 12
 sites = 38
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "21"
 covered = 0
 sites = 19
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "23"
 covered = 18
 sites = 21
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "24"
 covered = 8
 sites = 74
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "26"
 covered = 8
 sites = 53
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "27"
 covered = 2
 sites = 6
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "29"
 covered = 21
 sites = 32
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "32"
 covered = 35
 sites = 141
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "33"
 covered = 14
 sites = 63
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "34"
 covered = 11
 sites = 97
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "35"
 covered = 3
 sites = 10
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "36"
 covered = 0
 sites = 6
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "37"
 covered = 2
 sites = 24
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "38"
 covered = 1
 sites = 19
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "39"
 covered = 0
 sites = 44
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "40"
 covered = 1
 sites = 6
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "41"
 covered = 0
 sites = 23
-of = "g4 close: 20 gauntlet wave-1 blind lists, same-def match"
+of = "the blind judges' lists on 20 held-out Python repositories, matched by definition"
 
 [[recall]]
 key = "rs:11"
 covered = 18
 sites = 107
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:18"
 covered = 4
 sites = 25
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:20"
 covered = 4
 sites = 11
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:23"
 covered = 32
 sites = 43
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:27"
 covered = 3
 sites = 14
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:29"
 covered = 40
 sites = 41
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:32"
 covered = 0
 sites = 29
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:34"
 covered = 6
 sites = 20
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:37"
 covered = 0
 sites = 18
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:42"
 covered = 7
 sites = 21
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:48"
 covered = 8
 sites = 16
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:53"
 covered = 0
 sites = 5
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:56"
 covered = 0
 sites = 5
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"
 
 [[recall]]
 key = "rs:59"
 covered = 0
 sites = 12
-of = "rs2 close: 8 Rust judges' blind lists (5 clones, 3 applications), same-def match"
+of = "the blind judges' lists on 5 held-out Rust libraries and 3 held-out Rust applications, matched by definition"

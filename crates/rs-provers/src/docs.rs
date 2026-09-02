@@ -1,5 +1,5 @@
-//! `rs/provers.py`'s comment queries: a module's `#[allow]`s, the doc lines
-//! above an item, its header, and what a comment run reads as.
+//! Comment queries: a module's `#[allow]`s, the doc lines above an item,
+//! its header, and what a comment run reads as.
 
 use super::*;
 

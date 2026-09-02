@@ -1,5 +1,5 @@
-//! `tests/rules/test_oracle_rules.py`, the #2, #5 and #10 classes. Every test
-//! here builds an in-process checker at the mini repo's root.
+//! The oracle-backed trust rules, #2, #5 and #10. Every test here builds an
+//! in-process checker at the mini repo's root.
 
 use std::collections::BTreeSet;
 
@@ -9,7 +9,7 @@ use sightline_py_provers::oracle::Oracle;
 use sightline_testkit::{PyStack, build, run_rule, run_rule_on};
 use tempfile::TempDir;
 
-/// The mini repo with a checker at the same root (`conftest.py:run_oracle_rule`).
+/// The mini repo with a checker at the same root.
 fn with_oracle(files: &[(&str, &str)]) -> (TempDir, PyStack) {
     let (dir, mut stack) = build(files);
     let root = Utf8Path::from_path(dir.path()).expect("a utf-8 temp path");

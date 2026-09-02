@@ -1,7 +1,6 @@
-//! Port of `provers/spend.py` (codemap 3.3): what a call spends - the cost a
-//! caller cannot see from the signature, the catalog's world classes minus
-//! `logs` (logging and printing are io, and cost a caller nothing). Read by
-//! #59.
+//! What a call spends - the cost a caller cannot see from the signature, the
+//! catalog's world classes minus `logs` (logging and printing are io, and
+//! cost a caller nothing). Read by #59.
 
 use std::collections::BTreeSet;
 
@@ -25,8 +24,7 @@ fn handed_in(func: &Expr, params: &BTreeSet<String>) -> bool {
 /// The nodes a body runs: everything under it except a decorated nested def -
 /// a handler a factory registers spends when the handler runs, not when the
 /// factory does. An undecorated nested def is the body's own. The stack pops
-/// what it pushed last, as the Python generator does, so the first spend a
-/// caller sees is the same one.
+/// what it pushed last, which pins the order a caller sees.
 pub fn runs_under<'t>(node: Cn<'t>) -> Vec<Cn<'t>> {
     let mut stack = vec![node];
     let mut out = Vec::new();
