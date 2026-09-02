@@ -365,7 +365,7 @@ pub const RULE_32: Rule = Rule {
     record: RuleRecord {
         id: "32",
         slug: "dead-symbols",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "unreferenced symbols/params/imports by name-level liveness; a \
@@ -440,7 +440,7 @@ pub const RULE_60: Rule = Rule {
     record: RuleRecord {
         id: "60",
         slug: "dead-by-graph",
-        family: "C",
+        family: "context",
         engine_class: "WP",
         posture: Posture::Report,
         meaning: "a prod def whose name still occurs but which no call site in the \
@@ -560,7 +560,7 @@ pub const RULE_56: Rule = Rule {
     record: RuleRecord {
         id: "56",
         slug: "test-only-symbol",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "unpublished prod symbols every reference to which sits under a test \
@@ -686,7 +686,7 @@ pub const RULE_34: Rule = Rule {
     record: RuleRecord {
         id: "34",
         slug: "noop-code",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "commented-out code; no-op re-raise handlers; a broad except \

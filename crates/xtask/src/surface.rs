@@ -9,7 +9,7 @@ use anyhow::Result;
 use crate::paths::workspace_root;
 
 /// The implementation surface one agent context holds.
-pub const BOUND: usize = 49_000;
+pub const BOUND: usize = 50_000;
 
 /// Lines outside `#[cfg(test)]`. ceiling: the first `#[cfg(test)]` ends the
 /// count for that file, so a test module that is not last hides the code

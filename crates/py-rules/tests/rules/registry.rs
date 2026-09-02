@@ -85,9 +85,12 @@ fn slugs_unique_and_metadata_present() {
     assert_eq!(by_slug.len(), slugs.len());
 
     for rule in RULES {
-        assert!(["A", "B", "C", "P", "T", "Z"].contains(&rule.record.family));
+        assert!(
+            ["trust", "surface", "context", "perf", "tests", "checker"]
+                .contains(&rule.record.family)
+        );
         assert!(!rule.record.meaning.is_empty() && !rule.record.goal.is_empty());
-        if rule.record.family == "P" {
+        if rule.record.family == "perf" {
             // no static perf finding may ever gate
             assert_eq!(rule.record.posture, Posture::Report);
         }

@@ -21,19 +21,18 @@ pub fn run(
     langs: &Languages,
     prune: bool,
 ) -> Result<u8> {
-    let path = root.join(ratchet::BASELINE_NAME);
     let collected = pipeline::collect(root, config, registry, langs, false, None)?;
     let kept = ratcheted(&collected.kept, registry);
-    let old = ratchet::load(&path)?;
+    let old = ratchet::load(root)?;
     if prune && old.is_none() {
         eprintln!("no baseline to prune");
         return Ok(1);
     }
     let counts = match &old {
-        Some(old) if prune => ratchet::prune(&kept, &old.counts),
-        _ => ratchet::snapshot(&kept),
+        Some(old) if prune => ratchet::prune(&kept, &old.counts, &collected.repo),
+        _ => ratchet::snapshot(&kept, &collected.repo),
     };
-    let line = match &old {
+    let mut line = match &old {
         Some(old) if prune => format!(
             "pruned baseline: {} -> {} keys\n",
             old.counts.len(),
@@ -42,10 +41,16 @@ pub fn run(
         _ => format!(
             "baseline written: {} keys, {} findings\n",
             counts.len(),
-            counts.values().sum::<u32>()
+            counts.values().map(|e| e.count).sum::<u32>()
         ),
     };
-    ratchet::save(&path, &Baseline { counts })?;
+    if ratchet::save(root, &Baseline { counts })? {
+        line.push_str(&format!(
+            "{} replaces {}; commit the one and the removal of the other\n",
+            ratchet::BASELINE_NAME,
+            ratchet::LEGACY_NAME
+        ));
+    }
     std::io::stdout().write_all(line.as_bytes())?;
     Ok(0)
 }

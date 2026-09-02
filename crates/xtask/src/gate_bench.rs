@@ -11,7 +11,7 @@ use std::process::Command;
 use std::time::Instant;
 
 use anyhow::{Result, bail};
-use serde_json::{Value, json};
+use serde_json::Value;
 
 use crate::corpus::{self, Target};
 use crate::worktree::utf8;
@@ -134,18 +134,10 @@ pub fn run(t: &Target, audit_json: &Path, suffix: &str) -> Result<u8> {
     // a real baseline, from the audit itself, so the load and the diff really
     // run, with empty counts so blocking findings still surface for the
     // subset half
-    let counts: serde_json::Map<String, Value> = findings(&audit)
-        .map(|f| {
-            (
-                format!("{}|{}", text(f, "rule"), text(f, "symbol")),
-                json!(0),
-            )
-        })
+    let lines: Vec<String> = findings(&audit)
+        .map(|f| format!("{}|{} 0\n", text(f, "rule"), text(f, "symbol")))
         .collect();
-    std::fs::write(
-        &baseline,
-        serde_json::to_string(&json!({"version": 2, "counts": counts}))?,
-    )?;
+    std::fs::write(&baseline, lines.concat())?;
     let verdict = measure(t, &diff, &keys);
     std::fs::remove_file(&baseline)?;
     verdict
@@ -271,6 +263,8 @@ pub fn main(args: &[&str]) -> Result<u8> {
 
 #[cfg(test)]
 mod tests {
+    use serde_json::json;
+
     use super::*;
 
     #[test]

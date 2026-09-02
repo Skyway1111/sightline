@@ -9,6 +9,7 @@ pub mod catalog;
 pub mod clones;
 pub mod complexity;
 pub mod config;
+pub mod dump;
 pub mod edits;
 pub mod findings;
 pub mod git;

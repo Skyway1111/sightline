@@ -41,7 +41,7 @@ pub const RULE_32: Rule = Rule {
     record: RuleRecord {
         id: "32",
         slug: "dead-symbols",
-        family: "C",
+        family: "context",
         engine_class: "WP",
         posture: Posture::Ratchet,
         meaning: "a root-reachable `pub` item no resolved edge reaches, over a passed closed \
@@ -102,7 +102,7 @@ pub const RULE_56: Rule = Rule {
     record: RuleRecord {
         id: "56",
         slug: "test-only-symbol",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "a root-reachable `pub` item, over a passed closed world, every resolved edge \

@@ -13,11 +13,9 @@ use serde_json::Value;
 /// Pseudo-observations the tier bar counts for.
 pub const PRIOR_WEIGHT: u32 = 4;
 
-/// P(real) a sample of n supports, on one scale with the unmeasured.
-///
-/// The posterior mean under a prior of `PRIOR_WEIGHT` observations at `bar`,
-/// so n = 0 sits exactly at the bar, 5/5 (0.87 at a 0.7 bar) ranks below
-/// 91/97 (0.93), and 4/5 (0.76) ranks above an unjudged rule.
+/// The posterior over P(real) a sample of `tp` in `n` supports: `(mean,
+/// sd)` under a Beta prior of `PRIOR_WEIGHT` observations at `bar`. n = 0
+/// sits at the bar with the prior's own spread.
 #[must_use]
 #[allow(
     clippy::suboptimal_flops,
@@ -25,8 +23,31 @@ pub const PRIOR_WEIGHT: u32 = 4;
               finding: the audit is identical byte for byte at one thread and \
               at every core, with expected values pinned in tests"
 )]
-pub fn shrunk(tp: u32, n: u32, bar: f64) -> f64 {
-    (f64::from(tp) + f64::from(PRIOR_WEIGHT) * bar) / (f64::from(n) + f64::from(PRIOR_WEIGHT))
+pub fn posterior(tp: u32, n: u32, bar: f64) -> (f64, f64) {
+    let a = f64::from(tp) + f64::from(PRIOR_WEIGHT) * bar;
+    let b = f64::from(n - tp) + f64::from(PRIOR_WEIGHT) * (1.0 - bar);
+    let mean = a / (a + b);
+    (mean, (mean * (1.0 - mean) / (a + b + 1.0)).sqrt())
+}
+
+/// What `rank` sorts on: the posterior mean less one standard deviation.
+///
+/// A lower bound a sample of five cannot clear the way two hundred can. 5/5
+/// at a 0.8 bar scores 0.82, 232/256 scores 0.89, and 0/0 scores the bar
+/// less the prior's spread.
+#[must_use]
+pub fn score(tp: u32, n: u32, bar: f64) -> f64 {
+    let (mean, sd) = posterior(tp, n, bar);
+    mean - sd
+}
+
+/// The 95% interval of the posterior, clamped to the unit: what `explain`
+/// and the catalog print beside a fraction.
+#[must_use]
+pub fn interval(tp: u32, n: u32, bar: f64) -> (f64, f64) {
+    let (mean, sd) = posterior(tp, n, bar);
+    let half = 1.96 * sd;
+    ((mean - half).max(0.0), (mean + half).min(1.0))
 }
 
 /// One hand-judged seeded sample: `tp` of `n` true, judged at `bar`.
@@ -41,6 +62,21 @@ pub struct Sample {
 }
 
 impl Sample {
+    /// The bar this sample was judged against, the heuristic one where the
+    /// row names none.
+    #[must_use]
+    pub fn bar(&self) -> f64 {
+        self.bar.unwrap_or(0.7)
+    }
+
+    /// `lo-hi` at two decimals: how the roster and the catalog spell the
+    /// interval beside `tp/n`.
+    #[must_use]
+    pub fn spelled_interval(&self) -> String {
+        let (lo, hi) = interval(self.tp, self.n, self.bar());
+        format!("{lo:.2}-{hi:.2}")
+    }
+
     /// The JSON body a finding reports, in this record's field order.
     #[must_use]
     pub fn json(&self) -> IndexMap<&'static str, Value> {
@@ -52,6 +88,8 @@ impl Sample {
         if let Some(bar) = self.bar {
             out.insert("bar", Value::from(bar));
         }
+        let (lo, hi) = interval(self.tp, self.n, self.bar());
+        out.insert("interval", Value::from(vec![lo, hi]));
         out
     }
 }
@@ -232,10 +270,27 @@ mod tests {
                   makes an audit identical byte for byte; an epsilon here \
                   would let the expression be rewritten without a test noticing"
     )]
-    fn shrunk_is_the_posterior_mean() {
-        assert_eq!(shrunk(0, 0, 0.7), 0.7);
-        assert_eq!(shrunk(66, 80, 0.7), 0.819_047_619_047_619);
-        assert_eq!(shrunk(44, 46, 0.95), 0.956);
+    fn the_score_is_the_posterior_mean_less_one_sd() {
+        // no sample: the bar, less the prior's own spread
+        let (mean, sd) = posterior(0, 0, 0.7);
+        assert_eq!(mean, 0.7);
+        assert_eq!(score(0, 0, 0.7), mean - sd);
+        assert!(sd > 0.20 && sd < 0.21, "{sd}");
+        // the size of the sample is what the sd prices: 5/5 sits below
+        // 232/256 at one bar, and a thin sample below the bar it beat
+        assert!(score(5, 5, 0.8) < score(232, 256, 0.8));
+        assert!(score(5, 5, 0.8) > 0.82 && score(5, 5, 0.8) < 0.83);
+        assert!(score(232, 256, 0.8) > 0.88 && score(232, 256, 0.8) < 0.89);
+        assert_eq!(posterior(66, 80, 0.7).0, 0.819_047_619_047_619);
+        assert_eq!(posterior(44, 46, 0.95).0, 0.956);
+    }
+
+    #[test]
+    fn the_interval_is_clamped_to_the_unit() {
+        let (lo, hi) = interval(5, 5, 0.8);
+        assert!(lo > 0.73 && lo < 0.74, "{lo}");
+        assert_eq!(hi, 1.0);
+        assert_eq!(rule_precision()["50"].spelled_interval(), "0.91-0.96");
     }
 
     #[test]

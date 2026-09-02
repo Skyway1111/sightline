@@ -19,12 +19,15 @@ The words this document and `benchmarks.md` use as terms.
 
 | Term | Meaning |
 | --- | --- |
-| Arm | One shape a rule reports, named in the finding's slug suffix. A rule's precision is judged per arm where the arms differ |
+| Arm | One shape a rule reports, named in the finding's slug suffix. A rule's precision is judged per arm where the arms differ. `explain` calls an arm's rows its findings |
+| Family | What a rule prices, one of six words: trust, surface, context, perf, tests, checker |
 | Tier | How the finding was proved: proved, indexed or heuristic. Each tier has a precision bar |
 | Posture | What `gate` does with a rule: GATE blocks, RATCHET blocks what is new against the baseline, REPORT never blocks |
+| Scope | Which gate runs a rule: a `file` rule reads one file and runs in the fast gate, a `repo` rule needs the whole tree |
+| Shape | The digest of a symbol's body the baseline keeps beside its name, so a rename or a move keeps its allowance |
 | Corpus | The six public repositories `crates/xtask/corpus.toml` pins, audited by every measurement |
 | Clean repository | The corpus repository per language that a blocking rule must stay silent on. A GATE rule that fires there is demoted |
-| Held-out repositories | Public repositories drawn by seed for one round and never used to tune a rule. Also called the gauntlet |
+| Held-out repositories | Public repositories drawn by seed for one round and never read to tune a rule. Also called the gauntlet |
 | Round | One judged measurement: a manifest of held-out repositories, a seed, and hand verdicts on a sample of findings |
 | Judged sample | The `tp` of `n` findings a round read at their sites, in `data/precision.toml` |
 | Restriction | A narrowing of a rule's arms, accepted when it removes three or more judged false positives per true positive lost |
@@ -123,9 +126,13 @@ parser. `cargo xtask fence` proves three things:
 ## Language seam
 
 One `Stack` per source language, and `detect(root)` picks the stacks a root
-runs. A `Cargo.toml` anywhere the walk reaches selects Rust, so a tree whose
-crates sit below the root selects it too. A `pyproject.toml`, a `setup.py` or
-any `.py` file selects Python. A root that marks neither runs Python.
+runs. A `Cargo.toml` anywhere the walk reaches marks Rust, so a tree whose
+crates sit below the root marks it too. A `pyproject.toml` or a `setup.py`
+anywhere marks Python; `.py` files alone leave Python loose. The marked
+languages run. Where none is marked the loose ones run, and where none is
+loose either Python runs, so an empty tree still reports a header. A loose
+language beside a marked one is a stray script: it does not run, and the
+header says so.
 
 The walk is language-neutral and belongs to no stack: `discover` lists the
 auditable files once and each stack indexes the suffix it owns.
@@ -196,9 +203,11 @@ Facts passes run per module under rayon and merge in discovery order. Rules run
 under rayon in one group, each reading memoized accessors and a cloned salsa
 snapshot, then #5, #10 and the fix emitters run in sequence, because a world
 takes the database by mutable reference. Findings concatenate in registry order
-and one total order sorts them: measured chance the finding is real, then
-position within the rule, then the complexity prior, then location, then rule
-id. Tier is provenance, not a sort key.
+and one total order sorts them: a lower bound on the measured chance the
+finding is real (the posterior mean of the judged sample less one standard
+deviation, so five of five sits under two hundred of two hundred and twenty),
+then position within the rule, then the complexity prior, then location, then
+rule id. Tier is provenance, not a sort key.
 
 Provenance notes would otherwise record which thread reached a lazy accessor
 first, so each note-producing accessor keeps its notes in its own cell and the
@@ -255,12 +264,12 @@ measured precision. The record on the function is the only home for that.
 
 | Family | Ids | Home | What it prices |
 | --- | --- | --- | --- |
-| **A** trust and boundaries | 1-3, 5-10, 33, 40, 49, 50, 53 | `trust.rs`, `returns.rs` | Declared contracts against what callers prove. #5 lifts and #10 widens, both through worlds |
-| **B** surface count | 11, 12, 14, 18, 20, 21, 23, 37, 48, 54, 55 | `surface.rs`, `idioms.rs`, mining in `core` | Clones, idioms, clumps, folds, complexity. #11's block groups are the maximal repeats of a suffix array over per-statement blind digests |
-| **C** context economics | 24, 26-29, 32, 34-36, 38, 39, 56, 57, 59, 60 | `context.rs`, `imports.rs`, `dead.rs`, `comments.rs`, `records.rs` | What a reader must ingest, module topology, and weight that nothing ships |
-| **P** performance | 41 | `perf.rs`, hot set from `hotness.rs` | Catalog shapes inside the hot set alone. Each entry ships a micro-benchmark proving 2x or better |
-| **T** tests quality | 42, 44, 47 | `tests_quality.rs` | Binary structural shapes. A verdict is what mutation testing counts |
-| **Z** the checker's own verdicts | 58 | `oracle_errors.rs` | Live type errors and possibly-unbound reads, forwarded and never derived again. The claim is the checker's, so every such finding is ungrounded and REPORT |
+| **trust** | 1-3, 5-10, 33, 40, 49, 50, 53 | `trust.rs`, `returns.rs` | Declared contracts against what callers prove. #5 lifts and #10 widens, both through worlds |
+| **surface** | 11, 12, 14, 18, 20, 21, 23, 37, 48, 54, 55 | `surface.rs`, `idioms.rs`, mining in `core` | Clones, idioms, clumps, folds, complexity. #11's block groups are the maximal repeats of a suffix array over per-statement blind digests |
+| **context** | 24, 26-29, 32, 34-36, 38, 39, 56, 57, 59, 60 | `context.rs`, `imports.rs`, `dead.rs`, `comments.rs`, `records.rs` | What a reader must ingest, module topology, and weight that nothing ships |
+| **perf** | 41 | `perf.rs`, hot set from `hotness.rs` | Catalog shapes inside the hot set alone. Each entry ships a micro-benchmark proving 2x or better |
+| **tests** | 42, 44, 47 | `tests_quality.rs` | Binary structural shapes. A verdict is what mutation testing counts |
+| **checker** | 58 | `oracle_errors.rs` | Live type errors and possibly-unbound reads, forwarded and never derived again. The claim is the checker's, so every such finding is ungrounded and REPORT |
 
 What another linter already covers is stated on the rule record and printed by
 `explain`: ruff F822 for #32's `__all__` names, ruff PERF for #41's cold glue,
@@ -270,8 +279,8 @@ the ty rule set for #58.
 
 | Location | Meaning |
 | --- | --- |
-| `.sightline-baseline.json` | RATCHET keys and counts, the only posture written |
-| `sightline.toml` | This repository's own config, and the cargo version pin the Rust oracle expects |
+| `.sightline-baseline` | RATCHET keys, counts and shapes, the only posture written; one line per key |
+| `sightline.toml` | This repository's own config |
 | `data/precision.toml` | Measured precision and recall per rule and arm. Compiled into the binary, so a release answers `explain` with no checkout |
 | `data/retired.toml` | The rows of the trail that retire an id, extracted by `cargo xtask retired` |
 | `crates/xtask/corpus.toml` | The corpus table: name, root, config, language, role, and the commit the recorded measurements were taken at. Every measurement command reads it and no second list |

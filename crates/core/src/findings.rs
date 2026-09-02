@@ -9,7 +9,7 @@ use std::sync::Arc;
 use indexmap::IndexMap;
 use serde_json::{Map, Value, json};
 
-use crate::precision::{Sample, rule_sample, shrunk};
+use crate::precision::{Sample, rule_sample, score};
 
 /// Posix path under the repo root.
 pub type Rel = Arc<str>;
@@ -24,24 +24,26 @@ pub enum Tier {
 }
 
 impl Tier {
+    #[must_use]
     // sightline-ok: 11 - an enum's match table is its own name
-    pub fn value(self) -> &'static str {
+    pub const fn value(self) -> &'static str {
         match self {
-            Tier::Proved => "proved",
-            Tier::Indexed => "indexed",
-            Tier::Heuristic => "heuristic",
+            Self::Proved => "proved",
+            Self::Indexed => "indexed",
+            Self::Heuristic => "heuristic",
         }
     }
 
     /// `TIER_BAR`: the precision a tier is held to, and what `rank` assumes
     /// of a rule no round has judged. The one home for the bars
     /// `benchmarks.md` quotes.
+    #[must_use]
     // sightline-ok: 11 - an enum's match table is its own name
-    pub fn bar(self) -> f64 {
+    pub const fn bar(self) -> f64 {
         match self {
-            Tier::Proved => 0.95,
-            Tier::Indexed => 0.8,
-            Tier::Heuristic => 0.7,
+            Self::Proved => 0.95,
+            Self::Indexed => 0.8,
+            Self::Heuristic => 0.7,
         }
     }
 }
@@ -63,29 +65,31 @@ pub enum Engine {
 }
 
 impl Engine {
-    pub fn value(self) -> &'static str {
+    #[must_use]
+    pub const fn value(self) -> &'static str {
         match self {
-            Engine::Counterfactual => "counterfactual",
-            Engine::Oracle => "oracle",
-            Engine::Wp => "wp",
-            Engine::Idx => "idx",
-            Engine::OracleUngrounded => "oracle-ungrounded",
-            Engine::Ast => "ast",
+            Self::Counterfactual => "counterfactual",
+            Self::Oracle => "oracle",
+            Self::Wp => "wp",
+            Self::Idx => "idx",
+            Self::OracleUngrounded => "oracle-ungrounded",
+            Self::Ast => "ast",
         }
     }
 
     /// `TIER_BY_ENGINE`.
-    pub fn tier(self) -> Tier {
+    #[must_use]
+    pub const fn tier(self) -> Tier {
         match self {
-            Engine::Counterfactual | Engine::Oracle => Tier::Proved,
-            Engine::Wp | Engine::Idx => Tier::Indexed,
-            Engine::OracleUngrounded | Engine::Ast => Tier::Heuristic,
+            Self::Counterfactual | Self::Oracle => Tier::Proved,
+            Self::Wp | Self::Idx => Tier::Indexed,
+            Self::OracleUngrounded | Self::Ast => Tier::Heuristic,
         }
     }
 }
 
 /// Constructed by prover and facts machinery, carried by findings.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Evidence {
     Ast {
         detail: String,
@@ -111,29 +115,32 @@ pub enum Evidence {
 
 impl Evidence {
     /// What an AST rule reports where the site is the whole evidence.
-    pub fn ast() -> Evidence {
-        Evidence::Ast {
+    #[must_use]
+    pub const fn ast() -> Self {
+        Self::Ast {
             detail: String::new(),
         }
     }
 
     /// What an index rule reports where the site is the whole evidence.
-    pub fn idx() -> Evidence {
-        Evidence::Idx {
+    #[must_use]
+    pub const fn idx() -> Self {
+        Self::Idx {
             detail: String::new(),
         }
     }
 
-    pub fn engine(&self) -> Engine {
+    #[must_use]
+    pub const fn engine(&self) -> Engine {
         match self {
-            Evidence::Ast { .. } => Engine::Ast,
-            Evidence::Idx { .. } => Engine::Idx,
-            Evidence::Wp { .. } => Engine::Wp,
-            Evidence::Oracle { grounded: true, .. } => Engine::Oracle,
-            Evidence::Oracle {
+            Self::Ast { .. } => Engine::Ast,
+            Self::Idx { .. } => Engine::Idx,
+            Self::Wp { .. } => Engine::Wp,
+            Self::Oracle { grounded: true, .. } => Engine::Oracle,
+            Self::Oracle {
                 grounded: false, ..
             } => Engine::OracleUngrounded,
-            Evidence::Counterfactual { .. } => Engine::Counterfactual,
+            Self::Counterfactual { .. } => Engine::Counterfactual,
         }
     }
 }
@@ -186,11 +193,13 @@ pub struct Finding {
 }
 
 impl Finding {
-    pub fn engine(&self) -> Engine {
+    #[must_use]
+    pub const fn engine(&self) -> Engine {
         self.evidence.engine()
     }
 
-    pub fn tier(&self) -> Tier {
+    #[must_use]
+    pub const fn tier(&self) -> Tier {
         self.engine().tier()
     }
 }
@@ -200,8 +209,9 @@ impl Finding {
 pub struct Sink(pub Vec<Finding>);
 
 impl Sink {
-    pub fn new() -> Sink {
-        Sink(Vec::new())
+    #[must_use]
+    pub const fn new() -> Self {
+        Self(Vec::new())
     }
 
     pub fn push(&mut self, f: Finding) {
@@ -209,21 +219,24 @@ impl Sink {
     }
 }
 
-/// What the finding is expected to be worth: the rule's (or arm's) judged
-/// sample shrunk toward its tier's bar, the bar itself where no round judged
-/// one. One scale for both, so a thin perfect sample neither owns the head
-/// nor sinks below the unmeasured.
+/// What the finding is expected to be worth.
+///
+/// The lower bound `score` puts on the rule's (or arm's) judged sample under
+/// its tier's bar, and on an empty sample where no round judged one. One
+/// scale for both, so a thin perfect sample owns neither the head nor the
+/// tail.
+#[must_use]
 pub fn p_real(f: &Finding) -> f64 {
     let bar = f.tier().bar();
-    match rule_sample(f.rule, &f.cause, f.lang) {
-        Some(s) => shrunk(s.tp, s.n, bar),
-        None => bar,
-    }
+    let (tp, n) = rule_sample(f.rule, &f.cause, f.lang).map_or((0, 0), |s| (s.tp, s.n));
+    score(tp, n, bar)
 }
 
-/// What a consumer may weight the finding by: the rule's (or arm's) own
-/// judged sample, `None` where no round judged one. A tier is provenance,
-/// never a measurement: its old samples were drawn over since-retired rules.
+/// What a consumer may weight the finding by.
+///
+/// The rule's (or arm's) own judged sample, `None` where no round judged
+/// one. A tier is provenance, never a measurement: its old samples were
+/// drawn over since-retired rules.
 pub fn precision(f: &Finding) -> Option<IndexMap<&'static str, Value>> {
     rule_sample(f.rule, &f.cause, f.lang).map(Sample::json)
 }
@@ -253,6 +266,7 @@ fn edits_json(edits: &[SpanEdit]) -> Value {
 }
 
 /// One row of the `raw` dump layer; both stacks print it.
+#[must_use]
 pub fn finding_json(f: &Finding) -> Value {
     let mut row = Map::new();
     row.insert("rule".into(), Value::from(f.rule));
@@ -268,14 +282,13 @@ pub fn finding_json(f: &Finding) -> Value {
     row.insert("salience".into(), Value::from(f.salience));
     row.insert(
         "fix".into(),
-        match &f.fix {
-            None => Value::Null,
-            Some(fix) => json!({
+        f.fix.as_ref().map_or(Value::Null, |fix| {
+            json!({
                 "rel": &*fix.rel,
                 "edits": edits_json(&fix.edits),
                 "imports": fix.imports,
-            }),
-        },
+            })
+        }),
     );
     Value::Object(row)
 }
@@ -284,15 +297,15 @@ pub fn finding_json(f: &Finding) -> Value {
 pub(crate) mod tests {
     use super::*;
 
-    pub(crate) fn ast() -> Evidence {
+    pub fn ast() -> Evidence {
         Evidence::ast()
     }
 
-    pub(crate) fn idx() -> Evidence {
+    pub fn idx() -> Evidence {
         Evidence::idx()
     }
 
-    pub(crate) fn finding(rule: &'static str, evidence: Evidence) -> Finding {
+    pub fn finding(rule: &'static str, evidence: Evidence) -> Finding {
         Finding {
             rule,
             site: Site {
@@ -365,22 +378,23 @@ pub(crate) mod tests {
             cause: "commented-code:m.f:1".into(),
             ..finding("34", ast())
         };
-        assert_eq!(p_real(&arm), 0.947_826_086_956_521_8);
-        assert_eq!(p_real(&finding("1", ast())), 0.819_047_619_047_619);
-        assert_eq!(p_real(&finding("3", idx())), 0.8);
+        assert_eq!(p_real(&arm), score(19, 19, 0.7));
+        assert_eq!(p_real(&finding("1", ast())), score(66, 80, 0.7));
+        // no round judged #3: an empty sample at the indexed bar
+        assert_eq!(p_real(&finding("3", idx())), score(0, 0, 0.8));
     }
 
     #[test]
     fn p_real_shrinks_toward_the_tier_bar_not_the_samples_own() {
         // #5 is 44/46 judged at bar 0.8, but its evidence is proved: the
-        // prior is TIER_BAR[PROVED], (44 + 4 * 0.95) / 50
+        // prior is TIER_BAR[PROVED]
         let f = finding(
             "5",
             Evidence::Counterfactual {
                 receipt: "r".into(),
             },
         );
-        assert_eq!(p_real(&f), 0.956);
+        assert_eq!(p_real(&f), score(44, 46, 0.95));
     }
 
     #[test]
@@ -392,7 +406,7 @@ pub(crate) mod tests {
             cause: "clone".into(),
             ..finding("11", idx())
         };
-        assert_eq!(p_real(&f), 0.904_615_384_615_384_6);
+        assert_eq!(p_real(&f), score(232, 256, 0.8));
     }
 
     #[test]
@@ -401,7 +415,7 @@ pub(crate) mod tests {
         let p = precision(&finding("2", ast())).unwrap();
         assert_eq!(
             p.keys().copied().collect::<Vec<_>>(),
-            ["tp", "n", "seed", "of", "bar"]
+            ["tp", "n", "seed", "of", "bar", "interval"]
         );
         assert_eq!(p["tp"], 11);
     }
@@ -412,7 +426,7 @@ pub(crate) mod tests {
             lang: "rs",
             ..finding("11", idx())
         };
-        assert_eq!(p_real(&rs), 0.836_184_210_526_315_8);
-        assert_eq!(p_real(&finding("11", idx())), 0.904_615_384_615_384_6);
+        assert_eq!(p_real(&rs), score(251, 300, 0.8));
+        assert_eq!(p_real(&finding("11", idx())), score(232, 256, 0.8));
     }
 }

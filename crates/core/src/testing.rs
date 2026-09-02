@@ -15,7 +15,8 @@ use indexmap::{IndexMap, IndexSet};
 use crate::config::Config;
 use crate::findings::{Finding, Qname, Rel, Sink};
 use crate::lang::{
-    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Repo, Stack, Timing,
+    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Presence, Repo, Stack,
+    Timing,
 };
 use crate::registry::Registry;
 use crate::rule::{Posture, RuleRecord, RuleSet, Scope};
@@ -49,8 +50,14 @@ impl Language for Synthetic {
         self.suffix
     }
 
-    fn detect(&self, root: &Utf8Path) -> bool {
-        root.join(self.marker).is_file()
+    fn detect(&self, root: &Utf8Path) -> Presence {
+        if root.join(self.marker).is_file() {
+            Presence::Marked
+        } else if crate::walk::any_name(root, |n| n.ends_with(self.suffix)) {
+            Presence::Loose
+        } else {
+            Presence::Absent
+        }
     }
 
     fn build(
@@ -191,14 +198,20 @@ pub fn two_language_repo() -> Repo {
 /// the product for a judged rule to earn and none holds it since #31's
 /// burial, so the fixture is the only place render and `gate` meet one.
 const RECORDS: &[(&str, &str, &str, Posture, &str)] = &[
-    ("1", "weak-boundary-types", "A", Posture::Ratchet, "py"),
-    ("3", "contract-implied-guard", "A", Posture::Ratchet, "py"),
-    ("6", "dishonest-accessor", "A", Posture::Ratchet, "py"),
-    ("11", "structural-clones", "B", Posture::Ratchet, "py"),
-    ("11", "structural-clones", "B", Posture::Report, "rs"),
-    ("41", "perf-catalog", "P", Posture::Report, "py"),
-    ("42", "assertion-free-test", "T", Posture::Ratchet, "py"),
-    ("99", "gate-fixture", "C", Posture::Gate, "py"),
+    ("1", "weak-boundary-types", "trust", Posture::Ratchet, "py"),
+    (
+        "3",
+        "contract-implied-guard",
+        "trust",
+        Posture::Ratchet,
+        "py",
+    ),
+    ("6", "dishonest-accessor", "trust", Posture::Ratchet, "py"),
+    ("11", "structural-clones", "surface", Posture::Ratchet, "py"),
+    ("11", "structural-clones", "surface", Posture::Report, "rs"),
+    ("41", "perf-catalog", "perf", Posture::Report, "py"),
+    ("42", "assertion-free-test", "tests", Posture::Ratchet, "py"),
+    ("99", "gate-fixture", "context", Posture::Gate, "py"),
 ];
 
 /// # Panics

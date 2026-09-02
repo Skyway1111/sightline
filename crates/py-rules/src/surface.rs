@@ -5,7 +5,7 @@
 //! #12 is `idioms.rs`; the clone mining is `py_provers::clones`.
 //!
 //! file-length-ok: one file per rule family is this crate's shape, and a
-//! RuleRecord lives beside the function it describes. Splitting family B by
+//! RuleRecord lives beside the function it describes. Splitting the surface rules by
 //! size would put a record and its rule in two places.
 
 use std::collections::{BTreeSet, HashMap, HashSet};
@@ -15,7 +15,6 @@ use ruff_python_ast::visitor::transformer::{Transformer, walk_expr};
 use ruff_python_ast::{CmpOp, Expr, ExprCall, ExprContext, Parameter, Pattern, Stmt};
 
 use sightline_core::clones::digest;
-use sightline_core::complexity::CC_THRESHOLD;
 use sightline_core::findings::{Evidence, Finding, Qname, Rel, Sink, Site, SpanEdit};
 use sightline_core::pytext;
 use sightline_core::rule::{Posture, RuleRecord, Scope, owner_list};
@@ -55,7 +54,7 @@ pub const RULE_11: Rule = Rule {
     record: RuleRecord {
         id: "11",
         slug: "structural-clones",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "AST-normalized T2 clone groups (whole function, statement block, \
@@ -160,8 +159,19 @@ fn clone_finding(
 /// The qnames a clone group's message lists, in one order on every platform:
 /// a group's members reach a rule in discovery order, which the walk spells
 /// differently on Windows and on Unix.
-fn owners(members: &[Member]) -> Vec<&str> {
-    let mut out: Vec<&str> = members.iter().map(|m| &*m.symbol).collect();
+/// Each copy as `qname L<line>`, so a reader opens the other copies without
+/// a search.
+fn owners(facts: &RepoFacts<'_>, members: &[Member]) -> Vec<String> {
+    let mut out: Vec<String> = members
+        .iter()
+        .map(|m| {
+            format!(
+                "{} L{}",
+                m.symbol,
+                facts.modules[&m.module].line_of(m.nodes[0])
+            )
+        })
+        .collect();
     out.sort_unstable();
     out.dedup();
     out
@@ -198,7 +208,7 @@ fn rule_11(facts: &RepoFacts<'_>, provers: &Provers, out: &mut Sink) {
             None => count as f64,
             Some(age) => (count as i64 * age) as f64,
         };
-        let owners = owners(&group.members);
+        let owners = owners(facts, &group.members);
         let listed = owner_list(&owners);
         for member in &group.members {
             let module = &facts.modules[&member.module];
@@ -230,7 +240,7 @@ fn rule_11(facts: &RepoFacts<'_>, provers: &Provers, out: &mut Sink) {
         }
         let count = group.members.len();
         let stmts = first.nodes.len();
-        let owners = owners(&group.members);
+        let owners = owners(facts, &group.members);
         let listed = owner_list(&owners);
         for member in &group.members {
             let module = &facts.modules[&member.module];
@@ -254,7 +264,7 @@ fn rule_11(facts: &RepoFacts<'_>, provers: &Provers, out: &mut Sink) {
         let count = group.members.len();
         let anchor = &group.members[0];
         let module = &facts.modules[&anchor.module];
-        let owners = owners(&group.members);
+        let owners = owners(facts, &group.members);
         out.push(clone_finding(
             facts,
             module,
@@ -276,7 +286,7 @@ pub const RULE_14: Rule = Rule {
     record: RuleRecord {
         id: "14",
         slug: "data-clump",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "same >=3-param group across >=3 typed signatures",
@@ -515,7 +525,7 @@ pub const RULE_18: Rule = Rule {
     record: RuleRecord {
         id: "18",
         slug: "section-comments",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: ">=2 labeled phases narrated inside one function",
@@ -631,7 +641,7 @@ pub const RULE_20: Rule = Rule {
     record: RuleRecord {
         id: "20",
         slug: "repeated-lambda",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "same nontrivial lambda body >=3 times in a module",
@@ -735,7 +745,7 @@ pub const RULE_21: Rule = Rule {
     record: RuleRecord {
         id: "21",
         slug: "distributed-invariant",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "same self-rooted decision in >=3 methods of one class",
@@ -884,7 +894,7 @@ pub const RULE_37: Rule = Rule {
     record: RuleRecord {
         id: "37",
         slug: "speculative-generality",
-        family: "B",
+        family: "surface",
         engine_class: "WP+IDX",
         posture: Posture::Ratchet,
         meaning: "monomorphic params, unused defaults, single-impl abstractions",
@@ -1126,18 +1136,18 @@ fn abstraction_kind(facts: &RepoFacts<'_>, info: &ClassInfo) -> Option<&'static 
 }
 
 /// A Protocol is implemented by shape: any class with its methods, inherited
-/// ones included. An abstraction is never an implementation, and a test double
-/// is the second one.
+/// ones included. An abstraction is never an implementation, and a test
+/// double is the second one. One implemented by a test double alone types a
+/// foreign object the tests stand in for, and a published abstraction is a
+/// contract downstream implements: neither is speculative.
 fn single_impl_abstractions(facts: &RepoFacts<'_>, out: &mut Sink) {
     let kinds = abstraction_kinds(facts);
+    let in_tests = |module: &Qname| facts.rel_of(module).is_some_and(|rel| is_test_path(rel));
     let mut classes: Vec<&Qname> = facts.classes.keys().collect();
     classes.sort();
     for cls_q in classes {
         let info = &facts.classes[cls_q];
-        if facts
-            .rel_of(&info.module)
-            .is_some_and(|rel| is_test_path(rel))
-        {
+        if in_tests(&info.module) || facts.symbols.get(cls_q).is_some_and(|s| facts.publishes(s)) {
             continue;
         }
         let Some(kind) = kinds.get(cls_q).copied().flatten() else {
@@ -1160,7 +1170,7 @@ fn single_impl_abstractions(facts: &RepoFacts<'_>, out: &mut Sink) {
             })
             .collect();
         impls.sort();
-        if impls.len() != 1 {
+        if impls.len() != 1 || in_tests(&facts.classes[impls[0]].module) {
             continue;
         }
         let module = &facts.modules[&info.module];
@@ -1223,7 +1233,7 @@ pub const RULE_48: Rule = Rule {
     record: RuleRecord {
         id: "48",
         slug: "fold-candidate",
-        family: "B",
+        family: "surface",
         engine_class: "WP+IDX",
         posture: Posture::Ratchet,
         meaning: "private def with one prod call site and no other reference, \
@@ -1392,7 +1402,7 @@ fn fold_site<'a>(
             return None;
         };
         let caller_cc = facts.cc.get(&caller.qname).copied().unwrap_or(0);
-        if caller_cc + cognitive_complexity(def, depth) >= CC_THRESHOLD {
+        if caller_cc + cognitive_complexity(def, depth) >= facts.config.complexity_threshold {
             return None;
         }
     }
@@ -1627,7 +1637,7 @@ pub const RULE_54: Rule = Rule {
     record: RuleRecord {
         id: "54",
         slug: "kind-switch",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "same identifier-spelled tag set switched on in >=3 prod functions",
@@ -1822,7 +1832,7 @@ pub const RULE_55: Rule = Rule {
     record: RuleRecord {
         id: "55",
         slug: "positional-width",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: ">=5 positional params (receiver out) and no `*` marker",
@@ -1887,7 +1897,7 @@ pub const RULE_23: Rule = Rule {
     record: RuleRecord {
         id: "23",
         slug: "cognitive-complexity",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Report,
         meaning: "cognitive complexity >= 15; also the ranking prior",
@@ -1904,14 +1914,15 @@ pub const RULE_23: Rule = Rule {
 fn rule_23(facts: &RepoFacts<'_>, _provers: &Provers, out: &mut Sink) {
     for (module, sym) in iter_functions(facts) {
         let cc = facts.cc.get(&sym.qname).copied().unwrap_or(0);
-        if cc < CC_THRESHOLD {
+        let threshold = facts.config.complexity_threshold;
+        if cc < threshold {
             continue;
         }
         out.push(Finding {
             rule: "23",
             site: node_site(facts, module, sym.node),
             message: format!(
-                "{} has cognitive complexity {cc} (threshold {CC_THRESHOLD})",
+                "{} has cognitive complexity {cc} (threshold {threshold})",
                 sym.qname
             ),
             cause: format!("cognitive-complexity:{}", sym.qname),

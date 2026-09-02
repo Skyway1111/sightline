@@ -501,7 +501,7 @@ pub const RULE_12: Rule = Rule {
     record: RuleRecord {
         id: "12",
         slug: "idiom-catalog",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "whole-function reimplementations of stdlib/builtins",

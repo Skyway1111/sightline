@@ -163,7 +163,7 @@ fn layer_documents(
 ) -> Result<Documents> {
     let listing = walk::discover(root, config);
     let off: RuleSet = config.rules_off.clone();
-    let mut stacks =
+    let (mut stacks, _) =
         pipeline::build_stacks(root, config, langs, &listing, None, &off, BuildMode::Full)?;
     // the layers are written while the checker still answers and the header
     // after `close`: `raw` runs the rules, and a crash under them belongs in
@@ -204,7 +204,7 @@ fn renders(
     docs: &mut BTreeMap<String, Value>,
 ) -> Result<Vec<String>> {
     let off: RuleSet = config.rules_off.clone();
-    let mut collected = pipeline::collect_stacks(stacks, registry, &off, true);
+    let mut collected = pipeline::collect_stacks(stacks, Vec::new(), registry, config, &off, true);
     let (diff, _) = pipeline::fix_diff(&collected.repo, &collected.kept);
     pipeline::close(&mut collected.repo, &mut collected.walls);
     let repo = collected.repo;
@@ -219,6 +219,7 @@ fn renders(
         rules_off: config.rules_off.iter().cloned().collect(),
         rules_only: Vec::new(),
         paths: Vec::new(),
+        cut: 0,
     };
     for layer in layers {
         let doc = match *layer {

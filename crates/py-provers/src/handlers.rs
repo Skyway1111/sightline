@@ -1,5 +1,5 @@
 //! What an `except` handler does with the failure - one classifier for #34's
-//! prod swallows and family T's verdicts. The builtin exception table R16
+//! prod swallows and #42, #44 and #47's verdicts. The builtin exception table R16
 //! names lives here too, since it answers both "is this name an exception"
 //! and #33's base question.
 

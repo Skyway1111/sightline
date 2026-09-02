@@ -157,7 +157,7 @@ pub const RULE_24: Rule = Rule {
     record: RuleRecord {
         id: "24",
         slug: "dynamic-identifiers",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "getattr/import_module/globals[] with names assembled at runtime",
@@ -332,7 +332,7 @@ pub const RULE_26: Rule = Rule {
     record: RuleRecord {
         id: "26",
         slug: "declaration-literalness",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "dynamic __all__, star imports, computed constant declarations",
@@ -467,7 +467,7 @@ pub const RULE_27: Rule = Rule {
     record: RuleRecord {
         id: "27",
         slug: "purchase-price",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "modules big enough that their hot symbols tax every reader; modules \
@@ -574,7 +574,7 @@ pub const RULE_29: Rule = Rule {
     record: RuleRecord {
         id: "29",
         slug: "top-loading",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "undocumented big modules",
@@ -757,7 +757,7 @@ pub const RULE_59: Rule = Rule {
     record: RuleRecord {
         id: "59",
         slug: "cost-docstring",
-        family: "C",
+        family: "context",
         engine_class: "AST+IDX",
         posture: Posture::Ratchet,
         meaning: "heavy entry points that spend off the machine without saying so",
@@ -850,7 +850,7 @@ pub const RULE_38: Rule = Rule {
     record: RuleRecord {
         id: "38",
         slug: "value-duplication",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "same string literal declared at module level in >=3 modules of one \
@@ -955,7 +955,7 @@ pub const RULE_36: Rule = Rule {
     record: RuleRecord {
         id: "36",
         slug: "type-lie-density",
-        family: "C",
+        family: "context",
         engine_class: "AST+ORACLE",
         posture: Posture::Ratchet,
         meaning: "per-module ignore-pragma density; Any-laundering helpers",

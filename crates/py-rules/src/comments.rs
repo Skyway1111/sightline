@@ -356,7 +356,7 @@ pub const RULE_39: Rule = Rule {
     record: RuleRecord {
         id: "39",
         slug: "comment-discipline",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "comments restating code; a one-line docstring restating the def's \

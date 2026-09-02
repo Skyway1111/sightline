@@ -103,7 +103,7 @@ fn symbol_lines(facts: &RepoFacts<'_>, provers: &Provers, sym: &Symbol) -> Vec<S
                 ""
             },
             if hot.roots.is_empty() {
-                "; no hot roots (family P silent)"
+                "; no hot roots (#41 perf-catalog silent)"
             } else {
                 ""
             }

@@ -32,21 +32,6 @@ const METADATA: [&str; 5] = ["metadata", "--no-deps", "--offline", "--format-ver
 /// Cargo.toml` pins the same string and a test holds the two together.
 pub const RA_AP: &str = "0.0.328";
 
-/// `[tool.sightline.rust-toolchain]` from `sightline.toml`, embedded so a
-/// released binary holds it: the one home for the toolchain pin.
-pub fn pinned() -> IndexMap<String, String> {
-    let text = include_str!("../../../../sightline.toml");
-    let found = toml::from_str::<toml::Value>(text).ok().and_then(|table| {
-        let pin = table.get("tool")?.get("sightline")?.get("rust-toolchain")?;
-        let rows = pin.as_table()?.iter();
-        Some(
-            rows.filter_map(|(k, v)| Some((k.clone(), v.as_str()?.to_string())))
-                .collect(),
-        )
-    });
-    found.unwrap_or_default()
-}
-
 /// What the cargo passes memoize between calls, and the exe they run.
 #[derive(Default)]
 pub struct Cargo {
@@ -205,11 +190,18 @@ impl RsOracle {
                 };
                 let (rows, finished) = self.diags(&stdout, project, &self.root, true);
                 if !finished && !rows.iter().any(|d| d.level == "error") {
-                    let tail = stderr.trim().lines().next_back().unwrap_or("");
-                    self.fail(
-                        Some(project),
-                        &format!("cargo check: no build-finished ({tail})"),
-                    );
+                    // the check runs offline, so a dependency never fetched
+                    // is the usual reason; cargo names the mode in its own
+                    // words, and the note names the fix
+                    let why = if stderr.contains("offline") {
+                        format!(
+                            "cargo check: dependencies are not fetched; run `cargo fetch` in {project} and audit again"
+                        )
+                    } else {
+                        let tail = stderr.trim().lines().next_back().unwrap_or("");
+                        format!("cargo check: no build-finished ({tail})")
+                    };
+                    self.fail(Some(project), &why);
                     continue;
                 }
                 out.extend(rows);
@@ -346,22 +338,13 @@ impl RsOracle {
 
     /// What the header reports the toolchain as: the token `cargo --version`
     /// names its version by (`cargo 1.95.0 (...)`) and the compiled-in
-    /// `ra_ap`, each against the pin. A version off it is a note.
+    /// `ra_ap`.
     pub fn versions(&self) -> &IndexMap<String, String> {
         self.cargo.versions.get_or_init(|| {
             let ran = self.run(&["--version"], &self.root, "cargo version", None);
             let spelled = ran.map(|(stdout, _)| stdout).unwrap_or_default();
             let cargo = spelled.split_whitespace().nth(1).unwrap_or("").to_string();
-            let ra_ap = RA_AP.to_string();
-            let out = IndexMap::from([("cargo".into(), cargo), ("ra_ap".into(), ra_ap)]);
-            let pin = pinned();
-            for (name, found) in &out {
-                let off = pin.get(name).filter(|w| !found.is_empty() && *w != found);
-                if let Some(want) = off {
-                    self.note(format!("rs oracle: {name} {found} is off the {want} pin"));
-                }
-            }
-            out
+            IndexMap::from([("cargo".into(), cargo), ("ra_ap".into(), RA_AP.to_string())])
         })
     }
 }

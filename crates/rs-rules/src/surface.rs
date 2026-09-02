@@ -13,7 +13,6 @@ mod invariant;
 
 use std::collections::{BTreeMap, HashSet};
 
-use sightline_core::complexity::CC_THRESHOLD;
 use sightline_core::findings::{Evidence, Finding, Sink};
 use sightline_core::pytext;
 use sightline_core::rule::{Posture, RuleRecord, Scope, owner_list};
@@ -39,7 +38,7 @@ pub const RULE_11: Rule = Rule {
     record: RuleRecord {
         id: "11",
         slug: "structural-clones",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "blind-digest T2 clone groups over `fn` bodies and repeated >=5-statement \
@@ -52,6 +51,17 @@ pub const RULE_11: Rule = Rule {
     },
     run: rule_11,
 };
+
+/// Each copy as `qname L<line>`, so a reader opens the other copies without
+/// a search.
+fn owners<'a>(members: impl Iterator<Item = (&'a RsSymbol<'a>, Node<'a>)>) -> Vec<String> {
+    let mut out: Vec<String> = members
+        .map(|(sym, node)| format!("{} L{}", sym.qname, node.start_position().row + 1))
+        .collect();
+    out.sort_unstable();
+    out.dedup();
+    out
+}
 
 /// Whole-body T2 clones and, at sub-function granularity, the maximal
 /// repeated statement runs the neutral mining finds. Test members count
@@ -69,10 +79,7 @@ fn rule_11(facts: &RsFacts<'_>, provers: &RsProvers<'_>, out: &mut Sink) {
         if members.len() < 2 {
             continue;
         }
-        let mut owners: Vec<&str> = members.iter().map(|sym| &*sym.qname).collect();
-        owners.sort_unstable();
-        owners.dedup();
-        let listed = owner_list(&owners);
+        let listed = owner_list(&owners(members.iter().map(|sym| (*sym, sym.node))));
         for sym in members {
             if sym.is_test {
                 continue;
@@ -97,10 +104,9 @@ fn rule_11(facts: &RsFacts<'_>, provers: &RsProvers<'_>, out: &mut Sink) {
             continue;
         }
         let (count, stmts) = (group.members.len(), group.shapes.len());
-        let mut owners: Vec<&str> = group.members.iter().map(|(sym, _)| &*sym.qname).collect();
-        owners.sort_unstable();
-        owners.dedup();
-        let listed = owner_list(&owners);
+        let listed = owner_list(&owners(
+            group.members.iter().map(|(sym, nodes)| (*sym, nodes[0])),
+        ));
         for (sym, nodes) in &group.members {
             if sym.is_test {
                 continue;
@@ -130,7 +136,7 @@ pub const RULE_20: Rule = Rule {
     record: RuleRecord {
         id: "20",
         slug: "repeated-lambda",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "same nontrivial closure body >=3 times in a module",
@@ -202,7 +208,7 @@ pub const RULE_21: Rule = Rule {
     record: RuleRecord {
         id: "21",
         slug: "distributed-invariant",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "a `match` arm whose whole body is `unreachable!`/`panic!` on a variant of an \
@@ -223,7 +229,7 @@ pub const RULE_23: Rule = Rule {
     record: RuleRecord {
         id: "23",
         slug: "cognitive-complexity",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Report,
         meaning: "cognitive complexity >= 15; also the ranking prior",
@@ -242,14 +248,15 @@ fn rule_23(facts: &RsFacts<'_>, provers: &RsProvers<'_>, out: &mut Sink) {
             continue;
         }
         let cc = provers.complexity(&sym.qname);
-        if cc < CC_THRESHOLD {
+        let threshold = facts.config.complexity_threshold;
+        if cc < threshold {
             continue;
         }
         out.push(Finding {
             rule: "23",
             site: site(facts, sym, sym.node),
             message: format!(
-                "{} has cognitive complexity {cc} (threshold {CC_THRESHOLD})",
+                "{} has cognitive complexity {cc} (threshold {threshold})",
                 sym.qname
             ),
             cause: format!("cognitive-complexity:{}", sym.qname),
@@ -265,7 +272,7 @@ pub const RULE_37: Rule = Rule {
     record: RuleRecord {
         id: "37",
         slug: "speculative-generality",
-        family: "B",
+        family: "surface",
         engine_class: "IDX",
         posture: Posture::Report,
         meaning: "a non-public trait with exactly one `impl ... for` in the repo, on a type the \
@@ -285,7 +292,7 @@ pub const RULE_48: Rule = Rule {
     record: RuleRecord {
         id: "48",
         slug: "fold-candidate",
-        family: "B",
+        family: "surface",
         engine_class: "WP",
         posture: Posture::Report,
         meaning: "private `fn` with one prod call edge and no other reference, body on one line \

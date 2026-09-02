@@ -165,7 +165,11 @@ fn a_manifest_below_the_root_selects_the_stack() {
     let (py, rs) = (PyLanguage::default(), RsLanguage::default());
     let registered: Vec<&dyn Language> = vec![&py, &rs];
 
-    let names: Vec<&str> = detect(root, &registered).iter().map(|l| l.name()).collect();
+    let names: Vec<&str> = detect(root, &registered)
+        .0
+        .iter()
+        .map(|l| l.name())
+        .collect();
     assert_eq!(names, ["py", "rs"]);
 }
 
@@ -613,7 +617,7 @@ fn a_slash_marker_suppresses_by_id_and_by_slug() {
         .map(|n| finding("src/lib.rs", *n))
         .collect();
 
-    let (kept, dropped) = suppress(findings, stack.neutral(), &registry().id_by_slug);
+    let (kept, dropped) = suppress(findings, stack.neutral(), &registry().id_by_slug, &[]);
 
     assert_eq!(
         dropped.iter().map(|f| f.site.line).collect::<Vec<_>>(),

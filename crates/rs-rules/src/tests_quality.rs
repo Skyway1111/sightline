@@ -206,7 +206,7 @@ pub const RULE_42: Rule = Rule {
     record: RuleRecord {
         id: "42",
         slug: "assertion-free-test",
-        family: "T",
+        family: "tests",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "test function with no verdict in its body or a repo helper it calls",
@@ -283,7 +283,7 @@ pub const RULE_47: Rule = Rule {
     record: RuleRecord {
         id: "47",
         slug: "sleepy-test",
-        family: "T",
+        family: "tests",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "positive constant sleep inside a test",

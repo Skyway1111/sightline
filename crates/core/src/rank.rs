@@ -1,7 +1,8 @@
 //! The total order.
 //!
-//! Measured P(real) first (`p_real`: the rule's or arm's own judged sample,
-//! its tier's bar until a round judges one), then the finding's integer rank
+//! Measured P(real) first (`p_real`: a lower bound on the rule's or arm's
+//! own judged sample, so a thin sample ranks under a wide one at the same
+//! fraction and an empty one under both), then the finding's integer rank
 //! inside its own rule (0 = that rule's strongest; salience is a rule's own
 //! scale and means nothing across rules), then the complexity prior of the
 //! enclosing scope, then location, rule id last.
@@ -32,6 +33,12 @@ struct Key {
     id: u32,
 }
 
+#[allow(
+    clippy::indexing_slicing,
+    clippy::expect_used,
+    clippy::missing_panics_doc,
+    reason = "every index is a position in `findings`, and a slot is taken once"
+)]
 pub fn rank(findings: Vec<Finding>, facts: &dyn FactsView) -> Vec<Finding> {
     let cc: Vec<i64> = findings
         .iter()
@@ -206,8 +213,8 @@ mod tests {
             seen,
             [
                 ("2", "py", "b.p", 1, "redundant"),
-                ("60", "py", "m.p", 1, "dead-by-graph"),
                 ("5", "py", "m.p", 8, "lift"),
+                ("60", "py", "m.p", 1, "dead-by-graph"),
                 ("34", "py", "m.p", 4, "commented-code:m.f:1"),
                 ("11", "py", "b.p", 2, "clone"),
                 ("11", "py", "m.p", 3, "clone"),
@@ -241,8 +248,8 @@ mod tests {
 
     #[test]
     fn measured_precision_leads_and_the_tier_does_not() {
-        // #34's commented-code arm is 19/19 heuristic (0.95 shrunk); #56 is
-        // 18/22 indexed (0.82): the measured sample leads, the tier does not
+        // #34's commented-code arm is 19/19 heuristic (scores 0.90); #56 is
+        // 18/22 indexed (0.74): the measured sample leads, the tier does not
         let stack = SyntheticStack::new(&P, &[("m.p", "x\n")]);
         let heuristic = at("34", "m.p", 5, 0, "m.f", "commented-code:m.f:1", ast());
         let indexed = at("56", "m.p", 9, 0, "m.f", "test-only", idx());
@@ -253,16 +260,17 @@ mod tests {
     }
 
     #[test]
-    fn an_unjudged_rule_falls_back_to_the_tier_bar() {
-        // no round judged #3, so it ranks at TIER_BAR[INDEXED]: below a
-        // measured rule above that bar (#34, 19/19) and above one below it
-        // (#59, 9/11 at 0.7 -> 0.79)
+    fn an_unjudged_rule_ranks_below_a_judged_one() {
+        // no round judged #3: an empty sample at TIER_BAR[INDEXED] scores
+        // the bar less the prior's spread (0.62), under a measured rule
+        // above the bar (#34, 19/19) and under one at its own bar (#59,
+        // 9/11 at 0.7 -> 0.68): a measurement outranks a promise
         let stack = SyntheticStack::new(&P, &[("m.p", "x\n")]);
         let above = at("34", "m.p", 1, 0, "m.f", "commented-code:m.f:1", ast());
         let unjudged = at("3", "m.p", 1, 0, "m.f", "guard-implied", idx());
         let below = at("59", "m.p", 1, 0, "m.f", "cost-docstring", ast());
         let ranked = rank(vec![below, unjudged, above], stack.neutral());
-        assert_eq!(rules_of(&ranked), ["34", "3", "59"]);
+        assert_eq!(rules_of(&ranked), ["34", "59", "3"]);
     }
 
     #[test]
@@ -286,15 +294,15 @@ mod tests {
             at("2", "m.p", 6, 0, "m.f", "k", oracle()),
         ];
         let run = |fs: Vec<Finding>| {
-            let kept = suppress(fs, stack.neutral(), &HashMap::new()).0;
+            let kept = suppress(fs, stack.neutral(), &HashMap::new(), &[]).0;
             rules_of(&rank(kept, stack.neutral()))
         };
         let forward = run(fs.clone());
         let mut reversed = fs;
         reversed.reverse();
         assert_eq!(forward, run(reversed));
-        // shrunk: #2 11/11 at .95 -> .99, #1 66/80 at .7 -> .82, and an
-        // unjudged heuristic #3 at its bar .7
+        // scored: #2 11/11 at .95 -> .96, #1 66/80 at .7 -> .78, and an
+        // unjudged heuristic #3 under its bar at .50
         assert_eq!(forward, ["2", "1", "3"]);
     }
 }

@@ -66,10 +66,16 @@ fn the_gate_reaches_only_the_files_of_a_detected_languages_suffix() {
         "gone.rs",
     ]);
 
-    // a Cargo root with a `.py` file runs both stacks; the doc and the
-    // deleted file carry nothing
+    // a Cargo root marks Rust alone: the loose `.py` is a stray script the
+    // note names, and the doc and the deleted file carry nothing
     assert_eq!(out.code, 0, "{}", out.out);
-    assert!(out.out.contains("files checked 2"), "{}", out.out);
+    assert!(out.out.contains("files checked 1"), "{}", out.out);
+    assert!(
+        out.out
+            .contains("note: py: loose .py files skipped beside a marked tree"),
+        "{}",
+        out.out
+    );
 }
 
 #[ignore = "runs cargo over a fresh crate"]

@@ -12,11 +12,9 @@ use std::time::Duration;
 
 use camino::{Utf8Path, Utf8PathBuf};
 use indexmap::{IndexMap, IndexSet};
-use serde_json::{Map, Value, json};
 
 use crate::config::Config;
 use crate::findings::{Finding, Qname, Rel, Sink};
-use crate::pyjson::object;
 use crate::rule::RuleSet;
 
 /// What the shared walk lists: (absolute path, posix path under the root).
@@ -33,12 +31,25 @@ pub enum BuildMode {
     File,
 }
 
+/// How a root shows a language: a manifest marks it, source files alone
+/// leave it loose, and a loose language beside a marked one is a stray
+/// script, not a second tree to audit.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Presence {
+    Marked,
+    Loose,
+    Absent,
+}
+
 /// One language's stack: how to find it, and how to build it.
 pub trait Language: Sync {
     fn name(&self) -> &'static str;
     fn suffix(&self) -> &'static str;
-    /// Does this root run the stack?
-    fn detect(&self, root: &Utf8Path) -> bool;
+    /// How this root shows the language.
+    fn detect(&self, root: &Utf8Path) -> Presence;
+    /// # Errors
+    ///
+    /// A tree the stack cannot build.
     fn build(
         &self,
         root: &Utf8Path,
@@ -61,7 +72,9 @@ pub trait Stack: Send + Sync {
     /// `None` is a language with no emitter, which the verb reports rather
     /// than skipping silently.
     fn fix(&self, findings: &[Finding]) -> Option<String>;
-    /// `Err` holds the candidate qnames a miss should suggest.
+    /// # Errors
+    ///
+    /// The candidate qnames a miss should suggest.
     fn describe(&self, findings: &[Finding], qname: &str) -> Result<String, Vec<String>>;
     /// `(label, seconds)` per pass this build measured, for `audit
     /// --profile`. A stack that times nothing answers empty.
@@ -90,9 +103,11 @@ pub struct NeutralSymbol {
     pub kind: &'static str,
 }
 
-/// One language's facts as the pipeline reads them. `is_test` and the
-/// suppression comment syntax live here rather than on the `Language`
-/// record: the pipeline always holds facts, and a second home would drift.
+/// One language's facts as the pipeline reads them.
+///
+/// `is_test` and the suppression comment syntax live here rather than on the
+/// `Language` record: the pipeline always holds facts, and a second home
+/// would drift.
 pub struct Neutral {
     pub lang: &'static str,
     pub suffix: &'static str,
@@ -172,11 +187,15 @@ impl FactsView for Neutral {
     }
 }
 
-/// Every stack's facts as one language-blind view. Keys are qnames and rel
-/// paths, which no two languages share, so merging is a union in stack
-/// order. Facts are immutable after build, so the unions are built once.
+/// Every stack's facts as one language-blind view.
+///
+/// Keys are qnames and rel paths, which no two languages share, so merging
+/// is a union in stack order. Facts are immutable after build, so the unions
+/// are built once.
 pub struct Repo {
     pub stacks: Vec<Box<dyn Stack>>,
+    /// what `detect` said of the languages that did not build
+    pub notes: Vec<String>,
     languages: Vec<&'static str>,
     modules: IndexMap<Qname, NeutralModule>,
     module_by_rel: HashMap<Rel, Qname>,
@@ -187,9 +206,11 @@ pub struct Repo {
 }
 
 impl Repo {
-    pub fn new(stacks: Vec<Box<dyn Stack>>) -> Repo {
-        let mut repo = Repo {
+    #[must_use]
+    pub fn new(stacks: Vec<Box<dyn Stack>>) -> Self {
+        let mut repo = Self {
             languages: stacks.iter().map(|s| s.lang()).collect(),
+            notes: Vec::new(),
             modules: IndexMap::new(),
             module_by_rel: HashMap::new(),
             symbols: IndexMap::new(),
@@ -213,6 +234,8 @@ impl Repo {
 
     /// The facts holding this path: the stack that indexed it, else the one
     /// whose suffix it spells, else the first (a doc belongs to none).
+    #[must_use]
+    #[allow(clippy::indexing_slicing, reason = "`detect` always builds one stack")]
     pub fn owner(&self, rel: &str) -> &Neutral {
         for s in &self.stacks {
             if s.neutral().module_by_rel.contains_key(rel) {
@@ -275,108 +298,46 @@ impl FactsView for Repo {
     }
 }
 
-/// The stacks this root runs, in registry order; the first alone where a
-/// root marks none, so an empty tree still reports a header.
-pub fn detect<'a>(root: &Utf8Path, languages: &[&'a dyn Language]) -> Vec<&'a dyn Language> {
-    let marked: Vec<&'a dyn Language> = languages
-        .iter()
-        .copied()
-        .filter(|l| l.detect(root))
-        .collect();
-    if marked.is_empty() {
-        languages[..1].to_vec()
-    } else {
-        marked
-    }
-}
-
-/// The `neutral` dump layer: what suppress, rank and render read (this
-/// view), plus the marker lines they build their own table from. One home
-/// for both stacks: the view is all it reads.
-pub fn neutral_layer(view: &Neutral, ids_by_slug: &HashMap<String, String>) -> Value {
-    let mut suppressions = Map::new();
-    let mut markers = Map::new();
-    let code = view
-        .modules
-        .values()
-        .map(|m| (&*m.rel, &m.lines, view.comment_prefix, false));
-    let docs = view
-        .doc_files
-        .iter()
-        .map(|(rel, lines)| (&**rel, lines, "<!--", true));
-    for (rel, lines, prefix, is_doc) in code.chain(docs) {
-        let pattern = if is_doc {
-            crate::suppress::doc_suppress_re().clone()
-        } else {
-            crate::suppress::suppress_pattern(prefix)
-        };
-        let table = crate::suppress::marker_table(lines, &pattern, prefix, ids_by_slug);
-        if !table.is_empty() {
-            let mut rows: Vec<(u32, &IndexSet<String>)> =
-                table.iter().map(|(n, ids)| (*n, ids)).collect();
-            rows.sort_by_key(|(n, _)| *n);
-            suppressions.insert(
-                rel.to_string(),
-                object(rows.into_iter().map(|(n, ids)| {
-                    let mut sorted: Vec<&str> = ids.iter().map(String::as_str).collect();
-                    sorted.sort_unstable();
-                    (n.to_string(), Value::from(sorted))
-                })),
-            );
-        }
-        let hits: Vec<(String, Value)> = lines
+/// The stacks this root runs, in registry order.
+///
+/// The marked languages, else the loose ones, else the first alone, so an
+/// empty tree still reports a header. A loose language beside a marked one
+/// is skipped, and the note says so and how to mark it.
+pub fn detect<'a>(
+    root: &Utf8Path,
+    languages: &[&'a dyn Language],
+) -> (Vec<&'a dyn Language>, Vec<String>) {
+    let found: Vec<(&'a dyn Language, Presence)> =
+        languages.iter().map(|l| (*l, l.detect(root))).collect();
+    let pick = |want: Presence| -> Vec<&'a dyn Language> {
+        found
             .iter()
-            .enumerate()
-            .filter(|(_, line)| line.contains("sightline-ok"))
-            .map(|(i, line)| ((i + 1).to_string(), Value::from(&**line)))
-            .collect();
-        if !hits.is_empty() {
-            markers.insert(rel.to_string(), object(hits));
-        }
+            .filter(|(_, p)| *p == want)
+            .map(|(l, _)| *l)
+            .collect()
+    };
+    let marked = pick(Presence::Marked);
+    if marked.is_empty() {
+        let loose = pick(Presence::Loose);
+        let run = if loose.is_empty() {
+            languages.iter().take(1).copied().collect()
+        } else {
+            loose
+        };
+        return (run, Vec::new());
     }
-    let modules: Vec<Value> = view
-        .modules
-        .values()
-        .map(|m| {
-            json!({
-                "qname": &*m.qname,
-                "rel": &*m.rel,
-                "lines": m.lines.len(),
-                "comment_prefix": view.comment_prefix,
-                "is_test": (view.is_test)(&m.rel),
-            })
+    let notes = pick(Presence::Loose)
+        .iter()
+        .map(|l| {
+            format!(
+                "{}: loose {} files skipped beside a marked tree; a manifest marks a {} tree to audit",
+                l.name(),
+                l.suffix(),
+                l.name()
+            )
         })
         .collect();
-    let symbols = object(view.symbols.iter().map(|(q, s)| {
-        (
-            q.to_string(),
-            json!({
-                "module": &*s.module,
-                "kind": s.kind,
-                "lineno": s.lineno,
-                "end_lineno": s.end_lineno,
-            }),
-        )
-    }));
-    let doc_files = object(view.doc_files.iter().map(|(rel, lines)| {
-        (
-            rel.to_string(),
-            Value::from(lines.iter().map(|l| &**l).collect::<Vec<_>>()),
-        )
-    }));
-    json!({
-        "languages": [view.lang],
-        "modules": modules,
-        "doc_files": doc_files,
-        "symbols": symbols,
-        "errors": view.errors,
-        "fan_in": object(
-            view.fan_in.iter().map(|(q, n)| (q.to_string(), Value::from(*n))),
-        ),
-        "cc": object(view.cc.iter().map(|(q, n)| (q.to_string(), Value::from(*n)))),
-        "suppressions": suppressions,
-        "markers": markers,
-    })
+    (marked, notes)
 }
 
 #[cfg(test)]
@@ -393,18 +354,29 @@ mod tests {
         let root = Utf8Path::from_path(dir.path()).unwrap();
         let registry: &[&dyn Language] = &[&P, &Q];
         let names = |root: &Utf8Path| {
-            detect(root, registry)
-                .iter()
-                .map(|l| l.name())
-                .collect::<Vec<_>>()
+            let (found, notes) = detect(root, registry);
+            (found.iter().map(|l| l.name()).collect::<Vec<_>>(), notes)
         };
 
         // a root that marks none still reports, through the first alone
-        assert_eq!(names(root), ["p"]);
-        std::fs::write(root.join("Q.toml"), "").unwrap();
-        assert_eq!(names(root), ["q"]);
+        assert_eq!(names(root), (vec!["p"], vec![]));
+        // loose files run where no manifest marks a tree
+        std::fs::write(root.join("tool.q"), "").unwrap();
+        assert_eq!(names(root), (vec!["q"], vec![]));
+        // a manifest outranks them, and the stray script is named
         std::fs::write(root.join("P.toml"), "").unwrap();
-        assert_eq!(names(root), ["p", "q"]);
+        assert_eq!(
+            names(root),
+            (
+                vec!["p"],
+                vec![
+                    "q: loose .q files skipped beside a marked tree; a manifest marks a q tree to audit"
+                        .to_string()
+                ]
+            )
+        );
+        std::fs::write(root.join("Q.toml"), "").unwrap();
+        assert_eq!(names(root), (vec!["p", "q"], vec![]));
     }
 
     #[test]

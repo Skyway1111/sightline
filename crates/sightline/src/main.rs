@@ -82,6 +82,7 @@ fn run(cli: Cli) -> Result<u8> {
             paths,
             rules,
             profile,
+            top,
         } => {
             let (root, config) = verbs::root_config(repo)?;
             let opts = verbs::audit::Options {
@@ -91,6 +92,7 @@ fn run(cli: Cli) -> Result<u8> {
                 paths: paths.as_deref().unwrap_or_default(),
                 rules: rules.as_ref(),
                 profile: profile.as_deref(),
+                top: *top,
             };
             verbs::audit::run(&root, &config, &registry, &langs, &opts)
         }

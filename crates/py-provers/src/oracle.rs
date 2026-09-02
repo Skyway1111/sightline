@@ -315,22 +315,6 @@ impl Oracle {
     pub fn close(&self) {}
 }
 
-/// `detect_python_env`: the target repo's interpreter for import resolution,
-/// `<root>/<configured>/Scripts/python.exe` (`bin/python` off Windows) when
-/// config names one, else `<root>/.venv/...`, whichever exists.
-pub fn detect_python_env(root: &Utf8Path, configured: Option<&str>) -> Option<Utf8PathBuf> {
-    let exe = if cfg!(windows) {
-        "Scripts/python.exe"
-    } else {
-        "bin/python"
-    };
-    configured
-        .map(|c| root.join(c).join(exe))
-        .into_iter()
-        .chain(std::iter::once(root.join(".venv").join(exe)))
-        .find(|p| p.is_file())
-}
-
 /// How many imports the oracle could not resolve, per missing module, so the
 /// header says how much of the tree it could see. Without an oracle: nothing
 /// unresolved.
@@ -397,39 +381,4 @@ pub fn dump(facts: &RepoFacts<'_>, provers: &Provers) -> Option<Value> {
         "recv_types": provers.recv_types(facts).dump_rows(),
         "unresolved": {"count": unresolved.count(), "modules": unresolved.modules},
     }))
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    fn write(dir: &Utf8Path, files: &[(&str, &str)]) {
-        for (rel, text) in files {
-            let path = dir.join(rel);
-            std::fs::create_dir_all(path.parent().expect("a parent")).expect("the fixture dirs");
-            std::fs::write(&path, text).expect("the fixture files");
-        }
-    }
-
-    #[test]
-    fn detect_python_env_reads_the_configured_env_then_dot_venv() {
-        let dir = tempfile::tempdir().expect("a temp dir");
-        let root = Utf8Path::from_path(dir.path()).expect("a utf-8 temp path");
-        let exe = if cfg!(windows) {
-            "Scripts/python.exe"
-        } else {
-            "bin/python"
-        };
-        assert_eq!(detect_python_env(root, None), None);
-        write(root, &[(&format!(".venv/{exe}"), "")]);
-        assert_eq!(
-            detect_python_env(root, None),
-            Some(root.join(".venv").join(exe))
-        );
-        write(root, &[(&format!("customenv/{exe}"), "")]);
-        assert_eq!(
-            detect_python_env(root, Some("customenv")),
-            Some(root.join("customenv").join(exe))
-        );
-    }
 }

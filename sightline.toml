@@ -8,11 +8,4 @@ published = false
 # checkers read, whose slow side is written unannotated and unreferenced on
 # purpose.
 excludes = ["catalog"]
-# no hot-roots: family P reads Python and this tree keeps no Python modules
-
-# What the Rust oracle expects on PATH, the one home for the pin
-# (`oracle/cargo.rs:pinned` embeds this file). A version off it is a header
-# note, never a failure. rust-analyzer runs in process, so it is not here;
-# `oracle/cargo.rs:RA_AP` names the `ra_ap_*` version the binary compiled in.
-[tool.sightline.rust-toolchain]
-cargo = "1.98.0"
+# no hot-roots: #41 reads Python and this tree keeps no Python modules

@@ -27,7 +27,7 @@ pub const RULE_9: Rule = Rule {
     record: RuleRecord {
         id: "9",
         slug: "shared-mutable-state",
-        family: "A",
+        family: "trust",
         engine_class: "IDX",
         posture: Posture::Report,
         meaning: "a shared static written by three functions of its own module",
@@ -137,7 +137,7 @@ pub const RULE_53: Rule = Rule {
     record: RuleRecord {
         id: "53",
         slug: "raise-contract",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Report,
         meaning: "an `# Errors` section missing an error the body returns",

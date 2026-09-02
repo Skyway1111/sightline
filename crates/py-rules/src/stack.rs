@@ -9,10 +9,10 @@ use indexmap::{IndexMap, IndexSet};
 use serde_json::{Value, json};
 
 use sightline_core::config::Config;
+use sightline_core::dump::neutral_layer;
 use sightline_core::findings::{Finding, Qname, Rel, Sink, finding_json};
 use sightline_core::lang::{
-    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Stack, Timing,
-    neutral_layer,
+    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Presence, Stack, Timing,
 };
 use sightline_core::rule::RuleSet;
 use sightline_core::walk;
@@ -50,10 +50,16 @@ impl Language for PyLanguage {
         ".py"
     }
 
-    fn detect(&self, root: &Utf8Path) -> bool {
-        root.join("pyproject.toml").is_file()
-            || root.join("setup.py").is_file()
-            || walk::any_name(root, |n| n.ends_with(".py"))
+    /// A `pyproject.toml` or a `setup.py` anywhere the walk reaches marks a
+    /// Python tree; `.py` files alone are loose scripts.
+    fn detect(&self, root: &Utf8Path) -> Presence {
+        if walk::any_name(root, |n| n == "pyproject.toml" || n == "setup.py") {
+            Presence::Marked
+        } else if walk::any_name(root, |n| n.ends_with(".py")) {
+            Presence::Loose
+        } else {
+            Presence::Absent
+        }
     }
 
     fn build(

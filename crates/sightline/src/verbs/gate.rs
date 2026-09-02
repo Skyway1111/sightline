@@ -12,7 +12,7 @@ use indexmap::IndexSet;
 
 use sightline_core::config::Config;
 use sightline_core::findings::{Finding, Rel, Sink};
-use sightline_core::lang::{BuildMode, FactsView};
+use sightline_core::lang::{BuildMode, FactsView, Repo, Stack, detect};
 use sightline_core::ratchet;
 use sightline_core::registry::Registry;
 use sightline_core::rule::{Posture, RuleSet, Scope};
@@ -83,10 +83,11 @@ fn blockers(
     root: &Utf8Path,
     findings: &[Finding],
     registry: &Registry,
+    facts: &dyn FactsView,
 ) -> Result<(Vec<Finding>, u32)> {
-    let baseline = ratchet::load(&root.join(ratchet::BASELINE_NAME))?;
+    let baseline = ratchet::load(root)?;
     let (ratchet_side, absorbed) = match baseline {
-        Some(baseline) => ratchet::diff(ratcheted(findings, registry), &baseline.counts),
+        Some(baseline) => ratchet::diff(ratcheted(findings, registry), &baseline.counts, facts),
         None => (ratcheted(findings, registry), 0),
     };
     let mut blocking: Vec<Finding> = findings
@@ -160,16 +161,15 @@ pub fn run_fast(
     let mut unparsable: Vec<String> = Vec::new();
     let mut grammar_gaps: Vec<String> = Vec::new();
     let mut suppressed = 0;
+    let mut stacks: Vec<Box<dyn Stack>> = Vec::new();
     let registered = langs.registered();
-    // Only the languages the diff spells are detected: a language with no
-    // changed file of its suffix contributes nothing either way, and
-    // `detect`'s no-marker fallback can gate nothing (a known `.py` file
-    // marks the Python stack by existing), so neither skip changes a verdict.
-    let detected = registered
-        .iter()
-        .copied()
-        .filter(|l| rels.iter().any(|rel| rel.ends_with(l.suffix())))
-        .filter(|l| l.detect(root));
+    // The languages the tree runs, as the audit picks them, kept to those
+    // the diff spells: a language with no changed file of its suffix
+    // contributes nothing either way.
+    let (detected, mut notes) = detect(root, &registered);
+    let detected = detected
+        .into_iter()
+        .filter(|l| rels.iter().any(|rel| rel.ends_with(l.suffix())));
     for lang in detected {
         // tree-sitter-rust 0.24 rejects valid Rust (a `#[cfg]` on a
         // struct-pattern field, a turbofish struct pattern in a parameter),
@@ -202,13 +202,32 @@ pub fn run_fast(
         }
         let mut sink = Sink::new();
         stack.run_rules(&off, &mut sink, None);
-        let (kept, sup) = suppress(sink.0, stack.neutral(), &registry.id_by_slug);
+        let (kept, sup) = suppress(
+            sink.0,
+            stack.neutral(),
+            &registry.id_by_slug,
+            &config.overrides,
+        );
         suppressed += sup.len();
         findings.extend(kept);
+        stacks.push(stack);
     }
-    let (blocking, absorbed) = blockers(root, &findings, registry)?;
+    let repo = Repo::new(stacks);
+    let (blocking, absorbed) = blockers(root, &findings, registry, &repo)?;
     checked.sort();
-    let mut notes = vec!["fast gate: oracle and repo-scope rules not run".to_string()];
+    // the rules this gate cannot run are named, so a green here is never
+    // read as `--full`'s verdict on them
+    let skipped: Vec<String> = registry
+        .rules
+        .iter()
+        .filter(|r| r.scope == Scope::Repo && r.posture != Posture::Report)
+        .filter(|r| repo.languages().contains(&r.lang))
+        .map(|r| format!("#{}", r.id))
+        .collect();
+    notes.push(format!(
+        "fast gate: file-scope rules only; --full also runs {}",
+        skipped.join(", ")
+    ));
     notes.extend(unparsable_notes(&grammar_gaps));
     Ok(GateResult::new(
         blocking, checked, suppressed, absorbed, notes, unparsable,
@@ -223,7 +242,7 @@ pub fn run_full(
     langs: &Languages,
 ) -> Result<GateResult> {
     let collected = pipeline::collect(root, config, registry, langs, false, None)?;
-    let (blocking, absorbed) = blockers(root, &collected.kept, registry)?;
+    let (blocking, absorbed) = blockers(root, &collected.kept, registry, &collected.repo)?;
     let mut checked: Vec<String> = collected
         .repo
         .modules()
@@ -304,6 +323,7 @@ mod tests {
 
     use sightline_core::findings::{Evidence, Site};
     use sightline_core::ratchet::{Baseline, snapshot};
+    use sightline_core::testing::{P, SyntheticStack};
     use sightline_testkit::registry;
 
     /// One finding of `rule` on the symbol a baseline key names.
@@ -346,14 +366,16 @@ mod tests {
             ["42"]
         );
 
+        let stack = SyntheticStack::new(&P, &[("m.py", "x\n")]);
         ratchet::save(
-            &root.join(ratchet::BASELINE_NAME),
+            root,
             &Baseline {
-                counts: snapshot(&found),
+                counts: snapshot(&found, stack.neutral()),
             },
         )
         .expect("the baseline writes");
-        let (blocking, absorbed) = blockers(root, &found, &reg).expect("the gate reads it");
+        let (blocking, absorbed) =
+            blockers(root, &found, &reg, stack.neutral()).expect("the gate reads it");
         assert_eq!(
             blocking.iter().map(|f| f.rule).collect::<Vec<_>>(),
             ["99"],

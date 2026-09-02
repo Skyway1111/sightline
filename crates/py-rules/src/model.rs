@@ -28,7 +28,7 @@ pub struct MatchCtx<'a, 't> {
     pub facts: &'a RepoFacts<'t>,
     pub module: &'a Module<'t>,
     pub sym: &'a Symbol,
-    /// hot-path loop amplification (family P; 0 elsewhere)
+    /// hot-path loop amplification (#41 perf-catalog; 0 elsewhere)
     pub amp: u32,
 }
 

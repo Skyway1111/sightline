@@ -661,7 +661,7 @@ pub const RULE_41: Rule = Rule {
     record: RuleRecord {
         id: "41",
         slug: "perf-catalog",
-        family: "P",
+        family: "perf",
         engine_class: "WP",
         posture: Posture::Report,
         meaning: "proven quadratic/invariant-hoist/N+1/filter-scan shapes in hot \

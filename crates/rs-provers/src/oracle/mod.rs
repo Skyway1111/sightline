@@ -10,7 +10,10 @@
 //! re-rooted to the audited root, and a root whose tool stops degrades that
 //! root alone.
 
+mod cache;
 pub mod cargo;
+
+pub use cache::{sweep, target_dir};
 pub mod index;
 pub mod worlds;
 
@@ -21,7 +24,6 @@ use std::time::Instant;
 use camino::{Utf8Path, Utf8PathBuf};
 use indexmap::IndexMap;
 use serde_json::{Value, json};
-use sha1::{Digest, Sha1};
 use sightline_core::config::Config;
 use sightline_core::progress::progress;
 use sightline_core::rule::RuleSet;
@@ -102,6 +104,9 @@ pub struct RsOracle {
     /// one build directory outside every tree, and one per project root
     pub target: Utf8PathBuf,
     pub targets: IndexMap<Utf8PathBuf, Utf8PathBuf>,
+    /// `true` where `target` sits under the user's cache, which `close`
+    /// sweeps; `false` under `TARGET_ENV` or a test's own directory
+    pub in_cache: bool,
     state: Mutex<State>,
     pub cargo: cargo::Cargo,
     pub worlds: worlds::Worlds,
@@ -122,6 +127,7 @@ impl RsOracle {
         let targets = roots.iter().map(|p| (p.clone(), dir(p))).collect();
         RsOracle {
             target: target_dir(&root, "", target_base),
+            in_cache: target_base.is_none(),
             excludes: config
                 .excludes
                 .iter()
@@ -273,45 +279,6 @@ pub fn project_roots(root: &Utf8Path, crates: &IndexMap<String, String>) -> Vec<
     }
 }
 
-/// One build directory per project root, outside every tree it audits:
-/// `base` where the harness points a worktree run at the live root's, else
-/// a per-root dir under the user's cache, keyed by a digest of the root's
-/// path so repeat runs share one warm build. `project` is a rel under the
-/// audited root, and gets a directory of its own: two crates of one tree may
-/// pin different profiles, which cargo rebuilds a shared dir's dependencies
-/// to switch between.
-pub fn target_dir(root: &Utf8Path, project: &str, base: Option<&Utf8Path>) -> Utf8PathBuf {
-    let base = match base {
-        Some(named) => named.to_path_buf(),
-        None => {
-            let cache = match cfg!(windows) {
-                true => local_app_data(),
-                false => home().join(".cache"),
-            };
-            let key = format!("{:x}", Sha1::digest(root.as_str().as_bytes()));
-            cache
-                .join("sightline")
-                .join("cargo-target")
-                .join(&key[..12])
-        }
-    };
-    if project.is_empty() {
-        base
-    } else {
-        base.join(project.replace('/', "-"))
-    }
-}
-
-fn local_app_data() -> Utf8PathBuf {
-    let named = std::env::var("LOCALAPPDATA").map(Utf8PathBuf::from);
-    named.unwrap_or_else(|_| home().join("AppData/Local"))
-}
-
-fn home() -> Utf8PathBuf {
-    let named = std::env::var("USERPROFILE").or_else(|_| std::env::var("HOME"));
-    named.map(Utf8PathBuf::from).unwrap_or_default()
-}
-
 /// Every answer the toolchain gave one build, taken at build time: the
 /// header names every pass whatever the rules asked for, so asking late
 /// saves nothing.
@@ -369,6 +336,9 @@ impl RsAnswers {
         oracle.close();
         let mut out = self.notes.clone();
         out.extend(oracle.notes());
+        if oracle.in_cache {
+            out.extend(sweep(&oracle.target));
+        }
         out.extend(
             oracle
                 .faults()

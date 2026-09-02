@@ -1,0 +1,37 @@
+# A composite action: install one release of sightline on a Linux runner and
+# run one verb. `uses: Skyway1111/sightline@v0.3.0` in a workflow step; the
+# README shows the two jobs it serves, the blocking gate and the code-scanning
+# upload.
+name: sightline
+description: Install sightline and run a verb over the checked-out tree.
+inputs:
+  version:
+    description: The release to install, as its tag spells it, or `latest`.
+    required: false
+    default: latest
+  args:
+    description: The command line after `sightline`.
+    required: false
+    default: gate . --full
+runs:
+  using: composite
+  steps:
+    - name: Install sightline
+      shell: bash
+      run: |
+        set -euo pipefail
+        base="https://github.com/Skyway1111/sightline/releases"
+        case "${{ inputs.version }}" in
+          latest) url="$base/latest/download" ;;
+          *) url="$base/download/${{ inputs.version }}" ;;
+        esac
+        cd "$RUNNER_TEMP"
+        curl -sSfLO "$url/sightline-x86_64-unknown-linux-gnu.tar.xz"
+        curl -sSfLO "$url/sightline-x86_64-unknown-linux-gnu.tar.xz.sha256"
+        sha256sum --check --status sightline-x86_64-unknown-linux-gnu.tar.xz.sha256
+        tar -xf sightline-x86_64-unknown-linux-gnu.tar.xz
+        sudo install "$(find "$RUNNER_TEMP" -type f -name sightline)" /usr/local/bin/
+        sightline --version
+    - name: Run sightline
+      shell: bash
+      run: sightline ${{ inputs.args }}

@@ -25,6 +25,8 @@ pub struct Options<'a> {
     pub paths: &'a [String],
     pub rules: Option<&'a RuleSet>,
     pub profile: Option<&'a str>,
+    /// `--top N`: the N strongest findings alone
+    pub top: Option<usize>,
 }
 
 pub fn run(
@@ -45,8 +47,10 @@ pub fn run(
     let collected = pipeline::collect(root, config, registry, langs, false, opts.rules)?;
     let mut kept = collected.kept;
     let mut absorbed = 0;
-    match ratchet::load(&root.join(ratchet::BASELINE_NAME))? {
-        Some(baseline) if !opts.all => (kept, absorbed) = ratchet::diff(kept, &baseline.counts),
+    match ratchet::load(root)? {
+        Some(baseline) if !opts.all => {
+            (kept, absorbed) = ratchet::diff(kept, &baseline.counts, &collected.repo);
+        }
         _ => {}
     }
     let mut ranked = rank(kept, &collected.repo);
@@ -54,8 +58,10 @@ pub fn run(
     if !paths.is_empty() {
         ranked.retain(|f| under(&f.site.rel, &paths));
     }
-    let (notes, provers) = pipeline::header(&collected.repo);
     let findings = ranked.len();
+    let cut = opts.top.map_or(0, |top| findings.saturating_sub(top));
+    ranked.truncate(findings - cut);
+    let (notes, provers) = pipeline::header(&collected.repo);
     let result = AuditResult {
         findings: ranked,
         suppressed: collected.suppressed.len(),
@@ -69,6 +75,7 @@ pub fn run(
             .map(|r| r.iter().cloned().collect())
             .unwrap_or_default(),
         paths,
+        cut,
     };
     let rendered = match (opts.sarif, opts.json) {
         (true, _) => to_sarif(&result, registry),

@@ -1,4 +1,5 @@
 //! The rule registry: every language's `RULES` aggregated into one table.
+//!
 //! A reading is per language, so an id may hold one record per language:
 //! they share slug and family, and `by_id` answers with the one every
 //! consumer of those means. Posture is
@@ -29,7 +30,11 @@ pub struct Registry {
 }
 
 impl Registry {
-    pub fn new(records: Vec<RuleRecord>) -> anyhow::Result<Registry> {
+    /// # Errors
+    ///
+    /// An id that is not a number, a retired id, or two readings of one id
+    /// in one language.
+    pub fn new(records: Vec<RuleRecord>) -> anyhow::Result<Self> {
         let mut rules = records;
         rules.sort_by_key(|r| (r.id.parse::<u32>().unwrap_or(0), r.lang));
 
@@ -49,7 +54,7 @@ impl Registry {
             by_id.entry(r.id).or_insert(i);
             id_by_slug.insert(r.slug.to_string(), r.id.to_string());
         }
-        Ok(Registry {
+        Ok(Self {
             rules,
             id_by_slug,
             by_id,
@@ -58,16 +63,21 @@ impl Registry {
     }
 
     /// The first record holding this id, whichever language wrote it.
+    #[must_use]
+    #[allow(clippy::indexing_slicing, reason = "an index `new` took from `rules`")]
     pub fn by_id(&self, id: &str) -> Option<&RuleRecord> {
         self.by_id.get(id).map(|&i| &self.rules[i])
     }
 
+    #[must_use]
+    #[allow(clippy::indexing_slicing, reason = "an index `new` took from `rules`")]
     pub fn reading(&self, id: &str, lang: &str) -> Option<&RuleRecord> {
         self.by_reading.get(&(id, lang)).map(|&i| &self.rules[i])
     }
 
     /// What a finding blocks on: the record of the language that produced
     /// it, since an unjudged reading reports while its sibling ratchets.
+    #[must_use]
     pub fn posture_of(&self, id: &str, lang: &str) -> Option<Posture> {
         self.reading(id, lang)
             .or_else(|| self.by_id(id))
@@ -89,7 +99,7 @@ mod tests {
             } else {
                 "rs-clones"
             },
-            family: "B",
+            family: "surface",
             engine_class: "IDX",
             posture,
             meaning: "m",

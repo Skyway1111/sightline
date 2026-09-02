@@ -1,8 +1,8 @@
-//! The text rollup: prod modules then test
-//! modules, each set by finding count then size; symbols by finding count
-//! then first line; findings in rank order. The unit of work is a module or
-//! a symbol, and everything stacked on it reads in one place. The JSON is
-//! the flat ranked list.
+//! The text rollup: the ranked list grouped by module, then by symbol.
+//!
+//! Each group sits where its strongest finding ranks, prod modules before
+//! test modules. The unit of work is a module or a symbol, and everything
+//! stacked on it reads in one place. The JSON is the flat ranked list.
 
 use indexmap::IndexMap;
 
@@ -11,6 +11,15 @@ use crate::lang::NeutralModule;
 
 use super::{AuditResult, provenance};
 
+/// `text` with every spelling of the module's own qualified prefix dropped:
+/// the module header already named it, and a message that repeats it per
+/// symbol runs past the terminal. Both separators, since a Rust path spells
+/// `::` where a Python one spells `.`.
+fn short(text: &str, module: &NeutralModule) -> String {
+    text.replace(&format!("{}.", module.qname), "")
+        .replace(&format!("{}::", module.qname), "")
+}
+
 fn symbol_label(result: &AuditResult, module: Option<&NeutralModule>, qname: &str) -> String {
     let Some(module) = module else {
         return "(module scope)".to_string();
@@ -18,20 +27,22 @@ fn symbol_label(result: &AuditResult, module: Option<&NeutralModule>, qname: &st
     if qname == &*module.qname || qname == &*module.rel {
         return "(module scope)".to_string();
     }
-    let name = qname
-        .strip_prefix(&format!("{}.", module.qname))
-        .unwrap_or(qname);
+    let name = short(qname, module);
     match result.facts.symbols().get(qname) {
         Some(s) if s.end_lineno != 0 => {
             let lines = s.end_lineno - s.lineno + 1;
             format!("{name}  L{}-{} ({lines} lines)", s.lineno, s.end_lineno)
         }
-        _ => name.to_string(),
+        _ => name,
     }
 }
 
-/// One module: header with a per-rule tally, then symbols by finding count
-/// (then first line), each with its findings in rank order.
+/// One module: header with a per-rule tally, then symbols in the order
+/// their strongest finding ranks, each with its findings in rank order.
+#[allow(
+    clippy::indexing_slicing,
+    reason = "a block is built for a file that holds a finding"
+)]
 fn module_block(
     result: &AuditResult,
     module: Option<&NeutralModule>,
@@ -58,18 +69,13 @@ fn module_block(
             found.len()
         ),
     ];
+    // `found` is in rank order, so insertion order is the order the
+    // symbols' strongest findings rank
     let mut by_symbol: IndexMap<&str, Vec<&Finding>> = IndexMap::new();
     for f in found {
         by_symbol.entry(&f.site.symbol).or_default().push(f);
     }
-    let mut symbols: Vec<(&str, Vec<&Finding>)> = by_symbol.into_iter().collect();
-    symbols.sort_by_key(|(_, sites)| {
-        (
-            std::cmp::Reverse(sites.len()),
-            sites.iter().map(|f| f.site.line).min().unwrap_or(0),
-        )
-    });
-    for (qname, sites) in symbols {
+    for (qname, sites) in by_symbol {
         lines.push(format!("  {}", symbol_label(result, module, qname)));
         lines.extend(sites.iter().map(|f| {
             format!(
@@ -78,13 +84,18 @@ fn module_block(
                 f.site.col,
                 f.tier().value(),
                 f.rule,
-                f.message
+                module.map_or_else(|| f.message.clone(), |m| short(&f.message, m))
             )
         }));
     }
     lines
 }
 
+#[must_use]
+#[allow(
+    clippy::indexing_slicing,
+    reason = "the provenance keys `provenance` writes"
+)]
 pub fn to_text(result: &AuditResult) -> String {
     let prov = provenance(result);
     let counts = &prov["counts"];
@@ -96,12 +107,17 @@ pub fn to_text(result: &AuditResult) -> String {
             .unwrap_or_default()
     };
 
+    // `--top`: the count reads `shown of all`, so a cut is never mistaken
+    // for a clean tree
+    let findings = match n("cut") {
+        0 => n("findings").to_string(),
+        cut => format!("{} of {}", n("findings"), n("findings") + cut),
+    };
     let mut lines = vec![format!(
-        "sightline {} | modules {} | findings {} (proved {} / indexed {} / \
+        "sightline {} | modules {} | findings {findings} (proved {} / indexed {} / \
          heuristic {}) | suppressed {} | baselined {}",
         prov["sightline"].as_str().unwrap_or(""),
         prov["modules"].as_u64().unwrap_or(0),
-        n("findings"),
         n("proved"),
         n("indexed"),
         n("heuristic"),
@@ -147,18 +163,10 @@ pub fn to_text(result: &AuditResult) -> String {
             .and_then(|q| facts.modules().get(q))
     };
 
+    // insertion order is the order each file's strongest finding ranks;
+    // the stable sort only moves the test files after the rest
     let mut files: Vec<(&Rel, Vec<&Finding>)> = by_file.into_iter().collect();
-    files.sort_by(|(a, fa), (b, fb)| {
-        let key = |rel: &Rel, found: &Vec<&Finding>| {
-            (
-                facts.is_test(rel),
-                std::cmp::Reverse(found.len()),
-                std::cmp::Reverse(module_of(rel).map_or(0, |m| m.lines.len())),
-                (*rel).clone(),
-            )
-        };
-        key(a, fa).cmp(&key(b, fb))
-    });
+    files.sort_by_key(|(rel, _)| facts.is_test(rel));
 
     let mut in_tests = false;
     for (rel, found) in files {
@@ -168,14 +176,16 @@ pub fn to_text(result: &AuditResult) -> String {
             lines.push("tests:".to_string());
         }
         let module = module_of(rel);
-        let size = match module {
-            Some(m) => format!(
-                "{} lines, fan-in {}",
-                m.lines.len(),
-                facts.fan_in().get(&m.qname).copied().unwrap_or(0)
-            ),
-            None => "doc".to_string(),
-        };
+        let size = module.map_or_else(
+            || "doc".to_string(),
+            |m| {
+                format!(
+                    "{} lines, fan-in {}",
+                    m.lines.len(),
+                    facts.fan_in().get(&m.qname).copied().unwrap_or(0)
+                )
+            },
+        );
         lines.extend(module_block(result, module, &size, &found));
     }
     lines.join("\n") + "\n"
@@ -198,7 +208,7 @@ mod tests {
                 col: 0,
                 symbol: symbol.into(),
             },
-            message: "structural clone x3: a.fn, b.fn, c.fn".into(),
+            message: "structural clone x3: p::a.fn, p::b.fn, p::c.fn".into(),
             cause: cause.into(),
             ..finding("11", idx())
         }
@@ -240,17 +250,21 @@ mod tests {
     }
 
     #[test]
-    fn the_rollup_orders_modules_then_symbols_and_puts_tests_last() {
+    fn the_rollup_orders_modules_then_symbols_by_rank_and_puts_tests_last() {
         let stack = stack();
-        let mut findings = vec![
+        // the input is the ranked list: `t_z.p` leads it and `a.p` holds the
+        // most findings, and neither moves a module ahead of the one whose
+        // strongest finding ranks first
+        let mut findings: Vec<Finding> = (0..4)
+            .map(|i| at("t_z.p", 1, &format!("clone:t{i}"), "p::t_z.fn"))
+            .collect();
+        findings.extend([
             at("b.p", 1, "clone:k", "p::b.fn"),
+            at("a.p", 5, "clone:other", "p::a.other"),
             at("c.p", 4, "clone:k", "p::c"),
             at("a.p", 1, "clone:k", "p::a.fn"),
-            at("a.p", 5, "clone:other", "p::a.other"),
             at("a.p", 6, "clone:third", "p::a.other"),
-        ];
-        // the most findings of any module, and still last: it is a test
-        findings.extend((0..4).map(|i| at("t_z.p", 1, &format!("clone:t{i}"), "p::t_z.fn")));
+        ]);
         let text = to_text(&AuditResult::new(findings, stack.neutral()));
 
         let heads: Vec<&str> = text
@@ -260,9 +274,9 @@ mod tests {
         assert_eq!(
             heads,
             [
+                "b.p  3 lines, fan-in 1 | 1 findings: #11 x1",
                 "a.p  7 lines, fan-in 0 | 3 findings: #11 x3",
                 "c.p  5 lines, fan-in 0 | 1 findings: #11 x1",
-                "b.p  3 lines, fan-in 1 | 1 findings: #11 x1",
                 "tests:",
                 "t_z.p  3 lines, fan-in 0 | 4 findings: #11 x4",
             ]
@@ -276,10 +290,14 @@ mod tests {
             .unwrap()
             .lines()
             .collect();
-        // two findings beat one
+        // the symbol whose finding ranks first leads, whatever its line
         assert_eq!(block[1], "  other  L5-6 (2 lines)");
         assert_eq!(block[4], "  fn  L1-2 (2 lines)");
-        assert!(block[5].starts_with("    1:0    indexed   #11  structural clone"));
+        // the message drops the module's own prefix and keeps the others'
+        assert_eq!(
+            block[5],
+            "    1:0    indexed   #11  structural clone x3: fn, p::b.fn, p::c.fn"
+        );
         // provenance counts the real total
         assert!(text.contains("findings 9"));
         assert!(

@@ -119,7 +119,7 @@ fn test_members_carry_no_findings() {
         rows,
         [(
             "m.py",
-            "structural clone x3: m.fetch, test_a.test_one, test_b.test_two"
+            "structural clone x3: m.fetch L1, test_a.test_one L1, test_b.test_two L1"
         )]
     );
 }
@@ -565,7 +565,7 @@ fn expr_clone_fires_on_three_attribute_walk_at_four_sites() {
     );
     assert_eq!(
         f.message,
-        "expression clone x4: a.first, a.second, b.fourth +1 more"
+        "expression clone x4: a.first L2, a.second L4, b.fourth L4 +1 more"
     );
     assert_eq!(f.salience, 4.0);
 }

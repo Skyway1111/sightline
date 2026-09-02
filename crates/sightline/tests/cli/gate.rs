@@ -237,6 +237,6 @@ fn a_report_rule_reports_but_never_blocks_or_baselines() {
     let fast = run(&["gate", &root(&dir), "--files", "m.py"]);
     assert!(!fast.out.contains("#23"), "{}", fast.out);
     assert_eq!(run(&["baseline", &root(&dir)]).code, 0);
-    let counts = std::fs::read_to_string(dir.path().join(".sightline-baseline.json")).unwrap();
-    assert!(!counts.contains("\"23|"), "{counts}");
+    let counts = std::fs::read_to_string(dir.path().join(".sightline-baseline")).unwrap();
+    assert!(!counts.contains("\n23|"), "{counts}");
 }

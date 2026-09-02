@@ -92,7 +92,7 @@ fn a_baseline_absorbs_then_a_new_symbol_regresses_and_prune_restores_it() {
 
     // reverted, prune leaves the baseline byte for byte as it was
     std::fs::write(dir.path().join("m.py"), SOURCE).unwrap();
-    let baseline = dir.path().join(".sightline-baseline.json");
+    let baseline = dir.path().join(".sightline-baseline");
     let before = std::fs::read(&baseline).unwrap();
     let pruned = run(&["baseline", &root(&dir), "--prune"]);
     assert_eq!(pruned.code, 0);
@@ -324,7 +324,7 @@ fn explain_names_the_goal_the_posture_and_the_measured_precision() {
     assert!(
         run(&["explain", "35"])
             .out
-            .contains("precision: 8/8 seed 202608284")
+            .contains("precision: 8/8, 95% interval ")
     );
     // pool 2 on 28 repos: unmeasured
     assert!(run(&["explain", "3"]).out.contains("precision: unmeasured"));
@@ -351,10 +351,17 @@ fn explain_with_no_id_prints_the_roster_off_the_registry() {
             "family",
             "posture",
             "tier",
-            "precision"
+            "scope",
+            "precision",
+            "(95%",
+            "interval)"
         ]
     );
-    let rows: Vec<&str> = lines.collect();
+    // the readings, then the legend that spells the columns' words
+    let rows: Vec<&str> = lines
+        .take_while(|l| l.trim_start().starts_with('#'))
+        .collect();
+    assert!(out.out.contains("\nposture: ratchet blocks"));
 
     let mut want: Vec<String> = sightline_py_rules::RULES
         .iter()

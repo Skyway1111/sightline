@@ -24,10 +24,35 @@ Windows:
 powershell -ExecutionPolicy Bypass -c "irm https://github.com/Skyway1111/sightline/releases/latest/download/sightline-installer.ps1 | iex"
 ```
 
-Or take the archive yourself from the
-[releases page](https://github.com/Skyway1111/sightline/releases). Windows
-x64, Linux x64 and macOS arm64 are built for every release; each holds the
-binary, LICENSE, THIRD-PARTY.md and this file.
+Where a script piped into a shell is not allowed, take the archive and its
+checksum from the
+[releases page](https://github.com/Skyway1111/sightline/releases) and verify
+it before unpacking. Windows x64, Linux x64 and macOS arm64 are built for every
+release; each archive holds the binary, LICENSE, THIRD-PARTY.md and this file:
+
+```
+curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz
+curl -sSfLO https://github.com/Skyway1111/sightline/releases/latest/download/sightline-x86_64-unknown-linux-gnu.tar.xz.sha256
+sha256sum --check sightline-x86_64-unknown-linux-gnu.tar.xz.sha256
+tar -xf sightline-x86_64-unknown-linux-gnu.tar.xz
+```
+
+`sha256.sum` on the same page lists every archive's digest in one file.
+
+For a commit hook, the repository ships a
+[pre-commit](https://pre-commit.com) definition that runs the fast gate over
+the staged files with the `sightline` on your PATH:
+
+```yaml
+repos:
+  - repo: https://github.com/Skyway1111/sightline
+    rev: v0.2.0
+    hooks:
+      - id: sightline-gate
+```
+
+For GitHub Actions, `uses: Skyway1111/sightline@v0.2.0` installs a release on
+a Linux runner and runs one verb; the CI section below shows it.
 
 Check the install:
 
@@ -87,21 +112,27 @@ sightline audit doxx
 ```
 
 The first line is the provenance header, and the rest is the report, grouped by
-file and then by symbol, worst first:
+file and then by symbol, in the order the findings rank. The file whose
+strongest finding ranks first comes first:
 
 ```
 sightline 0.2.0 | modules 39 | findings 92 (proved 0 / indexed 53 / heuristic 39) | suppressed 0 | baselined 0
   languages: rs
 
 src/document/parsing/equation.rs  621 lines, fan-in 4 | 22 findings: #11 x19, #23 x3
-  doxx::document::parsing::equation::extract_inline_equation_positions  L31-163 (133 lines)
-    31:0    heuristic #23  ... has cognitive complexity 19 (threshold 15)
+  extract_inline_equation_positions  L31-163 (133 lines)
+    31:0    heuristic #23  extract_inline_equation_positions has cognitive complexity 19 (threshold 15)
 ```
 
+`--top 40` prints the forty strongest findings and counts the rest in the
+header, which is the first screen to read on a large tree.
+
 The report goes to stdout and the per-pass timings go to stderr, so a redirect
-keeps them apart. A first audit of a Rust tree pays for a full `cargo check` of
-it. Later audits reuse the build directory that
-[docs/reference.md](docs/reference.md) locates.
+keeps them apart. A first audit of a Rust tree pays for a full `cargo check`
+of it, at the memory and the time that check costs: the largest corpus tree,
+salvo, takes 34 s and peaks at 3.1 GB. Later audits reuse the build directory
+that [docs/reference.md](docs/reference.md) locates, and an audit removes the
+build directories of roots no audit has touched in 30 days.
 
 No finding makes `audit` exit non-zero. To read one finding's rule, pass its id
 to `explain`, or browse every rule in [docs/rules.md](docs/rules.md):
@@ -142,16 +173,24 @@ baseline .` writes, and REPORT never blocks.
 ## Run it in CI
 
 Write the baseline first and commit it. Without one, the first `gate --full`
-run blocks on every finding already in the tree:
+run blocks on every finding already in the tree. The baseline is one line per
+symbol, so a `merge=union` attribute lets git merge it without a conflict:
 
 ```
 sightline baseline .
-git add .sightline-baseline.json
+echo ".sightline-baseline merge=union" >> .gitattributes
+git add .sightline-baseline .gitattributes
 ```
+
+A symbol that is renamed or moved keeps its allowance: the baseline holds the
+shape of each symbol's body beside its name, and a finding on a body the
+baseline knows under another name is not new.
 
 Then take one of the two jobs below, or both. The first blocks a pull request.
 The second uploads the findings to code scanning, which annotates the diff and
-never blocks.
+never blocks. Each job spells the install out; `uses:
+Skyway1111/sightline@v0.2.0` with `args: gate . --full` is the same install
+and run as one step.
 
 Both jobs build the checked-out tree, so a pull request from a fork runs that
 fork's build scripts on your runner. That is true of any CI job that builds,
@@ -227,11 +266,20 @@ sightline fix doxx --out fixes.diff
 git -C doxx apply ../fixes.diff
 ```
 
+Five rules propose a patch: #32 deletes a dead symbol, #33 writes the return
+annotation the body proves, #35 hoists an import, #39 removes a comment that
+restates its code, #48 folds a one-use helper. On the corpus that is about
+two findings in a hundred. The rest of the report is for a reader.
+
 ## Configure
 
 Sightline reads `[tool.sightline]` from `pyproject.toml`, and from
 `sightline.toml` when there is no `pyproject.toml`. Pass `--config PATH` for a
-checkout you cannot write to. The keys are listed in
+checkout you cannot write to. `rules-off` switches a rule off for the tree,
+an `overrides` table switches rules off under some paths, and
+`complexity-threshold` moves #23's bar. In source, `sightline-ok: <id>` on a
+line covers the line, on a `def` or a `fn` it covers the definition, and
+`sightline-ok-file: <id>` covers the file. Every key and marker is in
 [docs/reference.md](docs/reference.md).
 
 ## Read next

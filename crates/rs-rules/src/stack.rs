@@ -9,10 +9,10 @@ use indexmap::{IndexMap, IndexSet};
 use serde_json::{Value, json};
 
 use sightline_core::config::Config;
+use sightline_core::dump::neutral_layer;
 use sightline_core::findings::{Finding, Qname, Rel, Sink, finding_json};
 use sightline_core::lang::{
-    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Stack, Timing,
-    neutral_layer,
+    BuildMode, Language, Listing, Neutral, NeutralModule, NeutralSymbol, Presence, Stack, Timing,
 };
 use sightline_core::rule::RuleSet;
 use sightline_rs_facts::build::{RsBuilt, build_facts};
@@ -37,8 +37,14 @@ impl Language for RsLanguage {
         SUFFIX
     }
 
-    fn detect(&self, root: &Utf8Path) -> bool {
-        crates::detect(root)
+    /// A `Cargo.toml` anywhere the walk reaches marks a Rust tree; there is
+    /// no loose Rust, since nothing builds `.rs` files without one.
+    fn detect(&self, root: &Utf8Path) -> Presence {
+        if crates::detect(root) {
+            Presence::Marked
+        } else {
+            Presence::Absent
+        }
     }
 
     fn build(

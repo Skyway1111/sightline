@@ -50,15 +50,19 @@ fn the_rollup_orders_modules_and_symbols_and_json_stays_complete() {
         ("c.py", "import a\nimport b\n\nb.fn()\n"),
         ("test_z.py", "def fn():\n    pass\n"),
     ]);
-    let mut findings = vec![
+    // the input is the ranked list: modules and symbols roll up in the order
+    // their strongest finding ranks, and the test module rolls up last with
+    // the most findings of any
+    let mut findings: Vec<Finding> = (0..4)
+        .map(|i| clone_at("test_z.py", 1, &format!("clone:t{i}"), "test_z.fn"))
+        .collect();
+    findings.extend([
         clone_at("b.py", 1, "clone:k", "b.fn"),
+        clone_at("a.py", 5, "clone:other", "a.other"),
         clone_at("c.py", 4, "clone:k", "c"), // module scope
         clone_at("a.py", 1, "clone:k", "a.fn"),
-        clone_at("a.py", 5, "clone:other", "a.other"),
         clone_at("a.py", 6, "clone:third", "a.other"),
-    ];
-    // the most findings, still last: tests roll up after prod
-    findings.extend((0..4).map(|i| clone_at("test_z.py", 1, &format!("clone:t{i}"), "test_z.fn")));
+    ]);
     let result = AuditResult::new(findings, stack.neutral());
 
     let text = to_text(&result);
@@ -69,9 +73,9 @@ fn the_rollup_orders_modules_and_symbols_and_json_stays_complete() {
     assert_eq!(
         heads,
         [
+            "b.py  2 lines, fan-in 1 | 1 findings: #11 x1",
             "a.py  6 lines, fan-in 0 | 3 findings: #11 x3",
             "c.py  4 lines, fan-in 0 | 1 findings: #11 x1",
-            "b.py  2 lines, fan-in 1 | 1 findings: #11 x1",
             "tests:",
             "test_z.py  2 lines, fan-in 0 | 4 findings: #11 x4",
         ]
@@ -85,7 +89,7 @@ fn the_rollup_orders_modules_and_symbols_and_json_stays_complete() {
         .expect("the block ends at c.py")
         .lines()
         .collect();
-    assert_eq!(a_block[1], "  other  L5-6 (2 lines)"); // two findings beat one
+    assert_eq!(a_block[1], "  other  L5-6 (2 lines)"); // ranks first
     assert_eq!(a_block[4], "  fn  L1-2 (2 lines)");
     assert!(a_block[5].starts_with("    1:0    indexed   #11  structural clone"));
     assert!(

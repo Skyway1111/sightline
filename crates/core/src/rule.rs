@@ -18,16 +18,30 @@ pub enum Posture {
 }
 
 impl Posture {
+    #[must_use]
     // sightline-ok: 11 - an enum's match table is its own name
-    pub fn value(self) -> &'static str {
+    pub const fn value(self) -> &'static str {
         match self {
-            Posture::Gate => "gate",
-            Posture::Ratchet => "ratchet",
-            Posture::Report => "report",
+            Self::Gate => "gate",
+            Self::Ratchet => "ratchet",
+            Self::Report => "report",
+        }
+    }
+
+    /// What `gate` does with the rule, in the words `explain` prints.
+    #[must_use]
+    // sightline-ok: 11 - an enum's match table is its own name
+    pub const fn describe(self) -> &'static str {
+        match self {
+            Self::Gate => "gate blocks on every finding",
+            Self::Ratchet => "gate blocks on what is new against the baseline",
+            Self::Report => "audit reports it and gate never blocks",
         }
     }
 }
 
+/// Which facts a rule needs.
+///
 /// `File`: single-file facts provably yield the full-build findings, so the
 /// fast gate runs the rule unless it reports. Anything leaning on repo-wide
 /// indexes, the oracle, or cross-module resolution stays `Repo`.
@@ -37,6 +51,27 @@ pub enum Scope {
     File,
 }
 
+impl Scope {
+    #[must_use]
+    // sightline-ok: 11 - an enum's match table is its own name
+    pub const fn value(self) -> &'static str {
+        match self {
+            Self::Repo => "repo",
+            Self::File => "file",
+        }
+    }
+
+    /// Which gate runs the rule, in the words `explain` prints.
+    #[must_use]
+    // sightline-ok: 11 - an enum's match table is its own name
+    pub const fn describe(self) -> &'static str {
+        match self {
+            Self::Repo => "reads the whole tree, so only audit and gate --full run it",
+            Self::File => "reads one file, so the fast gate runs it on every edit",
+        }
+    }
+}
+
 /// What every language-blind reader needs of a rule. The fn pointer type is
 /// the language's, so it is not here.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -44,7 +79,8 @@ pub struct RuleRecord {
     /// rule number, as a string
     pub id: &'static str,
     pub slug: &'static str,
-    /// "A" | "B" | "C" | "P" | "T" | "Z"
+    /// trust | surface | context | perf | tests | checker: the word the
+    /// roster and `explain` print
     pub family: &'static str,
     /// documented engine: AST | IDX | ORACLE | WP | mixed
     pub engine_class: &'static str,
@@ -74,11 +110,16 @@ pub fn owner_list<S: AsRef<str>>(qnames: &[S]) -> String {
     }
 }
 
-/// The one rule runner both language crates call: group A (every rule but
-/// the world owners) under rayon with one sink each, then the world owners
-/// sequentially in the order given, findings extended in `ids` order and a
-/// wall per rule for `timing`. `run_one` runs the rule at an index, or
-/// answers empty at zero cost for a rule the run skips.
+/// The one rule runner both language crates call.
+///
+/// Group A (every rule but the world owners) under rayon with one sink each,
+/// then the world owners sequentially in the order given, findings extended
+/// in `ids` order and a wall per rule for `timing`. `run_one` runs the rule
+/// at an index, or answers empty at zero cost for a rule the run skips.
+#[allow(
+    clippy::indexing_slicing,
+    reason = "one slot per id, indexed by the id's position"
+)]
 pub fn run_split<F>(
     ids: &[&'static str],
     world_owners: &[&str],

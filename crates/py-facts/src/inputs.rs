@@ -216,9 +216,23 @@ where
         .collect()
 }
 
+/// The distribution's metadata table: `[project]`, or `[tool.poetry]` for a
+/// tree poetry packages without one.
+fn project_table(data: &toml::Table) -> Option<&toml::Table> {
+    let poetry = data
+        .get("tool")
+        .and_then(|t| t.get("poetry"))
+        .and_then(toml::Value::as_table);
+    data.get("project")
+        .and_then(toml::Value::as_table)
+        .filter(|meta| !meta.is_empty())
+        .or(poetry)
+}
+
 /// The directories the tree's distributions package, relative to the root.
-/// A `[project]` with a `[build-system]`, or with a `py.typed` marker, is a
-/// distribution, unless it classifies itself `Private :: Do Not Upload`.
+/// A `[project]` or `[tool.poetry]` with a `[build-system]`, or with a
+/// `py.typed` marker, is a distribution, unless it classifies itself
+/// `Private :: Do Not Upload`.
 pub fn packaged_dirs(root: &Utf8Path, listing: &Listing) -> Vec<String> {
     let typed: HashSet<&str> = listing
         .iter()
@@ -238,12 +252,9 @@ pub fn packaged_dirs(root: &Utf8Path, listing: &Listing) -> Vec<String> {
         } else {
             format!("{}/", crate::qnames::under(root, &project))
         };
-        let Some(meta) = data.get("project").and_then(toml::Value::as_table) else {
+        let Some(meta) = project_table(&data) else {
             continue;
         };
-        if meta.is_empty() {
-            continue;
-        }
         let private = meta
             .get("classifiers")
             .and_then(toml::Value::as_array)
@@ -335,6 +346,20 @@ fn backend_dirs(project: &Utf8Path, data: &toml::Table, meta: &toml::Table) -> V
             }
         }
         _ => {}
+    }
+    // poetry: `packages = [{ include = "pkg", from = "src" }]`
+    let poetry = table("poetry")
+        .and_then(|p| p.get("packages"))
+        .and_then(toml::Value::as_array);
+    for entry in poetry
+        .into_iter()
+        .flatten()
+        .filter_map(toml::Value::as_table)
+    {
+        if let Some(include) = entry.get("include").map(spelled) {
+            let from = entry.get("from").map(spelled).unwrap_or_default();
+            out.push(project.join(from).join(include));
+        }
     }
     let build = table("hatch")
         .and_then(|h| h.get("build"))

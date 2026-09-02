@@ -54,7 +54,7 @@ const SHAPE: &str = concat!(
 );
 
 /// One fixture: the same shape is silent when cold, fires when hot-reachable,
-/// and no config at all silences family P with a provenance note naming it.
+/// and no config at all silences #41 perf-catalog with a provenance note naming it.
 #[test]
 fn hot_scoping_is_honest() {
     let (_dir, stack) = build_with(&[("m.py", SHAPE)], Config::new());
@@ -65,14 +65,14 @@ fn hot_scoping_is_honest() {
             .provers
             .notes()
             .iter()
-            .any(|n| n.contains("family P silent")),
+            .any(|n| n.contains("#41 perf-catalog silent")),
         "{:?}",
         stack.provers.notes()
     );
     // the header itself names it
     let mut result = AuditResult::new(Vec::new(), stack.neutral());
     result.notes = stack.provers.notes();
-    assert!(to_text(&result).contains("note: family P silent"));
+    assert!(to_text(&result).contains("note: #41 perf-catalog silent"));
     // rooted at `entry`: the shape fires in hot() and helper() but not cold()
     let found = run(&[("m.py", SHAPE)], hot(&["m.entry"]));
     let mut symbols: Vec<&str> = found.iter().map(|f| &*f.site.symbol).collect();

@@ -25,7 +25,7 @@ pub const RULE_57: Rule = Rule {
     record: RuleRecord {
         id: "57",
         slug: "dead-key",
-        family: "C",
+        family: "context",
         engine_class: "WP",
         posture: Posture::Ratchet,
         meaning: "a dict-record key a closed producer writes on every return path \

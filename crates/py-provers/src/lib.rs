@@ -26,6 +26,7 @@ pub mod imports;
 pub mod layers;
 pub mod liveness;
 pub mod oracle;
+pub mod pyenv;
 pub mod records;
 pub mod rettypes;
 pub mod scope;
@@ -136,6 +137,14 @@ pub struct Provers {
     splice_log: Mutex<Vec<SplicePass>>,
 }
 
+/// The environment directory an interpreter path names: two levels up from
+/// `Scripts/python.exe` or `bin/python`.
+fn env_dir(exe: &Utf8Path) -> &str {
+    exe.parent()
+        .and_then(Utf8Path::parent)
+        .map_or(exe.as_str(), Utf8Path::as_str)
+}
+
 impl Provers {
     /// `build_provers` and `wire_oracle_queries`' lossy note: the provers for
     /// one audit. Costs the checker's construction when config asks for one
@@ -144,17 +153,21 @@ impl Provers {
     pub fn new(root: &Utf8Path, config: &Config, facts: &RepoFacts<'_>, with_git: bool) -> Provers {
         let mut provers = Provers::bare(facts);
         if config.oracle {
-            let python_exe = oracle::detect_python_env(root, config.python_env.as_deref());
-            if python_exe.is_none() {
-                provers.note(
-                    Producer::Build,
-                    vec![
-                        "python-env not resolved: imports resolve against the \
-                          audit environment, not the target's"
-                            .to_string(),
-                    ],
-                );
-            }
+            let python_exe = pyenv::detect(root, config.python_env.as_deref(), |k| {
+                std::env::var(k).ok()
+            });
+            // the header names the environment the checker read, or the
+            // downgrade: without one the imports resolve against this
+            // machine's packages
+            let note = match &python_exe {
+                Some(exe) => format!("python-env: {}", env_dir(exe)),
+                None => format!(
+                    "python-env not found (looked for {}): imports resolve against the \
+                     audit environment, not the target's; set python-env in [tool.sightline]",
+                    pyenv::CANDIDATES
+                ),
+            };
+            provers.note(Producer::Build, vec![note]);
             provers.oracle = Oracle::new(
                 root,
                 &config.excludes,
@@ -492,7 +505,7 @@ impl Provers {
                 .collect();
             if hot.roots.is_empty() {
                 notes.push(
-                    "family P silent: no hot-roots config and no cost-declaring docstrings"
+                    "#41 perf-catalog silent: no hot-roots config and no cost-declaring docstrings"
                         .to_string(),
                 );
             }

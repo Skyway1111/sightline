@@ -54,7 +54,7 @@ pub const RULE_58: Rule = Rule {
     record: RuleRecord {
         id: "58",
         slug: "checker-error",
-        family: "Z",
+        family: "checker",
         engine_class: "ORACLE",
         posture: Posture::Report,
         meaning: "the type checker's own verdicts on the repo's code: return type \

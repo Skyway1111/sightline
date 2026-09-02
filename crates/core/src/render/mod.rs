@@ -33,13 +33,15 @@ pub struct AuditResult<'a> {
     pub rules_only: Vec<String>,
     /// `--paths`: rel prefixes kept
     pub paths: Vec<String>,
+    /// `--top`: how many of the ranked findings were cut before rendering
+    pub cut: usize,
 }
 
 impl<'a> AuditResult<'a> {
     /// A result with no baseline, no restriction and no prover header: what
     /// a test and a replay both start from.
     // sightline-ok: 56 - the fixture constructor every render and rules test shares
-    pub fn new(findings: Vec<Finding>, facts: &'a dyn FactsView) -> AuditResult<'a> {
+    pub fn new(findings: Vec<Finding>, facts: &'a dyn FactsView) -> Self {
         AuditResult {
             findings,
             suppressed: 0,
@@ -50,6 +52,7 @@ impl<'a> AuditResult<'a> {
             rules_off: Vec::new(),
             rules_only: Vec::new(),
             paths: Vec::new(),
+            cut: 0,
         }
     }
 }
@@ -60,6 +63,7 @@ fn sorted(values: &[String]) -> Vec<Value> {
     out.into_iter().map(|s| Value::from(s.as_str())).collect()
 }
 
+#[must_use]
 pub fn provenance(result: &AuditResult) -> Map<String, Value> {
     let langs = result.facts.languages();
     let mut only: Vec<&String> = result.rules_only.iter().collect();
@@ -88,6 +92,9 @@ pub fn provenance(result: &AuditResult) -> Map<String, Value> {
     }
     counts.insert("suppressed".into(), Value::from(result.suppressed));
     counts.insert("baselined".into(), Value::from(result.absorbed));
+    if result.cut > 0 {
+        counts.insert("cut".into(), Value::from(result.cut));
+    }
     out.insert("counts".into(), counts.into());
     out
 }

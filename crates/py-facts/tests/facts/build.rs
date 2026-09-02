@@ -1,3 +1,4 @@
+// file-length-ok: one test file per facts layer, sharing one fixture builder
 //! The pass-A half of the build: modules, qnames, symbols, classes, the
 //! node index and what the tree declares about itself. The tests whose
 //! whole subject is refs and call sites live in `resolve.rs`.
@@ -519,6 +520,24 @@ mod published {
             "[tool.hatch.build.targets.wheel]\npackages = [\"src/mypkg\"]\n",
         );
         let files = lib_with(&[("pyproject.toml", toml)]);
+        assert_eq!(published_of(&files), ["mypkg", "mypkg.api"]);
+    }
+
+    /// A poetry tree keeps its metadata under `[tool.poetry]` and packages
+    /// what `packages` includes, its own name when it lists none.
+    #[test]
+    fn poetry_packages_and_the_poetry_name() {
+        let listed = concat!(
+            "[tool.poetry]\nname = \"other\"\n",
+            "packages = [{ include = \"mypkg\", from = \"src\" }]\n\n",
+            "[build-system]\nrequires = [\"poetry-core\"]\n",
+        );
+        let files = lib_with(&[("pyproject.toml", listed)]);
+        assert_eq!(published_of(&files), ["mypkg", "mypkg.api"]);
+
+        let named =
+            "[tool.poetry]\nname = \"mypkg\"\n\n[build-system]\nrequires = [\"poetry-core\"]\n";
+        let files = lib_with(&[("pyproject.toml", named)]);
         assert_eq!(published_of(&files), ["mypkg", "mypkg.api"]);
     }
 

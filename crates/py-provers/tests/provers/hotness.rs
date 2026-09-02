@@ -151,7 +151,7 @@ fn no_roots_is_silent_and_noted() {
             .provers
             .notes()
             .iter()
-            .any(|n| n.contains("family P silent"))
+            .any(|n| n.contains("#41 perf-catalog silent"))
     );
 }
 

@@ -88,7 +88,7 @@ pub const RULE_2: Rule = Rule {
     record: RuleRecord {
         id: "2",
         slug: "locally-redundant-check",
-        family: "A",
+        family: "trust",
         engine_class: "ORACLE",
         // not GATE: even clean code has real hits
         posture: Posture::Ratchet,
@@ -224,7 +224,7 @@ pub const RULE_1: Rule = Rule {
     record: RuleRecord {
         id: "1",
         slug: "weak-boundary-types",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         // not GATE: clean code legitimately has Any/dict ML-config boundaries
         posture: Posture::Ratchet,
@@ -282,24 +282,15 @@ fn rule_1(facts: &RepoFacts<'_>, _provers: &Provers, out: &mut Sink) {
         {
             continue;
         }
+        // one finding per signature: the slots it leaves weak, listed, so a
+        // def with four `Any` params is one row and not four
         let args = fn_args(fn_def);
-        for arg in &args {
-            if let Some(weak) = weakness(annotation_of(module, arg)) {
-                out.push(Finding {
-                    rule: "1",
-                    site: node_site(facts, module, param_at(arg)),
-                    message: format!(
-                        "public boundary param '{}' of {}: {weak}",
-                        arg.name, sym.qname
-                    ),
-                    cause: format!("weak:{}:{}", sym.qname, arg.name),
-                    evidence: Evidence::Ast { detail: weak },
-                    salience: 0.0,
-                    fix: None,
-                    lang: "py",
-                });
-            }
-        }
+        let mut slots: Vec<String> = args
+            .iter()
+            .filter_map(|arg| {
+                weakness(annotation_of(module, arg)).map(|weak| format!("'{}' {weak}", arg.name))
+            })
+            .collect();
         let stars = [
             ("*", fn_def.parameters.vararg.as_deref()),
             ("**", fn_def.parameters.kwarg.as_deref()),
@@ -316,41 +307,28 @@ fn rule_1(facts: &RepoFacts<'_>, _provers: &Provers, out: &mut Sink) {
             if annotation_of(module, star).is_none()
                 && !forwarded_on(facts, module, module.nodes[sym.node as usize], star, prefix)
             {
-                out.push(Finding {
-                    rule: "1",
-                    site: node_site(facts, module, param_at(star)),
-                    message: format!(
-                        "opaque {prefix}{} on public boundary {}",
-                        star.name, sym.qname
-                    ),
-                    cause: format!("weak:{}:{prefix}{}", sym.qname, star.name),
-                    evidence: Evidence::Ast {
-                        detail: format!("opaque {prefix}{}", star.name),
-                    },
-                    salience: 0.0,
-                    fix: None,
-                    lang: "py",
-                });
+                slots.push(format!("opaque {prefix}{}", star.name));
             }
         }
-        let returns = module.returns(sym.node);
-        if let Some(weak_ret) = weakness(returns) {
-            // a return annotation a `# type:` comment spelled has no node of
-            // its own; CPython copies the def's location onto it
-            let at = returns
-                .and_then(|ann| Cn::Expr(ann).stamped())
-                .unwrap_or(sym.node);
-            out.push(Finding {
-                rule: "1",
-                site: node_site(facts, module, at),
-                message: format!("public boundary return of {}: {weak_ret}", sym.qname),
-                cause: format!("weak:{}:return", sym.qname),
-                evidence: Evidence::Ast { detail: weak_ret },
-                salience: 0.0,
-                fix: None,
-                lang: "py",
-            });
+        if let Some(weak_ret) = weakness(module.returns(sym.node)) {
+            slots.push(format!("return {weak_ret}"));
         }
+        if slots.is_empty() {
+            continue;
+        }
+        let detail = slots.join(", ");
+        out.push(Finding {
+            rule: "1",
+            site: node_site(facts, module, sym.node),
+            message: format!("public boundary {}: {detail}", sym.qname),
+            cause: format!("weak:{}", sym.qname),
+            evidence: Evidence::Ast {
+                detail: detail.clone(),
+            },
+            salience: slots.len() as f64,
+            fix: None,
+            lang: "py",
+        });
     }
 }
 
@@ -553,7 +531,7 @@ pub const RULE_5: Rule = Rule {
     record: RuleRecord {
         id: "5",
         slug: "proof-lifting",
-        family: "A",
+        family: "trust",
         engine_class: "WP+ORACLE",
         posture: Posture::Ratchet,
         meaning: "propose annotations callers already prove; never auto-apply",
@@ -768,7 +746,7 @@ pub const RULE_10: Rule = Rule {
     record: RuleRecord {
         id: "10",
         slug: "over-constrained-param",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "concrete container demanded where a protocol suffices",
@@ -877,7 +855,7 @@ pub const RULE_6: Rule = Rule {
     record: RuleRecord {
         id: "6",
         slug: "dishonest-accessor",
-        family: "A",
+        family: "trust",
         engine_class: "WP",
         posture: Posture::Ratchet,
         meaning: "accessor-named functions with proven effects",
@@ -1065,7 +1043,7 @@ pub const RULE_3: Rule = Rule {
     record: RuleRecord {
         id: "3",
         slug: "contract-implied-guard",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "emptiness guard implied by the guarded call's contract",
@@ -1194,7 +1172,7 @@ pub const RULE_7: Rule = Rule {
     record: RuleRecord {
         id: "7",
         slug: "comment-borne-protocol",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "'caller must ...' protocol narrated in a def's docstring",
@@ -1303,7 +1281,7 @@ pub const RULE_9: Rule = Rule {
     record: RuleRecord {
         id: "9",
         slug: "shared-mutable-state",
-        family: "A",
+        family: "trust",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "a module global rebound by three of its own functions; \
@@ -1468,7 +1446,7 @@ pub const RULE_49: Rule = Rule {
     record: RuleRecord {
         id: "49",
         slug: "mutable-default",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "a mutable literal as a parameter default",
@@ -1548,7 +1526,7 @@ pub const RULE_40: Rule = Rule {
     record: RuleRecord {
         id: "40",
         slug: "naming-proxies",
-        family: "A",
+        family: "trust",
         engine_class: "AST+ORACLE",
         posture: Posture::Ratchet,
         meaning: "is_*/has_*/can_* returning non-bool",
@@ -1622,7 +1600,7 @@ pub const RULE_50: Rule = Rule {
     record: RuleRecord {
         id: "50",
         slug: "unannotated-boundary",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "public prod def with an unannotated param or value-returning return",

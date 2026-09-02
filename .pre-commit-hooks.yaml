@@ -1,0 +1,17 @@
+# The pre-commit hook definition. `sightline` must be on PATH: the README's
+# install line puts it there, and `language: system` runs that binary rather
+# than building the fork from source on every machine.
+#
+#   repos:
+#     - repo: https://github.com/Skyway1111/sightline
+#       rev: v0.3.0
+#       hooks:
+#         - id: sightline-gate
+- id: sightline-gate
+  name: sightline gate
+  description: Block a commit on what the changed files add over the baseline (the fast gate, file-scope rules only).
+  entry: sightline gate . --files
+  language: system
+  types_or: [python, rust]
+  pass_filenames: true
+  require_serial: true

@@ -44,7 +44,7 @@ pub const RULE_18: Rule = Rule {
     record: RuleRecord {
         id: "18",
         slug: "section-comments",
-        family: "B",
+        family: "surface",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: ">=2 labeled phases narrated inside one function",
@@ -104,7 +104,7 @@ pub const RULE_34: Rule = Rule {
     record: RuleRecord {
         id: "34",
         slug: "noop-code",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "commented-out code: a non-doc comment run of >=3 lines that Rust parses; a \
@@ -228,7 +228,7 @@ pub const RULE_39: Rule = Rule {
     record: RuleRecord {
         id: "39",
         slug: "comment-discipline",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Report,
         meaning: "one multi-line doc run written word for word on differently named items",

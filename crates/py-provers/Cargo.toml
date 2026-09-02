@@ -20,6 +20,7 @@ rustc-hash.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
+toml.workspace = true
 sightline-core = { path = "../core" }
 sightline-py-facts = { path = "../py-facts" }
 

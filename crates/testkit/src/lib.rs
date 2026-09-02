@@ -304,7 +304,7 @@ pub fn make_repo(files: &[(&str, &str)]) -> TempDir {
 mod tests {
     use super::*;
 
-    use sightline_core::lang::{FactsView, Language, Stack};
+    use sightline_core::lang::{FactsView, Language, Presence, Stack};
 
     #[test]
     fn make_repo_writes_nested_paths_and_keeps_the_bytes() {
@@ -321,8 +321,8 @@ mod tests {
     fn the_synthetic_languages_reach_the_testkit() {
         let dir = make_repo(&[("P.toml", "")]);
         let root = camino::Utf8Path::from_path(dir.path()).unwrap();
-        assert!(P.detect(root));
-        assert!(!Q.detect(root));
+        assert_eq!(P.detect(root), Presence::Marked);
+        assert_eq!(Q.detect(root), Presence::Absent);
         let stack = SyntheticStack::new(&P, &[("m.p", "x\n")]);
         assert_eq!(stack.neutral().languages(), ["p"]);
         assert_eq!(registry().by_id("11").unwrap().slug, "structural-clones");

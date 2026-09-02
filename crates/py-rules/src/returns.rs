@@ -29,8 +29,7 @@ use sightline_py_provers::handlers::exception_is;
 
 use crate::model::Rule;
 use crate::util::{
-    decorator_names, fn_of, is_exported, iter_functions, iter_prod_functions, node_site,
-    raw_docstring,
+    decorator_names, fn_of, is_exported, iter_prod_functions, node_site, raw_docstring,
 };
 
 /// The out-of-band value a bare numeric contract admits. `""` under `-> str`
@@ -339,7 +338,7 @@ pub const RULE_33: Rule = Rule {
     record: RuleRecord {
         id: "33",
         slug: "return-honesty",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "return annotation contradicted by a None path; mixed returns",
@@ -354,7 +353,7 @@ pub const RULE_33: Rule = Rule {
 
 /// Return contracts must match the body (one finding per function).
 fn rule_33(facts: &RepoFacts<'_>, _provers: &Provers, out: &mut Sink) {
-    for (module, sym) in iter_functions(facts) {
+    for (module, sym) in iter_prod_functions(facts) {
         if let Some(f) = return_contract_finding(facts, module, sym) {
             out.push(f);
         }
@@ -492,7 +491,7 @@ pub const RULE_53: Rule = Rule {
     record: RuleRecord {
         id: "53",
         slug: "raise-contract",
-        family: "A",
+        family: "trust",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "docstring Raises section missing a type the body raises",

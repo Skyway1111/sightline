@@ -31,7 +31,7 @@ pub const RULE_27: Rule = Rule {
     record: RuleRecord {
         id: "27",
         slug: "purchase-price",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "modules big enough that their hot symbols tax every reader",
@@ -150,7 +150,7 @@ pub const RULE_29: Rule = Rule {
     record: RuleRecord {
         id: "29",
         slug: "top-loading",
-        family: "C",
+        family: "context",
         engine_class: "AST",
         posture: Posture::Ratchet,
         meaning: "big modules with no `//!` header",
@@ -223,7 +223,7 @@ pub const RULE_59: Rule = Rule {
     record: RuleRecord {
         id: "59",
         slug: "cost-docstring",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Report,
         meaning: "heavy entry points that spend off the machine without saying so",

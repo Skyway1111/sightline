@@ -32,6 +32,32 @@ fn rels(findings: &[Finding]) -> Vec<String> {
     out
 }
 
+/// `weak:<qname>:<slot>` per slot a #1 finding lists, every other cause as
+/// is: #1 reports one row per signature, and these tests read the slots.
+fn slot_causes(findings: &[Finding]) -> Vec<String> {
+    let mut out = Vec::new();
+    for f in findings {
+        let Evidence::Ast { detail } = &f.evidence else {
+            continue;
+        };
+        if !f.cause.starts_with("weak:") {
+            out.push(f.cause.clone());
+            continue;
+        }
+        for slot in detail.split(", ") {
+            let words: Vec<&str> = slot.split(' ').collect();
+            let name = if words[0] == "opaque" {
+                words[1]
+            } else {
+                words[0]
+            };
+            out.push(format!("{}:{}", f.cause, name.trim_matches('\'')));
+        }
+    }
+    out.sort_unstable();
+    out
+}
+
 // --- #1 weak boundary types --------------------------------------------------
 
 #[test]
@@ -47,10 +73,17 @@ fn fires_on_weak_public_signature() {
             ),
         )],
     );
-    let causes = sorted_causes(&findings);
-    assert!(causes.contains(&"weak:api.load:cfg"), "{causes:?}");
-    assert!(causes.contains(&"weak:api.load:return"), "{causes:?}");
-    assert!(causes.contains(&"weak:api.run:**kwargs"), "{causes:?}");
+    let causes = slot_causes(&findings);
+    assert_eq!(
+        causes,
+        [
+            "weak:api.load:cfg",
+            "weak:api.load:return",
+            "weak:api.run:**kwargs"
+        ]
+    );
+    // one row per signature: `load` lists both of its slots on one finding
+    assert_eq!(findings.len(), 2);
     assert!(findings.iter().all(|f| f.tier() == Tier::Heuristic));
 }
 
@@ -71,7 +104,7 @@ fn an_any_valued_mapping_placed_its_any() {
         )],
     );
     assert_eq!(
-        sorted_causes(&findings),
+        slot_causes(&findings),
         ["weak:api.loose:items", "weak:api.loose:return"]
     );
 }
@@ -93,7 +126,7 @@ fn a_callable_places_its_any() {
             ),
         )],
     );
-    assert_eq!(sorted_causes(&findings), ["weak:api.run:raw"]);
+    assert_eq!(slot_causes(&findings), ["weak:api.run:raw"]);
 }
 
 /// A method whose class answers to an external base takes the signature that
@@ -118,7 +151,7 @@ fn a_framework_fixed_method_did_not_choose_its_signature() {
         )],
     );
     assert_eq!(
-        sorted_causes(&findings),
+        slot_causes(&findings),
         ["weak:api.Plain.forward:ctx", "weak:api.forward:ctx"]
     );
 }
@@ -144,7 +177,7 @@ fn a_star_param_only_splatted_onward_is_the_callees() {
         )],
     );
     assert_eq!(
-        sorted_causes(&findings),
+        slot_causes(&findings),
         ["weak:api.named:**kwargs", "weak:api.named:*args"]
     );
 }
@@ -199,7 +232,7 @@ fn opaque_star_params_only_beside_a_declared_one() {
         )],
     );
     assert_eq!(
-        sorted_causes(&findings),
+        slot_causes(&findings),
         [
             "weak:api.pub2:**kwargs",
             "weak:api.pub2:*args",
@@ -225,7 +258,7 @@ fn bare_containers_and_lying_none_default() {
         )],
     );
     assert_eq!(
-        sorted_causes(&findings),
+        slot_causes(&findings),
         [
             "lying-default:api._internal:cfg",
             "lying-default:api.load:path",
@@ -239,7 +272,7 @@ fn bare_containers_and_lying_none_default() {
 fn signatures_in_test_files_are_not_boundaries() {
     let weak = "def check(cfg: dict):\n    return cfg\n";
     let findings = run_rule("1", &[("prod.py", weak)]);
-    assert_eq!(causes(&findings), ["weak:prod.check:cfg"]);
+    assert_eq!(slot_causes(&findings), ["weak:prod.check:cfg"]);
     let findings = run_rule("1", &[("tests/test_api.py", weak)]);
     assert!(
         findings.iter().all(|f| !f.site.rel.starts_with("tests/")),

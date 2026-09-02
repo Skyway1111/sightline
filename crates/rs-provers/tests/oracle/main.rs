@@ -13,7 +13,7 @@ use serde_json::json;
 use sightline_core::config::Config;
 use sightline_core::rule::RuleSet;
 use sightline_rs_provers::RsProvers;
-use sightline_rs_provers::oracle::cargo::{RA_AP, find_cargo, pinned};
+use sightline_rs_provers::oracle::cargo::{RA_AP, find_cargo};
 use sightline_rs_provers::oracle::{RsAnswers, RsOracle, answers_of, answers_with};
 use sightline_testkit::RsStack;
 use sightline_testkit::rs_fixtures::{CRATE, blanked, borrowed, member, siblings, workspace};
@@ -176,12 +176,6 @@ fn a_world_checks_in_the_crates_that_read_the_overlay() {
 }
 
 // --- degraded modes -----------------------------------------------------------
-
-#[test]
-fn the_pin_names_cargo() {
-    assert_eq!(pinned().keys().cloned().collect::<Vec<_>>(), ["cargo"]);
-    assert!(!pinned()["cargo"].is_empty());
-}
 
 /// `RA_AP` is what the header reports; the manifest is what cargo compiled.
 #[test]

@@ -172,7 +172,7 @@ pub const RULE_35: Rule = Rule {
     record: RuleRecord {
         id: "35",
         slug: "import-topology",
-        family: "C",
+        family: "context",
         engine_class: "IDX",
         posture: Posture::Ratchet,
         meaning: "import cycles (SCCs), cycles hidden behind deferred imports, and \

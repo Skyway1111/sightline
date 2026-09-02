@@ -14,8 +14,8 @@ inside the markers.
 - Windows 11, 32 GB RAM, AMD Ryzen 7 7800X3D
 - Rust 1.97.1, the pin in `rust-toolchain.toml`
 - Both oracles in process: ty from the fork rev in `Cargo.toml`, the Rust index
-  from `ra_ap_* 0.0.328`; the corpus environment's cargo is the
-  `sightline.toml` pin, 1.98.0
+  from `ra_ap_* 0.0.328`; the corpus environment's cargo is the one
+  `rust-toolchain.toml` pins, 1.97.1
 - Corpus pinned by commit (`crates/xtask/corpus.toml`, with the url each row
   clones from): powertools-lambda-python `a39e1018`, sqlglot `dcc36544`,
   merged-calculator `9eefca4b`, doxx `062819a1`, turmoil `684acc1a`, salvo
@@ -116,23 +116,23 @@ repositories.
 <!-- generated: fire-rates -->
 | Rule | P | S | M | Rule | P | S | M | Rule | P | S | M |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 651 | 172 | 159 | 23 | 19 | 220 | 284 | 42 | 7 | 2 | 4 |
+| 1 | 490 | 165 | 115 | 23 | 19 | 220 | 284 | 42 | 7 | 2 | 4 |
 | 2 | 5 | 5 | 46 | 24 | 2 | 6 | 28 | 44 | 0 | 3 | 3 |
 | 3 | 0 | 0 | 1 | 26 | 1 | 39 | 124 | 47 | 2 | 0 | 1 |
-| 5 | 10 | 14 | 37 | 27 | 19 | 27 | 82 | 48 | 1 | 3 | 5 |
+| 5 | 5 | 14 | 37 | 27 | 19 | 27 | 82 | 48 | 1 | 3 | 5 |
 | 6 | 3 | 0 | 0 | 29 | 68 | 80 | 0 | 49 | 0 | 1 | 0 |
-| 7 | 2 | 1 | 1 | 32 | 83 | 3 | 28 | 50 | 531 | 73 | 190 |
-| 9 | 0 | 0 | 2 | 33 | 19 | 1 | 24 | 53 | 8 | 0 | 1 |
+| 7 | 2 | 1 | 1 | 32 | 60 | 3 | 28 | 50 | 531 | 73 | 190 |
+| 9 | 0 | 0 | 2 | 33 | 14 | 1 | 24 | 53 | 8 | 0 | 1 |
 | 10 | 29 | 5 | 241 | 35 | 11 | 5 | 11 | 54 | 1 | 2 | 2 |
 | 11 | 199 | 241 | 645 | 36 | 5 | 1 | 9 | 55 | 54 | 54 | 102 |
-| 12 | 18 | 0 | 10 | 37 | 2 | 7 | 19 | 56 | 2 | 0 | 1 |
+| 12 | 18 | 0 | 10 | 37 | 0 | 6 | 19 | 56 | 0 | 0 | 1 |
 | 14 | 12 | 5 | 18 | 38 | 13 | 0 | 5 | 57 | 0 | 0 | 11 |
 | 18 | 0 | 1 | 6 | 39 | 106 | 2 | 4 | 58 | 0 | 7 | 13 |
 | 20 | 0 | 8 | 10 | 40 | 0 | 2 | 0 | 59 | 0 | 3 | 0 |
-| 21 | 3 | 3 | 1 | 41 | 0 | 0 | 5 | 60 | 11 | 1 | 4 |
+| 21 | 3 | 3 | 1 | 41 | 0 | 0 | 5 | 60 | 0 | 1 | 4 |
 
-Totals: P 1897, S 997, M 2137 findings (proved 5 / 5 / 46; indexed 457 / 369 / 1222).
-Arms (P/S/M): #1 `lying-default` 21/123/0, `weak` 630/49/159; #11 `clone` 177/145/221, `clone-block` 21/91/422, `expr-clone` 1/5/2; #26 `computed-declaration` 1/16/124, `dynamic-all` 0/1/0, `star-import` 0/22/0; #27 `fan-out` 2/4/6, `price` 17/23/76; #32 `dead-import` 1/1/1, `dead-param` 10/0/13, `dead-symbol` 72/2/14; #33 `lying-return` 17/1/0, `mixed-returns` 1/0/0, `sentinel` 0/0/1, `undeclared-optional` 1/0/23; #35 `entangled` 1/2/6, `hoistable-import` 5/2/5, `import-cycle` 5/1/0; #36 `any-laundering` 4/1/9, `type-lies` 1/0/0; #37 `monomorphic` 0/0/1, `single-impl` 1/1/0, `unused-default` 1/6/18; #39 `comment-restates` 68/2/4, `docstring-restates` 36/0/0, `dunder-restates` 2/0/0; #58 `invalid-method-override` 0/7/0, `invalid-return-type` 0/0/13.
+Totals: P 1688, S 989, M 2093 findings (proved 5 / 5 / 46; indexed 414 / 368 / 1222).
+Arms (P/S/M): #1 `lying-default` 21/123/0, `weak` 469/42/115; #11 `clone` 177/145/221, `clone-block` 21/91/422, `expr-clone` 1/5/2; #26 `computed-declaration` 1/16/124, `dynamic-all` 0/1/0, `star-import` 0/22/0; #27 `fan-out` 2/4/6, `price` 17/23/76; #32 `dead-import` 1/1/1, `dead-param` 10/0/13, `dead-symbol` 49/2/14; #33 `lying-return` 13/1/0, `mixed-returns` 1/0/0, `sentinel` 0/0/1, `undeclared-optional` 0/0/23; #35 `entangled` 1/2/6, `hoistable-import` 5/2/5, `import-cycle` 5/1/0; #36 `any-laundering` 4/1/9, `type-lies` 1/0/0; #37 `monomorphic` 0/0/1, `unused-default` 0/6/18; #39 `comment-restates` 68/2/4, `docstring-restates` 36/0/0, `dunder-restates` 2/0/0; #58 `invalid-method-override` 0/7/0, `invalid-return-type` 0/0/13.
 <!-- /generated: fire-rates -->
 
 ## Rust corpus
@@ -142,9 +142,9 @@ Walls, findings and oracle counters for the three Rust corpus repositories.
 <!-- generated: rs-corpus -->
 | repo | role | findings | wall | documents in / out | edges |
 | --- | --- | ---: | ---: | ---: | ---: |
-| doxx | clean | 92 | 15.2 s | 39 / 9571 | 1,845 |
-| turmoil | mid | 150 | 8.8 s | 98 / 6423 | 5,797 |
-| salvo | scale | 699 | 34.2 s | 274 / 11344 | 26,779 |
+| doxx | clean | 92 | 15.1 s | 39 / 9571 | 1,845 |
+| turmoil | mid | 150 | 8.4 s | 98 / 6423 | 5,797 |
+| salvo | scale | 699 | 18.6 s | 274 / 11344 | 26,779 |
 <!-- /generated: rs-corpus -->
 
 Fire rates for the Rust rules over the same three:

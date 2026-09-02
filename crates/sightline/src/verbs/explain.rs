@@ -11,7 +11,7 @@ use anyhow::Result;
 use serde::Deserialize;
 
 use sightline_core::findings::Engine;
-use sightline_core::precision::{key_of, rule_recall, rule_samples};
+use sightline_core::precision::{key_of, rule_recall, rule_samples, score};
 use sightline_core::pytext::repr_str;
 use sightline_core::registry::Registry;
 use sightline_core::rule::RuleRecord;
@@ -83,8 +83,23 @@ fn engine_of(record: &RuleRecord) -> Option<Engine> {
 /// own engine decides then).
 fn unjudged_bar(record: &RuleRecord) -> String {
     match engine_of(record).map(Engine::tier) {
-        Some(tier) => format!("rank reads the {} bar {:.2}", tier.value(), tier.bar()),
-        None => "its tier bar".to_string(),
+        Some(tier) => format!(
+            "ranks at {:.2}, the {} bar on an empty sample",
+            score(0, 0, tier.bar()),
+            tier.value()
+        ),
+        None => "ranks at its tier bar on an empty sample".to_string(),
+    }
+}
+
+/// `tp/n lo-hi`: the fraction and the interval it supports, the rule's own
+/// row where a round judged the whole rule, else the first arm it judged,
+/// named so the number is not read as the rule's.
+fn judged_cell(record: &RuleRecord) -> String {
+    match rule_samples(record.id, record.lang).first() {
+        Some(("", s)) => format!("{}/{} {}", s.tp, s.n, s.spelled_interval()),
+        Some((arm, s)) => format!("{}/{} {} ({arm})", s.tp, s.n, s.spelled_interval()),
+        None => "unmeasured".to_string(),
     }
 }
 
@@ -100,10 +115,10 @@ fn roster(registry: &Registry) -> String {
         .map(|r| r.slug.len())
         .max()
         .unwrap_or(0);
-    let line = |cell: [&str; 7]| {
+    let line = |cell: [&str; 8]| {
         format!(
-            "{:>4}  {:width$}  {:4}  {:6}  {:7}  {:9}  {}\n",
-            cell[0], cell[1], cell[2], cell[3], cell[4], cell[5], cell[6],
+            "{:>4}  {:width$}  {:4}  {:8}  {:7}  {:9}  {:5}  {}\n",
+            cell[0], cell[1], cell[2], cell[3], cell[4], cell[5], cell[6], cell[7],
         )
     };
     let mut out = line([
@@ -113,16 +128,10 @@ fn roster(registry: &Registry) -> String {
         "family",
         "posture",
         "tier",
-        "precision",
+        "scope",
+        "precision (95% interval)",
     ]);
     for r in &registry.rules {
-        // the rule's own row where a round judged the whole rule, else the
-        // first arm it judged, named so the number is not read as the rule's
-        let judged = match rule_samples(r.id, r.lang).first() {
-            Some(("", s)) => format!("{}/{}", s.tp, s.n),
-            Some((arm, s)) => format!("{}/{} ({arm})", s.tp, s.n),
-            None => "unmeasured".to_string(),
-        };
         out.push_str(&line([
             &format!("#{}", r.id),
             r.slug,
@@ -130,9 +139,16 @@ fn roster(registry: &Registry) -> String {
             r.family,
             r.posture.value(),
             engine_of(r).map_or("mixed", |e| e.tier().value()),
-            &judged,
+            r.scope.value(),
+            &judged_cell(r),
         ]));
     }
+    out.push_str(
+        "\nposture: ratchet blocks what a change adds over the baseline; report never blocks.\n\
+         scope: file rules run in the fast gate; repo rules need audit or gate --full.\n\
+         precision: real findings over findings a judged round read, with the interval\n\
+         the sample supports; rank sorts on a lower bound of it.\n",
+    );
     out
 }
 
@@ -147,7 +163,8 @@ fn json(registry: &Registry) -> String {
             let precision: Vec<serde_json::Value> = rule_samples(r.id, r.lang)
                 .into_iter()
                 .map(|(arm, s)| {
-                    serde_json::json!({"arm": arm, "tp": s.tp, "n": s.n, "seed": s.seed, "of": s.of})
+                    serde_json::json!({"arm": arm, "tp": s.tp, "n": s.n, "seed": s.seed,
+                        "of": s.of, "interval": s.spelled_interval()})
                 })
                 .collect();
             let recall = rule_recall(r.id, r.lang)
@@ -160,6 +177,7 @@ fn json(registry: &Registry) -> String {
                 "engine": r.engine_class,
                 "tier": engine_of(r).map_or("mixed", |e| e.tier().value()),
                 "posture": r.posture.value(),
+                "scope": r.scope.value(),
                 "meaning": r.meaning,
                 "goal": r.goal,
                 "complement": r.complement,
@@ -175,15 +193,19 @@ fn json(registry: &Registry) -> String {
 
 fn explain(record: &RuleRecord, out: &mut String) {
     out.push_str(&format!(
-        "#{} {} ({}, family {}, {}, {})\nchecks:  {}\ngoal:    {}\n",
+        "#{} {} ({}, {}, {} tier via {})\nchecks:  {}\ngoal:    {}\nposture: {} - {}\nscope:   {} - {}\n",
         record.id,
         record.slug,
         record.lang,
         record.family,
+        engine_of(record).map_or("mixed", |e| e.tier().value()),
         record.engine_class,
-        record.posture.value(),
         record.meaning,
         record.goal,
+        record.posture.value(),
+        record.posture.describe(),
+        record.scope.value(),
+        record.scope.describe(),
     ));
     // what another linter already covers, so this rule need not
     if !record.complement.is_empty() {
@@ -202,11 +224,15 @@ fn explain(record: &RuleRecord, out: &mut String) {
         let label = if arm.is_empty() {
             String::new()
         } else {
-            format!("{arm} arm ")
+            format!("'{arm}' findings ")
         };
         out.push_str(&format!(
-            "precision: {label}{}/{} seed {} - {}\n",
-            sample.tp, sample.n, sample.seed, sample.of
+            "precision: {label}{}/{}, 95% interval {}, seed {} - {}\n",
+            sample.tp,
+            sample.n,
+            sample.spelled_interval(),
+            sample.seed,
+            sample.of
         ));
     }
     if let Some(recall) = rule_recall(record.id, record.lang) {
@@ -268,7 +294,7 @@ mod tests {
         RuleRecord {
             id,
             slug: "unjudged",
-            family: "C",
+            family: "context",
             engine_class,
             posture: Posture::Report,
             meaning: "m",
@@ -285,20 +311,40 @@ mod tests {
     fn an_unjudged_reading_names_its_key_and_its_bar() {
         let mut out = String::new();
         explain(&record("99", "rs", "WP"), &mut out);
-        assert!(out.starts_with("#99 unjudged (rs, family C, WP, report)\n"));
+        assert!(out.starts_with("#99 unjudged (rs, context, indexed tier via WP)\n"));
+        assert!(out.contains("posture: report - audit reports it and gate never blocks\n"));
+        assert!(out.contains("scope:   repo - reads the whole tree"));
         assert!(out.contains(
-            "precision: unmeasured (no round judged rs:99; rank reads the indexed bar 0.80)\n"
+            "precision: unmeasured (no round judged rs:99; ranks at 0.62, the indexed bar \
+             on an empty sample)\n"
         ));
     }
 
     /// A rule that mixes engines has no one bar to name.
     #[test]
     fn a_mixed_engine_rule_names_no_bar() {
-        assert_eq!(unjudged_bar(&record("99", "py", "mixed")), "its tier bar");
+        assert_eq!(
+            unjudged_bar(&record("99", "py", "mixed")),
+            "ranks at its tier bar on an empty sample"
+        );
         assert_eq!(
             unjudged_bar(&record("99", "py", "ORACLE")),
-            "rank reads the proved bar 0.95"
+            "ranks at 0.85, the proved bar on an empty sample"
         );
+    }
+
+    /// The roster spells every column a reader needs to predict the gate:
+    /// the scope, and the interval beside the fraction.
+    #[test]
+    fn the_roster_prints_scope_and_the_interval() {
+        let registry = crate::pipeline::registry().expect("the registry builds");
+        let text = roster(&registry);
+        let row = text
+            .lines()
+            .find(|l| l.starts_with(" #50 "))
+            .expect("#50 is in the roster");
+        assert!(row.contains("  file   349/371 0.91-0.96"), "{row}");
+        assert!(text.contains("scope: file rules run in the fast gate"));
     }
 
     /// Every retired id the registry buries has a row in the embedded table.

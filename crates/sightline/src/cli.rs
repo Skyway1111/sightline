@@ -77,6 +77,9 @@ pub enum Command {
         /// Write this audit's per-pass walls to a JSON file
         #[arg(long, value_name = "JSON")]
         profile: Option<String>,
+        /// Report only the N strongest findings; the header counts the rest
+        #[arg(long, value_name = "N")]
+        top: Option<usize>,
     },
     /// Block on the files a change touched, or on the whole tree with --full
     Gate {

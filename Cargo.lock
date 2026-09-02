@@ -3066,6 +3066,7 @@ dependencies = [
  "sightline-py-facts",
  "sightline-testkit",
  "tempfile",
+ "toml 0.9.12+spec-1.1.0",
  "ty_project",
  "ty_python_semantic",
 ]

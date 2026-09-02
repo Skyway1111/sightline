@@ -11,11 +11,11 @@ explains how a finding is produced.
 | `audit ROOT` | Ranked report with a provenance header | Repo-wide | 0 |
 | `gate ROOT` | Blocking check over the files a change touched | One file per changed file | 0, or 1 on a block |
 | `gate ROOT --full` | Blocking check over the whole tree, for CI | Repo-wide | 0, or 1 on a block |
-| `baseline ROOT` | Writes `.sightline-baseline.json` | Repo-wide | 0 |
+| `baseline ROOT` | Writes `.sightline-baseline` | Repo-wide | 0 |
 | `fix ROOT` | Unified diff of verified fixes. It never writes to the tree | Repo-wide | 0 |
 | `facts ROOT QNAME` | What the provers hold about one symbol or module | Repo-wide | 0 |
-| `explain RULE` | One rule's record and its measured precision, or why a retired id was cut | None | 0 |
-| `explain` | Every rule the binary runs, one line each, with its slug, language, family, posture, tier and judged precision | None | 0 |
+| `explain RULE` | One rule's record: what it checks, its posture and scope in plain words, and its measured precision with the interval the sample supports. For a retired id, why it was cut | None | 0 |
+| `explain` | Every rule the binary runs, one line each, with its slug, language, family, posture, tier, scope and judged precision, then a legend for those words | None | 0 |
 | `debug dump ROOT` | One JSON document per pipeline layer, for reading what a stage holds | Repo-wide | 0 |
 
 `ROOT` is a directory. `RULE` is an id (`23`) or a slug (`dead-symbols`).
@@ -39,6 +39,7 @@ it, except `explain`.
 | `audit` | `--paths PATH...` | Report only findings under these paths. Facts stay repo-wide |
 | `audit` | `--rules SPEC` | Run only these rules. Ids or slugs, comma-separated |
 | `audit` | `--profile JSON` | Write this audit's per-pass walls to `JSON` |
+| `audit` | `--top N` | Report the N strongest findings alone. The header counts them as `N of all` |
 | `gate` | `--files FILE...` | Gate these files. The default is the working-tree diff against HEAD |
 | `gate` | `--since REF` | Also gate files changed since the merge base with `REF` |
 | `gate` | `--full` | Run the whole audit pipeline. It conflicts with `--files` and `--since` |
@@ -67,14 +68,28 @@ empty table, which is a valid config.
 | --- | --- | --- | --- |
 | `excludes` | list of strings | `[]` | Directories the walk never enters, on top of the built-in list below |
 | `rules-off` | list of ids or slugs | `[]` | Rules this repository does not run |
+| `overrides` | list of tables | `[]` | Rules off under some paths. Each `[[tool.sightline.overrides]]` table holds `paths`, matched as `excludes` entries are, and `rules-off`. A finding an override drops counts as suppressed |
+| `complexity-threshold` | integer | `15` | The cognitive complexity #23 reports at |
 | `oracle` | bool | `true` | Setting it to `false` turns off the type checker. Every oracle-backed finding then goes silent, and the header says so |
-| `python-env` | string | unset | The Python environment whose packages the type checker resolves. Auto-detected when unset |
-| `hot-roots` | list of qnames | `[]` | Seeds for the hot set family P (#41) prices. A `*` matches one path segment |
-| `published` | bool | unset | Overrides what the packaging metadata says this repository publishes. `true` means a library, whose callers are downstream, so no in-repo caller set is complete |
+| `python-env` | string | unset | The Python environment whose packages the type checker resolves, as a path under the root or an absolute one. Detected when unset, see below |
+| `hot-roots` | list of qnames | `[]` | Seeds for the hot set #41 prices. A `*` matches one path segment |
+| `published` | bool | unset | Overrides what the packaging metadata says this repository publishes. `true` means a library, whose callers are downstream, so no in-repo caller set is complete. The read knows `[project]` and `[tool.poetry]` |
 
-`[tool.sightline.rust-toolchain]` holds one key, `cargo`, naming the cargo
-version the Rust oracle expects on PATH. A version off the pin is a note in the
-provenance header, never a failure.
+```toml
+[tool.sightline]
+complexity-threshold = 20
+
+[[tool.sightline.overrides]]
+paths = ["tests", "scripts/*.py"]
+rules-off = [33, "speculative-generality"]
+```
+
+With `python-env` unset, the type checker takes the first environment that
+holds an interpreter: the one `VIRTUAL_ENV`, `CONDA_PREFIX` or
+`UV_PROJECT_ENVIRONMENT` names, then `.venv`, `venv` or `env` under the root,
+then the poetry cache's environment for a root holding `poetry.lock`. The
+header names the one it took, or says that none was found and that imports
+resolve against the machine's own packages.
 
 The walk always skips dot-directories and these names: `__pycache__`, `venv`,
 `node_modules`, `site-packages`, `build`, `dist`, `target`. A config may exclude
@@ -107,6 +122,18 @@ on what a change adds.
 Performance (#41) and complexity (#23) are REPORT. Both are a receipt, never a
 gate.
 
+## Scope
+
+A rule's scope says which gate runs it. A `file` rule reads one file, so the
+fast gate runs it on every edit. A `repo` rule reads the whole tree, the call
+graph or the type checker, so only `audit` and `gate --full` run it. The
+roster `sightline explain` prints has a scope column, and `sightline explain
+<id>` prints the scope in words.
+
+The fast gate therefore reports a subset of `--full`, and its header names
+the repo rules it did not run. A fast gate that passes says nothing about
+those rules; CI runs `--full`.
+
 ## Suppression
 
 A marker names rule ids or slugs, comma-separated. In source, spell it in the
@@ -124,13 +151,48 @@ In a `.md` or `.rst` file, spell it in HTML:
 ```
 
 A marker on a line of its own applies to the next line. A marker after code
-applies to its own line. Ids are numeric and permanent, and a retired id stays
-reserved; `sightline explain <id>` prints why a retired id was cut.
+applies to its own line. When the line it applies to opens a definition, a
+`def`, a `class` or a `fn`, the marker covers the whole definition, nested
+definitions included. `sightline-ok-file` anywhere in a file covers the file:
+
+```
+# sightline-ok-file: 39 - a tutorial's comments say what each line does
+```
+
+For a directory or a glob, the config's `overrides` table switches rules off
+under paths. Ids are numeric and permanent, and a retired id stays reserved;
+`sightline explain <id>` prints why a retired id was cut.
+
+## The baseline
+
+`baseline ROOT` writes `.sightline-baseline`, one line per key:
+
+```
+# sightline baseline: `<rule>|<symbol> <count> [<shape>]`, one per line; `merge=union` is safe
+11|pkg.mod.Cls.meth 2 9f2a1c0b7e6d5a4b
+50|pkg.api.load 1 3c1e77a0b2d4f6e8
+```
+
+The key is the rule and the symbol's qualified name. The count is how many
+findings of that rule the symbol may hold. The shape is a digest of the
+symbol's body with its name, its indentation and its blank lines taken out, so
+a symbol that is renamed, moved into a class or moved to another module keeps
+its allowance: a finding whose key the baseline lacks takes the count of an
+unclaimed entry of the same rule with the same shape. A body that changes is a
+new shape, and a finding it adds blocks.
+
+The file is one key per line so git merges it line by line. Add
+`.sightline-baseline merge=union` to `.gitattributes` and a merge never
+conflicts on it; a line both sides kept keeps the larger count. `baseline
+--prune` drops the keys no finding claims.
+
+A `.sightline-baseline.json` an earlier release wrote is read where the
+current file is absent, and `baseline` replaces it with the current file.
 
 ## Where Sightline writes
 
 Inside a repository, Sightline writes only where you ask it to. `baseline ROOT`
-writes `.sightline-baseline.json` at the root. `fix --out PATH` and `audit
+writes `.sightline-baseline` at the root. `fix --out PATH` and `audit
 --profile JSON` write the path you name. No other verb writes into a tree.
 
 Outside a repository, the Rust oracle builds the audited tree and points cargo
@@ -142,8 +204,11 @@ absolute path. A root whose crates live under sub-roots gets one subdirectory
 per sub-root under that, named by the sub-root's relative path with each `/`
 replaced by `-`.
 
-Nothing prunes those directories. Each one holds a full cargo build of one
-tree, and the base keeps one per root you have audited until you delete it.
+Each one holds a full cargo build of one tree. An audit touches a marker in
+its own root's directory and removes every sibling whose marker is older than
+30 days, and the header names what it removed. A directory an older release
+left has no marker; the first audit that sees it writes one, and it goes 30
+days later.
 
 To find the directory for one root, hash the root's absolute path. On Linux:
 
@@ -179,9 +244,9 @@ the directory when the load closes.
 identical byte for byte, at one thread and at every core.
 
 **A baseline written on one platform holds on another.**
-`.sightline-baseline.json` keys every count as `<rule>|<symbol qname>`. Neither
-half of that key names a path or a platform, so one tree ratchets the same way
-wherever it is audited.
+`.sightline-baseline` keys every count as `<rule>|<symbol qname>` and a shape
+digested from the symbol's own lines. None of that names a path or a platform,
+so one tree ratchets the same way wherever it is audited.
 
 **The report's order is the same on every platform.** The total order that
 sorts findings ends on the path relative to the root, then the line, the

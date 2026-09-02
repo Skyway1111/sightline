@@ -1,10 +1,14 @@
-//! SARIF 2.1.0, one run: the registry as the driver's rules, `level` by
-//! posture (the axis the gate blocks on), cause as the stable fingerprint.
-//! GitHub annotations are a SARIF upload, so there is no second format.
-//! Linear in the findings, no I/O.
+//! SARIF 2.1.0, one run.
+//!
+//! The registry as the driver's rules, `level` by posture (the axis the gate
+//! blocks on), cause as the stable fingerprint. GitHub annotations are a
+//! SARIF upload, so there is no second format. Linear in the findings, no
+//! I/O.
 //!
 //! An alert's rule pane is `help.markdown`, built from the record `explain`
 //! prints, so the two answers cannot drift.
+
+use std::fmt::Write as _;
 
 use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
 use serde_json::{Map, Value};
@@ -28,7 +32,8 @@ pub const HOME: &str = env!("CARGO_PKG_REPOSITORY");
 /// postures, the suppression marker and the exit codes.
 const HELP_URI: &str = concat!(env!("CARGO_PKG_REPOSITORY"), "/blob/main/docs/reference.md");
 
-pub fn sarif_level(posture: Posture) -> &'static str {
+#[must_use]
+pub const fn sarif_level(posture: Posture) -> &'static str {
     match posture {
         Posture::Gate => "error",
         Posture::Ratchet => "warning",
@@ -76,7 +81,7 @@ fn sarif_fix(fix: &Fix) -> Value {
 /// a reader who cannot run the binary sees the same answer.
 fn help_markdown(r: &RuleRecord) -> String {
     let mut out = format!(
-        "`#{}` **{}** - {}, family {}, {}, {}\n\n{}\n\nGoal: {}\n",
+        "`#{}` **{}** - {}, {}, {}, {}\n\n{}\n\nGoal: {}\n\nPosture: {}.\n",
         r.id,
         r.slug,
         r.lang,
@@ -85,9 +90,10 @@ fn help_markdown(r: &RuleRecord) -> String {
         r.posture.value(),
         r.meaning,
         r.goal,
+        r.posture.describe(),
     );
     if !r.complement.is_empty() {
-        out.push_str(&format!("\nComplement: {}\n", r.complement));
+        let _ = write!(out, "\nComplement: {}\n", r.complement);
     }
     let samples = rule_samples(r.id, r.lang);
     if samples.is_empty() {
@@ -99,18 +105,24 @@ fn help_markdown(r: &RuleRecord) -> String {
         } else {
             format!(" ({arm} arm)")
         };
-        out.push_str(&format!(
-            "\nPrecision{label}: {}/{} seed {} - {}\n",
-            sample.tp, sample.n, sample.seed, sample.of,
-        ));
+        let _ = write!(
+            out,
+            "\nPrecision{label}: {}/{}, 95% interval {}, seed {} - {}\n",
+            sample.tp,
+            sample.n,
+            sample.spelled_interval(),
+            sample.seed,
+            sample.of,
+        );
     }
     if let Some(recall) = rule_recall(r.id, r.lang) {
-        out.push_str(&format!(
+        let _ = write!(
+            out,
             "\nRecall: {}/{} - {}\n",
             recall.covered, recall.sites, recall.of,
-        ));
+        );
     }
-    out.push_str(&format!("\n`sightline explain {}`\n", r.id));
+    let _ = write!(out, "\n`sightline explain {}`\n", r.id);
     out
 }
 
@@ -128,6 +140,7 @@ fn by_id(registry: &Registry) -> Vec<&RuleRecord> {
     out
 }
 
+#[must_use]
 pub fn to_sarif(result: &AuditResult, registry: &Registry) -> String {
     let records = by_id(registry);
     let rules: Vec<Value> = records
@@ -174,8 +187,7 @@ fn finding_result(f: &Finding, registry: &Registry, records: &[&crate::rule::Rul
     let index = records.iter().position(|r| r.id == f.rule);
     let level = registry
         .posture_of(f.rule, f.lang)
-        .map(sarif_level)
-        .unwrap_or("note");
+        .map_or("note", sarif_level);
     let mut properties = Map::new();
     properties.insert("tier".into(), Value::from(f.tier().value()));
     properties.insert("engine".into(), Value::from(f.engine().value()));
@@ -276,7 +288,7 @@ mod tests {
         let indexed: Vec<&str> = results
             .iter()
             .map(|r| {
-                rules[r["ruleIndex"].as_u64().unwrap() as usize]["id"]
+                rules[usize::try_from(r["ruleIndex"].as_u64().unwrap()).unwrap()]["id"]
                     .as_str()
                     .unwrap()
             })
@@ -325,11 +337,13 @@ mod tests {
 
         let eleven = rules.iter().find(|r| r["id"] == "11").unwrap();
         let markdown = eleven["help"]["markdown"].as_str().unwrap();
-        assert!(markdown.starts_with("`#11` **structural-clones** - py, family B, AST, ratchet\n"));
+        assert!(markdown.starts_with("`#11` **structural-clones** - py, surface, AST, ratchet\n"));
         assert!(markdown.contains("\nGoal: the goal it approximates\n"));
-        // the judged rows `explain` prints, its arms named
-        assert!(markdown.contains("\nPrecision: 232/256 seed "));
-        assert!(markdown.contains("\nPrecision (clone arm): 70/83 seed "));
+        assert!(markdown.contains("\nPosture: gate blocks on what is new against the baseline.\n"));
+        // the judged rows `explain` prints, its arms named, each with the
+        // interval its sample supports
+        assert!(markdown.contains("\nPrecision: 232/256, 95% interval 0.87-0.94, seed "));
+        assert!(markdown.contains("\nPrecision (clone arm): 70/83, 95% interval "));
         assert!(markdown.ends_with("\n`sightline explain 11`\n"));
         // a plain-text `help` is what the format asks of every rule
         assert!(

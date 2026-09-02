@@ -149,9 +149,13 @@ fn a_group_of_two_names_both_owners() {
     let src = format!("pub fn one() {{\n{BODY}}}\npub fn two() {{\n{BODY}}}\n");
     let found = run_rs_rule("11", &krate(&src));
 
-    assert_eq!(
-        found[0].message,
-        "structural clone x2: demo_crate::one, demo_crate::two"
+    // each owner with its line, so a reader opens the other copy directly
+    assert!(
+        found[0]
+            .message
+            .starts_with("structural clone x2: demo_crate::one L1, demo_crate::two L"),
+        "{}",
+        found[0].message
     );
     assert_eq!(found[0].salience, 2.0);
     assert_eq!(causes(&found)[0], causes(&found)[1]);

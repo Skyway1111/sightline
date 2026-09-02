@@ -3,7 +3,7 @@
 //! of the call graph's callee edges (`callgraph::callee_of`). The
 //! amplification factor is the loop depth crossed along the path, a recursive
 //! cycle's own loops counted once, and a memo guard is a barrier
-//! (`memo_guards`); family P (#41) emits only inside the hot set.
+//! (`memo_guards`); #41 perf-catalog (#41) emits only inside the hot set.
 
 use std::collections::{BTreeMap, BTreeSet, HashMap};
 use std::sync::LazyLock;

@@ -96,6 +96,10 @@ pub fn off_set(config: &Config, registry: &Registry, only: Option<&RuleSet>) -> 
     off
 }
 
+/// The stacks a root builds, and what `detect` said of the languages it
+/// skipped.
+pub type Built = (Vec<Box<dyn Stack>>, Vec<String>);
+
 /// One stack per detected language, each built over the shared walk.
 pub fn build_stacks(
     root: &Utf8Path,
@@ -105,21 +109,24 @@ pub fn build_stacks(
     only: Option<&IndexSet<Rel>>,
     off: &RuleSet,
     mode: BuildMode,
-) -> Result<Vec<Box<dyn Stack>>> {
+) -> Result<Built> {
     let registered = langs.registered();
+    let (detected, notes) = detect(root, &registered);
     let mut stacks: Vec<Box<dyn Stack>> = Vec::new();
-    for lang in detect(root, &registered) {
+    for lang in detected {
         stacks.push(lang.build(root, config, listing, only, off, mode)?);
     }
-    Ok(stacks)
+    Ok((stacks, notes))
 }
 
 /// Every stack's rules into one list, suppressed as one. The oracle's
 /// database is dropped here unless the caller still needs it (`fix`,
-/// `facts`).
+/// `facts`). `notes` are `build_stacks`'s, kept for the header.
 pub fn collect_stacks(
     stacks: Vec<Box<dyn Stack>>,
+    notes: Vec<String>,
     registry: &Registry,
+    config: &Config,
     off: &RuleSet,
     keep_oracle: bool,
 ) -> Collected {
@@ -133,7 +140,8 @@ pub fn collect_stacks(
         stack.run_rules(off, &mut sink, Some(&mut on_rule));
     }
     let mut repo = Repo::new(stacks);
-    let (kept, suppressed) = suppress(sink.0, &repo, &registry.id_by_slug);
+    repo.notes = notes;
+    let (kept, suppressed) = suppress(sink.0, &repo, &registry.id_by_slug, &config.overrides);
     if !keep_oracle {
         close(&mut repo, &mut walls);
     }
@@ -169,8 +177,15 @@ pub fn collect(
 ) -> Result<Collected> {
     let off = off_set(config, registry, only);
     let listing = walk::discover(root, config);
-    let stacks = build_stacks(root, config, langs, &listing, None, &off, BuildMode::Full)?;
-    Ok(collect_stacks(stacks, registry, &off, keep_oracle))
+    let (stacks, notes) = build_stacks(root, config, langs, &listing, None, &off, BuildMode::Full)?;
+    Ok(collect_stacks(
+        stacks,
+        notes,
+        registry,
+        config,
+        &off,
+        keep_oracle,
+    ))
 }
 
 /// `cli.cmd_fix`: one diff, each language's emitter over its own files. A
@@ -195,7 +210,7 @@ pub fn fix_diff(repo: &Repo, kept: &[Finding]) -> (String, Vec<String>) {
 /// The header's `notes` and `provers` block: every stack's, in stack order
 /// (`cmd_audit`). Read after `close`, as the reference reads them.
 pub fn header(repo: &Repo) -> (Vec<String>, serde_json::Map<String, serde_json::Value>) {
-    let mut notes = Vec::new();
+    let mut notes = repo.notes.clone();
     let mut provers = serde_json::Map::new();
     for stack in &repo.stacks {
         notes.extend(stack.notes());
